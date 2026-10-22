@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#11100e;color:#ece8e1;font-family:'Schibsted Grotesk','Noto Sans TC',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:oklch(0.82 0.13 78)}a:hover{color:#ece8e1}
+button{font-family:inherit}
+@keyframes lumenFloat{0%{opacity:0;transform:translate(-50%,-50%)}15%{opacity:1}100%{opacity:0;transform:translate(-50%,-160%)}}
+@keyframes achIn{from{opacity:0;transform:translateY(-16px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes qiFlow{to{stroke-dashoffset:-40}}
+@keyframes qiPulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes lumenIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+<div style="min-height:100vh;box-sizing:border-box;padding:clamp(20px,4vw,48px);max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+
+  <header style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(236,232,225,.1);padding-bottom:20px">
+    <div style="display:flex;align-items:baseline;gap:14px">
+      <h1 style="margin:0;font-size:28px;font-weight:700;letter-spacing:-.02em">修真</h1>
+      <span style="font-size:14px;font-weight:600;color:oklch(0.82 0.13 78);border:1px solid oklch(0.82 0.13 78 / .5);border-radius:6px;padding:2px 8px">{{ realmName }}</span>
+      <span style="color:#a39e94;font-size:14px">一款打坐就能變強的放置遊戲，比真正修煉輕鬆一點。</span>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:8px;font-family:'JetBrains Mono',monospace;font-size:14px">
+      <span style="color:#a39e94">道果</span>
+      <span style="color:oklch(0.8 0.13 35);font-weight:500">{{ embersText }}</span>
+      <span style="color:#a39e94">· 修煉速度 +{{ emberBonusText }}%</span>
+    </div>
+  </header>
+
+  <main style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+
+    <section style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(44px,6vw,64px);font-weight:500;letter-spacing:-.03em;line-height:1">{{ lightText }}</div>
+        <div style="color:#a39e94;font-size:15px">元氣 · 每秒 <span style="color:#ece8e1;font-family:'JetBrains Mono',monospace">{{ rateText }}</span></div>
+      </div>
+
+      <div ref="{{ orbRef }}" style="position:relative;width:340px;max-width:100%;height:286px;margin:12px auto;user-select:none">
+        <button onClick="{{ onGather }}" aria-label="運轉元氣" style="position:absolute;inset:0;border:none;padding:0;background:none;cursor:pointer;transition:transform 80ms ease" style-active="transform:scale(.97)" style-hover="filter:brightness(1.1)">{{ figure }}</button>
+        {{ floaters }}
+      </div>
+      <div style="text-align:center;color:#a39e94;font-size:14px;margin-top:-12px">點擊運轉元氣 · 每次 <span style="color:#ece8e1;font-family:'JetBrains Mono',monospace">+{{ clickText }}</span></div>
+      <sc-if value="{{ isLianqi }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+        <span style="font-size:13px;color:#a39e94">已打通經脈 <span style="color:#ece8e1;font-family:'JetBrains Mono',monospace">{{ openedText }}</span> · 穴脈加成 <span style="color:oklch(0.8 0.13 35);font-family:'JetBrains Mono',monospace">×{{ merBonusText }}</span></span>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:360px">
+          <sc-for list="{{ meridians }}" as="mr" hint-placeholder-count="12">
+            <span title="{{ mr.hint }}" style="font-size:12px;padding:3px 9px;border-radius:10px;border:1px solid {{ mr.border }};color:{{ mr.color }}">{{ mr.name }}</span>
+          </sc-for>
+        </div>
+        <sc-if value="{{ notAllOpen }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ onXue }}" style="min-height:44px;min-width:220px;border-radius:8px;border:1px solid {{ xueBorder }};background:{{ xueBg }};color:{{ xueColor }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:6px 16px">
+            <span style="font-size:14px;font-weight:600">{{ xueLabel }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px">{{ xueCostText }}</span>
+          </button>
+        </sc-if>
+        <sc-if value="{{ allOpen }}" hint-placeholder-val="{{ false }}">
+          <span style="font-size:13px;color:oklch(0.8 0.13 35)">十二經脈已全數打通。</span>
+        </sc-if>
+        <span style="font-size:12px;color:#6f6a62;text-align:center;max-width:340px;text-wrap:pretty">每個穴道元氣 +3%，打通整條經脈再 ×1.15。轉世後需重新打通。</span>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ isGate }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+        <span style="font-size:13px;color:#a39e94">{{ gateTitle }} <span style="color:#ece8e1;font-family:'JetBrains Mono',monospace">{{ gateProgress }}</span> · 關卡加成 <span style="color:oklch(0.8 0.13 35);font-family:'JetBrains Mono',monospace">×{{ gateBonusText }}</span></span>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:360px">
+          <sc-for list="{{ gateItems }}" as="gi" hint-placeholder-count="9">
+            <span style="font-size:12px;padding:3px 9px;border-radius:10px;border:1px solid {{ gi.border }};color:{{ gi.color }}">{{ gi.name }}</span>
+          </sc-for>
+        </div>
+        <sc-if value="{{ gateNotDone }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ onGate }}" style="min-height:44px;min-width:220px;border-radius:8px;border:1px solid {{ gateBorder }};background:{{ gateBg }};color:{{ gateColor }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:6px 16px">
+            <span style="font-size:14px;font-weight:600">{{ gateLabel }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px">{{ gateCostText }}</span>
+          </button>
+        </sc-if>
+        <sc-if value="{{ gateDone }}" hint-placeholder-val="{{ false }}">
+          <span style="font-size:13px;color:oklch(0.8 0.13 35)">「{{ gateTitle }}」已圓滿。</span>
+        </sc-if>
+        <span style="font-size:12px;color:#6f6a62;text-align:center;max-width:340px;text-wrap:pretty">每過一關，元氣 ×1.15。轉世後需重新闖關。</span>
+      </div>
+      </sc-if>
+
+      <div style="border:1px solid rgba(236,232,225,.1);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+          <span style="font-size:17px;font-weight:700;color:oklch(0.82 0.13 78)">{{ realmName }}</span>
+          <span style="font-size:13px;color:#a39e94">境界加成 <span style="color:#ece8e1;font-family:'JetBrains Mono',monospace">{{ realmBonusText }}</span></span>
+        </div>
+        <span style="font-size:13px;color:#a39e94;text-wrap:pretty">{{ nextRealmText }}</span>
+        <sc-for list="{{ breakReqs }}" as="br" hint-placeholder-count="1">
+          <div style="display:flex;gap:10px;align-items:center;font-size:13px;color:{{ br.color }}">
+            <span style="width:8px;height:8px;border-radius:50%;background:{{ br.dot }};flex:none"></span>
+            <span>{{ br.text }}</span>
+          </div>
+        </sc-for>
+        <sc-if value="{{ notPeak }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ onBreak }}" style="min-height:44px;border-radius:8px;border:1px solid {{ breakBorder }};background:{{ breakBg }};color:{{ breakColor }};font-size:15px;font-weight:600;cursor:pointer">{{ breakLabel }}</button>
+        </sc-if>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(236,232,225,.1);padding-top:18px">
+        <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39e94">紀錄</div>
+        <sc-for list="{{ log }}" as="entry" hint-placeholder-count="3">
+          <div style="display:flex;gap:12px;font-size:14px;line-height:1.4;animation:lumenIn 300ms ease">
+            <span style="font-family:'JetBrains Mono',monospace;color:#6f6a62;flex:none">{{ entry.time }}</span>
+            <span style="color:{{ entry.color }}">{{ entry.text }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="flex:1.4 1 440px;min-width:0;display:flex;flex-direction:column;gap:20px">
+      <nav style="display:flex;gap:4px;border-bottom:1px solid rgba(236,232,225,.1)">
+        <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="3">
+          <button onClick="{{ tab.onSelect }}" style="background:none;border:none;border-bottom:2px solid {{ tab.border }};margin-bottom:-1px;padding:10px 14px;color:{{ tab.color }};font-size:15px;font-weight:600;cursor:pointer;display:flex;gap:8px;align-items:center">
+            {{ tab.label }}
+            <sc-if value="{{ tab.hasBadge }}" hint-placeholder-val="{{ false }}">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;background:oklch(0.82 0.13 78);color:#11100e;border-radius:10px;padding:1px 7px">{{ tab.badge }}</span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </nav>
+
+      <sc-if value="{{ isSources }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <span style="color:#a39e94;font-size:14px">功法會在你做別的事時持續吐納元氣。</span>
+            <div style="display:flex;gap:2px;background:#1a1916;border-radius:8px;padding:3px">
+              <sc-for list="{{ modes }}" as="m" hint-placeholder-count="3">
+                <button onClick="{{ m.onSelect }}" style="border:none;border-radius:6px;padding:5px 10px;font-family:'JetBrains Mono',monospace;font-size:12px;cursor:pointer;background:{{ m.bg }};color:{{ m.color }}">{{ m.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <sc-for list="{{ gens }}" as="g" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:18px;align-items:center;padding:16px 0;border-top:1px solid rgba(236,232,225,.08)">
+                <div style="display:flex;flex-direction:column;gap:3px;min-width:0">
+                  <div style="font-size:17px;font-weight:600">{{ g.name }}</div>
+                  <div style="color:#a39e94;font-size:13px">{{ g.desc }}</div>
+                  <div style="color:#a39e94;font-size:12px;font-family:'JetBrains Mono',monospace">{{ g.eachText }}/秒（每個）· 合計 {{ g.totalText }}/秒</div>
+                </div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:500;min-width:48px;text-align:right">{{ g.owned }}</div>
+                <button onClick="{{ g.onBuy }}" style="min-width:132px;min-height:44px;border-radius:8px;border:1px solid {{ g.btnBorder }};background:{{ g.btnBg }};color:{{ g.btnColor }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:6px 12px">
+                  <span style="font-size:13px;font-weight:600">升級 ×{{ g.qty }}</span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:12px">{{ g.costText }}</span>
+                </button>
+              </div>
+            </sc-for>
+            <sc-if value="{{ hasNextGen }}" hint-placeholder-val="{{ true }}">
+              <div style="padding:16px 0;border-top:1px solid rgba(236,232,225,.08);color:#6f6a62;font-size:14px;display:flex;justify-content:space-between;gap:12px">
+                <span>更高深的功法</span>
+                <span style="font-family:'JetBrains Mono',monospace">於 {{ nextGenText }} 出現</span>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isUpgrades }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="color:#a39e94;font-size:14px">{{ upgradesOwnedText }}</span>
+          <sc-if value="{{ noUpgrades }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:32px 0;color:#6f6a62;font-size:15px">目前沒有可參悟的秘訣。修習更多功法後會陸續出現。</div>
+          </sc-if>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
+            <sc-for list="{{ upgrades }}" as="u" hint-placeholder-count="4">
+              <button onClick="{{ u.onBuy }}" style="text-align:left;border-radius:10px;border:1px solid {{ u.btnBorder }};background:#1a1916;color:#ece8e1;padding:14px;cursor:pointer;display:flex;flex-direction:column;gap:6px;opacity:{{ u.opacity }}" style-hover="background:#22201c">
+                <span style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:15px;font-weight:600">{{ u.name }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a39e94;flex:none">{{ u.lvText }}</span></span>
+                <span style="font-size:13px;color:#a39e94">{{ u.desc }}</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:oklch(0.82 0.13 78)">{{ u.costText }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isRecords }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px">
+            <sc-for list="{{ stats }}" as="st" hint-placeholder-count="3">
+              <div style="background:#1a1916;border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:4px">
+                <span style="font-size:12px;color:#a39e94">{{ st.label }}</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:20px">{{ st.value }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <sc-for list="{{ achievements }}" as="a" hint-placeholder-count="5">
+              <div style="display:flex;gap:14px;align-items:center;padding:11px 0;border-top:1px solid rgba(236,232,225,.08);opacity:{{ a.opacity }}">
+                <span style="width:10px;height:10px;border-radius:50%;flex:none;background:{{ a.dot }}"></span>
+                <span style="font-size:15px;font-weight:600;flex:1">{{ a.name }}</span>
+                <span style="font-size:13px;color:#a39e94">{{ a.desc }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isDao }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="color:#a39e94;font-size:14px;text-wrap:pretty">{{ daoNote }}</span>
+          <div style="display:flex;flex-direction:column">
+            <sc-for list="{{ daos }}" as="dd" hint-placeholder-count="6">
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:18px;align-items:center;padding:16px 0;border-top:1px solid rgba(236,232,225,.08)">
+                <div style="display:flex;flex-direction:column;gap:3px;min-width:0">
+                  <div style="font-size:17px;font-weight:600">{{ dd.name }}</div>
+                  <div style="color:#a39e94;font-size:13px">{{ dd.desc }}</div>
+                </div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#a39e94;text-align:right">{{ dd.lvText }}</div>
+                <button onClick="{{ dd.onBuy }}" style="min-width:132px;min-height:44px;border-radius:8px;border:1px solid {{ dd.btnBorder }};background:{{ dd.btnBg }};color:{{ dd.btnColor }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:6px 12px">
+                  <span style="font-size:13px;font-weight:600">{{ dd.label }}</span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:12px">{{ dd.costText }}</span>
+                </button>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <div style="margin-top:12px;border:1px solid rgba(236,232,225,.1);border-radius:12px;padding:20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+        <div style="display:flex;flex-direction:column;gap:4px;flex:1 1 240px">
+          <span style="font-size:16px;font-weight:600;color:oklch(0.8 0.13 35)">轉世</span>
+          <span style="font-size:14px;color:#a39e94;text-wrap:pretty">{{ prestigeText }}</span>
+          <div style="display:flex;flex-direction:column;margin-top:8px">
+            <sc-for list="{{ gainRows }}" as="gr" hint-placeholder-count="5">
+              <div style="display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:5px 0;border-top:1px solid rgba(236,232,225,.06);font-size:13px">
+                <span style="color:{{ gr.color }}">{{ gr.label }}</span>
+                <span style="color:#6f6a62">{{ gr.note }}</span>
+                <span style="font-family:'JetBrains Mono',monospace;color:{{ gr.color }}">{{ gr.value }}</span>
+              </div>
+            </sc-for>
+            <div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0 0;border-top:1px solid rgba(236,232,225,.14);font-size:14px">
+              <span style="color:#a39e94">天命所歸 {{ gainMultText }} · 此時轉世可得</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:18px;color:oklch(0.8 0.13 35);font-weight:500">{{ gainTotalText }} 道果</span>
+            </div>
+          </div>
+        </div>
+        <button onClick="{{ onPrestige }}" style="min-height:44px;padding:0 18px;border-radius:8px;border:1px solid {{ prBorder }};background:{{ prBg }};color:{{ prColor }};font-size:14px;font-weight:600;cursor:pointer">{{ prestigeLabel }}</button>
+      </div>
+    </section>
+  </main>
+
+  <footer style="display:flex;justify-content:space-between;gap:12px;color:#6f6a62;font-size:13px;border-top:1px solid rgba(236,232,225,.1);padding-top:16px">
+    <span>進度自動儲存。離線期間以 {{ offlineRateText }} 速率累積，最多 {{ offlineCapText }} 小時。</span>
+    <button onClick="{{ onWipe }}" style="background:none;border:none;color:#6f6a62;font-size:13px;cursor:pointer;text-decoration:underline" style-hover="color:#ece8e1">{{ wipeLabel }}</button>
+  </footer>
+
+  <div style="position:fixed;top:24px;left:50%;transform:translateX(-50%);z-index:20;display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:none">
+    <sc-for list="{{ toasts }}" as="t" hint-placeholder-count="0">
+      <div style="background:#1a1916;border:1px solid oklch(0.82 0.13 78 / .6);border-radius:12px;padding:14px 20px;display:flex;gap:14px;align-items:center;box-shadow:0 0 32px oklch(0.82 0.13 78 / .25),0 8px 24px rgba(0,0,0,.4);animation:achIn 500ms cubic-bezier(.2,1.4,.4,1)">
+        <span style="width:12px;height:12px;border-radius:50%;background:oklch(0.82 0.13 78);box-shadow:0 0 12px oklch(0.85 0.13 78);flex:none"></span>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <span style="font-size:12px;color:oklch(0.82 0.13 78);letter-spacing:.08em">{{ t.title }}</span>
+          <span style="font-size:17px;font-weight:700">{{ t.name }}</span>
+          <span style="font-size:13px;color:#a39e94">{{ t.desc }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ showOffline }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;background:rgba(10,9,8,.72);display:flex;align-items:center;justify-content:center;padding:24px;z-index:10">
+      <div style="background:#1a1916;border:1px solid rgba(236,232,225,.12);border-radius:14px;padding:28px;max-width:360px;display:flex;flex-direction:column;gap:14px">
+        <span style="font-size:13px;color:#a39e94">你離開了 {{ offlineTime }}</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:500">+{{ offlineText }}</span>
+        <span style="font-size:14px;color:#a39e94">元氣已入體。無人護法，只吸收了一半。</span>
+        <button onClick="{{ onCloseOffline }}" style="min-height:44px;border:none;border-radius:8px;background:oklch(0.82 0.13 78);color:#11100e;font-size:15px;font-weight:600;cursor:pointer">收下</button>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;gameSpeed&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;10&quot;,&quot;100&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Game&quot;},&quot;floatingNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Game&quot;}}">
+const num9 = suf => ['一', '二', '三', '四', '五', '六', '七', '八', '九'].map(n => n + suf);
+class Component extends DCLogic {
+  G = [{ cost: 15, rate: 0.1 }, { cost: 100, rate: 1 }, { cost: 1100, rate: 8 }, { cost: 12000, rate: 47 }, { cost: 130000, rate: 260 }, { cost: 1.4e6, rate: 1400 }, { cost: 2e7, rate: 7800 }];
+  R = [
+    { name: '練氣', gens: [['吐納術', '吸氣，吐氣。大致可靠。'], ['引氣訣', '有抱負的呼吸法。'], ['周天運轉', '氣走一圈，再走一圈。'], ['養氣丹', '苦，但有效。'], ['聚靈陣', '方圓十里的靈氣都歸你。'], ['靈石礦脈', '挖到就是賺到。'], ['大周天', '全身經脈一起上工。']] },
+    { name: '築基', ups: ['道基穩固'], gens: [['築基心法', '先把地基打好。'], ['靈根淬鍊', '洗掉雜質，留下天賦。'], ['道基丹', '一顆抵三年苦修。'], ['洞府靈脈', '把家蓋在靈脈上。'], ['護基大陣', '防賊也防心魔。'], ['御劍術', '通勤時間大幅縮短。'], ['道基圓滿', '地基穩得能蓋高樓。']] },
+    { name: '金丹', ups: ['金丹不壞'], gens: [['凝丹訣', '把元氣捏成一顆。'], ['九轉丹爐', '轉九次，少一次都不行。'], ['地火淬丹', '火候是門學問。'], ['丹雷', '丹成時打下來的那道。'], ['金丹大道', '丹田裡的小太陽。'], ['丹紋', '每道紋路都是功力。'], ['九品金丹', '品相最好的那種。']] },
+    { name: '元嬰', ups: ['元嬰護體'], gens: [['養嬰訣', '另一個你，需要照顧。'], ['神識外放', '眼睛閉著也看得見。'], ['嬰火', '元嬰自己會生火了。'], ['元嬰出竅', '出門散步，肉身看家。'], ['身外化身', '多一個人幫你打坐。'], ['碎丹成嬰', '破而後立。'], ['元嬰大成', '它已經比你還勤快。']] },
+    { name: '化神', ups: ['神識通天'], gens: [['化神訣', '神識凝成實體。'], ['神遊太虛', '睡著也在修煉。'], ['意念化形', '想什麼就有什麼，大概。'], ['天地共鳴', '天地開始配合你的呼吸。'], ['法相天地', '背後多了一尊巨像。'], ['神念如絲', '千里之外一念即至。'], ['化神圓滿', '神與氣再也分不開。']] },
+    { name: '煉虛', ups: ['虛空藏'], gens: [['煉虛訣', '把實的練成虛的。'], ['虛空吐納', '在虛無中呼吸。'], ['空間裂隙', '元氣從縫裡漏進來。'], ['虛實相生', '有無之間來回切換。'], ['太虛幻境', '一座只屬於你的空間。'], ['挪移大法', '瞬間移動，不必轉車。'], ['返虛合道', '虛到極致就是道。']] },
+    { name: '合體', ups: ['萬法同源'], gens: [['天人合一', '你就是天，天就是你。'], ['法體雙修', '法力和肉身一起練。'], ['萬象歸一', '萬物都往你這裡流。'], ['不滅道體', '很難受傷，也很難感冒。'], ['合體真身', '化身全都收回來了。'], ['一念山河', '動念間山河變色。'], ['合道之境', '和大道簽了長約。']] },
+    { name: '大乘', ups: ['大乘妙法'], gens: [['大乘心經', '經文長得念不完。'], ['萬法圓融', '所有功法互相加持。'], ['小千世界', '體內養了一個世界。'], ['道域', '方圓之內你說了算。'], ['渡厄真言', '唸完就沒有煩惱。'], ['不朽金身', '歲月拿你沒辦法。'], ['大乘圓滿', '只差最後一步。']] },
+    { name: '渡劫', ups: ['劫後餘生'], gens: [['雷劫淬體', '把天雷當成按摩。'], ['心魔試煉', '和自己吵贏了。'], ['九天玄雷', '一道比一道響。'], ['劫雲吐納', '從雷雲裡吸元氣。'], ['天劫餘韻', '劈完的雷還能回收。'], ['仙靈之氣', '已經聞得到仙界的味道。'], ['飛升之門', '門開了一條縫。']] },
+  ];
+  GT = [null,
+    { title: '九重道基', verb: '鑄就', items: num9('重道基') },
+    { title: '九轉金丹', verb: '淬鍊', items: num9('轉') },
+    { title: '元嬰七境', verb: '孕育', items: ['嬰胎', '嬰形', '開眼', '能言', '離體', '神遊', '大成'] },
+    { title: '六識通明', verb: '貫通', items: ['眼識', '耳識', '鼻識', '舌識', '身識', '意識'] },
+    { title: '五行煉虛', verb: '煉化', items: ['金行', '木行', '水行', '火行', '土行'] },
+    { title: '四象歸一', verb: '融合', items: ['青龍', '白虎', '朱雀', '玄武'] },
+    { title: '八卦圓融', verb: '參悟', items: ['乾卦', '坤卦', '震卦', '巽卦', '坎卦', '離卦', '艮卦', '兌卦'] },
+    { title: '九重天劫', verb: '渡過', items: num9('重天劫') },
+  ];
+  gl(s, r) { return ((s.gates || [])[r]) || 0; }
+  gSum(s) { return (s.gates || []).reduce((a, b) => a + (b || 0), 0); }
+  gateCost(r, j, s) { const n = this.GT[r].items.length; return this.breakNeed(r) * 0.55 * Math.pow(2.2, j - (n - 1)) * (1 - 0.05 * this.L(s || {}, 'd8')); }
+  openGate = () => {
+    this.setState(s => {
+      const r = s.realm || 0, g = this.GT[r]; if (!g) return null;
+      const j = this.gl(s, r); if (j >= g.items.length) return null;
+      const c = this.gateCost(r, j, s); if (s.light < c) return null;
+      const gates = [...(s.gates || [])]; gates[r] = j + 1;
+      let ns = this.addLog({ ...s, light: s.light - c, gates }, `${g.verb}「${g.items[j]}」，元氣 ×1.15。`, j + 1 === g.items.length ? 'ach' : undefined);
+      if (j + 1 === g.items.length) ns = { ...ns, toasts: [...(ns.toasts || []), { id: Math.random(), title: '關卡圓滿', name: g.title, desc: '已可突破至下一境界', at: Date.now() }].slice(-3) };
+      return ns;
+    });
+  };
+  gn(s, i) { return this.R[s.realm || 0].gens[i]; }
+  breakNeed(r) { return 1e9 * Math.pow(4, r - 1); }
+  canBreak(s) { const r = s.realm || 0; if (r >= 8) return false; return r === 0 ? (s.xue || 0) >= 60 : this.gl(s, r) >= this.GT[r].items.length && this.G.every((g, i) => (s.owned[i] || 0) > 0); }
+  breakthrough = () => {
+    this.setState(s => {
+      if (!this.canBreak(s)) return null;
+      const nr = (s.realm || 0) + 1, nm = this.R[nr].name + '期';
+      let ns = { ...s, realm: nr, rq: 0, light: 0, owned: this.G.map(() => 0), upgrades: {}, ...(nr === 3 ? { ltY: s.lifetime || 1 } : {}) };
+      ns = this.addLog(ns, `突破成功，踏入${nm}！功法與秘訣煥然一新，元氣 ×5。`, 'ember');
+      ns = { ...ns, toasts: [...(ns.toasts || []), { id: Math.random(), title: '境界突破', name: nm, desc: '功法與秘訣已換成新境界的項目 · 元氣 ×5', at: Date.now() }].slice(-3) };
+      return this.checkAch(ns);
+    });
+  };
+  UC = {};
+  Uof(r) { return this.UC[r] || (this.UC[r] = this.buildUpgrades(r)); }
+  A = [
+    { id: 'a1', name: '初窺門徑', desc: '吸收 1 點元氣', test: s => s.allTime >= 1 },
+    { id: 'a2', name: '氣感', desc: '累計 100 元氣', test: s => s.allTime >= 100 },
+    { id: 'a3', name: '小有所成', desc: '累計 1 萬元氣', test: s => s.allTime >= 1e4 },
+    { id: 'a4', name: '靈氣外溢', desc: '累計 100 萬元氣', test: s => s.allTime >= 1e6 },
+    { id: 'a5', name: '天地異象', desc: '累計 10 億元氣', test: s => s.allTime >= 1e9 },
+    { id: 'a6', name: '勤修不輟', desc: '運氣 100 次', test: s => s.clicks >= 100 },
+    { id: 'a7', name: '走火邊緣', desc: '運氣 1,000 次', test: s => s.clicks >= 1000 },
+    { id: 'a8', name: '專精一道', desc: '首部功法修習 25 層', test: s => (s.owned[0] || 0) >= 25 },
+    { id: 'a9', name: '萬法歸宗', desc: '每種功法各修習一層', test: s => this.G.every((g, i) => (s.owned[i] || 0) > 0) },
+    { id: 'a10', name: '輪迴', desc: '轉世一次', test: s => s.collapses >= 1 },
+    { id: 'a11', name: '築基成功', desc: '踏入築基期', test: s => (s.realm || 0) >= 1 },
+    { id: 'a12', name: '結成金丹', desc: '踏入金丹期', test: s => (s.realm || 0) >= 2 },
+    { id: 'a13', name: '元嬰初成', desc: '踏入元嬰期', test: s => (s.realm || 0) >= 3 },
+    { id: 'a14', name: '煉虛合道', desc: '踏入煉虛期', test: s => (s.realm || 0) >= 5 },
+    { id: 'a15', name: '天劫將至', desc: '踏入渡劫期', test: s => (s.realm || 0) >= 8 },
+  ];
+  D = [
+    { id: 'd1', name: '道心堅定', desc: '所有元氣 +25%', base: 1, grow: 1.6, max: 50 },
+    { id: 'd2', name: '天生悟性', desc: '運氣所得 ×2', base: 1, grow: 2, max: 10 },
+    { id: 'd3', name: '閉關入定', desc: '離線收益 +10%', base: 2, grow: 1.5, max: 5 },
+    { id: 'd4', name: '洞天福地', desc: '功法升級花費 −4%', base: 3, grow: 1.8, max: 10 },
+    { id: 'd5', name: '天命所歸', desc: '轉世所得道果 +20%', base: 5, grow: 2, max: 20 },
+    { id: 'd6', name: '宿慧', desc: '轉世後保留 10 層吐納術', base: 2, grow: 1.7, max: 10 },
+    { id: 'd7', name: '先天道體', desc: '衝穴花費 −5%', base: 3, grow: 1.7, max: 10 },
+    { id: 'd8', name: '破境天賦', desc: '關卡花費 −5%', base: 5, grow: 1.7, max: 10 },
+    { id: 'd9', name: '靈根資質', desc: '秘訣花費 −5%', base: 4, grow: 1.7, max: 10 },
+    { id: 'd10', name: '輪迴記憶', desc: '轉世後直接打通 1 條經脈', base: 8, grow: 1.6, max: 12 },
+    { id: 'd11', name: '天道酬勤', desc: '運氣額外獲得每秒產出 1%', base: 3, grow: 1.5, max: 20 },
+    { id: 'd12', name: '一氣化三清', desc: '離線收益上限 +2 小時', base: 4, grow: 1.8, max: 8 },
+    { id: 'd13', name: '大道無極', desc: '所有元氣 ×1.1（乘算，無上限）', base: 10, grow: 1.3, max: Infinity },
+  ];
+  L(s, id) { return (s.dao || {})[id] || 0; }
+  daoCost(d, lv) { return Math.ceil(d.base * Math.pow(d.grow, lv)); }
+  cf(s) { return 1 - 0.04 * this.L(s, 'd4'); }
+  gainParts(s) {
+    const r = s.realm || 0, ok = r >= 3;
+    const rp = ok ? Math.pow(2, r - 3) : 0;
+    const base = s.ltY || s.lifetime || 1, ratio = (s.lifetime || 0) / base;
+    const lp = ok ? Math.max(0, Math.floor(Math.log10(Math.max(1, ratio)))) : 0;
+    const nextLt = base * Math.pow(10, lp + 1);
+    let gc = 0; for (let k = 3; k <= 8; k++) gc += this.gl(s, k);
+    const gp = ok ? gc * 0.25 : 0;
+    const raw = rp + lp + gp, mult = 1 + 0.2 * this.L(s, 'd5');
+    const total = Math.floor(raw * mult);
+    const fx = v => '+' + (Number.isInteger(v) ? v : v.toFixed(2));
+    const rows = [
+      { label: '境界', note: ok ? `${this.R[r].name}期 · 元嬰 1 枚，之後每境界加倍` : '踏入元嬰期得 1 枚，之後每境界加倍', v: rp },
+      { label: '元嬰後修為', note: ok ? `踏入元嬰後累積元氣每翻 10 倍 +1 · 下一枚於本世 ${this.fmt(nextLt)}` : '踏入元嬰後開始計算', v: lp },
+      { label: '高階關卡', note: `元嬰期起每過一關 +0.25 · 已過 ${gc} 關`, v: gp },
+    ];
+    return { total, rows: rows.map(x => ({ label: x.label, note: x.note, value: fx(x.v), color: x.v > 0 ? '#ece8e1' : '#6f6a62' })) };
+  }
+  gainOf(s) { return this.gainParts(s).total; }
+  buyDao(d) {
+    this.setState(s => {
+      const lv = this.L(s, d.id), c = this.daoCost(d, lv);
+      if (lv >= d.max || s.embers < c) return null;
+      return this.addLog({ ...s, embers: s.embers - c, dao: { ...s.dao, [d.id]: lv + 1 } }, `道境精進：${d.name} 第 ${lv + 1} 層。`, 'ember');
+    });
+  }
+  orbRef = React.createRef();
+  pRef = React.createRef();
+
+  startParticles() {
+    const P = [];
+    const spawn = (c, any) => {
+      const w = c.clientWidth, hh = c.clientHeight;
+      return { x: Math.random() * w, y: any ? Math.random() * hh : (Math.random() < .5 ? -4 : hh + 4), a: Math.random() * 6.28, sp: .15 + Math.random() * .45, r: .5 + Math.random() * 1.5, ph: Math.random() * 6.28, life: 0, max: 400 + Math.random() * 600 };
+    };
+    const loop = () => {
+      const c = this.pRef.current;
+      if (c) {
+        const dpr = window.devicePixelRatio || 1, w = c.clientWidth, hh = c.clientHeight;
+        if (c.width !== Math.round(w * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(hh * dpr); }
+        const x = c.getContext('2d');
+        x.setTransform(dpr, 0, 0, dpr, 0, 0);
+        x.clearRect(0, 0, w, hh);
+        while (P.length < 70) P.push(spawn(c, true));
+        for (let i = 0; i < P.length; i++) {
+          const p = P[i];
+          p.a += (Math.random() - .5) * .35;
+          p.x += Math.cos(p.a) * p.sp; p.y += Math.sin(p.a) * p.sp - .08;
+          p.life++; p.ph += .05;
+          if (p.life > p.max || p.x < -10 || p.x > w + 10 || p.y < -10 || p.y > hh + 10) { P[i] = spawn(c, true); continue; }
+          const fade = Math.min(1, p.life / 60, (p.max - p.life) / 60);
+          const al = fade * (.35 + .45 * (.5 + .5 * Math.sin(p.ph)));
+          x.beginPath(); x.arc(p.x, p.y, p.r, 0, 6.283);
+          x.fillStyle = `rgba(222,228,238,${al})`;
+          x.shadowColor = 'rgba(210,220,235,.8)'; x.shadowBlur = 4;
+          x.fill();
+        }
+      }
+      this.raf = requestAnimationFrame(loop);
+    };
+    this.raf = requestAnimationFrame(loop);
+  }
+  state = this.fresh({ floaters: [], tab: 'sources', mode: '1', confirm: false, confirmWipe: false, offline: null });
+
+  fresh(extra) {
+    return { light: 0, lifetime: 0, allTime: 0, owned: this.G.map(() => 0), upgrades: {}, embers: 0, embersEarned: 0, dao: {}, xue: 0, realm: 0, rq: 0, gates: [], ach: {}, clicks: 0, collapses: 0, log: [], ...extra };
+  }
+
+  buildUpgrades(r) {
+    const RN = this.R[r];
+    const tiers = [[1, 10, '精進'], [10, 50, '圓滿'], [25, 500, '大成'], [50, 5000, '化境']];
+    const list = [];
+    this.G.forEach((g, i) => tiers.forEach(([need, mult, word], t) => list.push({
+      id: `g${i}t${t}`, kind: 'gen', gen: i, name: `${RN.gens[i][0]}·${word}`, desc: `${RN.gens[i][0]}產出翻倍`,
+      cost: g.cost * mult, req: s => (s.owned[i] || 0) >= need,
+    })));
+    list.push(
+      { id: 'c1', kind: 'click', mult: 2, name: '心無旁騖', desc: '運氣所得翻倍', cost: 100, req: s => s.clicks >= 25 },
+      { id: 'c2', kind: 'click', mult: 2, name: '氣沉丹田', desc: '運氣所得再翻倍', cost: 2000, req: s => s.clicks >= 200 },
+      { id: 'c3', kind: 'clickPct', pct: 0.02, name: '借力打力', desc: '運氣額外獲得每秒產出的 2%', cost: 50000, req: s => (s.rq || 0) >= 2e4 },
+      { id: 'c4', kind: 'clickPct', pct: 0.03, name: '天人感應', desc: '運氣再獲得每秒產出的 3%', cost: 5e6, req: s => (s.rq || 0) >= 2e6 },
+      { id: 'x1', kind: 'global', mult: 1.5, name: '洞府靈泉', desc: '所有元氣 ×1.5', cost: 2e5, req: s => (s.rq || 0) >= 1e5 },
+      { id: 'x2', kind: 'global', mult: 2, name: '天眼通', desc: '所有元氣 ×2', cost: 1e8, req: s => (s.rq || 0) >= 5e7 },
+    );
+    (RN.ups || []).forEach((n, k) => list.push({ id: 'r' + k, kind: 'global', mult: 2, name: n, desc: `${RN.name}期秘傳：所有元氣 ×2`, cost: 5e5, req: s => (s.rq || 0) >= 2e5 }));
+    return list;
+  }
+
+  speed() { return Number(this.props.gameSpeed ?? 1) || 1; }
+
+  derive(s) {
+    let global = 1, clickMult = 1, clickPct = 0;
+    const gm = this.G.map(() => 1);
+    for (const u of this.Uof(s.realm || 0)) { const n = this.uLv(s, u); if (!n) continue;
+      if (u.kind === 'gen') gm[u.gen] *= Math.pow(2, n);
+      else if (u.kind === 'global') global *= Math.pow(u.mult, n);
+      else if (u.kind === 'click') clickMult *= Math.pow(u.mult, n);
+      else clickPct += u.pct * n;
+    }
+    clickPct += 0.01 * this.L(s, 'd11'); global *= Math.pow(1.1, this.L(s, 'd13'));
+    global *= 1 + 0.25 * this.L(s, 'd1'); global *= 1 + 0.05 * Object.keys(s.ach || {}).length;
+    global *= Math.pow(5, s.realm || 0) * Math.pow(1.15, this.gSum(s));
+    const xu = s.xue || 0; global *= (1 + 0.03 * xu) * Math.pow(1.15, Math.floor(xu / 5)); clickMult *= Math.pow(2, this.L(s, 'd2'));
+    const em = 1 + 0.1 * (s.embersEarned || 0);
+    const each = this.G.map((g, i) => g.rate * gm[i] * global * em);
+    const rate = each.reduce((a, e, i) => a + e * (s.owned[i] || 0), 0);
+    return { each, rate, click: clickMult * em + rate * clickPct };
+  }
+
+  fmt(n) {
+    if (n < 10000) return n < 10 && n % 1 ? n.toFixed(1) : Math.floor(n).toLocaleString('zh-TW');
+    const u = ['萬', '億', '兆', '京', '垓', '秭', '穰', '溝', '澗', '正'];
+    let i = -1;
+    while (n >= 10000 && i < u.length - 1) { n /= 10000; i++; }
+    return (n < 10 ? n.toFixed(2) : n < 100 ? n.toFixed(1) : Math.floor(n)) + u[i];
+  }
+  fmtTime(sec) {
+    const h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60);
+    return h ? `${h} 小時 ${m} 分` : m ? `${m} 分鐘` : `${Math.floor(sec)} 秒`;
+  }
+
+  costN(i, k, n, s) { const b = this.G[i].cost * this.cf(s) * Math.pow(1.15, k); return b * (Math.pow(1.15, n) - 1) / 0.15; }
+  buyN(s, i) {
+    const m = s.mode;
+    if (m !== 'max') return Number(m);
+    const b = this.G[i].cost * this.cf(s) * Math.pow(1.15, s.owned[i] || 0);
+    return Math.max(1, Math.floor(Math.log(s.light * 0.15 / b + 1) / Math.log(1.15)));
+  }
+
+  addLog(s, text, kind) {
+    const d = new Date();
+    const time = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+    return { ...s, log: [{ id: Math.random(), text, time, kind }, ...s.log].slice(0, 6) };
+  }
+  checkAch(s) {
+    let ns = s;
+    for (const a of this.A) if (!ns.ach[a.id] && a.test(ns)) {
+      ns = this.addLog({ ...ns, ach: { ...ns.ach, [a.id]: true } }, `達成成就：${a.name}。元氣永久 +5%。`, 'ach');
+      ns = { ...ns, toasts: [...(ns.toasts || []), { id: Math.random(), title: '成就達成', name: a.name, desc: a.desc + ' · 元氣永久 +5%', at: Date.now() }].slice(-3) };
+    }
+    return ns;
+  }
+
+  save() {
+    const { floaters, tab, confirm, confirmWipe, offline, toasts, ...rest } = this.state;
+    try { localStorage.setItem('lumen-save-v1', JSON.stringify({ ...rest, savedAt: Date.now() })); } catch (e) {}
+  }
+
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem('lumen-save-v1');
+      if (raw) {
+        const d = JSON.parse(raw);
+        d.log = (d.log || []).filter(e => !/[A-Za-z]{2,}/.test(e.text));
+        if (d.embersEarned == null) d.embersEarned = d.embers || 0;
+        if (!d.log.length) d.log = [{ id: Math.random(), text: '你坐了下來。試著運轉一下元氣。', time: '--:--' }];
+        const loaded0 = d;
+        const loaded = { ...this.fresh({}), ...d, owned: this.G.map((g, i) => (d.owned || [])[i] || 0) };
+        const secs = Math.min((Date.now() - (d.savedAt || Date.now())) / 1000, (8 + 2 * this.L(loaded0, 'd12')) * 3600);
+        const earn = this.derive(loaded).rate * secs * (0.5 + 0.1 * this.L(loaded, 'd3'));
+        const ns = { ...loaded, light: loaded.light + earn, lifetime: loaded.lifetime + earn, allTime: loaded.allTime + earn, rq: (loaded.rq || 0) + earn };
+        this.setState({ ...ns, offline: secs > 10 && earn > 0 ? { secs, earn } : null });
+      } else {
+        this.setState(s => this.addLog(s, '你坐了下來。試著運轉一下元氣。'));
+      }
+    } catch (e) {}
+    this.last = performance.now();
+    this.startParticles();
+    this.timer = setInterval(this.tick, 100);
+    this.saveTimer = setInterval(() => this.save(), 5000);
+    this.onUnload = () => this.save();
+    window.addEventListener('beforeunload', this.onUnload);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer); clearInterval(this.saveTimer); cancelAnimationFrame(this.raf);
+    window.removeEventListener('beforeunload', this.onUnload);
+    this.save();
+  }
+
+  tick = () => {
+    const now = performance.now();
+    const dt = (now - this.last) / 1000 * this.speed();
+    this.last = now;
+    this.setState(s => {
+      const g = this.derive(s).rate * dt;
+      const old = s.toasts || [], tt = old.filter(t => Date.now() - t.at < 3600);
+      if (!g && tt.length === old.length) return null;
+      return this.checkAch({ ...s, toasts: tt, light: s.light + g, lifetime: s.lifetime + g, allTime: s.allTime + g, rq: (s.rq || 0) + g });
+    });
+  };
+
+  gather = (e) => {
+    const r = this.orbRef.current && this.orbRef.current.getBoundingClientRect();
+    const x = r && e.clientX ? e.clientX - r.left : 120, y = r && e.clientY ? e.clientY - r.top : 120;
+    const id = Math.random();
+    this.setState(s => {
+      const c = this.derive(s).click;
+      const floaters = (this.props.floatingNumbers ?? true) ? [...s.floaters, { id, x, y, text: '+' + this.fmt(c) }].slice(-20) : s.floaters;
+      return this.checkAch({ ...s, light: s.light + c, lifetime: s.lifetime + c, allTime: s.allTime + c, rq: (s.rq || 0) + c, clicks: s.clicks + 1, floaters });
+    });
+    setTimeout(() => this.setState(s => ({ floaters: s.floaters.filter(f => f.id !== id) })), 900);
+  };
+
+  buyGen(i) {
+    this.setState(s => {
+      const k = s.owned[i] || 0, n = this.buyN(s, i), c = this.costN(i, k, n, s);
+      if (c > s.light) return null;
+      const owned = [...s.owned]; owned[i] = k + n;
+      let ns = { ...s, light: s.light - c, owned };
+      if (k === 0) ns = this.addLog(ns, `開始修習「${this.gn(s, i)[0]}」。`);
+      return this.checkAch(ns);
+    });
+  }
+  uLv(s, u) { const v = s.upgrades[u.id]; return v === true ? 1 : (v || 0); }
+  uCost(s, u) { return u.cost * Math.pow(u.kind === 'clickPct' ? 6 : 10, this.uLv(s, u)) * (1 - 0.05 * this.L(s, 'd9')); }
+  buyUp(u) {
+    this.setState(s => {
+      const lv = this.uLv(s, u), c = this.uCost(s, u);
+      if (s.light < c) return null;
+      return this.addLog({ ...s, light: s.light - c, upgrades: { ...s.upgrades, [u.id]: lv + 1 } }, `參悟「${u.name}」至第 ${lv + 1} 層。`);
+    });
+  }
+  prestige = () => {
+    const gain = this.gainOf(this.state);
+    if (gain < 1 || (this.state.realm || 0) < 3) return;
+    if (!this.state.confirm) { this.setState({ confirm: true }); setTimeout(() => this.setState({ confirm: false }), 3000); return; }
+    this.setState(s => this.checkAch(this.addLog({
+      ...s, light: 0, lifetime: 0, owned: this.G.map((g, i) => i === 0 ? 10 * this.L(s, 'd6') : 0), upgrades: {}, xue: 5 * this.L(s, 'd10'), realm: 0, rq: 0, gates: [], ltY: 0, embers: s.embers + gain, embersEarned: (s.embersEarned || 0) + gain, collapses: s.collapses + 1, confirm: false,
+    }, `轉世重修，帶著 ${gain} 枚道果投胎。前世記憶有點模糊。`, 'ember')));
+  };
+  wipe = () => {
+    if (!this.state.confirmWipe) { this.setState({ confirmWipe: true }); setTimeout(() => this.setState({ confirmWipe: false }), 3000); return; }
+    try { localStorage.removeItem('lumen-save-v1'); } catch (e) {}
+    this.setState(this.addLog(this.fresh({ floaters: [], tab: 'sources', mode: '1', confirm: false, confirmWipe: false, offline: null }), '你坐了下來。試著運轉一下元氣。'));
+  };
+
+  M = (() => {
+    const armL = [[[262,205],[222,230],[215,290],[200,330],[45,368]],[[270,215],[234,242],[228,300],[214,342],[50,378]],[[278,225],[246,256],[240,312],[226,356],[55,388]]];
+    const legL = [[[330,430],[210,400],[110,420],[330,472],[565,580]],[[330,448],[225,425],[132,435],[340,486],[555,568]],[[330,466],[240,450],[154,450],[350,500],[545,556]]];
+    const mir = p => p.map(([x, y]) => [730 - x, y]);
+    const g = { 肺: armL[0], 心: armL[2], 心包: armL[1], 大腸: mir(armL[0]), 小腸: mir(armL[2]), 三焦: mir(armL[1]), 脾: legL[0], 腎: legL[2], 肝: legL[1], 胃: mir(legL[0]), 膀胱: mir(legL[2]), 膽: mir(legL[1]) };
+    const order = ['肺', '大腸', '胃', '脾', '心', '小腸', '膀胱', '腎', '心包', '三焦', '膽', '肝'];
+    const T = [1, 3, 6, 10, 15, 22, 30, 40, 55, 75, 100, 130];
+    return order.map((k, i) => ({ name: k + '經', pts: g[k], need: T[i] }));
+  })();
+  XB = [20, 200, 1500, 1e4, 7e4, 5e5, 3.5e6, 2.5e7, 1.8e8, 1.3e9, 9e9, 6e10];
+  xueCost(k, s) { return this.XB[Math.floor(k / 5)] * Math.pow(1.6, k % 5) * (1 - 0.05 * this.L(s || {}, 'd7')); }
+  openXue = () => {
+    this.setState(s => {
+      const k = s.xue || 0;
+      if (k >= 60 || s.light < this.xueCost(k, s)) return null;
+      const m = this.M[Math.floor(k / 5)];
+      let ns = { ...s, light: s.light - this.xueCost(k, s), xue: k + 1 };
+      ns = (k + 1) % 5 === 0 ? this.addLog(ns, `打通了${m.name}！元氣 ×1.15。`, 'ach') : this.addLog(ns, `衝開${m.name}第 ${k % 5 + 1} 穴。`);
+      return ns;
+    });
+  };
+  openedCount(owned) { const n = owned.reduce((a, b) => a + (b || 0), 0); return this.M.filter(m => n >= m.need).length; }
+
+  buildFigure(rate, opened, xue, s) {
+    const h = React.createElement;
+    const lv = Math.min(1, Math.log10(rate + 1) / 6);
+    const dur = [2.4, 1.6, 1.1, 0.7][Math.min(3, Math.floor(lv * 4))] + 's';
+    const amber = 'oklch(0.82 0.13 78)', glow = 'drop-shadow(0 0 3px oklch(0.85 0.13 78))';
+    const q = (p0, c, p1, t) => [(1 - t) * (1 - t) * p0[0] + 2 * (1 - t) * t * c[0] + t * t * p1[0], (1 - t) * (1 - t) * p0[1] + 2 * (1 - t) * t * c[1] + t * t * p1[1]];
+    const flow = (d, i, on) => [
+      h('path', { key: 'b' + i, d, strokeWidth: 2.4, strokeOpacity: on ? 0.4 : 0.16 }),
+      on && h('path', { key: 'f' + i, d, strokeWidth: 5, strokeOpacity: 0.55 + lv * 0.45, strokeDasharray: '8 32', style: { animation: `qiFlow ${dur} linear infinite`, animationDelay: `${-i * 0.37}s`, filter: glow } })];
+    const core = ['M365 28 L365 525', 'M365 185 Q320 192 262 205 M365 185 Q410 192 468 205'];
+    const lines = this.M.map(m => { const [p0, c1, p1, c2, p2] = m.pts; return 'M' + p0 + ' Q' + c1 + ' ' + p1 + ' Q' + c2 + ' ' + p2; });
+    const dots = [];
+    this.M.forEach((m, i) => { const [p0, c1, p1, c2, p2] = m.pts; 
+      [[p0, c1, p1, .3], [p0, c1, p1, .7], [p1, c2, p2, .25], [p1, c2, p2, .6], [p1, c2, p2, .95]].forEach(([a, c, b, t], j) => {
+        const [x, y] = q(a, c, b, t);
+        const k = i * 5 + j, on = xue > k, nx = xue === k;
+        dots.push(h('circle', { key: `d${i}-${j}`, cx: x, cy: y, r: on ? 4.5 : nx ? 5 : 3.2, fill: on ? 'oklch(0.9 0.1 85)' : nx ? '#ece8e1' : 'rgba(236,232,225,.25)', style: on ? { filter: glow } : nx ? { animation: 'qiPulse 1.2s ease-in-out infinite', filter: 'drop-shadow(0 0 4px #fff)' } : null }));
+      }); });
+    const pts = [[360, 62], [365, 250], [365, 420]];
+    const lay = { position: 'absolute', inset: 0, width: '100%', height: '100%', overflow: 'visible' };
+    return h('div', { style: { position: 'relative', width: '100%', height: '100%' } },
+     h('svg', { viewBox: '0 0 740 622', style: lay },
+      h('defs', null,
+        h('radialGradient', { id: 'qiHalo' }, h('stop', { offset: '0%', stopColor: 'oklch(0.85 0.13 78)', stopOpacity: 0.3 + lv * 0.4 }), h('stop', { offset: '100%', stopColor: 'oklch(0.6 0.12 60)', stopOpacity: 0 }))),
+      h('circle', { cx: 365, cy: 320, r: 270 + lv * 70, fill: 'url(#qiHalo)', style: { animation: 'qiPulse 4s ease-in-out infinite' } }),
+     ),
+     h('canvas', { key: 'qiParticles', ref: this.pRef, style: { position: 'absolute', left: -40, top: -40, width: 'calc(100% + 80px)', height: 'calc(100% + 80px)', pointerEvents: 'none' } }),
+     h('img', { src: 'assets/cultivator-v2.png', alt: '', draggable: false, style: { ...lay, objectFit: 'contain' } }),
+     h('svg', { viewBox: '0 0 740 622', style: lay },
+      h('g', { fill: 'none', stroke: amber, strokeLinecap: 'round' },
+        core.map((d, i) => flow(d, 'c' + i, true)),
+        lines.map((d, i) => flow(d, i, i < opened))),
+      dots,
+      (() => { const r = (s && s.realm) || 0, g = this.GT[r]; if (!g) return null; const n = g.items.length, done = this.gl(s, r);
+        return g.items.map((it, j) => { const ang = Math.PI * (1.12 + 0.76 * (n === 1 ? .5 : j / (n - 1))), x = 365 + Math.cos(ang) * 330, y = 330 + Math.sin(ang) * 300, on = j < done, nx = j === done;
+          return h('g', { key: 'gt' + j },
+            h('circle', { cx: x, cy: y, r: on ? 13 : nx ? 12 : 9, fill: on ? 'oklch(0.8 0.13 35)' : nx ? '#ece8e1' : 'rgba(236,232,225,.12)', stroke: on ? 'none' : 'rgba(236,232,225,.35)', strokeWidth: 2, style: on ? { filter: 'drop-shadow(0 0 8px oklch(0.8 0.13 35))' } : nx ? { animation: 'qiPulse 1.2s ease-in-out infinite' } : null }),
+            h('text', { x, y: y - 22, textAnchor: 'middle', fontSize: 22, fill: on ? 'oklch(0.85 0.1 40)' : '#6f6a62', style: { fontFamily: "'Noto Sans TC',sans-serif" } }, it.replace(/重道基|重天劫|轉$/, m => m === '轉' ? '轉' : '')));
+        }); })(),
+      pts.map(([x, y], i) => h('circle', { key: 'p' + i, cx: x, cy: y, r: i === 2 ? 16 + lv * 14 : 9, fill: i === 2 ? 'oklch(0.9 0.1 85)' : amber, style: { animation: `qiPulse ${2 + i * 0.6}s ease-in-out infinite`, filter: 'drop-shadow(0 0 6px oklch(0.85 0.13 78))' } }))));
+  }
+
+  renderVals() {
+    const s = this.state;
+    const d = this.derive(s);
+    const xue = s.xue || 0, opened = Math.floor(xue / 5);
+    const amber = 'oklch(0.82 0.13 78)', line = 'rgba(236,232,225,.14)', muted = '#a39e94';
+    const btn = ok => ({ btnBg: ok ? amber : 'transparent', btnColor: ok ? '#11100e' : muted, btnBorder: ok ? amber : line });
+
+    const visible = this.G.map((g, i) => i === 0 || (s.owned[i - 1] || 0) > 0 || (s.owned[i] || 0) > 0 || (s.rq || 0) >= g.cost * 0.5);
+    const gens = this.G.map((g, i) => {
+      if (!visible[i]) return null;
+      const n = this.buyN(s, i), c = this.costN(i, s.owned[i] || 0, n, s);
+      return { name: this.gn(s, i)[0], desc: this.gn(s, i)[1], owned: s.owned[i] || 0, qty: n, costText: this.fmt(c), eachText: this.fmt(d.each[i]), totalText: this.fmt(d.each[i] * (s.owned[i] || 0)), ...btn(s.light >= c), onBuy: () => this.buyGen(i) };
+    }).filter(Boolean);
+    const nextIdx = visible.indexOf(false);
+
+    const avail = this.Uof(s.realm || 0).filter(u => u.req(s)).map(u => ({ u, c: this.uCost(s, u), lv: this.uLv(s, u) })).sort((a, b) => a.c - b.c);
+    const affordable = avail.filter(x => s.light >= x.c).length;
+    const upgrades = avail.map(({ u, c, lv }) => ({ name: u.name, desc: u.desc + '（每層）', lvText: `第 ${lv} 層`, costText: this.fmt(c) + ' 元氣', btnBorder: s.light >= c ? amber : line, opacity: s.light >= c ? 1 : 0.55, onBuy: () => this.buyUp(u) }));
+    const ownedUps = this.Uof(s.realm || 0).reduce((a, u) => a + this.uLv(s, u), 0);
+    const achCount = Object.keys(s.ach).length;
+
+    const tabs = [['sources', '功法', 0], ['upgrades', '秘訣', affordable], ['dao', '道境', this.D.filter(d => this.L(s, d.id) < d.max && s.embers >= this.daoCost(d, this.L(s, d.id))).length], ['records', '成就', 0]].map(([id, label, badge]) => ({
+      label, badge, hasBadge: badge > 0, color: s.tab === id ? '#ece8e1' : muted, border: s.tab === id ? amber : 'transparent', onSelect: () => this.setState({ tab: id }),
+    }));
+    const modes = [['1', '×1'], ['10', '×10'], ['max', '最大']].map(([id, label]) => ({
+      label, bg: s.mode === id ? '#2c2a25' : 'transparent', color: s.mode === id ? '#ece8e1' : muted, onSelect: () => this.setState({ mode: id }),
+    }));
+
+    const gain = this.gainOf(s), canRe = gain >= 1 && (s.realm || 0) >= 3;
+        const ember = 'oklch(0.8 0.13 35)';
+    const glowR = 24 + Math.min(110, Math.log10(d.rate + 1) * 16);
+
+    return {
+      lightText: this.fmt(s.light), rateText: this.fmt(d.rate), clickText: this.fmt(d.click),
+      embersText: this.fmt(s.embers), emberBonusText: String(Math.round((s.embersEarned || 0) * 10)),
+      offlineCapText: String(8 + 2 * this.L(s, 'd12')),
+      offlineRateText: Math.round((0.5 + 0.1 * this.L(s, 'd3')) * 100) + '%',
+      isDao: s.tab === 'dao',
+      daoNote: `道境不會因轉世而重置。花費道果不會減少修煉速度加成（依累計獲得 ${this.fmt(s.embersEarned || 0)} 枚計算）。`,
+      daos: this.D.map(d => { const lv = this.L(s, d.id), c = this.daoCost(d, lv), maxed = lv >= d.max, ok = !maxed && s.embers >= c;
+        return { name: d.name, desc: d.desc + '（每層）', lvText: d.max === Infinity ? `${lv} 層` : `${lv} / ${d.max} 層`, costText: maxed ? '已圓滿' : c + ' 道果', label: maxed ? '圓滿' : '精進', btnBg: ok ? 'oklch(0.8 0.13 35)' : 'transparent', btnColor: ok ? '#11100e' : '#a39e94', btnBorder: ok ? 'oklch(0.8 0.13 35)' : 'rgba(236,232,225,.14)', onBuy: () => this.buyDao(d) }; }),
+      glow: `0 0 ${glowR}px oklch(0.82 0.13 78 / .55), 0 0 ${glowR * 2.4}px oklch(0.7 0.13 60 / .22)`,
+      orbRef: this.orbRef, onGather: this.gather, figure: this.buildFigure(d.rate, opened, xue, s),
+      openedText: `${opened} / 12`,
+      meridians: this.M.map((m, i) => { const p = Math.max(0, Math.min(5, xue - i * 5)), done = p === 5, cur = !done && i === opened;
+        return { name: done || !cur ? m.name : `${m.name} ${p}/5`, color: done ? 'oklch(0.8 0.13 35)' : cur ? '#ece8e1' : '#6f6a62', border: done ? 'oklch(0.8 0.13 35 / .6)' : cur ? 'oklch(0.82 0.13 78 / .7)' : 'rgba(236,232,225,.1)', hint: done ? '已打通' : cur ? '正在衝穴' : '尚未打通' }; }),
+      merBonusText: ((1 + 0.03 * xue) * Math.pow(1.15, opened)).toFixed(2),
+      allOpen: xue >= 60, notAllOpen: xue < 60,
+      xueLabel: xue >= 60 ? '' : `衝開${this.M[Math.floor(xue / 5)].name}第 ${xue % 5 + 1} 穴`,
+      xueCostText: xue >= 60 ? '' : this.fmt(this.xueCost(xue, s)) + ' 元氣',
+      xueBg: xue < 60 && s.light >= this.xueCost(xue, s) ? 'oklch(0.82 0.13 78)' : 'transparent',
+      xueColor: xue < 60 && s.light >= this.xueCost(xue, s) ? '#11100e' : '#a39e94',
+      xueBorder: xue < 60 && s.light >= this.xueCost(xue, s) ? 'oklch(0.82 0.13 78)' : 'rgba(236,232,225,.14)',
+      onXue: this.openXue,
+      isGate: !!this.GT[s.realm || 0],
+      gateTitle: this.GT[s.realm || 0] ? this.GT[s.realm || 0].title : '',
+      gateProgress: this.GT[s.realm || 0] ? `${this.gl(s, s.realm)} / ${this.GT[s.realm].items.length}` : '',
+      gateBonusText: Math.pow(1.15, this.gSum(s)).toFixed(2),
+      gateItems: this.GT[s.realm || 0] ? this.GT[s.realm].items.map((it, j) => { const dn = j < this.gl(s, s.realm), cur = j === this.gl(s, s.realm);
+        return { name: it, color: dn ? 'oklch(0.8 0.13 35)' : cur ? '#ece8e1' : '#6f6a62', border: dn ? 'oklch(0.8 0.13 35 / .6)' : cur ? 'oklch(0.82 0.13 78 / .7)' : 'rgba(236,232,225,.1)' }; }) : [],
+      gateNotDone: !!this.GT[s.realm || 0] && this.gl(s, s.realm) < this.GT[s.realm].items.length,
+      gateDone: !!this.GT[s.realm || 0] && this.gl(s, s.realm) >= this.GT[s.realm].items.length,
+      ...(() => { const r = s.realm || 0, g = this.GT[r]; if (!g) return {}; const j = this.gl(s, r); if (j >= g.items.length) return { gateLabel: '', gateCostText: '' };
+        const c = this.gateCost(r, j, s), ok = s.light >= c;
+        return { gateLabel: `${g.verb}「${g.items[j]}」`, gateCostText: this.fmt(c) + ' 元氣', gateBg: ok ? 'oklch(0.82 0.13 78)' : 'transparent', gateColor: ok ? '#11100e' : '#a39e94', gateBorder: ok ? 'oklch(0.82 0.13 78)' : 'rgba(236,232,225,.14)' }; })(),
+      onGate: this.openGate,
+      realmName: this.R[s.realm || 0].name + '期', isLianqi: !(s.realm || 0),
+      realmBonusText: '×' + this.fmt(Math.pow(5, s.realm || 0)),
+      nextRealmText: (s.realm || 0) < 8 ? `下一境界：${this.R[(s.realm || 0) + 1].name}期 · 元氣 ×5，功法與秘訣重置為新項目` : '已至渡劫期，此世修為已到盡頭。轉世可帶著道果重修。',
+      breakReqs: ((s.realm || 0) >= 8 ? [] : !(s.realm || 0) ? [{ text: `打通十二經脈（${opened}/12）`, ok: opened >= 12 }] : [
+        { text: `完成「${this.GT[s.realm].title}」（${this.gl(s, s.realm)}/${this.GT[s.realm].items.length}）`, ok: this.gl(s, s.realm) >= this.GT[s.realm].items.length },
+        { text: `每部功法至少修習一層（${this.G.filter((g, i) => (s.owned[i] || 0) > 0).length}/7）`, ok: this.G.every((g, i) => (s.owned[i] || 0) > 0) },
+      ]).map(r => ({ text: r.text, dot: r.ok ? 'oklch(0.82 0.13 78)' : '#3a3732', color: r.ok ? '#ece8e1' : '#a39e94' })),
+      notPeak: (s.realm || 0) < 8,
+      breakLabel: (s.realm || 0) < 8 ? `突破至${this.R[(s.realm || 0) + 1].name}期` : '',
+      breakBg: this.canBreak(s) ? 'oklch(0.8 0.13 35)' : 'transparent', breakColor: this.canBreak(s) ? '#11100e' : '#a39e94', breakBorder: this.canBreak(s) ? 'oklch(0.8 0.13 35)' : 'rgba(236,232,225,.14)',
+      onBreak: this.breakthrough,
+      floaters: s.floaters.map(f => React.createElement('div', { key: f.id, style: { position: 'absolute', left: f.x, top: f.y, pointerEvents: 'none', fontFamily: "'JetBrains Mono',monospace", fontSize: 18, fontWeight: 500, color: '#fff7e6', textShadow: '0 0 8px rgba(0,0,0,.5)', animation: 'lumenFloat 900ms ease-out forwards' } }, f.text)),
+      log: s.log.map(e => ({ ...e, color: e.kind === 'ach' ? amber : e.kind === 'ember' ? ember : '#ece8e1' })),
+      tabs, modes, gens,
+      isSources: s.tab === 'sources', isUpgrades: s.tab === 'upgrades', isRecords: s.tab === 'records',
+      hasNextGen: nextIdx > -1, nextGenText: nextIdx > -1 ? '本境界累積 ' + this.fmt(this.G[nextIdx].cost * 0.5) + ' 元氣' : '',
+      upgrades, noUpgrades: upgrades.length === 0,
+      upgradesOwnedText: `本境界共參悟 ${ownedUps} 層。秘訣沒有層數上限，每層價格遞增；突破境界或轉世後會重置。`,
+      stats: [
+        { label: '累計元氣', value: this.fmt(s.allTime) },
+        { label: '本世', value: this.fmt(s.lifetime) },
+        { label: '境界', value: this.R[s.realm || 0].name + '期' },
+        { label: '運氣次數', value: this.fmt(s.clicks) },
+        { label: '轉世次數', value: String(s.collapses) },
+        { label: '成就', value: `${achCount}/${this.A.length}` },
+        { label: '成就加成', value: `+${achCount * 5}%` },
+      ],
+      toasts: (s.toasts || []).map(t => ({ id: t.id, title: t.title || '成就達成', name: t.name, desc: t.desc })),
+      achievements: this.A.map(a => ({ name: a.name, desc: a.desc + ' · 元氣 +5%', opacity: s.ach[a.id] ? 1 : 0.4, dot: s.ach[a.id] ? amber : '#3a3732' })),
+      prestigeText: (s.realm || 0) < 3 ? `需踏入元嬰期才能轉世（目前：${this.R[s.realm || 0].name}期）。剛踏入元嬰期就轉世可得 1 枚道果，修得越深得越多。` : '散去境界、經脈、功法與秘訣，從練氣重新修起。每枚道果永久增加 10% 修煉速度。',
+      gainRows: this.gainParts(s).rows, gainTotalText: String(gain), gainMultText: '×' + (1 + 0.2 * this.L(s, 'd5')).toFixed(1),
+      prestigeLabel: gain < 1 || (s.realm || 0) < 3 ? '尚未達成' : s.confirm ? '再點一次確認' : `轉世，獲得 ${gain}`,
+      prBg: canRe ? ember : 'transparent', prColor: canRe ? '#11100e' : muted, prBorder: canRe ? ember : line,
+      onPrestige: this.prestige,
+      wipeLabel: s.confirmWipe ? '再點一次清除所有進度' : '清除存檔',
+      onWipe: this.wipe,
+      showOffline: !!s.offline,
+      offlineTime: s.offline ? this.fmtTime(s.offline.secs) : '', offlineText: s.offline ? this.fmt(s.offline.earn) : '',
+      onCloseOffline: () => this.setState({ offline: null }),
+    };
+  }
+}
+</script>
+</body>
+</html>
