@@ -27,7 +27,7 @@ button{font-family:inherit}
     <div style="display:flex;align-items:baseline;gap:14px">
       <h1 style="margin:0;font-size:28px;font-weight:700;letter-spacing:-.02em">修真</h1>
       <span style="font-size:14px;font-weight:600;color:oklch(0.82 0.13 78);border:1px solid oklch(0.82 0.13 78 / .5);border-radius:6px;padding:2px 8px">{{ realmName }}</span>
-      <span style="color:#a39e94;font-size:14px">一款打坐就能變強的放置遊戲，比真正修煉輕鬆一點。</span>
+      <sc-if value="{{ notMobile }}" hint-placeholder-val="{{ true }}"><span style="color:#a39e94;font-size:14px">一款打坐就能變強的放置遊戲，比真正修煉輕鬆一點。</span></sc-if>
     </div>
     <div style="display:flex;align-items:baseline;gap:8px;font-family:'JetBrains Mono',monospace;font-size:14px">
       <span style="color:#a39e94">道果</span>
@@ -38,17 +38,18 @@ button{font-family:inherit}
 
   <main style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
 
+    <sc-if value="{{ showLeft }}" hint-placeholder-val="{{ true }}">
     <section style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:28px">
       <div style="display:flex;flex-direction:column;gap:4px">
         <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(44px,6vw,64px);font-weight:500;letter-spacing:-.03em;line-height:1">{{ lightText }}</div>
-        <div style="color:#a39e94;font-size:15px">元氣 · 每秒 <span style="color:#ece8e1;font-family:'JetBrains Mono',monospace">{{ rateText }}</span></div>
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;color:#a39e94;font-size:15px"><span style="color:{{ unitColor }};font-weight:700;font-size:18px;text-shadow:0 0 12px {{ unitColor }}">{{ unitName }}</span><span>· 每秒 <span style="color:#ece8e1;font-family:'JetBrains Mono',monospace">{{ rateText }}</span></span><span style="font-size:12px;color:#6f6a62">{{ unitNote }}</span></div>
       </div>
 
       <div ref="{{ orbRef }}" style="position:relative;width:340px;max-width:100%;height:286px;margin:12px auto;user-select:none">
         <button onClick="{{ onGather }}" aria-label="運轉元氣" style="position:absolute;inset:0;border:none;padding:0;background:none;cursor:pointer;transition:transform 80ms ease" style-active="transform:scale(.97)" style-hover="filter:brightness(1.1)">{{ figure }}</button>
         {{ floaters }}
       </div>
-      <div style="text-align:center;color:#a39e94;font-size:14px;margin-top:-12px">點擊運轉元氣 · 每次 <span style="color:#ece8e1;font-family:'JetBrains Mono',monospace">+{{ clickText }}</span></div>
+      <div style="text-align:center;color:#a39e94;font-size:14px;margin-top:-12px">點擊運轉{{ unitName }} · 每次 <span style="color:#ece8e1;font-family:'JetBrains Mono',monospace">+{{ clickText }}</span></div>
       <sc-if value="{{ isLianqi }}" hint-placeholder-val="{{ true }}">
       <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
         <span style="font-size:13px;color:#a39e94">已打通經脈 <span style="color:#ece8e1;font-family:'JetBrains Mono',monospace">{{ openedText }}</span> · 穴脈加成 <span style="color:oklch(0.8 0.13 35);font-family:'JetBrains Mono',monospace">×{{ merBonusText }}</span></span>
@@ -87,7 +88,7 @@ button{font-family:inherit}
         <sc-if value="{{ gateDone }}" hint-placeholder-val="{{ false }}">
           <span style="font-size:13px;color:oklch(0.8 0.13 35)">「{{ gateTitle }}」已圓滿。</span>
         </sc-if>
-        <span style="font-size:12px;color:#6f6a62;text-align:center;max-width:340px;text-wrap:pretty">每過一關，元氣 ×1.15。轉世後需重新闖關。</span>
+        <span style="font-size:12px;color:#6f6a62;text-align:center;max-width:340px;text-wrap:pretty">每過一關，修煉速度 ×1.15。轉世後需重新闖關。</span>
       </div>
       </sc-if>
 
@@ -118,8 +119,18 @@ button{font-family:inherit}
         </sc-for>
       </div>
     </section>
+    </sc-if>
 
+    <sc-if value="{{ showRight }}" hint-placeholder-val="{{ true }}">
     <section style="flex:1.4 1 440px;min-width:0;display:flex;flex-direction:column;gap:20px">
+      <sc-if value="{{ showMini }}" hint-placeholder-val="{{ false }}">
+        <div style="position:sticky;top:0;z-index:5;background:#11100e;padding:8px 0 10px;border-bottom:1px solid rgba(236,232,225,.1);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:500">{{ lightText }}</span>
+          <span style="color:{{ unitColor }};font-weight:700">{{ unitName }}</span>
+          <span style="color:#a39e94;font-size:13px">· 每秒 {{ rateText }}</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notMobile }}" hint-placeholder-val="{{ true }}">
       <nav style="display:flex;gap:4px;border-bottom:1px solid rgba(236,232,225,.1)">
         <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="3">
           <button onClick="{{ tab.onSelect }}" style="background:none;border:none;border-bottom:2px solid {{ tab.border }};margin-bottom:-1px;padding:10px 14px;color:{{ tab.color }};font-size:15px;font-weight:600;cursor:pointer;display:flex;gap:8px;align-items:center">
@@ -130,11 +141,12 @@ button{font-family:inherit}
           </button>
         </sc-for>
       </nav>
+      </sc-if>
 
       <sc-if value="{{ isSources }}" hint-placeholder-val="{{ true }}">
         <div style="display:flex;flex-direction:column;gap:14px">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-            <span style="color:#a39e94;font-size:14px">功法會在你做別的事時持續吐納元氣。</span>
+            <span style="color:#a39e94;font-size:14px">功法會在你做別的事時持續吐納{{ unitName }}。</span>
             <div style="display:flex;gap:2px;background:#1a1916;border-radius:8px;padding:3px">
               <sc-for list="{{ modes }}" as="m" hint-placeholder-count="3">
                 <button onClick="{{ m.onSelect }}" style="border:none;border-radius:6px;padding:5px 10px;font-family:'JetBrains Mono',monospace;font-size:12px;cursor:pointer;background:{{ m.bg }};color:{{ m.color }}">{{ m.label }}</button>
@@ -143,14 +155,14 @@ button{font-family:inherit}
           </div>
           <div style="display:flex;flex-direction:column">
             <sc-for list="{{ gens }}" as="g" hint-placeholder-count="3">
-              <div style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:18px;align-items:center;padding:16px 0;border-top:1px solid rgba(236,232,225,.08)">
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:{{ genGap }};align-items:center;padding:16px 0;border-top:1px solid rgba(236,232,225,.08)">
                 <div style="display:flex;flex-direction:column;gap:3px;min-width:0">
                   <div style="font-size:17px;font-weight:600">{{ g.name }}</div>
                   <div style="color:#a39e94;font-size:13px">{{ g.desc }}</div>
                   <div style="color:#a39e94;font-size:12px;font-family:'JetBrains Mono',monospace">{{ g.eachText }}/秒（每個）· 合計 {{ g.totalText }}/秒</div>
                 </div>
-                <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:500;min-width:48px;text-align:right">{{ g.owned }}</div>
-                <button onClick="{{ g.onBuy }}" style="min-width:132px;min-height:44px;border-radius:8px;border:1px solid {{ g.btnBorder }};background:{{ g.btnBg }};color:{{ g.btnColor }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:6px 12px">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:{{ genOwnedSize }};font-weight:500;min-width:32px;text-align:right">{{ g.owned }}</div>
+                <button onClick="{{ g.onBuy }}" style="min-width:{{ genBtnW }};min-height:44px;border-radius:8px;border:1px solid {{ g.btnBorder }};background:{{ g.btnBg }};color:{{ g.btnColor }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:6px 12px">
                   <span style="font-size:13px;font-weight:600">升級 ×{{ g.qty }}</span>
                   <span style="font-family:'JetBrains Mono',monospace;font-size:12px">{{ g.costText }}</span>
                 </button>
@@ -248,7 +260,22 @@ button{font-family:inherit}
         <button onClick="{{ onPrestige }}" style="min-height:44px;padding:0 18px;border-radius:8px;border:1px solid {{ prBorder }};background:{{ prBg }};color:{{ prColor }};font-size:14px;font-weight:600;cursor:pointer">{{ prestigeLabel }}</button>
       </div>
     </section>
+    </sc-if>
   </main>
+
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <div style="height:64px"></div>
+    <nav style="position:fixed;left:0;right:0;bottom:0;z-index:15;background:#1a1916;border-top:1px solid rgba(236,232,225,.12);display:flex;padding-bottom:env(safe-area-inset-bottom)">
+      <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="5">
+        <button onClick="{{ tab.onSelect }}" style="flex:1;min-height:56px;background:none;border:none;border-top:2px solid {{ tab.top }};color:{{ tab.color }};font-size:14px;font-weight:600;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;position:relative">
+          {{ tab.label }}
+          <sc-if value="{{ tab.hasBadge }}" hint-placeholder-val="{{ false }}">
+            <span style="position:absolute;top:6px;right:calc(50% - 26px);font-family:'JetBrains Mono',monospace;font-size:10px;background:oklch(0.82 0.13 78);color:#11100e;border-radius:8px;padding:0 5px">{{ tab.badge }}</span>
+          </sc-if>
+        </button>
+      </sc-for>
+    </nav>
+  </sc-if>
 
   <footer style="display:flex;justify-content:space-between;gap:12px;color:#6f6a62;font-size:13px;border-top:1px solid rgba(236,232,225,.1);padding-top:16px">
     <span>進度自動儲存。離線期間以 {{ offlineRateText }} 速率累積，最多 {{ offlineCapText }} 小時。</span>
@@ -273,7 +300,7 @@ button{font-family:inherit}
       <div style="background:#1a1916;border:1px solid rgba(236,232,225,.12);border-radius:14px;padding:28px;max-width:360px;display:flex;flex-direction:column;gap:14px">
         <span style="font-size:13px;color:#a39e94">你離開了 {{ offlineTime }}</span>
         <span style="font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:500">+{{ offlineText }}</span>
-        <span style="font-size:14px;color:#a39e94">元氣已入體。無人護法，只吸收了一半。</span>
+        <span style="font-size:14px;color:#a39e94">已入體。閉關期間修為未曾停歇。</span>
         <button onClick="{{ onCloseOffline }}" style="min-height:44px;border:none;border-radius:8px;background:oklch(0.82 0.13 78);color:#11100e;font-size:15px;font-weight:600;cursor:pointer">收下</button>
       </div>
     </div>
@@ -283,9 +310,11 @@ button{font-family:inherit}
 <script type="text/x-dc" data-dc-script data-props="{&quot;gameSpeed&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;10&quot;,&quot;100&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Game&quot;},&quot;floatingNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Game&quot;}}">
 const num9 = suf => ['一', '二', '三', '四', '五', '六', '七', '八', '九'].map(n => n + suf);
 class Component extends DCLogic {
+  QN = ['元氣', '靈氣', '真元', '法力', '神元', '虛元', '道元', '仙元', '仙靈之氣'];
+  QH = [78, 200, 55, 320, 260, 160, 20, 290, 110];
   G = [{ cost: 15, rate: 0.1 }, { cost: 100, rate: 1 }, { cost: 1100, rate: 8 }, { cost: 12000, rate: 47 }, { cost: 130000, rate: 260 }, { cost: 1.4e6, rate: 1400 }, { cost: 2e7, rate: 7800 }];
   R = [
-    { name: '練氣', gens: [['吐納術', '吸氣，吐氣。大致可靠。'], ['引氣訣', '有抱負的呼吸法。'], ['周天運轉', '氣走一圈，再走一圈。'], ['養氣丹', '苦，但有效。'], ['聚靈陣', '方圓十里的靈氣都歸你。'], ['靈石礦脈', '挖到就是賺到。'], ['大周天', '全身經脈一起上工。']] },
+    { name: '練氣', ups: ['洞府靈泉'], gens: [['吐納術', '吸氣，吐氣。大致可靠。'], ['引氣訣', '有抱負的呼吸法。'], ['周天運轉', '氣走一圈，再走一圈。'], ['養氣丹', '苦，但有效。'], ['聚靈陣', '方圓十里的靈氣都歸你。'], ['靈石礦脈', '挖到就是賺到。'], ['大周天', '全身經脈一起上工。']] },
     { name: '築基', ups: ['道基穩固'], gens: [['築基心法', '先把地基打好。'], ['靈根淬鍊', '洗掉雜質，留下天賦。'], ['道基丹', '一顆抵三年苦修。'], ['洞府靈脈', '把家蓋在靈脈上。'], ['護基大陣', '防賊也防心魔。'], ['御劍術', '通勤時間大幅縮短。'], ['道基圓滿', '地基穩得能蓋高樓。']] },
     { name: '金丹', ups: ['金丹不壞'], gens: [['凝丹訣', '把元氣捏成一顆。'], ['九轉丹爐', '轉九次，少一次都不行。'], ['地火淬丹', '火候是門學問。'], ['丹雷', '丹成時打下來的那道。'], ['金丹大道', '丹田裡的小太陽。'], ['丹紋', '每道紋路都是功力。'], ['九品金丹', '品相最好的那種。']] },
     { name: '元嬰', ups: ['元嬰護體'], gens: [['養嬰訣', '另一個你，需要照顧。'], ['神識外放', '眼睛閉著也看得見。'], ['嬰火', '元嬰自己會生火了。'], ['元嬰出竅', '出門散步，肉身看家。'], ['身外化身', '多一個人幫你打坐。'], ['碎丹成嬰', '破而後立。'], ['元嬰大成', '它已經比你還勤快。']] },
@@ -307,7 +336,7 @@ class Component extends DCLogic {
   ];
   gl(s, r) { return ((s.gates || [])[r]) || 0; }
   gSum(s) { return (s.gates || []).reduce((a, b) => a + (b || 0), 0); }
-  gateCost(r, j, s) { const n = this.GT[r].items.length; return this.breakNeed(r) * 0.55 * Math.pow(2.2, j - (n - 1)) * (1 - 0.05 * this.L(s || {}, 'd8')); }
+  gateCost(r, j, s) { const n = this.GT[r].items.length; return this.breakNeed(r) * this.Q(r) * 0.55 * Math.pow(2.2, j - (n - 1)) * (1 - 0.05 * this.L(s || {}, 'd8')); }
   openGate = () => {
     this.setState(s => {
       const r = s.realm || 0, g = this.GT[r]; if (!g) return null;
@@ -320,37 +349,46 @@ class Component extends DCLogic {
     });
   };
   gn(s, i) { return this.R[s.realm || 0].gens[i]; }
-  breakNeed(r) { return 1e9 * Math.pow(4, r - 1); }
+  BN = [0, 1.7e21, 1e25, 8.1e27, 7.3e30, 4.9e33, 1.6e36, 1.2e39, 1.1e42];
+  breakNeed(r) { return this.BN[r]; }
   canBreak(s) { const r = s.realm || 0; if (r >= 8) return false; return r === 0 ? (s.xue || 0) >= 60 : this.gl(s, r) >= this.GT[r].items.length && this.G.every((g, i) => (s.owned[i] || 0) > 0); }
   breakthrough = () => {
     this.setState(s => {
       if (!this.canBreak(s)) return null;
       const nr = (s.realm || 0) + 1, nm = this.R[nr].name + '期';
       let ns = { ...s, realm: nr, rq: 0, light: 0, owned: this.G.map(() => 0), upgrades: {}, ...(nr === 3 ? { ltY: s.lifetime || 1 } : {}) };
-      ns = this.addLog(ns, `突破成功，踏入${nm}！功法與秘訣煥然一新，元氣 ×5。`, 'ember');
-      ns = { ...ns, toasts: [...(ns.toasts || []), { id: Math.random(), title: '境界突破', name: nm, desc: '功法與秘訣已換成新境界的項目 · 元氣 ×5', at: Date.now() }].slice(-3) };
+      ns = this.addLog(ns, `突破成功，踏入${nm}！${this.QN[nr - 1]}凝練為「${this.QN[nr]}」，1 ${this.QN[nr]} = 1億 ${this.QN[nr - 1]}。`, 'ember');
+      ns = { ...ns, toasts: [...(ns.toasts || []), { id: Math.random(), title: '境界突破', name: nm, desc: `${this.QN[nr - 1]}凝練為「${this.QN[nr]}」· 功法與秘訣煥然一新`, at: Date.now() }].slice(-3) };
       return this.checkAch(ns);
     });
   };
   UC = {};
   Uof(r) { return this.UC[r] || (this.UC[r] = this.buildUpgrades(r)); }
-  A = [
-    { id: 'a1', name: '初窺門徑', desc: '吸收 1 點元氣', test: s => s.allTime >= 1 },
-    { id: 'a2', name: '氣感', desc: '累計 100 元氣', test: s => s.allTime >= 100 },
-    { id: 'a3', name: '小有所成', desc: '累計 1 萬元氣', test: s => s.allTime >= 1e4 },
-    { id: 'a4', name: '靈氣外溢', desc: '累計 100 萬元氣', test: s => s.allTime >= 1e6 },
-    { id: 'a5', name: '天地異象', desc: '累計 10 億元氣', test: s => s.allTime >= 1e9 },
-    { id: 'a6', name: '勤修不輟', desc: '運氣 100 次', test: s => s.clicks >= 100 },
-    { id: 'a7', name: '走火邊緣', desc: '運氣 1,000 次', test: s => s.clicks >= 1000 },
-    { id: 'a8', name: '專精一道', desc: '首部功法修習 25 層', test: s => (s.owned[0] || 0) >= 25 },
-    { id: 'a9', name: '萬法歸宗', desc: '每種功法各修習一層', test: s => this.G.every((g, i) => (s.owned[i] || 0) > 0) },
-    { id: 'a10', name: '輪迴', desc: '轉世一次', test: s => s.collapses >= 1 },
-    { id: 'a11', name: '築基成功', desc: '踏入築基期', test: s => (s.realm || 0) >= 1 },
-    { id: 'a12', name: '結成金丹', desc: '踏入金丹期', test: s => (s.realm || 0) >= 2 },
-    { id: 'a13', name: '元嬰初成', desc: '踏入元嬰期', test: s => (s.realm || 0) >= 3 },
-    { id: 'a14', name: '煉虛合道', desc: '踏入煉虛期', test: s => (s.realm || 0) >= 5 },
-    { id: 'a15', name: '天劫將至', desc: '踏入渡劫期', test: s => (s.realm || 0) >= 8 },
-  ];
+  A = (() => {
+    const L = [];
+    const add = (cat, list, test) => list.forEach(([v, name], i) => L.push({ id: cat.id + i, cat: cat.name, name, desc: cat.desc(v, i), test: s => test(s, v, i) }));
+    const F = n => this.fmt(n);
+    const sumOwned = s => s.owned.reduce((x, y) => x + (y || 0), 0);
+    const sumUp = s => Object.values(s.upgrades || {}).reduce((x, y) => x + (y === true ? 1 : y || 0), 0);
+    const sumDao = s => Object.values(s.dao || {}).reduce((x, y) => x + (y || 0), 0);
+    add({ id: 'qe', name: '元氣', desc: v => `累計 ${this.fAny(v)}` }, [[1e3, '氣感初生'], [1e11, '小有積蓄'], [1e19, '靈氣充盈'], [1e27, '氣海如淵'], [1e35, '靈氣外溢'], [1e43, '天地異象'], [1e51, '吞天納地'], [1e59, '氣貫長虹'], [1e67, '星河倒灌'], [1e75, '萬古長青'], [1e83, '混沌初開'], [1e91, '大道無垠']], (s, v) => s.allTime >= v);
+    add({ id: 'qr', name: '產出', desc: v => `每秒產出 ${this.fAny(v)}` }, [[10, '細水長流'], [1e8, '源源不絕'], [1e16, '江河奔流'], [1e24, '百川歸海'], [1e32, '潮生潮落'], [1e40, '天河傾瀉'], [1e48, '星海翻湧'], [1e56, '造化無窮']], (s, v) => this.derive(s).rate >= v);
+    add({ id: 'qc', name: '運氣', desc: v => `運氣 ${F(v)} 次` }, [[500, '勤修不輟'], [2000, '持之以恆'], [5000, '鐵杵磨針'], [10000, '走火邊緣'], [25000, '入魔不悔']], (s, v) => s.clicks >= v);
+    add({ id: 'qg', name: '功法', desc: v => `本境界功法合計 ${v} 層` }, [[50, '博覽群經'], [100, '功法百層'], [200, '學究天人'], [400, '萬卷在胸'], [700, '一代宗師']], (s, v) => sumOwned(s) >= v);
+    add({ id: 'qs', name: '功法', desc: v => `單一功法修習 ${v} 層` }, [[50, '專精一道'], [100, '登峰造極'], [200, '前無古人']], (s, v) => Math.max(...s.owned) >= v);
+    add({ id: 'qu', name: '秘訣', desc: v => `本境界秘訣合計 ${v} 層` }, [[10, '略有心得'], [30, '觸類旁通'], [60, '融會貫通'], [100, '秘傳萬卷']], (s, v) => sumUp(s) >= v);
+    add({ id: 'qm', name: '經脈', desc: v => `打通 ${v} 條經脈` }, [[1, '一脈貫通'], [3, '三脈齊開'], [6, '半身通透'], [9, '九脈歸流'], [12, '十二重樓']], (s, v) => (s.xue || 0) >= v * 5);
+    add({ id: 'qj', name: '境界', desc: (v, i) => `踏入${this.R[v].name}期` }, [[1, '築基成功'], [2, '結成金丹'], [3, '元嬰初成'], [4, '化神歸元'], [5, '煉虛合道'], [6, '合體大成'], [7, '大乘在望'], [8, '天劫將至']], (s, v) => (s.realm || 0) >= v);
+    add({ id: 'qk', name: '關卡', desc: v => `完成「${this.GT[v].title}」` }, [[1, '道基九重'], [2, '金丹九轉'], [3, '元嬰大成'], [4, '六識通明'], [5, '五行歸元'], [6, '四象合一'], [7, '八卦圓融'], [8, '萬劫不磨']], (s, v) => (s.realm || 0) > v || this.gl(s, v) >= this.GT[v].items.length);
+    add({ id: 'qt', name: '轉世', desc: v => `轉世 ${v} 次` }, [[1, '輪迴'], [3, '三世修行'], [5, '五世同參'], [10, '十世善人'], [25, '萬世不滅']], (s, v) => s.collapses >= v);
+    add({ id: 'qf', name: '道果', desc: v => `累計獲得 ${v} 枚道果` }, [[10, '道果初結'], [50, '碩果累累'], [200, '道果滿園'], [1000, '萬果歸宗']], (s, v) => (s.embersEarned || 0) >= v);
+    add({ id: 'qd', name: '道境', desc: v => `道境合計 ${v} 層` }, [[5, '道心初定'], [20, '道境漸深'], [50, '道法自然'], [100, '與道同遊']], (s, v) => sumDao(s) >= v);
+    return L;
+  })();
+  Q(r) { return Math.pow(1e8, r || 0); }
+  fq(n, s) { return this.fmt(n / this.Q(s.realm || 0)); }
+  fAny(n) { let k = 0; while (k < 8 && n >= this.Q(k + 1)) k++; return this.fmt(n / this.Q(k)) + ' ' + this.QN[k]; }
+  achN(s) { return this.A.filter(a => (s.ach || {})[a.id]).length; }
   D = [
     { id: 'd1', name: '道心堅定', desc: '所有元氣 +25%', base: 1, grow: 1.6, max: 50 },
     { id: 'd2', name: '天生悟性', desc: '運氣所得 ×2', base: 1, grow: 2, max: 10 },
@@ -363,7 +401,7 @@ class Component extends DCLogic {
     { id: 'd9', name: '靈根資質', desc: '秘訣花費 −5%', base: 4, grow: 1.7, max: 10 },
     { id: 'd10', name: '輪迴記憶', desc: '轉世後直接打通 1 條經脈', base: 8, grow: 1.6, max: 12 },
     { id: 'd11', name: '天道酬勤', desc: '運氣額外獲得每秒產出 1%', base: 3, grow: 1.5, max: 20 },
-    { id: 'd12', name: '一氣化三清', desc: '離線收益上限 +2 小時', base: 4, grow: 1.8, max: 8 },
+    { id: 'd12', name: '一氣化三清', desc: '離線收益上限 +6 小時', base: 4, grow: 1.8, max: 8 },
     { id: 'd13', name: '大道無極', desc: '所有元氣 ×1.1（乘算，無上限）', base: 10, grow: 1.3, max: Infinity },
   ];
   L(s, id) { return (s.dao || {})[id] || 0; }
@@ -382,7 +420,7 @@ class Component extends DCLogic {
     const fx = v => '+' + (Number.isInteger(v) ? v : v.toFixed(2));
     const rows = [
       { label: '境界', note: ok ? `${this.R[r].name}期 · 元嬰 1 枚，之後每境界加倍` : '踏入元嬰期得 1 枚，之後每境界加倍', v: rp },
-      { label: '元嬰後修為', note: ok ? `踏入元嬰後累積元氣每翻 10 倍 +1 · 下一枚於本世 ${this.fmt(nextLt)}` : '踏入元嬰後開始計算', v: lp },
+      { label: '元嬰後修為', note: ok ? `踏入元嬰後累積元氣每翻 10 倍 +1 · 下一枚於本世 ${this.fAny(nextLt)}` : '踏入元嬰後開始計算', v: lp },
       { label: '高階關卡', note: `元嬰期起每過一關 +0.25 · 已過 ${gc} 關`, v: gp },
     ];
     return { total, rows: rows.map(x => ({ label: x.label, note: x.note, value: fx(x.v), color: x.v > 0 ? '#ece8e1' : '#6f6a62' })) };
@@ -434,26 +472,21 @@ class Component extends DCLogic {
   state = this.fresh({ floaters: [], tab: 'sources', mode: '1', confirm: false, confirmWipe: false, offline: null });
 
   fresh(extra) {
-    return { light: 0, lifetime: 0, allTime: 0, owned: this.G.map(() => 0), upgrades: {}, embers: 0, embersEarned: 0, dao: {}, xue: 0, realm: 0, rq: 0, gates: [], ach: {}, clicks: 0, collapses: 0, log: [], ...extra };
+    return { light: 0, lifetime: 0, allTime: 0, owned: this.G.map(() => 0), upgrades: {}, embers: 0, embersEarned: 0, dao: {}, qv: 1, xue: 0, realm: 0, rq: 0, gates: [], ach: {}, clicks: 0, collapses: 0, log: [], ...extra };
   }
 
   buildUpgrades(r) {
     const RN = this.R[r];
-    const tiers = [[1, 10, '精進'], [10, 50, '圓滿'], [25, 500, '大成'], [50, 5000, '化境']];
     const list = [];
-    this.G.forEach((g, i) => tiers.forEach(([need, mult, word], t) => list.push({
-      id: `g${i}t${t}`, kind: 'gen', gen: i, name: `${RN.gens[i][0]}·${word}`, desc: `${RN.gens[i][0]}產出翻倍`,
-      cost: g.cost * mult, req: s => (s.owned[i] || 0) >= need,
-    })));
+    this.G.forEach((g, i) => list.push({
+      id: `g${i}`, kind: 'gen', gen: i, name: `${RN.gens[i][0]}秘要`, desc: `${RN.gens[i][0]}產出翻倍`,
+      cost: g.cost * 2, req: s => (s.owned[i] || 0) >= 1,
+    }));
     list.push(
       { id: 'c1', kind: 'click', mult: 2, name: '心無旁騖', desc: '運氣所得翻倍', cost: 100, req: s => s.clicks >= 25 },
-      { id: 'c2', kind: 'click', mult: 2, name: '氣沉丹田', desc: '運氣所得再翻倍', cost: 2000, req: s => s.clicks >= 200 },
-      { id: 'c3', kind: 'clickPct', pct: 0.02, name: '借力打力', desc: '運氣額外獲得每秒產出的 2%', cost: 50000, req: s => (s.rq || 0) >= 2e4 },
-      { id: 'c4', kind: 'clickPct', pct: 0.03, name: '天人感應', desc: '運氣再獲得每秒產出的 3%', cost: 5e6, req: s => (s.rq || 0) >= 2e6 },
-      { id: 'x1', kind: 'global', mult: 1.5, name: '洞府靈泉', desc: '所有元氣 ×1.5', cost: 2e5, req: s => (s.rq || 0) >= 1e5 },
-      { id: 'x2', kind: 'global', mult: 2, name: '天眼通', desc: '所有元氣 ×2', cost: 1e8, req: s => (s.rq || 0) >= 5e7 },
+      { id: 'c3', kind: 'clickPct', pct: 0.02, name: '借力打力', desc: '運氣額外獲得每秒產出的 2%', cost: 50000, req: s => (s.rq || 0) >= 2e4 * this.Q(s.realm || 0) },
     );
-    (RN.ups || []).forEach((n, k) => list.push({ id: 'r' + k, kind: 'global', mult: 2, name: n, desc: `${RN.name}期秘傳：所有元氣 ×2`, cost: 5e5, req: s => (s.rq || 0) >= 2e5 }));
+    (RN.ups || []).forEach((n, k) => list.push({ id: 'r' + k, kind: 'global', mult: 2, name: n, desc: '所有元氣翻倍', cost: 5e5, req: s => (s.rq || 0) >= 2e5 * this.Q(s.realm || 0) }));
     return list;
   }
 
@@ -469,13 +502,14 @@ class Component extends DCLogic {
       else clickPct += u.pct * n;
     }
     clickPct += 0.01 * this.L(s, 'd11'); global *= Math.pow(1.1, this.L(s, 'd13'));
-    global *= 1 + 0.25 * this.L(s, 'd1'); global *= 1 + 0.05 * Object.keys(s.ach || {}).length;
+    global *= 1 + 0.25 * this.L(s, 'd1'); global *= 1 + 0.02 * this.achN(s);
     global *= Math.pow(5, s.realm || 0) * Math.pow(1.15, this.gSum(s));
     const xu = s.xue || 0; global *= (1 + 0.03 * xu) * Math.pow(1.15, Math.floor(xu / 5)); clickMult *= Math.pow(2, this.L(s, 'd2'));
     const em = 1 + 0.1 * (s.embersEarned || 0);
-    const each = this.G.map((g, i) => g.rate * gm[i] * global * em);
+    const QQ = this.Q(s.realm || 0);
+    const each = this.G.map((g, i) => g.rate * gm[i] * global * em * QQ);
     const rate = each.reduce((a, e, i) => a + e * (s.owned[i] || 0), 0);
-    return { each, rate, click: clickMult * em + rate * clickPct };
+    return { each, rate, click: clickMult * em * QQ + rate * clickPct };
   }
 
   fmt(n) {
@@ -490,11 +524,11 @@ class Component extends DCLogic {
     return h ? `${h} 小時 ${m} 分` : m ? `${m} 分鐘` : `${Math.floor(sec)} 秒`;
   }
 
-  costN(i, k, n, s) { const b = this.G[i].cost * this.cf(s) * Math.pow(1.15, k); return b * (Math.pow(1.15, n) - 1) / 0.15; }
+  costN(i, k, n, s) { const b = this.G[i].cost * this.Q(s.realm || 0) * this.cf(s) * Math.pow(1.15, k); return b * (Math.pow(1.15, n) - 1) / 0.15; }
   buyN(s, i) {
     const m = s.mode;
     if (m !== 'max') return Number(m);
-    const b = this.G[i].cost * this.cf(s) * Math.pow(1.15, s.owned[i] || 0);
+    const b = this.G[i].cost * this.Q(s.realm || 0) * this.cf(s) * Math.pow(1.15, s.owned[i] || 0);
     return Math.max(1, Math.floor(Math.log(s.light * 0.15 / b + 1) / Math.log(1.15)));
   }
 
@@ -506,14 +540,14 @@ class Component extends DCLogic {
   checkAch(s) {
     let ns = s;
     for (const a of this.A) if (!ns.ach[a.id] && a.test(ns)) {
-      ns = this.addLog({ ...ns, ach: { ...ns.ach, [a.id]: true } }, `達成成就：${a.name}。元氣永久 +5%。`, 'ach');
-      ns = { ...ns, toasts: [...(ns.toasts || []), { id: Math.random(), title: '成就達成', name: a.name, desc: a.desc + ' · 元氣永久 +5%', at: Date.now() }].slice(-3) };
+      ns = this.addLog({ ...ns, ach: { ...ns.ach, [a.id]: true } }, `達成成就：${a.name}。元氣永久 +2%。`, 'ach');
+      ns = { ...ns, toasts: [...(ns.toasts || []), { id: Math.random(), title: '成就達成', name: a.name, desc: a.desc + ' · 元氣永久 +2%', at: Date.now() }].slice(-3) };
     }
     return ns;
   }
 
   save() {
-    const { floaters, tab, confirm, confirmWipe, offline, toasts, ...rest } = this.state;
+    const { floaters, tab, mobile, tabTouched, confirm, confirmWipe, offline, toasts, ...rest } = this.state;
     try { localStorage.setItem('lumen-save-v1', JSON.stringify({ ...rest, savedAt: Date.now() })); } catch (e) {}
   }
 
@@ -525,10 +559,13 @@ class Component extends DCLogic {
         d.log = (d.log || []).filter(e => !/[A-Za-z]{2,}/.test(e.text));
         if (d.embersEarned == null) d.embersEarned = d.embers || 0;
         if (!d.log.length) d.log = [{ id: Math.random(), text: '你坐了下來。試著運轉一下元氣。', time: '--:--' }];
+        if (!d.qv) { const q = this.Q(d.realm || 0); d.light = (d.light || 0) * q; d.rq = (d.rq || 0) * q; d.qv = 1; }
         const loaded0 = d;
+        if (d.upgrades) { const U0 = d.upgrades, lv = k => U0[k] === true ? 1 : (U0[k] || 0), mv = (from, to) => { const n = lv(from); if (n) { U0[to] = lv(to) + n; delete U0[from]; } }; mv('c2', 'c1'); mv('c4', 'c3'); mv('x1', 'r0'); mv('x2', 'r0'); }
+        if (d.upgrades) for (let i = 0; i < 7; i++) { let n = 0; for (let t = 0; t < 4; t++) { const k = `g${i}t${t}`, v = d.upgrades[k]; if (v) { n += v === true ? 1 : v; delete d.upgrades[k]; } } if (n) d.upgrades[`g${i}`] = (d.upgrades[`g${i}`] || 0) + n; }
         const loaded = { ...this.fresh({}), ...d, owned: this.G.map((g, i) => (d.owned || [])[i] || 0) };
-        const secs = Math.min((Date.now() - (d.savedAt || Date.now())) / 1000, (8 + 2 * this.L(loaded0, 'd12')) * 3600);
-        const earn = this.derive(loaded).rate * secs * (0.5 + 0.1 * this.L(loaded, 'd3'));
+        const secs = Math.min((Date.now() - (d.savedAt || Date.now())) / 1000, (24 + 6 * this.L(loaded0, 'd12')) * 3600);
+        const earn = this.derive(loaded).rate * secs * (1 + 0.1 * this.L(loaded, 'd3'));
         const ns = { ...loaded, light: loaded.light + earn, lifetime: loaded.lifetime + earn, allTime: loaded.allTime + earn, rq: (loaded.rq || 0) + earn };
         this.setState({ ...ns, offline: secs > 10 && earn > 0 ? { secs, earn } : null });
       } else {
@@ -537,6 +574,9 @@ class Component extends DCLogic {
     } catch (e) {}
     this.last = performance.now();
     this.startParticles();
+    this.mq = window.matchMedia('(max-width: 720px), (pointer: coarse) and (max-width: 1024px)');
+    this.onMq = () => this.setState(s => ({ mobile: this.mq.matches, tab: this.mq.matches && !s.mobile && !s.tabTouched ? 'cultivate' : s.tab }));
+    this.onMq(); this.mq.addEventListener ? this.mq.addEventListener('change', this.onMq) : this.mq.addListener(this.onMq);
     this.timer = setInterval(this.tick, 100);
     this.saveTimer = setInterval(() => this.save(), 5000);
     this.onUnload = () => this.save();
@@ -545,6 +585,7 @@ class Component extends DCLogic {
   componentWillUnmount() {
     clearInterval(this.timer); clearInterval(this.saveTimer); cancelAnimationFrame(this.raf);
     window.removeEventListener('beforeunload', this.onUnload);
+    if (this.mq) this.mq.removeEventListener ? this.mq.removeEventListener('change', this.onMq) : this.mq.removeListener(this.onMq);
     this.save();
   }
 
@@ -566,7 +607,7 @@ class Component extends DCLogic {
     const id = Math.random();
     this.setState(s => {
       const c = this.derive(s).click;
-      const floaters = (this.props.floatingNumbers ?? true) ? [...s.floaters, { id, x, y, text: '+' + this.fmt(c) }].slice(-20) : s.floaters;
+      const floaters = (this.props.floatingNumbers ?? true) ? [...s.floaters, { id, x, y, text: '+' + this.fq(c, s) }].slice(-20) : s.floaters;
       return this.checkAch({ ...s, light: s.light + c, lifetime: s.lifetime + c, allTime: s.allTime + c, rq: (s.rq || 0) + c, clicks: s.clicks + 1, floaters });
     });
     setTimeout(() => this.setState(s => ({ floaters: s.floaters.filter(f => f.id !== id) })), 900);
@@ -583,7 +624,7 @@ class Component extends DCLogic {
     });
   }
   uLv(s, u) { const v = s.upgrades[u.id]; return v === true ? 1 : (v || 0); }
-  uCost(s, u) { return u.cost * Math.pow(u.kind === 'clickPct' ? 6 : 10, this.uLv(s, u)) * (1 - 0.05 * this.L(s, 'd9')); }
+  uCost(s, u) { return u.cost * this.Q(s.realm || 0) * Math.pow(({ gen: 10, global: 20, click: 10, clickPct: 8 })[u.kind] || 10, this.uLv(s, u)) * (1 - 0.05 * this.L(s, 'd9')); }
   buyUp(u) {
     this.setState(s => {
       const lv = this.uLv(s, u), c = this.uCost(s, u);
@@ -614,7 +655,7 @@ class Component extends DCLogic {
     const T = [1, 3, 6, 10, 15, 22, 30, 40, 55, 75, 100, 130];
     return order.map((k, i) => ({ name: k + '經', pts: g[k], need: T[i] }));
   })();
-  XB = [20, 200, 1500, 1e4, 7e4, 5e5, 3.5e6, 2.5e7, 1.8e8, 1.3e9, 9e9, 6e10];
+  XB = [50, 1100, 26000, 5.8e5, 1.3e7, 3e8, 6.7e9, 1.5e11, 3.4e12, 7.8e13, 1.8e15, 4e16];
   xueCost(k, s) { return this.XB[Math.floor(k / 5)] * Math.pow(1.6, k % 5) * (1 - 0.05 * this.L(s || {}, 'd7')); }
   openXue = () => {
     this.setState(s => {
@@ -677,22 +718,23 @@ class Component extends DCLogic {
     const amber = 'oklch(0.82 0.13 78)', line = 'rgba(236,232,225,.14)', muted = '#a39e94';
     const btn = ok => ({ btnBg: ok ? amber : 'transparent', btnColor: ok ? '#11100e' : muted, btnBorder: ok ? amber : line });
 
-    const visible = this.G.map((g, i) => i === 0 || (s.owned[i - 1] || 0) > 0 || (s.owned[i] || 0) > 0 || (s.rq || 0) >= g.cost * 0.5);
+    const visible = this.G.map((g, i) => i === 0 || (s.owned[i - 1] || 0) > 0 || (s.owned[i] || 0) > 0 || (s.rq || 0) >= g.cost * 0.5 * this.Q(s.realm || 0));
     const gens = this.G.map((g, i) => {
       if (!visible[i]) return null;
       const n = this.buyN(s, i), c = this.costN(i, s.owned[i] || 0, n, s);
-      return { name: this.gn(s, i)[0], desc: this.gn(s, i)[1], owned: s.owned[i] || 0, qty: n, costText: this.fmt(c), eachText: this.fmt(d.each[i]), totalText: this.fmt(d.each[i] * (s.owned[i] || 0)), ...btn(s.light >= c), onBuy: () => this.buyGen(i) };
+      return { name: this.gn(s, i)[0], desc: this.gn(s, i)[1], owned: s.owned[i] || 0, qty: n, costText: this.fq(c, s), eachText: this.fq(d.each[i], s), totalText: this.fq(d.each[i] * (s.owned[i] || 0), s), ...btn(s.light >= c), onBuy: () => this.buyGen(i) };
     }).filter(Boolean);
     const nextIdx = visible.indexOf(false);
 
     const avail = this.Uof(s.realm || 0).filter(u => u.req(s)).map(u => ({ u, c: this.uCost(s, u), lv: this.uLv(s, u) })).sort((a, b) => a.c - b.c);
     const affordable = avail.filter(x => s.light >= x.c).length;
-    const upgrades = avail.map(({ u, c, lv }) => ({ name: u.name, desc: u.desc + '（每層）', lvText: `第 ${lv} 層`, costText: this.fmt(c) + ' 元氣', btnBorder: s.light >= c ? amber : line, opacity: s.light >= c ? 1 : 0.55, onBuy: () => this.buyUp(u) }));
+    const upgrades = avail.map(({ u, c, lv }) => ({ name: u.name, desc: u.desc + '（每層）', lvText: `第 ${lv} 層`, costText: this.fq(c, s) + ' ' + this.QN[s.realm || 0], btnBorder: s.light >= c ? amber : line, opacity: s.light >= c ? 1 : 0.55, onBuy: () => this.buyUp(u) }));
     const ownedUps = this.Uof(s.realm || 0).reduce((a, u) => a + this.uLv(s, u), 0);
-    const achCount = Object.keys(s.ach).length;
+    const achCount = this.achN(s);
 
-    const tabs = [['sources', '功法', 0], ['upgrades', '秘訣', affordable], ['dao', '道境', this.D.filter(d => this.L(s, d.id) < d.max && s.embers >= this.daoCost(d, this.L(s, d.id))).length], ['records', '成就', 0]].map(([id, label, badge]) => ({
-      label, badge, hasBadge: badge > 0, color: s.tab === id ? '#ece8e1' : muted, border: s.tab === id ? amber : 'transparent', onSelect: () => this.setState({ tab: id }),
+    const mob = !!s.mobile, T = !mob && s.tab === 'cultivate' ? 'sources' : s.tab;
+    const tabs = [...(mob ? [['cultivate', '修煉', 0]] : []), ['sources', '功法', 0], ['upgrades', '秘訣', affordable], ['dao', '道境', this.D.filter(d => this.L(s, d.id) < d.max && s.embers >= this.daoCost(d, this.L(s, d.id))).length], ['records', '成就', 0]].map(([id, label, badge]) => ({
+      label, badge, hasBadge: badge > 0, color: T === id ? '#ece8e1' : muted, border: T === id ? amber : 'transparent', top: T === id ? amber : 'transparent', onSelect: () => this.setState({ tab: id, tabTouched: true }),
     }));
     const modes = [['1', '×1'], ['10', '×10'], ['max', '最大']].map(([id, label]) => ({
       label, bg: s.mode === id ? '#2c2a25' : 'transparent', color: s.mode === id ? '#ece8e1' : muted, onSelect: () => this.setState({ mode: id }),
@@ -703,11 +745,15 @@ class Component extends DCLogic {
     const glowR = 24 + Math.min(110, Math.log10(d.rate + 1) * 16);
 
     return {
-      lightText: this.fmt(s.light), rateText: this.fmt(d.rate), clickText: this.fmt(d.click),
+      lightText: this.fq(s.light, s), rateText: this.fq(d.rate, s), clickText: this.fq(d.click, s),
+      unitName: this.QN[s.realm || 0], unitColor: `oklch(0.8 0.12 ${this.QH[s.realm || 0]})`,
+      unitNote: (s.realm || 0) ? `1 ${this.QN[s.realm]} = 1億 ${this.QN[s.realm - 1]}` : '',
       embersText: this.fmt(s.embers), emberBonusText: String(Math.round((s.embersEarned || 0) * 10)),
-      offlineCapText: String(8 + 2 * this.L(s, 'd12')),
-      offlineRateText: Math.round((0.5 + 0.1 * this.L(s, 'd3')) * 100) + '%',
-      isDao: s.tab === 'dao',
+      offlineCapText: String(24 + 6 * this.L(s, 'd12')),
+      offlineRateText: Math.round((1 + 0.1 * this.L(s, 'd3')) * 100) + '%',
+      isDao: T === 'dao',
+      notMobile: !mob, isMobile: mob, showLeft: !mob || T === 'cultivate', showRight: !mob || T !== 'cultivate', showMini: mob && T !== 'cultivate',
+      genBtnW: mob ? '96px' : '132px', genGap: mob ? '10px' : '18px', genOwnedSize: mob ? '20px' : '26px',
       daoNote: `道境不會因轉世而重置。花費道果不會減少修煉速度加成（依累計獲得 ${this.fmt(s.embersEarned || 0)} 枚計算）。`,
       daos: this.D.map(d => { const lv = this.L(s, d.id), c = this.daoCost(d, lv), maxed = lv >= d.max, ok = !maxed && s.embers >= c;
         return { name: d.name, desc: d.desc + '（每層）', lvText: d.max === Infinity ? `${lv} 層` : `${lv} / ${d.max} 層`, costText: maxed ? '已圓滿' : c + ' 道果', label: maxed ? '圓滿' : '精進', btnBg: ok ? 'oklch(0.8 0.13 35)' : 'transparent', btnColor: ok ? '#11100e' : '#a39e94', btnBorder: ok ? 'oklch(0.8 0.13 35)' : 'rgba(236,232,225,.14)', onBuy: () => this.buyDao(d) }; }),
@@ -734,11 +780,11 @@ class Component extends DCLogic {
       gateDone: !!this.GT[s.realm || 0] && this.gl(s, s.realm) >= this.GT[s.realm].items.length,
       ...(() => { const r = s.realm || 0, g = this.GT[r]; if (!g) return {}; const j = this.gl(s, r); if (j >= g.items.length) return { gateLabel: '', gateCostText: '' };
         const c = this.gateCost(r, j, s), ok = s.light >= c;
-        return { gateLabel: `${g.verb}「${g.items[j]}」`, gateCostText: this.fmt(c) + ' 元氣', gateBg: ok ? 'oklch(0.82 0.13 78)' : 'transparent', gateColor: ok ? '#11100e' : '#a39e94', gateBorder: ok ? 'oklch(0.82 0.13 78)' : 'rgba(236,232,225,.14)' }; })(),
+        return { gateLabel: `${g.verb}「${g.items[j]}」`, gateCostText: this.fq(c, s) + ' ' + this.QN[s.realm || 0], gateBg: ok ? 'oklch(0.82 0.13 78)' : 'transparent', gateColor: ok ? '#11100e' : '#a39e94', gateBorder: ok ? 'oklch(0.82 0.13 78)' : 'rgba(236,232,225,.14)' }; })(),
       onGate: this.openGate,
       realmName: this.R[s.realm || 0].name + '期', isLianqi: !(s.realm || 0),
       realmBonusText: '×' + this.fmt(Math.pow(5, s.realm || 0)),
-      nextRealmText: (s.realm || 0) < 8 ? `下一境界：${this.R[(s.realm || 0) + 1].name}期 · 元氣 ×5，功法與秘訣重置為新項目` : '已至渡劫期，此世修為已到盡頭。轉世可帶著道果重修。',
+      nextRealmText: (s.realm || 0) < 8 ? `下一境界：${this.R[(s.realm || 0) + 1].name}期 · ${this.QN[s.realm || 0]}凝練為「${this.QN[(s.realm || 0) + 1]}」，修煉速度 ×5，功法與秘訣重置為新項目` : '已至渡劫期，此世修為已到盡頭。轉世可帶著道果重修。',
       breakReqs: ((s.realm || 0) >= 8 ? [] : !(s.realm || 0) ? [{ text: `打通十二經脈（${opened}/12）`, ok: opened >= 12 }] : [
         { text: `完成「${this.GT[s.realm].title}」（${this.gl(s, s.realm)}/${this.GT[s.realm].items.length}）`, ok: this.gl(s, s.realm) >= this.GT[s.realm].items.length },
         { text: `每部功法至少修習一層（${this.G.filter((g, i) => (s.owned[i] || 0) > 0).length}/7）`, ok: this.G.every((g, i) => (s.owned[i] || 0) > 0) },
@@ -750,21 +796,21 @@ class Component extends DCLogic {
       floaters: s.floaters.map(f => React.createElement('div', { key: f.id, style: { position: 'absolute', left: f.x, top: f.y, pointerEvents: 'none', fontFamily: "'JetBrains Mono',monospace", fontSize: 18, fontWeight: 500, color: '#fff7e6', textShadow: '0 0 8px rgba(0,0,0,.5)', animation: 'lumenFloat 900ms ease-out forwards' } }, f.text)),
       log: s.log.map(e => ({ ...e, color: e.kind === 'ach' ? amber : e.kind === 'ember' ? ember : '#ece8e1' })),
       tabs, modes, gens,
-      isSources: s.tab === 'sources', isUpgrades: s.tab === 'upgrades', isRecords: s.tab === 'records',
-      hasNextGen: nextIdx > -1, nextGenText: nextIdx > -1 ? '本境界累積 ' + this.fmt(this.G[nextIdx].cost * 0.5) + ' 元氣' : '',
+      isSources: T === 'sources', isUpgrades: T === 'upgrades', isRecords: T === 'records',
+      hasNextGen: nextIdx > -1, nextGenText: nextIdx > -1 ? '本境界累積 ' + this.fmt(this.G[nextIdx].cost * 0.5) + ' ' + this.QN[s.realm || 0] : '',
       upgrades, noUpgrades: upgrades.length === 0,
       upgradesOwnedText: `本境界共參悟 ${ownedUps} 層。秘訣沒有層數上限，每層價格遞增；突破境界或轉世後會重置。`,
       stats: [
-        { label: '累計元氣', value: this.fmt(s.allTime) },
-        { label: '本世', value: this.fmt(s.lifetime) },
+        { label: '累計修為', value: this.fAny(s.allTime) },
+        { label: '本世', value: this.fAny(s.lifetime) },
         { label: '境界', value: this.R[s.realm || 0].name + '期' },
         { label: '運氣次數', value: this.fmt(s.clicks) },
         { label: '轉世次數', value: String(s.collapses) },
         { label: '成就', value: `${achCount}/${this.A.length}` },
-        { label: '成就加成', value: `+${achCount * 5}%` },
+        { label: '成就加成', value: `+${achCount * 2}%` },
       ],
       toasts: (s.toasts || []).map(t => ({ id: t.id, title: t.title || '成就達成', name: t.name, desc: t.desc })),
-      achievements: this.A.map(a => ({ name: a.name, desc: a.desc + ' · 元氣 +5%', opacity: s.ach[a.id] ? 1 : 0.4, dot: s.ach[a.id] ? amber : '#3a3732' })),
+      achievements: this.A.map(a => ({ name: a.name, desc: a.cat + ' · ' + a.desc, opacity: s.ach[a.id] ? 1 : 0.4, dot: s.ach[a.id] ? amber : '#3a3732' })),
       prestigeText: (s.realm || 0) < 3 ? `需踏入元嬰期才能轉世（目前：${this.R[s.realm || 0].name}期）。剛踏入元嬰期就轉世可得 1 枚道果，修得越深得越多。` : '散去境界、經脈、功法與秘訣，從練氣重新修起。每枚道果永久增加 10% 修煉速度。',
       gainRows: this.gainParts(s).rows, gainTotalText: String(gain), gainMultText: '×' + (1 + 0.2 * this.L(s, 'd5')).toFixed(1),
       prestigeLabel: gain < 1 || (s.realm || 0) < 3 ? '尚未達成' : s.confirm ? '再點一次確認' : `轉世，獲得 ${gain}`,
@@ -773,7 +819,7 @@ class Component extends DCLogic {
       wipeLabel: s.confirmWipe ? '再點一次清除所有進度' : '清除存檔',
       onWipe: this.wipe,
       showOffline: !!s.offline,
-      offlineTime: s.offline ? this.fmtTime(s.offline.secs) : '', offlineText: s.offline ? this.fmt(s.offline.earn) : '',
+      offlineTime: s.offline ? this.fmtTime(s.offline.secs) : '', offlineText: s.offline ? this.fq(s.offline.earn, s) + ' ' + this.QN[s.realm || 0] : '',
       onCloseOffline: () => this.setState({ offline: null }),
     };
   }
