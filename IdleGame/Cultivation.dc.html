@@ -24,6 +24,19 @@ button{font-family:inherit}
 </helmet>
 <div style="min-height:100vh;box-sizing:border-box;padding:clamp(20px,4vw,48px);max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
 
+  <sc-if value="{{ showTitle }}" hint-placeholder-val="{{ true }}">
+    <div style="position:fixed;inset:0;z-index:40;background:#11100e url('assets/title.png') center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 24px max(56px,8vh)">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,16,14,0) 45%,rgba(17,16,14,.55) 75%,rgba(17,16,14,.85) 100%);pointer-events:none"></div>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:22px;animation:lumenIn 900ms ease">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+          <h1 style="margin:0;font-size:clamp(48px,9vw,88px);font-weight:700;letter-spacing:.2em;color:#fff8ea;text-shadow:0 2px 24px rgba(0,0,0,.45),0 0 40px oklch(0.85 0.1 80 / .5)">修真</h1>
+          <span style="font-family:'Schibsted Grotesk',sans-serif;font-size:clamp(13px,1.6vw,16px);letter-spacing:.5em;color:#f3ead8;text-shadow:0 1px 8px rgba(0,0,0,.5)">CULTIVATION</span>
+        </div>
+        <button onClick="{{ onStart }}" style="min-height:52px;min-width:220px;padding:0 36px;border-radius:999px;border:1px solid oklch(0.85 0.1 80 / .9);background:rgba(17,16,14,.55);backdrop-filter:blur(6px);color:#fff8ea;font-size:18px;font-weight:600;letter-spacing:.3em;cursor:pointer;box-shadow:0 0 28px oklch(0.85 0.12 80 / .35)" style-hover="background:oklch(0.82 0.13 78);color:#11100e" style-active="transform:scale(.97)">{{ startLabel }}</button>
+      </div>
+    </div>
+  </sc-if>
+
   <header style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(236,232,225,.1);padding-bottom:20px">
     <div style="display:flex;align-items:baseline;gap:14px">
       <h1 style="margin:0;font-size:28px;font-weight:700;letter-spacing:-.02em">修真</h1>
@@ -625,7 +638,8 @@ class Component extends DCLogic {
   }
 
   save() {
-    const { floaters, tab, mobile, tabTouched, achOpen, confirm, confirmWipe, offline, toasts, ...rest } = this.state;
+    if (!this.started) return;
+    const { started, floaters, tab, mobile, tabTouched, achOpen, confirm, confirmWipe, offline, toasts, ...rest } = this.state;
     try { localStorage.setItem('cultivation-save-v1', JSON.stringify({ ...rest, savedAt: Date.now() })); } catch (e) {}
   }
 
@@ -642,24 +656,32 @@ class Component extends DCLogic {
         if (d.upgrades) { const U0 = d.upgrades, lv = k => U0[k] === true ? 1 : (U0[k] || 0), mv = (from, to) => { const n = lv(from); if (n) { U0[to] = lv(to) + n; delete U0[from]; } }; mv('c2', 'c1'); mv('c4', 'c3'); mv('x1', 'r0'); mv('x2', 'r0'); }
         if (d.upgrades) for (let i = 0; i < 7; i++) { let n = 0; for (let t = 0; t < 4; t++) { const k = `g${i}t${t}`, v = d.upgrades[k]; if (v) { n += v === true ? 1 : v; delete d.upgrades[k]; } } if (n) d.upgrades[`g${i}`] = (d.upgrades[`g${i}`] || 0) + n; }
         const loaded = { ...this.fresh({}), ...d, owned: this.G.map((g, i) => (d.owned || [])[i] || 0) };
-        const secs = Math.min((Date.now() - (d.savedAt || Date.now())) / 1000, (24 + 6 * this.L(loaded0, 'd12')) * 3600);
-        const earn = this.derive(loaded).rate * secs * (1 + 0.1 * this.L(loaded, 'd3'));
-        const ns = { ...loaded, light: loaded.light + earn, lifetime: loaded.lifetime + earn, allTime: loaded.allTime + earn, rq: (loaded.rq || 0) + earn };
-        this.setState({ ...ns, offline: secs > 10 && earn > 0 ? { secs, earn } : null });
+        this.savedAt = d.savedAt || Date.now();
+        this.setState({ ...loaded, offline: null });
       } else {
         this.setState(s => this.addLog(s, '你坐了下來。試著運轉一下元氣。'));
       }
     } catch (e) {}
-    this.last = performance.now();
     this.startParticles();
     this.mq = window.matchMedia('(max-width: 720px), (pointer: coarse) and (max-width: 1024px)');
     this.onMq = () => this.setState(s => ({ mobile: this.mq.matches, tab: this.mq.matches && !s.mobile && !s.tabTouched ? 'cultivate' : s.tab }));
     this.onMq(); this.mq.addEventListener ? this.mq.addEventListener('change', this.onMq) : this.mq.addListener(this.onMq);
-    this.timer = setInterval(this.tick, 100);
-    this.saveTimer = setInterval(() => this.save(), 5000);
     this.onUnload = () => this.save();
     window.addEventListener('beforeunload', this.onUnload);
   }
+  startGame = () => {
+    if (this.started) return;
+    this.started = true;
+    this.setState(s => {
+      if (!this.savedAt) return { started: true };
+      const secs = Math.min((Date.now() - this.savedAt) / 1000, (24 + 6 * this.L(s, 'd12')) * 3600);
+      const earn = this.derive(s).rate * secs * (1 + 0.1 * this.L(s, 'd3'));
+      return { started: true, light: s.light + earn, lifetime: s.lifetime + earn, allTime: s.allTime + earn, rq: (s.rq || 0) + earn, offline: secs > 10 && earn > 0 ? { secs, earn } : null };
+    });
+    this.last = performance.now();
+    this.timer = setInterval(this.tick, 100);
+    this.saveTimer = setInterval(() => this.save(), 5000);
+  };
   componentWillUnmount() {
     clearInterval(this.timer); clearInterval(this.saveTimer); cancelAnimationFrame(this.raf);
     window.removeEventListener('beforeunload', this.onUnload);
@@ -909,6 +931,7 @@ class Component extends DCLogic {
       onWipe: this.wipe,
       showOffline: !!s.offline,
       offlineTime: s.offline ? this.fmtTime(s.offline.secs) : '', offlineText: s.offline ? this.fq(s.offline.earn, s) + ' ' + this.QN[s.realm || 0] : '',
+      showTitle: !s.started, onStart: this.startGame, hasSave: !!this.savedAt, startLabel: this.savedAt ? '繼續修煉' : '開始遊戲',
       onCloseOffline: () => this.setState({ offline: null }),
     };
   }
