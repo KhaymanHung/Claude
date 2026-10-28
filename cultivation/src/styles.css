@@ -1,0 +1,38 @@
+:root {
+  --bg: #11100e;
+  --panel: #1a1916;
+  --panel-hover: #22201c;
+  --text: #ece8e1;
+  --muted: #a39e94;
+  --dim: #6f6a62;
+  --amber: oklch(0.82 0.13 78);
+  --ember: oklch(0.8 0.13 35);
+  --line: rgba(236, 232, 225, .1);
+  --mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Schibsted Grotesk', 'Noto Sans TC', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--amber); }
+a:hover { color: var(--text); }
+button { font-family: inherit; }
+
+@keyframes lumenFloat { 0% { opacity: 0; transform: translate(-50%, -50%) } 15% { opacity: 1 } 100% { opacity: 0; transform: translate(-50%, -160%) } }
+@keyframes achIn { from { opacity: 0; transform: translateY(-16px) scale(.92) } to { opacity: 1; transform: none } }
+@keyframes qiFlow { to { stroke-dashoffset: -40 } }
+@keyframes qiPulse { 0%, 100% { opacity: .55 } 50% { opacity: 1 } }
+@keyframes lumenIn { from { opacity: 0; transform: translateY(-4px) } to { opacity: 1; transform: none } }
+
+/* Interaction states the prototype expressed as style-hover / style-active. */
+.start-btn:hover { background: var(--amber) !important; color: var(--bg) !important; }
+.start-btn:active { transform: scale(.97); }
+.figure-btn { transition: transform 80ms ease; }
+.figure-btn:hover { filter: brightness(1.1); }
+.figure-btn:active { transform: scale(.97); }
+.upgrade-card:hover { background: var(--panel-hover) !important; }
+.wipe-btn:hover { color: var(--text) !important; }
