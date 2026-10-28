@@ -173,6 +173,7 @@ button{font-family:inherit}
                 <div style="display:flex;flex-direction:column;gap:3px;min-width:0;container-type:inline-size">
                   <div style="display:flex;flex-wrap:nowrap;align-items:baseline;gap:8px;white-space:nowrap;overflow:hidden"><span style="font-size:clamp(12px,6cqi,17px);font-weight:600;flex:none">{{ g.name }}</span><span style="color:#a39e94;font-size:clamp(10px,4cqi,13px);overflow:hidden;text-overflow:ellipsis;min-width:0">{{ g.desc }}</span></div>
                   <div style="color:#a39e94;font-size:clamp(9px,3.6cqi,12px);font-family:'JetBrains Mono',monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ g.eachText }}/秒（每個）· 合計 {{ g.totalText }}/秒</div>
+                  <div style="color:oklch(0.82 0.13 78);font-size:clamp(9px,3.4cqi,11px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ g.msText }}</div>
                 </div>
                 <div style="font-family:'JetBrains Mono',monospace;font-size:{{ genOwnedSize }};font-weight:500;min-width:32px;text-align:right">{{ g.owned }}</div>
                 <button onClick="{{ g.onBuy }}" style="min-width:{{ genBtnW }};min-height:44px;border-radius:8px;border:1px solid {{ g.btnBorder }};background:{{ g.btnBg }};color:{{ g.btnColor }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:6px 12px">
@@ -439,6 +440,8 @@ class Component extends DCLogic {
   buyZhen = () => { this.setState(s => { const lv = s.zhen || 0, c = this.zCost(s); if (lv >= this.ZMAX || s.light < c) return null;
     return this.addLog({ ...s, light: s.light - c, zhen: lv + 1 }, `${this.ZN[s.realm || 0]}加固至第 ${lv + 1} 重。`); }); };
   gn(s, i) { return this.R[s.realm || 0].gens[i]; }
+  MS = 1.15;
+  msB(k) { return Math.pow(this.MS, Math.floor(k / 10)); }
   BN = [0, 1e+28, 4.7e+31, 3.4e+34, 3.5e+37, 2.1e+40, 6.3e+42, 4.7e+45, 6.5e+48, 2.7e+51, 8.9e+53, 4.5e+56, 5.1e+59, 4.7e+62, 2.6e+65];
   breakNeed(r) { return this.BN[r]; }
   canBreak(s) { const r = s.realm || 0; if (r >= this.LAST) return false; return r === 0 ? (s.xue || 0) >= 60 : this.gl(s, r) >= this.GT[r].items.length && this.G.every((g, i) => (s.owned[i] || 0) > 0); }
@@ -598,7 +601,7 @@ class Component extends DCLogic {
     const xu = s.xue || 0; global *= (1 + 0.03 * xu) * Math.pow(1.15, Math.floor(xu / 5)); clickMult *= Math.pow(1.5, this.L(s, 'd2'));
     const em = this.emB(s);
     const QQ = this.Q(s.realm || 0);
-    const each = this.G.map((g, i) => g.rate * gm[i] * global * em * QQ);
+    const each = this.G.map((g, i) => g.rate * gm[i] * this.msB(s.owned[i] || 0) * global * em * QQ);
     const rate = each.reduce((a, e, i) => a + e * (s.owned[i] || 0), 0);
     return { each, rate, click: clickMult * em * QQ + rate * clickPct };
   }
@@ -822,7 +825,7 @@ class Component extends DCLogic {
     const gens = this.G.map((g, i) => {
       if (!visible[i]) return null;
       const n = this.buyN(s, i), c = this.costN(i, s.owned[i] || 0, n, s);
-      return { name: this.gn(s, i)[0], desc: this.gn(s, i)[1], owned: s.owned[i] || 0, qty: n, costText: this.fq(c, s), eachText: this.fq(d.each[i], s), totalText: this.fq(d.each[i] * (s.owned[i] || 0), s), ...btn(s.light >= c), onBuy: () => this.buyGen(i) };
+      return { name: this.gn(s, i)[0], desc: this.gn(s, i)[1], owned: s.owned[i] || 0, qty: n, costText: this.fq(c, s), eachText: this.fq(d.each[i], s), msText: `每 10 層產出 ×${this.MS}（目前 ×${this.fmt(this.msB(s.owned[i] || 0))}，再 ${10 - (s.owned[i] || 0) % 10} 層）`, totalText: this.fq(d.each[i] * (s.owned[i] || 0), s), ...btn(s.light >= c), onBuy: () => this.buyGen(i) };
     }).filter(Boolean);
     const nextIdx = visible.indexOf(false);
 
