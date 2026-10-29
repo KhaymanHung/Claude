@@ -1,0 +1,55 @@
+# 學大地之斬（earthslice）：先查條件 → 試著向雕像學 → 學不了就走騎士堡解謎，向亞瑟王（Arthur）學
+# 用法：#quest 學大地之斬，之後 #next（或 #next all 自動做到需要你處理的步驟）
+# 資料來源：攻略〈入門與升級〉〈騎士堡〉；勇者學校的圓桌騎士巨像清單上也有大地之斬（2026-10-29 look statue）
+
+[[quest]]
+id = "learn-earthslice"
+name = "學大地之斬"
+aliases = ["大地之斬", "大地斬", "earthslice", "ear", "學ear"]
+area = "勇者學校"
+level = "10-60"
+intro = "大地之斬（earthslice）250 點，任何武器都能用，Lv10 以後才能用（攻略說可以提前學）。攻略寫要到騎士堡向亞瑟王（Arthur）學，但勇者學校的圓桌騎士巨像清單上也有，所以先試雕像，學不了再解謎。"
+note = "騎士堡是 Lv55～60 的解謎，路上有很多強怪。攻略建議：找線上玩家帶路，或「走到剝皮匠（skinner）那裡再找人用召喚術（summon）把你叫過去」。用法：ear <怪>，學會後 agg 0。"
+rewards = ["大地之斬（earthslice）：練到 99 生命 +180、移動力 +200"]
+
+[[quest.steps]]
+title = "查學習條件"
+note = "看 help 和技能樹，記下前置條件、等級限制和教的人。結果在紀錄檔，跑完給 Claude 看。"
+do = ["help earthslice", "skills earthslice", "practice"]
+
+[[quest.steps]]
+title = "向圓桌騎士巨像學"
+note = "自動走到勇者學校的圓桌騎士巨像（要先跑過 #map 勇者學校 80 10），learn statue earthslice，學會就練習。遊戲說記憶點數不夠就先升級；說「這不是你所能學的技能」或其他訊息，表示要解謎，繼續下一步。學會的話這個解謎到這裡就結束（#quest stop）。"
+learn = "earthslice"
+
+[[quest.steps]]
+title = "準備去騎士堡"
+manual = true
+note = """攻略的準備：
+・技能：夜視術（infravision）、舞空術（fly）、補充體力術（refresh）已學；攻略另外建議開鎖（pick lock）、窺視（peek）、偷竊（steal）、藏匿（hide）、潛行（sneak）、偽裝（pretend）共 700 點（小偷巨像），點數不夠就不學，改找人帶路。
+・帶食物和水（造食物術、造泉術已學）。
+・最省事的做法：在線上問人（chat），請騎士或會召喚術（summon）的玩家把你叫到亞瑟王附近。"""
+
+[[quest.steps]]
+title = "前往騎士堡：西方大陸入口"
+note = "map3（/3w3se → look painting）到西方大陸。到了之後下一步要你自己走。"
+do = ["map3"]
+
+[[quest.steps]]
+title = "前往騎士堡：西方大陸到騎士堡"
+manual = true
+note = """攻略路線（每到一處先 look 確認）：
+1. 看到西塞斯後一直往南到底，能東就東、能南就南，找到往下的路到廢棄的港口（sneak、hide）。
+2. 渡海（cast fly 或用小艇（boat））後往南找〔淺海海域〕，往西一直走到北歐，往南到阿爾卑斯，一直往西（經英吉利海峽）再往北，join。
+3. 進騎士堡後往北一格整裝：卸下照明器具，cast infravision、sneak、hide。分岔路口 look 看敘述指路。到騎士森林後，四個方向出口那格，其中一個方向是騎士堡之路（沒有綠林大盜（robber）的方向機率較大）。
+建議邊走邊 #record，到了 #record save 騎士堡，下次 #goto 騎士堡 就能直接走。"""
+
+[[quest.steps]]
+title = "向亞瑟王學大地之斬"
+manual = true
+note = "找到亞瑟王（Arthur）後先 look arthur，再試 learn arthur earthslice（指令格式以遊戲說明為準），學會後 prac earthslice。把畫面給 Claude，之後會把這段改成自動。"
+
+[[quest.steps]]
+title = "學會之後"
+note = "確認學會、看剩下的記憶點數。之後練功把 kill_command 改成 \"ear\"，on_start 改成 [\"agg 0\"]。"
+do = ["practice"]

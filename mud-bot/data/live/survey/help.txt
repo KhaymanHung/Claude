@@ -1,0 +1,17 @@
+> help
+        你可以鍵入以下的標題得到更詳盡的資訊:
+
+        begin            新手上路.
+        mud_intro        MUD 簡介
+        void_intro       四度空間簡介
+        notice           最新情報,不看不可.
+        command / cmds   各種指令[新手必讀].
+        rule             本 mud 的遊戲規則,請遵守之.
+        setup            各項設定和說明[新手必讀].
+        map              各區域的地理位置圖.
+        area             各區域分類列表
+        quests           各種任務
+        wizlist          現役神族.
+        immortal         神族晉升辨法級守則.
+        channels         開關各種頻道。
+        thanx            感謝.

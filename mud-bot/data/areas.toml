@@ -1,0 +1,706 @@
+# 區域資料（由攻略整理）
+# route：從回城點出發的走法，寫法同解謎資料（/ 是回城、map2、map3 是捷徑）
+# [[hunt]] 是 #farm 用的練功設定：approach 是怎麼走到練功區，patrol 是在區域裡巡邏的路線
+#   攻略沒有寫巡邏路線，第一次去可以用 #record 記錄你自己走的路，存成 data/user_routes.toml
+
+# 常用捷徑，路線裡可以直接寫名稱
+[places]
+"/" = ["recall"]
+map2 = ["/3w4s", "talk wizard help"]   # 古代東方大陸（打工巫師）
+map3 = ["/3w3se", "look painting"]      # 西方大陸（博物館）
+
+# 可以用 rnote 傳送的房間：區域 → 房間名稱
+[rnote]
+"破壞神連結區" = ["梅塔-利卡那-國道"]
+"昆侖" = ["高石臺前"]
+"恐龍公園" = ["恐龍公園大門"]
+"古大陸" = ["終南山", "嵩山絕頂", "河北", "棧道曲折處"]
+"鞏恩城" = ["鞏恩城入口"]
+"凌雲窟" = ["大岩石之上"]
+"聖域" = ["巨路大道"]
+"酆都熱鬥篇" = ["破裂空間"]
+"布達拉宮" = ["廟前廣場"]
+"神秘高塔" = ["魔法高塔入口"]
+"襄陽" = ["城門外"]
+"魔谷" = ["魔谷入口處的路"]
+"睡美人" = ["荒廢小鎮"]
+"長安城" = ["光化門"]
+"愛神堡" = ["愛神堡入口"]
+"曼托爾城" = ["巨魔部落的大門"]
+"桃花村" = ["村莊入口"]
+"大理國" = ["城門口"]
+"創世紀" = ["大不列顛", "沙漠入口"]
+"企鵝村" = ["企鵝村的入口"]
+"金字塔" = ["東方大沙漠"]
+"黑地" = ["邪之要徑"]
+"亞斯本" = ["隱密的廢墟"]
+"騎士堡" = ["彎延小路的入口"]
+"五行世界" = ["五行之路"]
+"冒險野郎三" = ["東京市中心"]
+"風采之都" = ["市中心", "文化街尾", "醫生協會"]
+"艾莎尼亞" = ["花崗石大門"]
+
+[[area]]
+name = "矮人育嬰中心"
+level = "1-5"
+author = "Sandman"
+
+[[area]]
+name = "勇者學校"
+aliases = ["新手學校", "新勇者學校", "school"]
+level = "1-5"
+author = "Qing"
+route = ["/2sw2u"]
+note = "在市中心輸入 start 進入新手之旅，stage 1-5 依序過關可升到 Lv9，過關獎賞上帝武裝 (god vest)。學技能會扣記憶點數；Lv1 練習免費（可練到十分熟練）。各雕像教的技能見 data/statues.toml，用 #learn <技能> 自動去學。"
+
+[[area]]
+name = "小精靈村"
+aliases = ["精靈村", "smurf"]
+level = "1-10"
+author = "Generic"
+route = ["map3", "seeeennnnn"]
+note = "小精靈老爸 papa smurf 在 map3 → 4e 再往 n。"
+
+[[area]]
+name = "北方平原"
+level = "1-30"
+author = "Copper"
+
+[[area]]
+name = "玩具反斗城"
+level = "1-30"
+author = "Ronald"
+
+[[area]]
+name = "吉尼亞斯西邊森林"
+level = "5-15"
+author = "Diku"
+
+[[area]]
+name = "綠血小鬼之森"
+level = "5-20"
+author = "Copper"
+
+[[area]]
+name = "吉尼亞斯外圍平原"
+level = "5-25"
+author = "Alfa"
+
+[[area]]
+name = "新奧夫卡"
+level = "5-35"
+author = "Hatchet"
+note = "Lv36-55 推薦練功地點之一。"
+
+[[area]]
+name = "元素峽谷"
+aliases = ["element canyon", "元素"]
+level = "5-50"
+author = "Raff"
+route = ["map3", "s"]
+note = "Lv35-60 群攻天堂。look painting 後往 s，再往 e 走到底。有（白色聖光）的怪先不打，earthslice 群攻，遇到 5-6 隻怪時效率最高。帶大補丸、頭好壯壯（在 /ws 買）。沒怪時 recall 等 reborn、sleep 回 mana；看到「你感覺到周圍有點風吹草動.」代表怪已重生。"
+
+[[area]]
+name = "金字塔"
+level = "5-60"
+author = "Andi"
+note = "黃金殿堂：u n e u s d。"
+
+[[area]]
+name = "生菜沙拉王國"
+aliases = ["生菜沙拉", "生菜", "salad"]
+level = "8-25"
+author = "Corel"
+note = "從 / 往東走到底。森林中不能 recall，要找到水池；很耗 mv。水果蔬菜位置從 /5e2n 算起。"
+
+[[area]]
+name = "巨人洞穴"
+level = "10-15"
+author = "Merc"
+
+[[area]]
+name = "東方大沙漠"
+aliases = ["東方沙漠"]
+level = "10-20"
+author = "Anon"
+route = ["/5e2n2en4e2n2s3w3nenen3n6e"]
+note = "無謎。"
+
+[[area]]
+name = "泰洛市"
+aliases = ["thalos", "泰洛"]
+level = "10-25"
+author = "Anon"
+route = ["map3", "s6e3s3w"]
+note = "Lv12-24：beast、mimic、lizard。"
+
+[[area]]
+name = "矮人王國"
+aliases = ["dwarf", "矮人"]
+level = "10-25"
+author = "Anon"
+route = ["map3", "s5wnd2s"]
+note = "南方 Lv1-12：toy、dwarf、nanny、doll、bear（/3w3se look painting s5wnd2s）。北方 Lv29-44：guard、giant lizard、giant（/3w3se look painting s5wd3n）。"
+
+[[area]]
+name = "夢幻撲克王國"
+aliases = ["撲克王國", "撲克", "poker", "poke"]
+level = "10-30"
+author = "Vera"
+route = ["/6s2e4u"]
+note = "Lv10-20 只打黑桃兵 (spade)；Lv20-30 通殺，但依花色順序：黑桃 (spade) → 方塊 (diamond) → 紅心 (heart) → 梅花 (club)；jack、queen、king 等大型 mob 依黑桃 → 方塊 → 梅花 → 紅心。只能進不能出，recall 要走到最南（進來那格）。"
+
+[[area]]
+name = "聖魔森林"
+level = "10-35"
+author = "Alfa"
+
+[[area]]
+name = "龍塔"
+aliases = ["dragon tower"]
+level = "10-50"
+author = "Shuo"
+route = ["map3", "s9e3n5u2wu3e"]
+
+[[area]]
+name = "奧林帕斯山"
+aliases = ["奧林帕斯", "olympus"]
+level = "10-60"
+author = "Generic"
+translator = "ICTUS"
+route = ["/3w3s", "look painting", "s3e3n2w6n2u"]
+
+[[area]]
+name = "Ultima"
+aliases = ["ultima", "創世紀"]
+level = "10-60"
+author = "Gen"
+route = ["map3", "5sesesesd3s"]
+
+[[area]]
+name = "鞏恩城"
+level = "10-60"
+author = "Volvic"
+
+[[area]]
+name = "相聚一刻"
+aliases = ["一刻館", "ikkoku"]
+level = "15-25"
+author = "Chosen"
+route = ["/6w3n", "enter ikkoku"]
+note = "Lv10-20 推薦練功地點。"
+
+[[area]]
+name = "少林寺"
+aliases = ["shaolin"]
+level = "15-25"
+author = "Boom"
+route = ["map2", "9wswn2w2u"]
+note = "Lv24-29：monk、visitor、child。可向練功場的和尚學 tigerfist、bannofist，向醉和尚學 drunkfist。"
+
+[[area]]
+name = "神秘高塔"
+level = "15-50"
+author = "Shuo"
+
+[[area]]
+name = "蜀山劍俠"
+level = "20-60"
+author = "Cgh"
+
+[[area]]
+name = "雲空"
+level = "25-45"
+author = "Dylan"
+translator = "ICTUS"
+note = "Lv21-45 推薦練功地點；練 holy 升級時多打雲空和魔王迷宮。附近有空中閣樓。"
+
+[[area]]
+name = "恐龍公園"
+level = "25-50"
+author = "Uranus"
+
+[[area]]
+name = "曼托爾城"
+aliases = ["mahntor"]
+level = "25-60"
+author = "Chris"
+translator = "ICTUS"
+route = ["map3", "s6e4s2es2ed3ne4swse2sd5s"]
+
+[[area]]
+name = "十二星宮"
+aliases = ["polaris"]
+level = "30-50"
+author = "Doctor"
+note = "由奧林帕斯宙斯後方往上走，進入水晶球。"
+
+[[area]]
+name = "巨木林"
+level = "30-60"
+author = "Chosen"
+
+[[area]]
+name = "企鵝村"
+aliases = ["penguin"]
+level = "30-60"
+author = "Chosen"
+route = ["/13wds3w6n"]
+note = "Lv44-60：bird、cat、dog、flyman、tiger、bike、goat、master、daemon、pig、walker、akane、senbe、policeman、zai、millet、boar 等。解謎入口另見企鵝村解謎（/13wds3w4n）。水肥大王杜頓巴可以用來練凌波微步（不要攻擊他）。"
+
+[[area]]
+name = "魔谷"
+aliases = ["daemon"]
+level = "30-60"
+author = "Chosen"
+route = ["/13w3ne4nd"]
+
+[[area]]
+name = "蒙古草原"
+aliases = ["蒙古"]
+level = "30-60"
+author = "Suleen"
+route = ["map2", "3w3nen5e2s"]
+note = "Lv45-55 推薦練功地點之一。"
+
+[[area]]
+name = "大理國"
+aliases = ["大理"]
+level = "30-60"
+author = "OHIO"
+route = ["map2", "4w2s2w5sws2ws", "enter"]
+
+[[area]]
+name = "笑傲江湖之東方不敗篇"
+aliases = ["笑傲江湖", "東方不敗", "黑木崖"]
+level = "30-60"
+author = "Dely"
+route = ["map2", "4w2nw"]
+note = "enter hole 是東方不敗篇解謎、enter war 是黑木崖戰爭。"
+
+[[area]]
+name = "奕之國度"
+aliases = ["奕之王國", "chess"]
+level = "35-60"
+author = "Winwell"
+route = ["/3w3n2e2nen2d2ne2nwnwn2u4nu2e2se", "behold chess"]
+
+[[area]]
+name = "襄陽"
+aliases = ["xiangyang"]
+level = "35-60"
+author = "Chosen"
+route = ["map2", "5ws"]
+
+[[area]]
+name = "魔王迷宮"
+aliases = ["maze"]
+level = "40-60"
+author = "Corel"
+route = ["map3", "s6e7n"]
+note = "Lv46-55 推薦練功地點。"
+
+[[area]]
+name = "野蠻遊戲"
+aliases = ["jumanji"]
+level = "40-60"
+author = "Qer"
+route = ["map2", "n5ene", "search corner"]
+
+[[area]]
+name = "天界"
+aliases = ["heaven"]
+level = "45-60"
+author = "Vera"
+route = ["map2", "7w"]
+note = "Lv45-60，mob 等級 40-60 又多。往 n 走；往上到底後往 n 再到寶塔第二層有 mirror（str+1 hr+5 dr+5，nosave，好打）。可用 charm 抓童子 (retinue) 與日光、月光菩薩，group 起來讓牧師 gfull heal 無限循環。無謎。"
+
+[[area]]
+name = "絕情谷"
+level = "50-60"
+author = "Chosen"
+
+[[area]]
+name = "昆侖"
+level = "50-60"
+author = "Corel"
+
+[[area]]
+name = "布達拉宮"
+aliases = ["budala"]
+level = "50-60"
+author = "Corel"
+note = "襄陽往西走到底；解過崑崙謎後可傳送。"
+
+[[area]]
+name = "七龍珠"
+level = "50-60"
+author = "Yshuang"
+
+[[area]]
+name = "暗黑的破壞神魔道器篇"
+aliases = ["暗黑破壞神", "魔道器"]
+level = "50-60"
+author = "KOKKO"
+note = "吉雅尼斯城 → 5s2wne。"
+
+[[area]]
+name = "白霧森林"
+aliases = ["白霧"]
+level = "55-60"
+author = "Suleen"
+route = ["map3", "6e"]
+
+[[area]]
+name = "魔宮"
+level = "55-60"
+author = "Chosen"
+
+[[area]]
+name = "騎士堡"
+aliases = ["camelot"]
+level = "55-60"
+author = "Chosen"
+note = "路線很長：look painting 後一路往南到廢棄的港口，渡海找淺海海域，往西到北歐、往南到阿爾卑斯、往西過英吉利海峽再往北 join。現在可以請騎士 summon。"
+
+[[area]]
+name = "聖域"
+aliases = ["sanctuary"]
+level = "55-60"
+author = "Gen"
+route = ["map3", "s13w", "s2w2sws3wnw4n2wu"]
+
+[[area]]
+name = "桃花村"
+aliases = ["桃花"]
+level = "55-60"
+author = "Timon"
+route = ["map2", "c fly", "4w4s2e", "swim"]
+
+[[area]]
+name = "夢望城"
+level = "60"
+author = "Corel"
+route = ["map2", "4w"]
+note = "往南看到客棧後往西進雨林（迷宮）。"
+
+[[area]]
+name = "五行世界"
+aliases = ["五行"]
+level = "60"
+author = "Chosen"
+route = ["/3nw2nen3w2d3n2en2u2n2w"]
+note = "五行族適合練 dodge 和 agility（agg 0 聚集約五隻，十分鐘內可練到 99）。"
+
+[[area]]
+name = "亞斯本"
+aliases = ["aspen"]
+level = "60"
+author = "Chosen"
+note = "找未來計程車 give 20000 coins taxi，或請牧師傳送。"
+
+[[area]]
+name = "JOJO 冒險野郎第三部"
+aliases = ["jojo3"]
+level = "60"
+author = "Chosen"
+route = ["/3w5s", "board plane"]
+
+[[area]]
+name = "嚴流島"
+level = "60"
+author = "Winwell"
+
+[[area]]
+name = "黑地"
+level = "60"
+author = "Chosen"
+route = ["/7s2e"]
+note = "分三層：惡流、侍魂、風林火山，每層的路只能往前不能後退。先拿 13 把 key 再打天魔（旋天脛甲、二星龍珠）。"
+
+[[area]]
+name = "凌雲窟"
+aliases = ["firehole"]
+level = "60"
+author = "Qing"
+route = ["map2", "4w2s2w5sws2ws3e2n5enw2n2wnwnwn"]
+
+[[area]]
+name = "酆都熱鬥篇"
+aliases = ["酆都", "豐都熱鬥篇", "hell", "地獄"]
+level = "60"
+author = "Corel"
+note = "從絕情谷最裡面往下跳，或請牧師傳送。"
+
+[[area]]
+name = "愛神堡"
+aliases = ["cupid"]
+level = "60"
+author = "Timon"
+route = ["map2", "5wn3u"]
+
+[[area]]
+name = "三國演義 {黃巾之亂}"
+aliases = ["黃巾之亂", "sango1"]
+level = "60"
+author = "Macau"
+route = ["map2", "say 1"]
+
+[[area]]
+name = "三國演義 {赤壁之戰}"
+aliases = ["赤壁之戰", "sango2"]
+level = "60"
+author = "Macau"
+route = ["map2", "say 2"]
+
+[[area]]
+name = "礦坑"
+aliases = ["mine"]
+level = "60"
+author = "Gooder"
+note = "市中心往西走到底，共 20 層。"
+
+[[area]]
+name = "暗黑的破壞神忍者城篇"
+level = "60"
+author = "KOKKO"
+
+[[area]]
+name = "暗黑的破壞神武家屋敷篇"
+level = "60"
+author = "KOKKO"
+
+[[area]]
+name = "艾莎尼亞"
+aliases = ["愛莎尼亞", "isani"]
+level = "60"
+author = "Khshi"
+note = "往騎士堡的路上，[東南西北] 淺海海域這格 4w 後往北到底。"
+
+[[area]]
+name = "睡美人"
+aliases = ["sleeping beauty"]
+level = "60"
+author = "Ichen"
+note = "由風采之都的說書人前往。"
+
+[[area]]
+name = "雕像館"
+level = "ALL"
+author = "Joey"
+
+[[area]]
+name = "長安城"
+level = "ALL"
+author = "Warman"
+
+[[area]]
+name = "JoJo 冒險野郎"
+level = "ALL"
+author = "Chosen"
+
+[[area]]
+name = "吉尼南方近郊"
+level = "ALL"
+author = "Chosen"
+
+[[area]]
+name = "風采西方近郊"
+level = "ALL"
+author = "Chosen"
+
+[[area]]
+name = "風采北方近郊"
+level = "ALL"
+author = "Chosen"
+
+[[area]]
+name = "古大陸中"
+level = "ALL"
+author = "Chosen"
+
+[[area]]
+name = "SOGO 百貨"
+level = "ALL"
+author = "Winwell"
+
+[[area]]
+name = "風采之都"
+aliases = ["市中心", "/", "recall"]
+level = "ALL"
+author = "Qing"
+note = "回城點（recall 的地方）。路線裡的 / 就是這裡。"
+
+[[area]]
+name = "格鬥天堂"
+aliases = ["fight paradise", "paradiser", "戰鬥模擬室"]
+level = "ALL"
+author = "Qer"
+route = ["/3w2s5e2se", "open e", "e", "talk paradiser ok", "get key"]
+note = "Lv10-30 最有效率的練功場，共 12 間戰鬥模擬室，打完 [1] 換隔壁 [2]，依此類推。從 paradiser 處 2w2n3w6n → unlock d → open d 進入模擬室。Lv12 前用少林拳 (f saulin mob)，之後換羅漢拳 (f lohan mob)；打怪前先 agg 100。mob 等級＝編號×5＋5。"
+
+[[area]]
+name = "童話世界"
+level = "ALL"
+author = "Yshuang"
+
+[[area]]
+name = "傑克與魔豆"
+level = "ALL"
+author = "Yshuang"
+
+[[area]]
+name = "闇之陵"
+level = "ALL"
+author = "Cgh"
+
+[[area]]
+name = "吉雅尼斯王城"
+aliases = ["吉雅尼斯城", "吉尼亞斯", "吉雅妮斯"]
+level = "ALL"
+author = "Gen"
+note = "Lv55-60：珠寶商 (jeweller) 較安全；烘焙師父 (baker) 物攻約珠寶商 2-3 倍；巫師 (wizard)、梅傑特 (mayato) 法術猛（nuc 無 san 16xx-19xx）。"
+
+[[area]]
+name = "奇奇島"
+level = "ALL"
+author = "Bluesky"
+
+[[area]]
+name = "動物園"
+aliases = ["zoo"]
+level = "ALL"
+author = "Qing"
+note = "Lv1-5 練功處；絞殺一隻就能升到 lv2。"
+
+[[area]]
+name = "幫派總壇"
+level = "ALL"
+author = "Qing"
+
+[[area]]
+name = "Limbo"
+level = "NONE"
+author = "Diku"
+
+[[area]]
+name = "十二金釵"
+route = ["map2", "4w3se"]
+note = "可以在 5n3w4n3ene 買地圖。"
+
+[[area]]
+name = "闇的繼承者"
+aliases = ["smangel"]
+route = ["map3", "s7e9n", "walk inside"]
+
+[[area]]
+name = "科研中心"
+note = "企鵝村附近。"
+
+[[area]]
+name = "龍穴"
+route = ["/3nw2nen2d2ne2nwnwn2u3nnue2nd"]
+note = "要先解完龍塔。"
+
+[[area]]
+name = "五十一區"
+aliases = ["area51"]
+route = ["/5e2n3e5n2e6n3es"]
+
+[[area]]
+name = "哈爾比之家"
+route = ["/9w4sdw2nue3u"]
+note = "無謎，適合 baby 升級；有迷霧不可 recall，耗 mv。練 holy 的第二選擇：打死一隻 harpy 心地 +4。harpy 隊長身上有 scroll 和 potion。"
+
+[[area]]
+name = "西方沙漠"
+route = ["map3", "6s9e"]
+note = "無謎。"
+
+[[area]]
+name = "梅塔-利卡那森林"
+route = ["/3w3se", "look painting", "5s2wnenenen2n2w4n2wnw"]
+note = "暗黑破壞神的背景區域，無獨立解謎。"
+
+[[area]]
+name = "JOJO 冒險野郎第四部"
+aliases = ["jojo4"]
+route = ["/11w", "talk paradiser adv"]
+
+[[area]]
+name = "空中閣樓"
+note = "在雲空附近，打礦石的極佳場所。"
+
+[[area]]
+name = "異星球"
+note = "戰爭區域在風采之都和西郊。"
+
+[[hunt]]
+name = "矮人王國南"
+kill_command = "f saulin"   # Lv12 前用 f saulin，之後 f lohan；學會大地之斬後可改 "ear"
+on_start = ["agg 100"]
+area = "矮人王國"
+level = "1-12"
+targets = ["toy", "dwarf", "nanny", "doll", "bear"]
+approach = ["map3", "s5wnd2s"]
+patrol = []
+
+[[hunt]]
+name = "泰洛市"
+kill_command = "f lohan"   # Lv12 前用 f saulin，之後 f lohan；學會大地之斬後可改 "ear"
+on_start = ["agg 100"]
+area = "泰洛市"
+level = "12-24"
+targets = ["beast", "mimic", "lizard"]
+approach = ["map3", "s6e3s3w"]
+patrol = []
+
+[[hunt]]
+name = "少林寺"
+kill_command = "f lohan"   # Lv12 前用 f saulin，之後 f lohan；學會大地之斬後可改 "ear"
+on_start = ["agg 100"]
+area = "少林寺"
+level = "24-29"
+targets = ["monk", "visitor", "child"]
+approach = ["map2", "9wswn2w2u"]
+patrol = []
+
+[[hunt]]
+name = "矮人王國北"
+kill_command = "f lohan"   # Lv12 前用 f saulin，之後 f lohan；學會大地之斬後可改 "ear"
+on_start = ["agg 100"]
+area = "矮人王國"
+level = "29-44"
+targets = ["guard", "'giant lizard'", "giant"]
+approach = ["map3", "s5wd3n"]
+patrol = []
+
+[[hunt]]
+name = "企鵝村"
+kill_command = "f lohan"   # Lv12 前用 f saulin，之後 f lohan；學會大地之斬後可改 "ear"
+on_start = ["agg 100"]
+area = "企鵝村"
+level = "44-60"
+targets = ["bird", "cat", "dog", "flyman", "tiger", "bike", "goat", "master", "daemon", "pig", "walker", "akane", "senbe", "policeman", "zai", "millet", "boar"]
+approach = ["/13wds3w6n"]
+patrol = []
+
+[[hunt]]
+name = "撲克黑桃"
+kill_command = "f lohan"   # Lv12 前用 f saulin，之後 f lohan；學會大地之斬後可改 "ear"
+on_start = ["agg 100"]
+area = "夢幻撲克王國"
+level = "10-20"
+targets = ["spade"]
+approach = ["/6s2e4u"]
+patrol = []
+
+[[hunt]]
+name = "撲克通殺"
+kill_command = "f lohan"   # Lv12 前用 f saulin，之後 f lohan；學會大地之斬後可改 "ear"
+on_start = ["agg 100"]
+area = "夢幻撲克王國"
+level = "20-30"
+targets = ["spade", "diamond", "heart", "club"]
+approach = ["/6s2e4u"]
+patrol = []

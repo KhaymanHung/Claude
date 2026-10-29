@@ -1,0 +1,80 @@
+> spells all
+這個世上所存在的法術有:
+
+               armor           神靈呼喚術 記憶量: 20
+               bless           女神庇祐術 記憶量: 60
+           blindness               目盲術 記憶量: 15
+       burning hands               火臂術 記憶量: 25
+      call lightning             雷之招喚 記憶量: 60
+        charm person               攝心術 記憶量: 80
+         chill touch             寒霜之觸 記憶量: 25
+     continual light               光球術 記憶量: 5
+     control weather           呼風喚雨術 記憶量: 10
+         create food           製造食物術 記憶量: 5
+       create spring               造泉術 記憶量: 5
+        create water               造水術 記憶量: 5
+      cure blindness               復明術 記憶量: 20
+          cure light             輕度治療 記憶量: 5
+         cure poison               療毒術 記憶量: 20
+        cure serious             強力治療 記憶量: 5
+               curse               詛咒術 記憶量: 10
+         detect evil           偵測邪惡術 記憶量: 5
+       detect hidden           偵測藏匿術 記憶量: 50
+        detect invis           偵測隱形術 記憶量: 15
+        detect magic           偵測魔法術 記憶量: 5
+       detect poison           偵測毒性術 記憶量: 5
+        dispel magic           去除魔法術 記憶量: 60
+          earthquake               地震術 記憶量: 200
+      enchant weapon           加強武器術 記憶量: 180
+         faerie fire               碎甲術 記憶量: 40
+          faerie fog               顯像術 記憶量: 20
+            fireball               火球術 記憶量: 190
+         flamestrike               熾焰術 記憶量: 400
+                 fly               舞空術 記憶量: 30
+      giant strength             巨人之力 記憶量: 90
+                heal               治療術 記憶量: 65
+            identify               鑑定術 記憶量: 10
+         infravision               夜視術 記憶量: 15
+               invis               隱身術 記憶量: 30
+      know alignment               辯邪術 記憶量: 5
+      lightning bolt               轟雷落 記憶量: 150
+       locate object               定位術 記憶量: 10
+       magic missile               魔法彈 記憶量: 5
+          mass invis               全隱術 記憶量: 20
+            illusion             迷朦幻影 記憶量: 50
+           pass door               游離化 記憶量: 130
+              poison                 植毒 記憶量: 40
+          protection               聖佑術 記憶量: 30
+             refresh           補充體力術 記憶量: 20
+        remove curse           去除詛咒術 記憶量: 25
+           sanctuary                 聖光 記憶量: 210
+              shield                 氣盾 記憶量: 30
+               sleep               催眠術 記憶量: 40
+          stone skin           肌膚石化術 記憶量: 60
+              summon               召喚術 記憶量: 30
+            teleport               雲遊術 記憶量: 50
+       ventriloquate               腹語術 記憶量: 5
+              weaken             力之禁錮 記憶量: 15
+                lore               博識術 記憶量: 20
+         double heal           雙重治療術 記憶量: 230
+           full heal           完全治療術 記憶量: 400
+          extra heal           額外治療術 記憶量: 20
+           lifesteal               取魄術 記憶量: 60
+           soulsteal               勾魂術 記憶量: 150
+        nuclearblast               核爆術 記憶量: 700
+       remove nodrop           解除磁性術 記憶量: 30
+       recharge item               補充術 記憶量: 30
+             barrier           魔法結界術 記憶量: 20
+            paralyze               麻痺術 記憶量: 100
+      cure paralysis           治療麻痺術 記憶量: 20
+            holyaura           大至聖光芒 記憶量: 30
+     gcure blindness           群體復明術 記憶量: 5
+               gheal       群體強力治療術 記憶量: 15
+          gfull heal       群體恢復生命術 記憶量: 30
+         gextra heal       群體加強生命術 記憶量: 20
+         cross glory             十字光芒 記憶量: 50
+       polar sparkle             究極死光 記憶量: 100
+          dark space             闇黑結界 記憶量: 20
+        full refresh           體力復原術 記憶量: 80
+
+日蝕結束了。

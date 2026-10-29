@@ -1,0 +1,151 @@
+# ============================================================
+#  四度空間（MERC 2.2）練功與解謎助手 設定檔
+#  標記「TODO」的地方要依四度空間的實際內容修改
+#  攻略資料（區域、解謎、技能、裝備）在 data/ 資料夾，不在這個檔案
+#  正規表示式用單引號 '...'；單引號裡不能再放單引號，用 . 代替（例如 aren.t）
+# ============================================================
+
+[server]
+host = "void7777.ddns.net"   # 攻略上的位址；用模擬伺服器測試時改成 "127.0.0.1"
+port = 7777
+encoding = "cp950"        # Big5；若亂碼可改 "big5" 或 "utf-8"
+
+[bot]
+command_interval = 0.5    # 兩個指令之間至少間隔幾秒
+log_dir = "logs"
+data_dir = "data"         # 攻略資料的資料夾
+raw_log = true            # 另外記錄原始封包到 logs/*.raw.log（除錯用，密碼會遮住）
+
+# ------------------------------------------------------------
+#  自動登入：依序等待 prompt 出現就送出 send
+#  $user 會換成 username，$password 會換成啟動時輸入的密碼
+# ------------------------------------------------------------
+[login]
+enabled = true
+username = "runchar"             # TODO: 角色名稱
+
+[[login.steps]]
+prompt = "請輸入你在本遊戲中所使用的名字"   # 實際畫面：請輸入你在本遊戲中所使用的名字 ID NAME?
+send = "$user"
+
+[[login.steps]]
+prompt = "請輸入密碼"     # 實際畫面：請輸入密碼:
+send = "$password"
+
+[[login.steps]]
+prompt = "ENTER"          # 登入後若有「按 ENTER 繼續」之類的畫面會自動按 Enter；沒有也不影響
+send = ""
+
+# ------------------------------------------------------------
+#  狀態列：程式靠它知道 hp / mana / mv
+#  攻略建議在遊戲裡設定：prompt <生命%h/%H 法力%m/%M 移動力%v/%V 內力%p/%P>
+#  也支援攻略範例裡的 <4123/4123hp 1460/678mp 1582/2423mv 房間名> 格式
+#  最後一行是英文 score 的輸出，用來補抓最大值
+# ------------------------------------------------------------
+[status]
+patterns = [
+  '生命\s*(?P<hp>\d+)/(?P<maxhp>\d+)\s*法力\s*(?P<mana>\d+)/(?P<maxmana>\d+)\s*移動力\s*(?P<mv>\d+)/(?P<maxmv>\d+)(?:\s*內力\s*(?P<power>\d+)/(?P<maxpower>\d+))?',
+  '<(?P<hp>\d+)/(?P<maxhp>\d+)hp (?P<mana>\d+)/(?P<maxmana>\d+)mp (?P<mv>\d+)/(?P<maxmv>\d+)mv',
+  '<(?P<hp>\d+)/(?P<maxhp>\d+)hp (?P<mana>\d+)/(?P<maxmana>\d+)m (?P<mv>\d+)/(?P<maxmv>\d+)mv>',
+  '<(?P<hp>\d+)hp (?P<mana>\d+)m (?P<mv>\d+)mv>',
+  'You have (?P<hp>\d+)/(?P<maxhp>\d+) hit, (?P<mana>\d+)/(?P<maxmana>\d+) mana, (?P<mv>\d+)/(?P<maxmv>\d+) movement',
+]
+refresh = ["score"]       # 開始狩獵和升級時送出，用來更新最大值
+# 設定狀態列的完整指令，探索和狩獵開始前會送一次。不要只寫 prompt：不帶參數的 prompt 是開關，會把狀態列關掉
+prompt_command = "prompt <生命%h/%H 法力%m/%M 移動力%v/%V 內力%p/%P>"
+
+# ------------------------------------------------------------
+#  狩獵設定（#auto 用這裡的設定；#farm 會改用 data/areas.toml 的練功設定，
+#  但血量、休息、指令等規則仍然用這裡的）
+#  目前的 targets 和 path 對應模擬伺服器，實際練功時換掉
+# ------------------------------------------------------------
+[hunt]
+targets = ["goblin", "rat"]   # TODO: 怪物關鍵字（kill 後面接的字），排前面的先打
+approach = []                 # 從回城點走到練功區的路線（沿路不打怪），寫法同攻略，例如 ["map3", "s6e3s3w"]
+path = ["n", "n", "e"]        # 巡邏路線（每一格都會打怪）；空的 [] 表示原地清怪等重生
+# pingpong：走到底再原路走回來　loop：路線本身會繞回起點　recall：走到底就回城重來
+path_mode = "pingpong"
+start_with_recall = true
+on_start = []                 # 開始狩獵時先送的指令，例如 ["agg 100"]
+after_kill = ["get all corpse", "sacrifice corpse"]
+max_kills_per_room = 5        # 同一格同一種怪最多連續打幾隻
+
+flee_below = 0.3              # 戰鬥中血量低於 30% 就 flee
+after_flee = "recall"         # recall：回城重新走　stop：停止等你處理
+rest_hp_below = 0.5           # 移動前血量低於 50% 就休息
+rest_mv_below = 0.2           # 移動力低於 20% 就休息
+rest_mana_below = 0.0         # 法術系職業可設定，例如 0.3；0 表示不管 mana
+resume_above = 0.95           # 休息到 95% 再出發
+
+kill_command = "kill"         # 四度空間也可以用招式，例如 "f saulin"、"ear"（後面會接怪物關鍵字）
+flee_command = "flee"
+recall_command = "recall"
+rest_command = "sleep"        # 也可以用 "rest"
+wake_command = "wake"
+poll_command = ""             # 休息時定期送空行，讓伺服器回傳狀態列
+
+kill_wait = 4                 # kill 之後等幾秒看有沒有開打
+move_wait = 1.5               # 移動後等幾秒看有沒有錯誤訊息
+fight_timeout = 90            # 一場戰鬥超過幾秒就當作異常
+fight_quiet = 8               # 幾秒沒有戰鬥訊息就當作戰鬥結束
+rest_poll = 2                 # 休息時每幾秒看一次狀態列（越短，自然恢復間隔量得越準）
+max_rest = 900                # 最多休息幾秒
+max_recoveries = 5            # 連續回城重來幾次還不行就停止
+respawn_wait = 20             # 沒有巡邏路線時，清完一輪最多等幾秒再打（看到重生訊息會提早開始）
+
+# ------------------------------------------------------------
+#  遊戲訊息（MERC 2.2 英文預設值，加上攻略裡出現過的中文訊息）
+#  TODO: 四度空間是中文化的，請把實際看到的中文訊息用 | 加進去
+# ------------------------------------------------------------
+[messages]
+no_target = 'They aren.t here'
+not_attackable = 'You must MURDER a player|You hit yourself|Kill stealing|你對它根本沒轍'
+target_dead = 'is DEAD!!'
+died = 'You have been KILLED!!'
+# 任何一行戰鬥訊息（打到怪、被怪打）
+combat = '(?i)^(?=.*\byour?\b).*\b(attack|attacks|miss|misses|scratch|scratches|graze|grazes|hit|hits|injure|injures|wound|wounds|maul|mauls|decimate|decimates|devastate|devastates|maim|maims|mutilate|mutilates|disembowel|disembowels|dismember|dismembers|massacre|massacres|mangle|mangles)\b|\*\*\*|===|>>>|<<<'
+still_fighting = 'No way! +You are still fighting|You do the best you can'
+not_fighting = 'You aren.t fighting anyone'
+flee_ok = 'You flee from combat'
+flee_fail = 'PANIC! You couldn.t escape'
+no_exit = 'Alas, you cannot go that way|is closed|這個方向沒有路'
+exhausted = 'You are too exhausted|精疲力竭'
+sleeping = 'In your dreams, or what'
+recall_fail = 'forsaken you|You failed'
+exp = 'You receive (?P<n>\d+) experience points'
+level_up = 'You raise a level'
+respawn = '你感覺到周圍有點風吹草動'
+# 飢餓、口渴（2026-10-29 實測：你飢餓難耐、你口乾舌燥；喝泉水是「你覺得你不那麼渴了」）
+hungry = '你飢餓難耐|You are hungry'
+thirsty = '你口乾舌燥|You are thirsty'
+not_hungry = 'You are full|You are no longer hungry|吃飽'
+not_thirsty = 'You do not feel thirsty|You are no longer thirsty|不渴|喝飽'
+no_item = 'You do not have that|You don.t have that|你身上沒有|你沒有這樣東西'   # 「你找不到你想喝的東西」是泉水乾了，不算缺貨
+pager = '按\s*ENTER\s*繼續|\(c\)繼續顯示'   # 分頁提示，看到會自動按 Enter
+
+# ------------------------------------------------------------
+#  觸發器：狩獵開啟時，出現 pattern 就送出 send
+# ------------------------------------------------------------
+[[triggers]]
+name = "肚子餓"
+pattern = '^$never'           # 停用：飢餓改由下面的 [supplies] 處理
+send = []
+
+[[triggers]]
+name = "口渴"
+pattern = '^$never'           # 停用：口渴改由下面的 [supplies] 處理
+send = []
+
+# ------------------------------------------------------------
+#  補給：狩獵或探索時，飢餓、口渴就自動吃喝；身上沒有了就回城購買
+#  新角色身上沒有錢（score 顯示 0 美拉），建議 Lv1 時在勇者學校向冒險者雕像
+#  免費學 create food、create water、create spring（Lv1 practice 不花記憶點數），用法術補給
+# ------------------------------------------------------------
+[supplies]
+enabled = true
+eat = ["cast 'create food'", "get food", "eat food"]   # 實測：變出「乾糧/magic food」在地上，要先撿起來（法力 20）
+drink = ["cast 'create spring'", "drink spring", "drink spring", "drink spring", "drink spring", "drink spring"]   # 實測：變出「飲水機/spring」，不能撿、過一會兒會乾掉，所以連喝幾口（法力 20）
+# 有錢之後改成用買的，例如 eat = ["eat bread"]、drink = ["drink skin"]，再設定下面三項
+shop_route = ["/ws"]          # 商店路線（攻略：/ws 可以買大補丸、頭好壯壯）
+buy = []                      # 購買指令，例如 ["buy 5 大補丸", "buy 頭好壯壯"]；空的表示不自動購買
+after_buy = []                # 買完要做的事，例如 ["fill skin fountain"]

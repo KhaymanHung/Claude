@@ -1,0 +1,2824 @@
+# 技能與法術資料（由攻略整理）
+# memory 記憶量、delay 協調性損耗、cycle 等待指令週期、gain_* 練到 99 增加的上限、cost_mana 施法花費
+# 數值為 "?" 表示攻略缺資料
+
+exclusive = ["bare fist 拳力 ←→ soleslash 獨孤九劍", "blitz 閃電奇襲式 ←→ hunt 獵殺、swordmaster 劍訣", "heavyslice 狂暴砍 ←→ aid 準確攻擊、two weapon 雙手持劍法", "two weapon 雙手持劍法 ←→ swordmaster 劍訣、kaioken 界王拳", "swordmaster 劍訣 ←→ kamekameha 龜派氣功、reflexion 乾坤大挪移", "spellmaster 魔力加持 ←→ manamaster 法力加持 ←→ time power 子午大法", "ejinjing 易筋經 ←→ okra power 葵花寶典、evilslash 辟邪劍法"]
+
+[[skill]]
+en = "ejinjing"
+zh = "易筋經"
+kind = "skill"
+group = "拳法"
+memory = 200
+delay = 0
+cycle = 0
+gain_hp = 0
+gain_mana = 0
+gain_mv = 0
+gain_power = 350
+desc = "易筋經，傳說中，中國少林寺失傳己久的高深內功，學習此內功的呼吸吐納之法，可以脫胎換骨，加速生命力的恢復。"
+
+[[skill]]
+en = "reflexion"
+zh = "乾坤大挪移"
+kind = "skill"
+group = "拳法"
+memory = 400
+delay = 25
+cycle = 8
+gain_hp = 50
+gain_mana = 0
+gain_mv = 0
+gain_power = 50
+requires = "ejinjing（max power > 1200）"
+desc = "乾坤大挪移，傳說中來自波斯古國的武功心法。可以利用巧妙的手法，將對手的的攻擊，反加諸於對手的身上。是種「以彼之道，還諸彼之身」的神秘功夫。"
+
+[[skill]]
+en = "bare fist"
+zh = "拳力"
+kind = "skill"
+group = "拳法"
+memory = 150
+delay = 25
+cycle = 0
+gain_hp = 0
+gain_mana = 0
+gain_mv = 0
+gain_power = 30
+desc = "拳力，學會此一技能之後將會加強在戰鬥中徒手之攻擊威力。"
+
+[[skill]]
+en = "kamekameha"
+zh = "龜派氣功"
+kind = "skill"
+group = "拳法"
+memory = 300
+delay = "?"
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+gain_power = "?"
+requires = "bare fist + ejinjing"
+desc = "龜派氣功，為武天老師的得意技之一，發功時將全身之氣集於雙掌之中，再一股作氣向敵人打去，內力愈強則威力愈大。"
+
+[[skill]]
+en = "gankitama"
+zh = "元氣玉"
+kind = "skill"
+group = "拳法"
+memory = 400
+delay = "?"
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+gain_power = "?"
+requires = "kamekameha"
+desc = "元氣玉，可將天地之間所有生命力聚集在自己的身上，而向敵人發出致命的一擊，唯其威力將視個人之內力修為而有所不同。"
+
+[[skill]]
+en = "kaioken"
+zh = "界王拳"
+kind = "skill"
+group = "拳法"
+memory = 600
+delay = "?"
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+gain_power = "?"
+requires = "gankitama"
+desc = "界王拳，可將自己的速度及力量在短時間內爆發到極限，以發揮驚人的傷害力，唯其增益之多寡將隨內力之不同而有所改變。"
+
+[[skill]]
+en = "saulinfist"
+zh = "少林長拳"
+kind = "skill"
+group = "拳法"
+memory = 100
+delay = 30
+cycle = 8
+gain_hp = 50
+gain_mana = 0
+gain_mv = 30
+gain_power = 50
+desc = "少林長拳，為少林寺之入門拳法，也是眾多拳法之基本拳法，威力雖不強卻也相當重要。"
+
+[[skill]]
+en = "lohanfist"
+zh = "羅漢拳"
+kind = "skill"
+group = "拳法"
+memory = 150
+delay = 40
+cycle = 8
+gain_hp = 100
+gain_mana = 0
+gain_mv = 40
+gain_power = 70
+requires = "saulinfist + bare fist"
+desc = "羅漢拳，拳法家的基本武功，是少林一派的拳法，使得不使用任何武器的拳法家，仍然可以具有高度的傷害力。"
+
+[[skill]]
+en = "tigerfist"
+zh = "伏虎拳"
+kind = "skill"
+group = "拳法"
+memory = 250
+delay = 50
+cycle = 8
+gain_hp = 150
+gain_mana = 0
+gain_mv = 20
+gain_power = 100
+requires = "lohanfist"
+teacher = "少林寺練功弟子"
+quest = "shaolin"
+
+[[skill]]
+en = "bannofist"
+zh = "般若掌"
+kind = "skill"
+group = "拳法"
+memory = 300
+delay = 60
+cycle = 8
+gain_hp = 200
+gain_mana = 0
+gain_mv = 50
+gain_power = 120
+requires = "tigerfist"
+teacher = "少林寺練功弟子"
+quest = "shaolin"
+desc = "般若掌，少林寺七十二絕技之一，欲練此功須有當相的少林功夫基礎，在根基深厚的條件之下，才能發揮出此功之精髓。"
+
+[[skill]]
+en = "handsfist"
+zh = "大慈大悲千手式"
+kind = "skill"
+group = "拳法"
+memory = 400
+delay = 60
+cycle = 8
+gain_hp = 250
+gain_mana = 0
+gain_mv = 80
+gain_power = 180
+requires = "bannofist"
+desc = "大慈大悲千手式，相傳為少林寺之空相大師所創，為一少林寺之上乘武學其威力雖然不比大力金剛指，可也一般人能練得起來的。"
+
+[[skill]]
+en = "kingonfinger"
+zh = "大力金剛指"
+kind = "skill"
+group = "拳法"
+memory = 300
+delay = 60
+cycle = 8
+gain_hp = 250
+gain_mana = 0
+gain_mv = 50
+gain_power = 150
+requires = "handsfist"
+desc = "大力金剛指，少林七十二絕技之一，必須有少林基本功的基礎才有可能練成，不過一般的少林弟子也是與此絕技無緣，只有極少數的人才能練成，一旦練成其威力將無與倫比。"
+
+[[skill]]
+en = "wushangfinger"
+zh = "無相劫指"
+kind = "skill"
+group = "拳法"
+memory = 200
+delay = 60
+cycle = 8
+gain_hp = 300
+gain_mana = 0
+gain_mv = 60
+gain_power = 180
+requires = "kingonfinger"
+desc = "無相劫指，為少林寺之最上乘武學，其威力來自於將己身之雜念完全摒除，心眼頓開，便可將自身之全力擊向敵人最弱之處。"
+
+[[skill]]
+en = "cometfist"
+zh = "天馬流星拳"
+kind = "skill"
+group = "拳法／額外非系統拳法"
+memory = 200
+delay = 60
+cycle = 11
+gain_hp = 300
+gain_mana = 0
+gain_mv = 120
+gain_power = 100
+requires = "max hp > 1800, max power > 1000"
+desc = "天馬流星拳，拳術家的絕招之一。傳說中來自聖鬥士的必殺技。能爆發你體內的小宇宙在極短時間內發出極多拳招。也因此，用這個拳招將會耗損你不少的體力。"
+
+[[skill]]
+en = "sadfist"
+zh = "黯然消魂掌"
+kind = "skill"
+group = "拳法／額外非系統拳法"
+memory = 200
+delay = 40
+cycle = 8
+gain_hp = 250
+gain_mana = 0
+gain_mv = 0
+gain_power = 200
+requires = "lohanfist, max hp > 1500, max power > 1000"
+teacher = "僻地楊過"
+teacher_note = "解過襄陽才能學"
+quest = "xiangyang"
+desc = "黯然消魂掌，這套掌法是一套發揮人類潛能的掌法。為一中原武術，共有十七式。當你的 HP 大於 200 時，即可使用，每次扣除 200 點 HP。這套掌法的特性是當你的生命力愈低時，使用出來的威力愈大。乃是神雕大俠楊過所創的招式。意即心情愈沉重，掌力愈強之意。"
+
+[[skill]]
+en = "dragonfist"
+zh = "降龍十八掌"
+kind = "skill"
+group = "拳法／額外非系統拳法"
+memory = 150
+delay = 60
+cycle = 13
+gain_hp = 100
+gain_mana = 0
+gain_mv = 0
+gain_power = 200
+requires = "max power > 800"
+teacher = "襄陽郭靖"
+teacher_note = "解過襄陽才能學；學習時要戴面具"
+quest = "xiangyang"
+desc = "中國古老的武技。傳說中丐幫的鎮幫之寶。屬於極為剛猛的招式。共有十八式。故稱為降龍十八掌。掌力雄渾無儔。但練習的過程亦極為辛苦。"
+
+[[skill]]
+en = "ictus"
+zh = "六脈神劍"
+kind = "skill"
+group = "拳法／額外非系統拳法"
+memory = 300
+delay = 65
+cycle = 13
+gain_hp = 150
+gain_mana = 0
+gain_mv = 0
+gain_power = 250
+requires = "wushangfinger, max power > 1500"
+usage = "ictus；ictus <victim>"
+desc = "六脈神劍，神州南方大理段家之絕世武功，集全身內力於雙手指尖，隔空對敵人產生傷害。此外為避免阻礙內力的運行，出招時必須卸除雙手上的所有防具，此招內力耗損頗大；攻擊威力依擊中次數遞增，但命中率將遞減。"
+
+[[skill]]
+en = "stun"
+zh = "點穴"
+kind = "skill"
+group = "拳法／額外非系統拳法"
+memory = 200
+delay = 25
+cycle = 8
+gain_hp = 0
+gain_mana = 0
+gain_mv = 0
+gain_power = 50
+requires = "kingonfinger, max power > 800"
+usage = "stun <victim>"
+desc = "點穴，失傳己久的中國武技絕學，能以一指之力制住對手的要害，而讓對手動彈不得，使出此技能時必須空出雙手，而且也必須具有相當的內力。"
+
+[[skill]]
+en = "drunkfist"
+zh = "醉拳"
+kind = "skill"
+group = "拳法／額外非系統拳法"
+memory = 150
+delay = "?"
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+gain_power = "?"
+teacher = "少林寺喝醉的師父"
+quest = "shaolin"
+desc = "醉拳，相傳為清末蘇乞兒之獨門拳法，共有八式，又有人稱為醉八仙，在使出此拳法時必須在半醉的狀態之下方能發揮它最大的威力，故而引以為名。"
+
+[[skill]]
+en = "evilslash"
+zh = "辟邪劍法"
+kind = "skill"
+group = "劍法"
+memory = 300
+delay = "?"
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+gain_power = "?"
+desc = "辟邪劍法，為一詭譎多變之劍法，習此劍法之人將會陰陽怪氣，不過其劍法犀利無比，在葵花寶典的魔功之下將可發揮駭人的殺傷力。"
+
+[[skill]]
+en = "okra power"
+zh = "葵花寶典"
+kind = "skill"
+group = "劍法"
+memory = 500
+delay = "?"
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+gain_power = "?"
+desc = "葵花寶典，相傳為一宮中宦官所創之絕世魔功，其後為少林方丈紅葉禪師所得，不過由於是魔功故禪師並未練成，但後又被華山弟子岳肅及蔡子峰偷學，而演變成為氣宗及劍宗兩派，學此魔功必須先泯滅人性，方能魔功大成。"
+
+[[skill]]
+en = "mountainslash"
+zh = "茅山劍法"
+kind = "skill"
+group = "劍法"
+memory = 25
+delay = 10
+cycle = 6
+gain_hp = 40
+gain_mana = 0
+gain_mv = 0
+gain_power = 30
+
+[[skill]]
+en = "swordmaster"
+zh = "劍訣"
+kind = "skill"
+group = "劍法"
+memory = 300
+delay = 25
+cycle = 0
+gain_hp = 0
+gain_mana = 0
+gain_mv = 0
+gain_power = 100
+desc = "劍訣，為用劍者最高之心法，習得此法後，方可將自身所學之劍法發揮到爐火純青之境界，而且亦將劍人合一，不容易被人擊落手中之劍。"
+
+[[skill]]
+en = "shadowslash"
+zh = "虛影劍法"
+kind = "skill"
+group = "劍法"
+memory = 50
+delay = 10
+cycle = 6
+gain_hp = 50
+gain_mana = 0
+gain_mv = 80
+gain_power = 30
+desc = "虛影劍法，利用快速的劍式來擾亂對手的視覺，而攻其不備，有較高的命中率，但是威力並不大。"
+
+[[skill]]
+en = "fusislash"
+zh = "伏羲劍法"
+kind = "skill"
+group = "劍法"
+memory = 150
+delay = 15
+cycle = 6
+gain_hp = 70
+gain_mana = 0
+gain_mv = 150
+gain_power = 70
+requires = "shadowslash"
+desc = "伏羲劍法，相傳為上古時代炎帝伏羲氏所創之劍法，因為時代久遠，故有許多招式都不甚完整，只留下一些基本的招式。"
+
+[[skill]]
+en = "shanyanslash"
+zh = "玄陽劍法"
+kind = "skill"
+group = "劍法"
+memory = 250
+delay = 25
+cycle = 7
+gain_hp = 80
+gain_mana = 0
+gain_mv = 250
+gain_power = 140
+requires = "fusislash + swordmaster"
+desc = "玄陽劍法，玄陽者黑火也，即此劍法之精髓，劍行如黑色火焰般之奇巧詭譎，讓人捉摸不定。"
+
+[[skill]]
+en = "chunshislash"
+zh = "沖虛劍法"
+kind = "skill"
+group = "劍法"
+memory = 250
+delay = 30
+cycle = 8
+gain_hp = 100
+gain_mana = 0
+gain_mv = 300
+gain_power = 200
+requires = "shanyanslash"
+desc = "沖虛劍法，即謙沖自牧，虛懷若谷之意，劍法保守，外人不易探得虛實，因此其劍招亦難以令人捉摸。"
+
+[[skill]]
+en = "twoyislash"
+zh = "兩儀劍法"
+kind = "skill"
+group = "劍法"
+memory = 400
+delay = 35
+cycle = 8
+gain_hp = 200
+gain_mana = 0
+gain_mv = 350
+gain_power = 300
+requires = "chunshislash"
+desc = "兩儀劍法，相傳為娥嵋派所創之劍法，取兩儀生四象，四象生八卦，八卦生萬物之意，劍招綿延不絕，生生不息。"
+
+[[skill]]
+en = "taigislash"
+zh = "太極劍法"
+kind = "skill"
+group = "劍法"
+memory = 450
+delay = 45
+cycle = 9
+gain_hp = 300
+gain_mana = 0
+gain_mv = 500
+gain_power = 380
+requires = "twoyislash"
+desc = "太極劍法，為武當派開山之祖——張三丰所創之劍技，取法太極故以「無極無我」為至高境界，當用劍者將太極之精神發揮至淋漓盡致之時，此劍法將展現其無窮的威力。"
+
+[[skill]]
+en = "flowerslash"
+zh = "狂花劍法"
+kind = "skill"
+group = "劍法／額外非系統劍法"
+memory = 200
+delay = 50
+cycle = 10
+gain_hp = 250
+gain_mana = 0
+gain_mv = 150
+gain_power = 140
+requires = "max move > 800"
+desc = "狂花劍法，是劍術家的絕技之一，乃以迅雷不及掩耳的速度，在劍光閃閃的氣勢之下，以劍氣來傷敵，但是用這個劍招將會扣損你的移動力。而且你也必須具有相當的移動力才能施出這六招連綿齊出的劍技。"
+
+[[skill]]
+en = "soleslash"
+zh = "獨孤九劍"
+kind = "skill"
+group = "劍法／額外非系統劍法"
+memory = 500
+delay = "?"
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+gain_power = "?"
+requires = "flowerslash"
+desc = "獨孤九劍，乃劍魔——獨孤求敗——所創之超凡劍技，獨孤九劍，有進無退，招招都是進攻，故敵人不得不守，出招者當然無須顧及防守。"
+
+[[skill]]
+en = "bloomslash"
+zh = "天女散花"
+kind = "skill"
+group = "劍法／額外非系統劍法"
+memory = 150
+delay = 45
+cycle = 11
+gain_hp = 200
+gain_mana = 0
+gain_mv = 150
+gain_power = 120
+requires = "max power > 1000"
+desc = "天女散花，為一群體性的攻擊劍法，可對面前所有敵人產生傷害。"
+
+[[skill]]
+en = "girlslash"
+zh = "玉女劍法"
+kind = "skill"
+group = "劍法／額外非系統劍法"
+memory = 150
+delay = 50
+cycle = 14
+gain_hp = 200
+gain_mana = 0
+gain_mv = 150
+gain_power = 120
+requires = "max move > 1200"
+teacher = "絕情谷小龍女"
+teacher_note = "學完再對小龍女 say 是"
+quest = "xiangyang"
+desc = "玉女劍法，此劍法必須由情投意合之男女二人同時出招方可見其威力，在單有一人的情況下是無法使出此招的。"
+
+[[skill]]
+en = "fireslash"
+zh = "火之魔劍"
+kind = "skill"
+group = "劍法／魔法劍"
+memory = 25  # 2026-10-29 實測（攻略寫 50）
+delay = 25
+cycle = 12
+gain_hp = 90
+gain_mana = 60
+gain_mv = 60
+gain_power = 80
+requires = "shanyanslash + fireball"
+desc = "火之魔劍，乃是魔法劍的一種，必須在劍招和魔法的相互配合之下才能發揮其威力，而此劍技會讓出招者發出帶著高熱火球的強烈狠劈。"
+
+[[skill]]
+en = "flameslash"
+zh = "焰之魔劍"
+kind = "skill"
+group = "劍法／魔法劍"
+memory = 50  # 2026-10-29 實測（攻略寫 100）
+delay = 35
+cycle = 12
+gain_hp = 120
+gain_mana = 100
+gain_mv = 100
+gain_power = 120
+requires = "fireslash + flamestrike"
+teacher = "黑地闇之賢者／魔法高塔夏雅"
+teacher_note = "夏雅要先解完她的一件事"
+desc = "焰之魔劍，乃是魔法劍的一種，必須在劍招和魔法的相互配合之下才能發揮其威力，而此劍式一出劍身將化作一道火柱撲向敵人。"
+
+[[skill]]
+en = "nuclearslash"
+zh = "核變魔劍"
+kind = "skill"
+group = "劍法／魔法劍"
+memory = 75  # 2026-10-29 實測（攻略寫 150）
+delay = 50
+cycle = 12
+gain_hp = 200
+gain_mana = 200
+gain_mv = 200
+gain_power = 160
+requires = "flameslash + nuclearblast"
+teacher = "魔法高塔夏雅"
+teacher_note = "要解完夏雅的一件事"
+desc = "核變魔劍，乃是魔法劍的一種，必須在劍招和魔法的相互配合之下才能發揮其威力，使用此技將會觸發核反應而引起威力強大的核爆。"
+
+[[skill]]
+en = "lifeslash"
+zh = "奪命魔劍"
+kind = "skill"
+group = "劍法／魔法劍"
+memory = 100  # 2026-10-29 實測（攻略寫 200）
+delay = 35
+cycle = 12
+gain_hp = 150
+gain_mana = 100
+gain_mv = 100
+gain_power = 120
+requires = "fireslash + lifesteal"
+desc = "奪命魔劍，乃是魔法劍的一種，必須在劍招和魔法的相互配合之下才能發揮其威力，劍體將在魔力的驅使之下變成一把嗜血的武器，吸取中劍者的生命力。"
+
+[[skill]]
+en = "soulslash"
+zh = "魂竊魔劍"
+kind = "skill"
+group = "劍法／魔法劍"
+memory = 100  # 2026-10-29 實測（攻略寫 260）
+delay = 50
+cycle = 12
+gain_hp = 150
+gain_mana = 50
+gain_mv = 100
+gain_power = 120
+requires = "lifeslash + soulsteal"
+desc = "魂竊魔劍，乃是魔法劍的一種，必須在劍招和魔法的相互配合之下才能發揮其威力，使用此招將會讓手中的劍成為一把會吸取中劍者精力的武器。"
+
+[[skill]]
+en = "thunderslash"
+zh = "雷光電劍"
+kind = "skill"
+group = "劍法／魔法劍"
+memory = 80  # 2026-10-29 實測（攻略寫 150）
+delay = 40
+cycle = 12
+gain_hp = 150
+gain_mana = 150
+gain_mv = 120
+gain_power = 150
+requires = "shanyanslash + lightning bolt"
+teacher = "魔法高塔夏雅"
+teacher_note = "要解完夏雅的一件事（爆雷魔劍）"
+desc = "雷光電劍，乃是魔法劍的一種，必須在劍招和魔法的相互配合之下才能發揮其威力，此劍技一出大地雷鳴，而敵人也將受落雷所傷。"
+
+[[skill]]
+en = "dodge"
+zh = "閃躲"
+kind = "skill"
+group = "戰士技能"
+memory = 100
+delay = 25
+cycle = 0
+gain_hp = 20
+gain_mana = 0
+gain_mv = 50
+gain_power = 0
+desc = "閃躲，此技能將會讓你閃躲掉對方的攻擊，使你不受任何的傷害。"
+
+[[skill]]
+en = "aid"
+zh = "準確攻擊"
+kind = "skill"
+group = "戰士技能"
+memory = 150
+delay = 25
+cycle = 0
+gain_hp = 50
+gain_mana = 0
+gain_mv = 60
+gain_power = 20
+requires = "dodge"
+desc = "準確攻擊。戰士系在正式格鬥中十分重要的技能。在戰鬥中，被你的對手躲避會使你的攻擊落空。擁有這項技能，可以降低被你的對手躲避的機會，可以說是十分實用的技能。"
+
+[[skill]]
+en = "agility"
+zh = "輕功"
+kind = "skill"
+group = "戰士技能"
+memory = 300
+delay = "?"
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+gain_power = "?"
+requires = "dodge"
+desc = "輕功，乃練功者將其體內之氣向上提昇，而使全身飄然，在戰鬥之中也較易閃過敵人的攻擊。"
+
+[[skill]]
+en = "outdo waver"
+zh = "凌波微步"
+kind = "skill"
+group = "戰士技能"
+memory = 300
+delay = "?"
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+gain_power = "?"
+requires = "agility"
+teacher = "五行世界的金元素（小金）"
+teacher_note = "需完成五行世界"
+quest = "five-elements"
+desc = "凌波微步，為逍遙派之獨門輕功，練此功者不但身輕如燕而且將可在戰鬥之中快速的改變身法，令敵人捉摸不定。可以閃躲過怪物的特殊攻擊。"
+
+[[skill]]
+en = "parry"
+zh = "格檔"
+kind = "skill"
+group = "戰士技能"
+memory = 200
+delay = 25
+cycle = 0
+gain_hp = 130
+gain_mana = 0
+gain_mv = 25
+gain_power = 30
+requires = "dodge"
+desc = "格擋，學得此技能後，將可在戰鬥之中以武器化解掉敵人的攻擊。"
+
+[[skill]]
+en = "disarm"
+zh = "卸除武器"
+kind = "skill"
+group = "戰士技能"
+memory = 200
+delay = 25
+cycle = 8
+gain_hp = 0
+gain_mana = 0
+gain_mv = 0
+gain_power = 30
+requires = "parry"
+usage = "disarm <victim>"
+desc = "卸除武裝，乃是一項可將敵人手上的武器擊落的戰鬥技巧，在使用時右手也必須裝備著武器。"
+
+[[skill]]
+en = "block"
+zh = "左手格檔"
+kind = "skill"
+group = "戰士技能"
+memory = 250
+delay = 25
+cycle = 0
+gain_hp = 150
+gain_mana = 0
+gain_mv = 0
+gain_power = 30
+requires = "parry"
+desc = "使用左手的盾來格檔敵人的攻擊。但是具有雙手劍技能的職業在左手有武器時，也可以使用這個技能。這個技能在戰鬥中會自動使用。"
+
+[[skill]]
+en = "rescue"
+zh = "解救"
+kind = "skill"
+group = "戰士技能"
+memory = 100
+delay = 20
+cycle = 8
+gain_hp = 200
+gain_mana = 0
+gain_mv = 25
+gain_power = 20
+requires = "block"
+usage = "rescue <victim>"
+desc = "解救，將 victim 所受的所有攻擊都轉成為自己來承受，是一項燃燒自己照亮別人的技能。"
+
+[[skill]]
+en = "enhanced damage"
+zh = "加強破壞"
+kind = "skill"
+group = "戰士技能"
+memory = 100
+delay = 25
+cycle = 0
+gain_hp = 30
+gain_mana = 0
+gain_mv = 0
+gain_power = 30
+desc = "加強破壞，學會此技巧之後，在戰鬥中將更能掌握武器的使用方法而造成更大的傷害力。"
+
+[[skill]]
+en = "heavyslice"
+zh = "狂暴砍"
+kind = "skill"
+group = "戰士技能"
+memory = 250
+delay = 25
+cycle = 0
+gain_hp = 100
+gain_mana = 0
+gain_mv = 0
+gain_power = 30
+requires = "enhanced damage + block"
+desc = "狂暴砍，在戰鬥中，你的對手隨時可能以武器或是盾牌來阻擋你的攻擊，但是如果你學會了這項技能。將會使你的對手，因為承受不了你巨大的力量。而失去了抵擋的能力。"
+
+[[skill]]
+en = "two weapon"
+zh = "雙手持劍法"
+kind = "skill"
+group = "戰士技能"
+memory = 600
+delay = 25
+cycle = 0
+gain_hp = 100
+gain_mana = 0
+gain_mv = 0
+gain_power = 0
+requires = "enhanced damage"
+desc = "雙手劍，這個技能可以使得你具有雙手持劍的本領，且在一回合之內，左右手的武器都可以傷害敵人。"
+
+[[skill]]
+en = "earthslice"
+zh = "大地之斬"
+kind = "skill"
+group = "戰士技能"
+memory = 250
+delay = 30
+cycle = 10
+gain_hp = 180
+gain_mana = 0
+gain_mv = 200
+gain_power = 0
+usage = "earthslice <victim>"
+teacher = "騎士堡亞瑟王"
+quest = "camelot"
+desc = "大地之斬，使用此技的勇者，將武器用力撞擊地面，造成敵人受到地震的侵害，是個相當不錯的群體攻擊技能。"
+
+[[skill]]
+en = "windslice"
+zh = "風嘯之斬"
+kind = "skill"
+group = "戰士技能"
+memory = 300
+delay = 75
+cycle = 50
+gain_hp = 350
+gain_mana = 0
+gain_mv = 300
+gain_power = 0
+requires = "earthslice + two weapon"
+teacher = "騎士堡亞瑟王"
+teacher_note = "解過 Ultima 才能學"
+quest = "ultima"
+desc = "風嘯之斬，一個比美風之靈動的劍法，運用全身的力量，一次爆發六次攻擊……將會耗盡體力，但也由於體力不支，必須要延遲一段時間方能再出手。這個技能除了內力外不扣除任何點數。"
+
+[[skill]]
+en = "second attack"
+zh = "二段突刺"
+kind = "skill"
+group = "戰士技能"
+memory = 100
+delay = 25
+cycle = 0
+gain_hp = 50
+gain_mana = 0
+gain_mv = 30
+gain_power = 0
+desc = "多段攻擊，學過此技能之後將會讓人在戰鬥中更能利用時機，而給予敵人更多次的打擊。"
+
+[[skill]]
+en = "third attack"
+zh = "三段突刺"
+kind = "skill"
+group = "戰士技能"
+memory = 150
+delay = 25
+cycle = 0
+gain_hp = 100
+gain_mana = 0
+gain_mv = 50
+gain_power = 0
+requires = "second attack"
+desc = "多段攻擊，學過此技能之後將會讓人在戰鬥中更能利用時機，而給予敵人更多次的打擊。"
+
+[[skill]]
+en = "blitz"
+zh = "閃電奇襲式"
+kind = "skill"
+group = "戰士技能"
+memory = 250
+delay = 25
+cycle = 0
+gain_hp = 160
+gain_mana = 0
+gain_mv = 100
+gain_power = 0
+requires = "third attack"
+desc = "閃電奇襲，學此技能可在戰鬥之中將自己的速度狂飆到極點而擊出多次連打，重創敵人。"
+
+[[skill]]
+en = "hunt"
+zh = "獵殺"
+kind = "skill"
+group = "戰士技能"
+memory = 250
+delay = 25
+cycle = 8
+gain_hp = 250
+gain_mana = 0
+gain_mv = 100
+gain_power = 0
+requires = "third attack"
+usage = "hunt <victim> 設定獵殺對象"
+desc = "hunt 解除獵殺 可怕的獵殺技能，使用此技可以在對方脫逃之時，馬上追趕過去，正是斬草除根。當被你獵殺的敵人走到你所在的房間之間，你亦會主動的開啟戰鬥，並且先行出手。"
+
+[[skill]]
+en = "throw"
+zh = "武器投射"
+kind = "skill"
+group = "戰士技能"
+memory = 50
+delay = 25
+cycle = 6
+gain_hp = 30
+gain_mana = 0
+gain_mv = 0
+gain_power = 0
+usage = "throw <victim>"
+desc = "武器投射，學得此投巧之後可將手中的「武器」向敵人丟射，所造成的傷害力，依各人的 Dr 來計算，唯投射出去的武器將會消失不見，切記！"
+
+[[skill]]
+en = "darting"
+zh = "暗器"
+kind = "skill"
+group = "戰士技能"
+memory = 150
+delay = "?"
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+gain_power = "?"
+requires = "throw"
+usage = "darting weapon <victim>"
+desc = "暗器，為中原武術之獨門絕技，可趁敵人之不備施放暗器，攻其要害，不過若敵人過於機敏則將失敗。"
+
+[[skill]]
+en = "shoot"
+zh = "射擊"
+kind = "skill"
+group = "戰士技能"
+memory = 600  # 2026-10-29 實測（攻略寫 800）
+delay = 20
+cycle = 5
+gain_hp = 100
+gain_mana = 0
+gain_mv = 0
+gain_power = 0
+usage = "SHOOT <victim>"
+desc = "射擊，當你使用射擊這個技能的時候，你的右手必須拿著射擊用的武器，而且武器必須搭載著彈藥或是箭。射擊和你自身的 dr 無關。強度是決定在射擊武器的威力。這是槍手強大的技能之一。參考: LOADMISSILE、UNLOADMISSILE"
+
+[[skill]]
+en = "buttock"
+zh = "過肩摔"
+kind = "skill"
+group = "戰士技能"
+memory = 200
+delay = 30
+cycle = 14
+gain_hp = 0
+gain_mana = 0
+gain_mv = 80
+gain_power = 0
+usage = "buttock"
+desc = "過肩摔，一種特殊的格鬥技巧，唯戰鬥中方能使用，使用成功後將使對手行動延緩，而相對增加自己攻擊的機會。"
+
+[[skill]]
+en = "scan"
+zh = "搜查"
+kind = "skill"
+group = "戰士技能"
+memory = 10
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 0
+gain_mv = 0
+gain_power = 0
+desc = "這個冒險者專屬的技能，可以用來掃描你四周的敵人，但僅限於一個房間的距離。建議你在危險的區域，在移動前，先用 scan 來調查四周的情況。參考: SPY"
+
+[[skill]]
+en = "pick lock"
+zh = "開鎖"
+kind = "skill"
+group = "小偷技能"
+memory = 20
+delay = 0
+cycle = 12
+gain_hp = 0
+gain_mana = 0
+gain_mv = 20
+gain_power = 0
+
+[[skill]]
+en = "peek"
+zh = "窺視"
+kind = "skill"
+group = "小偷技能"
+memory = 100
+delay = 0
+cycle = 5
+gain_hp = 0
+gain_mana = 0
+gain_mv = 40
+gain_power = 0
+requires = "pick lock"
+desc = "窺視，這個技能會使你在看別人時，順便看看對方身上所有攜帶的物品。這個技能當你學會之後系統會在你看別人的時候，就自動將別人身上的東西都顯示出來。"
+
+[[skill]]
+en = "steal"
+zh = "偷竊"
+kind = "skill"
+group = "小偷技能"
+memory = 30
+delay = 25
+cycle = 12
+gain_hp = 0
+gain_mana = 0
+gain_mv = 70
+gain_power = 0
+requires = "peek"
+usage = "STEAL coins <victim>；STEAL <object> <victim>"
+desc = "偷竊，讓你能在別人不注意時，竊取他身上的東西或是金錢，不過如果失敗了也必須負出當相大的代價。"
+
+[[skill]]
+en = "hide"
+zh = "藏匿"
+kind = "skill"
+group = "小偷技能"
+memory = 250
+delay = 0
+cycle = 8
+gain_hp = 100
+gain_mana = 0
+gain_mv = 100
+gain_power = 0
+requires = "steal"
+usage = "hide"
+desc = "藏匿，此技能將可使你善於利用地形及地物作掩蔽，而使一般人看不見你，也無法查覺到你存在。"
+
+[[skill]]
+en = "pretend"
+zh = "偽裝"
+kind = "skill"
+group = "小偷技能"
+memory = 50
+delay = 0
+cycle = 12
+gain_hp = 0
+gain_mana = 0
+gain_mv = 0
+gain_power = 0
+requires = "hide"
+usage = "pretend <victim> 偽裝成 victim"
+desc = "pretend 解除偽裝 偽裝術，當你使用偽裝術之後，別人將無法分辨你和被你偽裝的對象，可以用來欺敵。"
+
+[[skill]]
+en = "sneak"
+zh = "潛行"
+kind = "skill"
+group = "小偷技能"
+memory = 250
+delay = 0
+cycle = 8
+gain_hp = 150
+gain_mana = 0
+gain_mv = 100
+gain_power = 0
+requires = "hide"
+usage = "SNEAK"
+desc = "潛行，此技巧讓你在進出房間時能無聲無息而不被一般人所發覺，趁敵人不備而予以痛擊。"
+
+[[skill]]
+en = "spy"
+zh = "偵查"
+kind = "skill"
+group = "小偷技能"
+memory = 50
+delay = 0
+cycle = 10
+gain_hp = 0
+gain_mana = 0
+gain_mv = 50
+gain_power = 0
+requires = "sneak + scan"
+usage = "SPY"
+desc = "這個技能可以用來偵查你四周的玩家或者是 mob。和 SCAN 不同的是，其距離長達三個房間，可以更清楚的了解四周的環境。"
+
+[[skill]]
+en = "backstab"
+zh = "背刺"
+kind = "skill"
+group = "小偷技能"
+memory = 900
+delay = 55
+cycle = 14
+gain_hp = 450
+gain_mana = 0
+gain_mv = 100
+gain_power = 0
+requires = "sneak"
+usage = "bs <victim>"
+desc = "從敵人的背後使用致命的背刺，這項技能會使你的對手遭受到極為可怕的傷害，尤其學習過 BS POWER 的人，更能發揮背刺的威力，在你的對手睡著或是看不見你的時候，背刺將具有更強的殺傷力。參考 BS POWER。"
+
+[[skill]]
+en = "bs power"
+zh = "加強背刺"
+kind = "skill"
+group = "小偷技能"
+memory = 700
+delay = 0
+cycle = 0
+gain_hp = 200
+gain_mana = 0
+gain_mv = 0
+gain_power = 0
+requires = "backstab"
+teacher = "騎士堡強盜頭子"
+desc = "這是一項加強背刺威力的技能，能在使用背刺傷害對手的一剎那，使破壞力巨增。"
+
+[[skill]]
+en = "piercy"
+zh = "剌瞎"
+kind = "skill"
+group = "小偷技能"
+memory = 100
+delay = 35
+cycle = 10
+gain_hp = 0
+gain_mana = 0
+gain_mv = 50
+gain_power = 0
+requires = "backstab"
+usage = "piercy <victim>"
+desc = "刺割，此技能讓你能在戰鬥中以手中可行刺之武器刺向敵的雙眼而照成敵人的失明。"
+
+[[skill]]
+en = "abscond"
+zh = "遁逃術"
+kind = "skill"
+group = "小偷技能"
+memory = 120
+delay = 20
+cycle = 8
+gain_hp = 50
+gain_mana = 0
+gain_mv = 150
+gain_power = 0
+requires = "backstab + dodge"
+usage = "abscond；abscond <direction>"
+desc = "東洋忍術中的隱遁術。可自由決定所要脫逃的方向，但是所有不可進入的地方依然不可進入，屬於強力的脫逃術。"
+
+[[skill]]
+en = "benumb"
+zh = "迷香術"
+kind = "skill"
+group = "小偷技能"
+memory = 120
+delay = 0
+cycle = 10
+gain_hp = 0
+gain_mana = 0
+gain_mv = 50
+gain_power = 0
+requires = "backstab"
+usage = "benumb <obj> <direction>"
+desc = "施迷香，可以向隔壁房間施迷香(obj)。但失敗時會波及自己所在的房間。"
+
+[[skill]]
+en = "daub poison"
+zh = "抹毒術"
+kind = "skill"
+group = "小偷技能"
+memory = 60
+delay = 0
+cycle = 12
+gain_hp = 0
+gain_mana = 0
+gain_mv = 0
+gain_power = 0
+requires = "backstab"
+usage = "daub <poison>"
+desc = "東洋忍術中的抹毒術。可以將毒藥塗抹在手中的武器上，但失敗時自己會中毒。經過塗抹過的武器，在戰鬥時將可對敵人造成毒害，但離開遊戲後其上的毒性將會自動消失。"
+
+[[skill]]
+en = "assail"
+zh = "奇襲術"
+kind = "skill"
+group = "小偷技能"
+memory = 140  # 2026-10-29 實測（攻略寫 150）
+delay = 35
+cycle = 12
+gain_hp = 80
+gain_mana = 0
+gain_mv = 50
+gain_power = 0
+requires = "backstab"
+
+[[skill]]
+en = "time power"
+zh = "子午大法"
+kind = "skill"
+group = "道士技能"
+memory = 800
+delay = 0
+cycle = 0
+gain_hp = 0
+gain_mana = 180
+gain_mv = 0
+gain_power = 0
+requires = "enchant weapon + teleport"
+desc = "子午大法，為修道人之上乘心法，習得此心法之後，將可在正午或子夜之時吸納天地日月之精華，並化為己身之精神力。"
+
+[[skill]]
+en = "barter"
+zh = "五鬼運財術"
+kind = "skill"
+group = "道士技能"
+memory = 30
+delay = 0
+cycle = 0
+gain_hp = 0
+gain_mana = 50
+gain_mv = 0
+gain_power = 0
+requires = "time power"
+desc = "五鬼運財術，古代道士的專有技巧，可將藉由咒語將屍體內剩餘的靈力轉換成金錢。"
+
+[[skill]]
+en = "makescroll"
+zh = "煉符咒"
+kind = "skill"
+group = "道士技能"
+memory = 30
+delay = 0
+cycle = 12
+gain_hp = 0
+gain_mana = 0
+gain_mv = 150
+gain_power = 0
+requires = "time power + identify"
+usage = "makescroll <法術名稱>"
+desc = "畫符術，這一個失傳已久的茅山術，源自於中國古代道士，可以將所學的法術藉由畫符術，記錄於符咒之上。你可以使用 recite 這個指令來使用符咒。"
+
+[[skill]]
+en = "changjunslash"
+zh = "全真劍法"
+kind = "skill"
+group = "道士技能"
+memory = 100  # 2026-10-29 實測（攻略寫 30）
+delay = 25
+cycle = 8
+gain_hp = 60
+gain_mana = 0
+gain_mv = 0
+gain_power = 200
+requires = "time power + mountainslash"
+desc = "全真劍法，相傳為全真教掌門丘處機所創，因其乃是依照北斗七星之方位而創，故可將人封於其中而無法動彈。"
+
+[[skill]]
+en = "plowslash"
+zh = "天罡北斗陣"
+kind = "skill"
+group = "道士技能"
+memory = 50  # 2026-10-29 實測（攻略寫 30）
+delay = 60
+cycle = 12
+gain_hp = 150
+gain_mana = 0
+gain_mv = 0
+gain_power = 250
+requires = "changjunslash"
+teacher = "孔明或周瑜（第二陣法以上）"
+teacher_note = "陣法第一層的熟練：int 30／wis 30 成功一次加 9"
+quest = "sango2"
+desc = "天罡北斗陣法，七名熟悉此劍陣的人將可組成的此一強勢劍陣，只要七人合作無間使可發揮強大的威力。"
+
+[[skill]]
+en = "charmcorpse"
+zh = "操屍術"
+kind = "skill"
+group = "道士技能"
+memory = 50
+delay = 0
+cycle = 12
+gain_hp = 0
+gain_mana = 120
+gain_mv = 0
+gain_power = 0
+requires = "time power + charm person"
+usage = "charmcorpse <n.corpse> 或 charmcorpse corpse"
+desc = "趕屍，相傳在中國湘西一帶，道士可以利用法力，驅使屍體聽其號令。而此技能便是使屍體變成殭屍，而聽令於你。"
+
+[[skill]]
+en = "chaodu"
+zh = "超渡"
+kind = "skill"
+group = "道士技能"
+memory = 80
+delay = 0
+cycle = 12
+gain_hp = 0
+gain_mana = 120
+gain_mv = 0
+gain_power = 0
+requires = "charmcorpse"
+usage = "chaodu <n.corpse>"
+desc = "超渡大法。犧牲自己的內力及法力，可將屍體傳送回地藏廟。唯失敗時屍體有損傷之虞，使用時務需小心。"
+
+[[skill]]
+en = "manamaster"
+zh = "法力加持"
+kind = "skill"
+group = "牧師技能"
+memory = 850
+delay = 0
+cycle = 0
+gain_hp = 0
+gain_mana = 150
+gain_mv = 0
+gain_power = 0
+requires = "full heal + sanctuary"
+desc = "法力加持，藉由宗教上的信仰和神的力量，將本身的法力提昇，天神也會因為信仰者的忠誠而在宗教奉獻時提昇奉獻者之精神力。"
+
+[[skill]]
+en = "self-blast"
+zh = "自爆"
+kind = "skill"
+group = "牧師技能"
+memory = 1
+delay = 60
+cycle = 8
+gain_hp = -1000
+gain_mana = 0
+gain_mv = 0
+gain_power = 0
+requires = "manamaster"
+
+[[skill]]
+en = "spellmaster"
+zh = "魔力加持"
+kind = "skill"
+group = "巫師技能"
+memory = 850
+delay = 0
+cycle = 0
+gain_hp = 0
+gain_mana = 180
+gain_mv = 0
+gain_power = 0
+requires = "nuclearblast"
+desc = "魔力加持，此技能乃為魔法師在施用多次魔法之後所領悟到的，習得此技之後魔法的威力將更加強大，且花費較少之精神力。"
+
+[[skill]]
+en = "armor"
+zh = "神靈呼喚術"
+kind = "spell"
+group = "防禦輔助系"
+memory = 20
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 35
+gain_mv = 0
+cost_mana = 30
+usage = "cast armor <character>"
+desc = "神靈呼喚，施用此術將獲得天神之庇祐而增強防禦力 20 點。"
+
+[[skill]]
+en = "shield"
+zh = "氣盾"
+kind = "spell"
+group = "防禦輔助系"
+memory = 30
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 45
+gain_mv = 0
+cost_mana = 40
+requires = "armor"
+usage = "cast shield"
+desc = "這些法術將會降低施法者的防護等級(AC)。SHIELD 將會降低 20 點防護等級。STONE SKIN 將會降低 40 點防護等級。"
+
+[[skill]]
+en = "giant strength"
+zh = "巨人之力"
+kind = "spell"
+group = "防禦輔助系"
+memory = 90
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 75
+gain_mv = 0
+cost_mana = 70
+requires = "shield"
+usage = "cast 'giant strength' <character>"
+desc = "巨人之力，此法術會暫時使施法者的肌肉韌性加強，而擁有更大的力量。"
+
+[[skill]]
+en = "stone skin"
+zh = "肌膚石化術"
+kind = "spell"
+group = "防禦輔助系"
+memory = 60
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 90
+gain_mv = 0
+cost_mana = 80
+requires = "shield"
+usage = "cast 'stone skin'"
+desc = "這些法術將會降低施法者的防護等級(AC)。SHIELD 將會降低 20 點防護等級。STONE SKIN 將會降低 40 點防護等級。"
+
+[[skill]]
+en = "barrier"
+zh = "魔法結界術"
+kind = "spell"
+group = "防禦輔助系"
+memory = 20
+delay = 0
+cycle = 9
+gain_hp = 0
+gain_mana = 120
+gain_mv = 0
+cost_mana = 100
+requires = "stone skin + spellmaster"
+usage = "cast barrier <victim>"
+desc = "魔法結界，此一法術可以在被施法者身旁形成一魔法結界，而此一魔法結界一旦張開將可有機率性地替被施法者擋去所有的攻擊性法術。"
+
+[[skill]]
+en = "bless"
+zh = "女神庇祐術"
+kind = "spell"
+group = "祝福防護系"
+memory = 60
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 40
+gain_mv = 0
+cost_mana = 50
+usage = "cast bless <character>"
+desc = "女神庇祐，此法術將會增加命中率，及一些攻擊性法術的抵抗力。"
+
+[[skill]]
+en = "remove curse"
+zh = "去除詛咒術"
+kind = "spell"
+group = "祝福防護系"
+memory = 25
+delay = 15
+cycle = 8
+gain_hp = 0
+gain_mana = 30
+gain_mv = 0
+cost_mana = 30
+requires = "bless"
+usage = "cast 'remove curse' <character>"
+desc = "去除詛咒術，此一法術將會除去施在一個人身上的詛咒。"
+
+[[skill]]
+en = "protection"
+zh = "聖佑術"
+kind = "spell"
+group = "祝福防護系"
+memory = 30
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 60
+gain_mv = 0
+cost_mana = 50
+requires = "bless"
+usage = "cast protection"
+desc = "聖祐術，將會使「邪惡的生物」對你所造成的傷害，減少一定的程度。"
+
+[[skill]]
+en = "sanctuary"
+zh = "聖光"
+kind = "spell"
+group = "祝福防護系"
+memory = 210
+delay = 0
+cycle = 10
+gain_hp = 0
+gain_mana = 120
+gain_mv = 0
+cost_mana = 100
+requires = "protection"
+usage = "cast sanctuary <character>"
+desc = "聖光術，在聖靈庇祐之下，將可使外來之所有傷害均威力減半。"
+
+[[skill]]
+en = "holyaura"
+zh = "大至聖光芒"
+kind = "spell"
+group = "祝福防護系"
+memory = 30
+delay = 0
+cycle = 10
+gain_hp = 0
+gain_mana = 220
+gain_mv = 0
+cost_mana = 200
+requires = "sanctuary + manamaster"
+usage = "cast holyaura <character>"
+desc = "大至聖光芒，此一法術將會對施法者所在團體內之所有隊員披上聖光，為一整體性法術。"
+
+[[skill]]
+en = "curse"
+zh = "詛咒術"
+kind = "spell"
+group = "詛咒削弱系"
+memory = 10
+delay = 15
+cycle = 8
+gain_hp = 0
+gain_mana = 35
+gain_mv = 0
+cost_mana = 30
+usage = "cast 'curse' <character>"
+desc = "詛咒術，此一法術將會減少被施法者的命中率和抵抗魔法的威力。而且會使得這個人無法被萬能的神看到，而無法將他傳送回來。"
+
+[[skill]]
+en = "weaken"
+zh = "力之禁錮"
+kind = "spell"
+group = "詛咒削弱系"
+memory = 15
+delay = 15
+cycle = 8
+gain_hp = 0
+gain_mana = 50
+gain_mv = 0
+cost_mana = 50
+requires = "curse"
+usage = "cast weaken <victim>"
+desc = "力之禁錮，此一法術成功，可使敵人之部分力量受到封印而無法使出全力。"
+
+[[skill]]
+en = "blindness"
+zh = "目盲術"
+kind = "spell"
+group = "詛咒削弱系"
+memory = 15
+delay = 15
+cycle = 8
+gain_hp = 0
+gain_mana = 50
+gain_mv = 0
+cost_mana = 50
+requires = "curse"
+usage = "cast blindness <victim>"
+desc = "目盲術，此法術將可使敵人之視力暫時喪失。"
+
+[[skill]]
+en = "poison"
+zh = "植毒"
+kind = "spell"
+group = "詛咒削弱系"
+memory = 40
+delay = 15
+cycle = 8
+gain_hp = 0
+gain_mana = 90
+gain_mv = 0
+cost_mana = 80
+requires = "curse + detect poison"
+usage = "cast poison <victim>"
+desc = "植毒，此一法術可將毒素植入敵人的體內，使其痛不堪而力量驟減，並且也將使其回復能力減弱。"
+
+[[skill]]
+en = "faerie fire"
+zh = "碎甲術"
+kind = "spell"
+group = "詛咒削弱系"
+memory = 40
+delay = 10
+cycle = 8
+gain_hp = 0
+gain_mana = 60
+gain_mv = 0
+cost_mana = 50
+requires = "curse"
+usage = "cast 'faerie fire' <victim>"
+desc = "這個法術是用來增加被施法者的防護等級。增加的等級數和施法者的等級有關。等級愈高增加的愈多。"
+
+[[skill]]
+en = "dispel magic"
+zh = "去除魔法術"
+kind = "spell"
+group = "詛咒削弱系"
+memory = 60
+delay = 10
+cycle = 8
+gain_hp = 0
+gain_mana = 30
+gain_mv = 0
+cost_mana = 25
+requires = "faerie fire + detect magic"
+usage = "cast 'dispel magic' <character>"
+desc = "解咒術，這個法術將會解除被施法者身上的一些魔法影響。這個法術如果用在怪物的身上則是一種主動攻擊的法術，如果是用同伴的身上則是一種仁慈的行為。"
+
+[[skill]]
+en = "sleep"
+zh = "催眠術"
+kind = "spell"
+group = "詛咒削弱系"
+memory = 40
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 75
+gain_mv = 0
+cost_mana = 70
+requires = "curse"
+usage = "cast sleep <victim>"
+desc = "催眠術，此一法術將可使得你使用的對象陷入熟睡狀態。"
+
+[[skill]]
+en = "charm person"
+zh = "攝心術"
+kind = "spell"
+group = "詛咒削弱系"
+memory = 80
+delay = 25
+cycle = 8
+gain_hp = 0
+gain_mana = 120
+gain_mv = 0
+cost_mana = 120
+requires = "sleep"
+usage = "cast 'charm person' <victim>"
+desc = "攝心術，這個法術如果成功可以使得被施法的人會聽你的話。你可以 ORDER 來命令他作一些事。你必須對被你所馴服的人的行為負責，相反的如果別人砍了被你馴服的人，他一樣要接受懲罰。"
+
+[[skill]]
+en = "control weather"
+zh = "呼風喚雨術"
+kind = "spell"
+group = "天候飛行系"
+memory = 10
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 30
+gain_mv = 0
+cost_mana = 30
+usage = "cast 'control weather' better；cast 'control weather' worse"
+desc = "這個法術可以控制天氣的好壞。"
+
+[[skill]]
+en = "fly"
+zh = "舞空術"
+kind = "spell"
+group = "天候飛行系"
+memory = 30
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 80
+gain_mv = 150
+cost_mana = 75
+requires = "control weather"
+usage = "cast 'fly' <character>"
+desc = "舞空術，此一法術可使施法者飄然凌空，漫步於天上。"
+
+[[skill]]
+en = "call lightning"
+zh = "雷之招喚"
+kind = "spell"
+group = "天候飛行系"
+memory = 60
+delay = 25
+cycle = 10
+gain_hp = 90
+gain_mana = 60
+gain_mv = 0
+cost_mana = 50
+requires = "control weather"
+usage = "cast 'call lightning'"
+desc = "雷之招喚，此法術必須要在室外，而且當時的天氣要是很差的天氣才可以，此法術一旦成功將會借助閃電之力使敵人受傷。"
+
+[[skill]]
+en = "lightning bolt"
+zh = "轟雷落"
+kind = "spell"
+group = "天候飛行系"
+memory = 150  # 2026-10-29 實測（攻略寫 60）
+delay = 30
+cycle = 11
+gain_hp = 120
+gain_mana = 80
+gain_mv = 0
+cost_mana = 75
+requires = "call lightning"
+usage = "cast 'lightning bolt' <victim>"
+desc = "轟雷落，一施此法天地驟然變色，晴天霹靂，怒雷將以雷霆萬鈞之勢劈向敵人。"
+
+[[skill]]
+en = "create water"
+zh = "造水術"
+kind = "spell"
+group = "創造系"
+memory = 5
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 15
+gain_mv = 0
+cost_mana = 10
+usage = "cast 'create water' <drink-container>"
+desc = "造水術，這個法術將會製造出一些水裝你所指定的容器裝滿。"
+
+[[skill]]
+en = "create food"
+zh = "製造食物術"
+kind = "spell"
+group = "創造系"
+memory = 5
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 25
+gain_mv = 0
+cost_mana = 20
+requires = "create water"
+usage = "cast 'create food' <string>"
+desc = "製造食物，這個法術會製造出名為 <string> 的食物。"
+
+[[skill]]
+en = "create spring"
+zh = "造泉術"
+kind = "spell"
+group = "創造系"
+memory = 5
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 25
+gain_mv = 0
+cost_mana = 20
+requires = "create water"
+usage = "cast 'create spring'"
+desc = "造泉術，這個法術會製造出水源。"
+
+[[skill]]
+en = "continual light"
+zh = "光球術"
+kind = "spell"
+group = "創造系"
+memory = 5
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 30
+gain_mv = 0
+cost_mana = 25
+requires = "create spring + create food"
+usage = "cast 'continual light'"
+desc = "光球術，這個法術將會製造出一只照明用具。"
+
+[[skill]]
+en = "cure light"
+zh = "輕度治療"
+kind = "spell"
+group = "治療系"
+memory = 5
+delay = 3
+cycle = 8
+gain_hp = 15
+gain_mana = 7
+gain_mv = 0
+cost_mana = 5
+usage = "cast 'cure light' <character>"
+desc = "這些法術將可以對傷者作一些低程度的治療。"
+
+[[skill]]
+en = "cure serious"
+zh = "強力治療"
+kind = "spell"
+group = "治療系"
+memory = 5  # 2026-10-29 實測（攻略寫 8）
+delay = 3
+cycle = 8
+gain_hp = 30
+gain_mana = 15
+gain_mv = 0
+cost_mana = 12
+requires = "cure light"
+usage = "cast 'cure serious' <character>"
+desc = "這些法術將可以對傷者作一些低程度的治療。"
+
+[[skill]]
+en = "refresh"
+zh = "補充體力術"
+kind = "spell"
+group = "治療系"
+memory = 20
+delay = 10
+cycle = 8
+gain_hp = 0
+gain_mana = 25
+gain_mv = 50
+cost_mana = 20
+requires = "cure serious"
+usage = "cast refresh <character>"
+desc = "這個法術將會恢復一個人的移動力。"
+
+[[skill]]
+en = "cure poison"
+zh = "療毒術"
+kind = "spell"
+group = "治療系"
+memory = 20
+delay = 0
+cycle = 9
+gain_hp = 20
+gain_mana = 50
+gain_mv = 0
+cost_mana = 40
+requires = "cure serious + detect poison"
+usage = "cast 'cure poison' <character>"
+desc = "療毒術，此法術可中和你體內的毒素。"
+
+[[skill]]
+en = "cure blindness"
+zh = "復明術"
+kind = "spell"
+group = "治療系"
+memory = 20
+delay = 10
+cycle = 8
+gain_hp = 20
+gain_mana = 50
+gain_mv = 0
+cost_mana = 40
+requires = "cure serious"
+usage = "cast 'cure blindness' <character>"
+desc = "復明術，此一法術可治療瞎了的眼睛。"
+
+[[skill]]
+en = "cure paralysis"
+zh = "治療麻痺術"
+kind = "spell"
+group = "治療系"
+memory = 20
+delay = 20
+cycle = 8
+gain_hp = 30
+gain_mana = 50
+gain_mv = 0
+cost_mana = 50
+requires = "cure blindness"
+usage = "cast 'cure paralysis' <victim>"
+desc = "消麻術，此一法術可解除被施法者所受的麻痺術。"
+
+[[skill]]
+en = "gcure blindness"
+zh = "群體復明術"
+kind = "spell"
+group = "治療系"
+memory = 5
+delay = 20
+cycle = 10
+gain_hp = 25
+gain_mana = 80
+gain_mv = 0
+cost_mana = 75
+requires = "cure blindness + manamaster"
+usage = "cast 'gcure blindness' <victim>"
+desc = "此法術可解除施法者所在團體內所有人員的疾病。為群體性的治療性法術。"
+
+[[skill]]
+en = "heal"
+zh = "治療術"
+kind = "spell"
+group = "治療系"
+memory = 65
+delay = 15
+cycle = 8
+gain_hp = 50
+gain_mana = 75
+gain_mv = 0
+cost_mana = 60
+requires = "cure serious"
+usage = "cast heal <character>"
+desc = "這些法術將可以對被施法者作一些高程度的治療。EXTRA HEAL 則會額外增加被施法者的生命力。"
+
+[[skill]]
+en = "double heal"
+zh = "雙重治療術"
+kind = "spell"
+group = "治療系"
+memory = 230
+delay = 30
+cycle = 10
+gain_hp = 120
+gain_mana = 120
+gain_mv = 0
+cost_mana = 100
+requires = "heal"
+usage = "cast 'double heal' <character>"
+desc = "這些法術將可以對被施法者作一些高程度的治療。EXTRA HEAL 則會額外增加被施法者的生命力。"
+
+[[skill]]
+en = "full heal"
+zh = "完全治療術"
+kind = "spell"
+group = "治療系"
+memory = 400
+delay = 0
+cycle = 11
+gain_hp = 250
+gain_mana = 150
+gain_mv = 0
+cost_mana = 140
+requires = "double heal"
+usage = "cast 'full heal' <character>"
+desc = "這些法術將可以對被施法者作一些高程度的治療。EXTRA HEAL 則會額外增加被施法者的生命力。"
+
+[[skill]]
+en = "extra heal"
+zh = "額外治療術"
+kind = "spell"
+group = "治療系"
+memory = 20
+delay = 0
+cycle = 10
+gain_hp = 120
+gain_mana = 150
+gain_mv = 0
+cost_mana = 100
+requires = "full heal + manamaster"
+usage = "cast 'extra heal' <character>"
+desc = "這些法術將可以對被施法者作一些高程度的治療。EXTRA HEAL 則會額外增加被施法者的生命力。"
+
+[[skill]]
+en = "gheal"
+zh = "群體強力治療術"
+kind = "spell"
+group = "治療系"
+memory = 15
+delay = 20
+cycle = 9
+gain_hp = 120
+gain_mana = 120
+gain_mv = 0
+cost_mana = 100
+requires = "full heal + manamaster"
+usage = "cast 'group heal' <victim>"
+desc = "這些法術將可對施法者所在的團體產生高低程度不等的治療。GROUP EXTRA HEAL 則可額外增加施法者所在團體內所有人員的生命力。"
+
+[[skill]]
+en = "gfull"
+zh = "群體恢復生命術"
+kind = "spell"
+group = "治療系"
+memory = 30
+delay = 35
+cycle = 11
+gain_hp = 300
+gain_mana = 270
+gain_mv = 0
+cost_mana = 250
+requires = "gheal"
+usage = "cast 'group full heal' <victim>"
+desc = "這些法術將可對施法者所在的團體產生高低程度不等的治療。GROUP EXTRA HEAL 則可額外增加施法者所在團體內所有人員的生命力。"
+
+[[skill]]
+en = "gextra heal"
+zh = "群體加強生命術"
+kind = "spell"
+group = "治療系"
+memory = 20
+delay = 0
+cycle = 10
+gain_hp = 250
+gain_mana = 210
+gain_mv = 0
+cost_mana = 200
+requires = "gfull"
+usage = "cast 'group extra heal' <victim>"
+desc = "這些法術將可對施法者所在的團體產生高低程度不等的治療。GROUP EXTRA HEAL 則可額外增加施法者所在團體內所有人員的生命力。"
+
+[[skill]]
+en = "know alignment"
+zh = "辯邪術"
+kind = "spell"
+group = "偵測系"
+memory = 5
+delay = 0
+cycle = 6
+gain_hp = 0
+gain_mana = 10
+gain_mv = 0
+cost_mana = 10
+usage = "cast 'know alignment' <character>"
+desc = "這個法術會顯示出對方的陣營。"
+
+[[skill]]
+en = "detect evil"
+zh = "偵測邪惡術"
+kind = "spell"
+group = "偵測系"
+memory = 5
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 30
+gain_mv = 0
+cost_mana = 30
+requires = "know alignment"
+
+[[skill]]
+en = "detect hidden"
+zh = "偵測藏匿術"
+kind = "spell"
+group = "偵測系"
+memory = 50
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 30
+gain_mv = 0
+cost_mana = 30
+requires = "detect evil + infravision"
+usage = "cast 'detect hidden'"
+desc = "這個法術可以讓被施法者去偵測到隱藏的人。"
+
+[[skill]]
+en = "detect magic"
+zh = "偵測魔法術"
+kind = "spell"
+group = "偵測系"
+memory = 5
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 10
+gain_mv = 0
+cost_mana = 10
+usage = "cast 'detect magic'"
+desc = "這個法術可以使施法者知道是否物品帶有魔法。"
+
+[[skill]]
+en = "infravision"
+zh = "夜視術"
+kind = "spell"
+group = "偵測系"
+memory = 15
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 40
+gain_mv = 0
+cost_mana = 40
+requires = "detect magic"
+usage = "cast infravision <character>"
+desc = "這個法術可以使得被施法的人可以在黑暗中看到東西。"
+
+[[skill]]
+en = "detect invis"
+zh = "偵測隱形術"
+kind = "spell"
+group = "偵測系"
+memory = 15
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 30
+gain_mv = 0
+cost_mana = 30
+requires = "detect magic"
+usage = "cast 'detect invis'"
+desc = "這個法術可以讓被施法的人有能力去看到隱形的人和物品。"
+
+[[skill]]
+en = "faerie fog"
+zh = "顯像術"
+kind = "spell"
+group = "偵測系"
+memory = 20
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 20
+gain_mv = 0
+cost_mana = 20
+requires = "detect invis"
+usage = "cast 'faerie fog'"
+desc = "這個法術將會解除所有和你在同一個房間中人物的一些魔法影響。如隱形(invis)、隱藏(hidden)和潛行(sneak)。"
+
+[[skill]]
+en = "lore"
+zh = "博識術"
+kind = "spell"
+group = "偵測系"
+memory = 20
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 60
+gain_mv = 0
+cost_mana = 50
+requires = "faerie fog"
+usage = "cast lore <victim>"
+desc = "這個法術可以偵看別人的一些能力狀況，使用它來了解別人的實力，知己知彼，百戰不殆。"
+
+[[skill]]
+en = "confuse"
+zh = "困惑術"
+kind = "spell"
+group = "偵測系"
+memory = 30
+delay = 0
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+cost_mana = 50
+requires = "lore"
+usage = "cast confuse <victim>"
+desc = "困惑術，此一法術將可使敵人的思路受阻，因而智力減弱。"
+
+[[skill]]
+en = "lifesteal"
+zh = "取魄術"
+kind = "spell"
+group = "偵測系"
+memory = 60
+delay = 25
+cycle = 9
+gain_hp = 100
+gain_mana = 80
+gain_mv = 0
+cost_mana = 75
+requires = "lore"
+usage = "cast lifesteal <victim>"
+desc = "取魄術，此法術會讓施法者從敵人身上吸取生命力，進而轉化為自己的生命力。"
+
+[[skill]]
+en = "soulsteal"
+zh = "勾魂術"
+kind = "spell"
+group = "偵測系"
+memory = 150
+delay = 15
+cycle = 9
+gain_hp = 0
+gain_mana = 50
+gain_mv = 0
+cost_mana = 20
+requires = "lifesteal"
+usage = "cast soulsteal <victim>"
+desc = "勾魂術，此法術將可吸取敵人的精神力而轉化成自己的精神力。"
+
+[[skill]]
+en = "locate object"
+zh = "定位術"
+kind = "spell"
+group = "物品系"
+memory = 10
+delay = 0
+cycle = 9
+gain_hp = 0
+gain_mana = 20
+gain_mv = 0
+cost_mana = 20
+usage = "cast 'locate object' <name>"
+desc = "這個法術將會顯示出你所要找的物品的位置（在誰的身上）。"
+
+[[skill]]
+en = "identify"
+zh = "鑑定術"
+kind = "spell"
+group = "物品系"
+memory = 10
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 25
+gain_mv = 0
+cost_mana = 20
+requires = "locate object"
+usage = "cast identify <object>"
+desc = "鑑定術，這個法術將會顯示一些有關這項物品的資料。"
+
+[[skill]]
+en = "remove nodrop"
+zh = "解除磁性術"
+kind = "spell"
+group = "物品系"
+memory = 30
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 35
+gain_mv = 0
+cost_mana = 30
+requires = "identify"
+usage = "cast 'remove nodrop' <object>"
+desc = "這個法術，可以去除一些無法丟掉的物品，也就是 nodrop 的物品。"
+
+[[skill]]
+en = "recharge item"
+zh = "補充術"
+kind = "spell"
+group = "物品系"
+memory = 30
+delay = 0
+cycle = 10
+gain_hp = 0
+gain_mana = 60
+gain_mv = 0
+cost_mana = 50
+requires = "identify"
+usage = "cast 'recharge item' <object>"
+desc = "補充術，使用這個法術，可以補充一些具有法力裝置物品的法力，不過若稍一不慎則會將物品毀損。"
+
+[[skill]]
+en = "enchant weapon"
+zh = "加強武器術"
+kind = "spell"
+group = "物品系"
+memory = 180
+delay = 0
+cycle = 10
+gain_hp = 0
+gain_mana = 80
+gain_mv = 0
+cost_mana = 75
+requires = "recharge item"
+usage = "cast 'enchant weapon' <weapon>"
+desc = "這個法術可以附予一些武器一些魔法，來增加它的傷害力和命中率。這個你要施法的武器必須是沒有被施法過的。而且這個武器的陣營將和施法者目前的陣營是一樣的。"
+
+[[skill]]
+en = "bloom weapon"
+zh = "武器鍛燒術"
+kind = "spell"
+group = "物品系"
+memory = 30
+delay = 0
+cycle = 10
+gain_hp = 0
+gain_mana = 100
+gain_mv = 0
+cost_mana = 80
+requires = "enchant weapon + time power"
+usage = "cast 'bloom weapon' <weapon>"
+desc = "武器鍛燒術，古代道士所獨有的法術，可加強武器的平時傷害力，唯經過鍛燒之武器，將於數小時內自動燃燒殆盡而消失。"
+
+[[skill]]
+en = "invis"
+zh = "隱身術"
+kind = "spell"
+group = "隱形傳送系"
+memory = 30
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 40
+gain_mv = 0
+cost_mana = 30
+usage = "cast invis <character>"
+desc = "INVIS 這個法術將會將你施法的對像隱形起來。如果已經隱形的人，一發起戰鬥則會馬上現出身來。 MASS INVIS 這個法術會使得和使用者在同一個集團(GROUP)中的所有人一起隱形起來（包括施法者本身）。"
+
+[[skill]]
+en = "mass invis"
+zh = "全隱術"
+kind = "spell"
+group = "隱形傳送系"
+memory = 20
+delay = 0
+cycle = 10
+gain_hp = 0
+gain_mana = 45
+gain_mv = 0
+cost_mana = 40
+requires = "invis"
+usage = "cast 'mass invis'"
+desc = "INVIS 這個法術將會將你施法的對像隱形起來。如果已經隱形的人，一發起戰鬥則會馬上現出身來。 MASS INVIS 這個法術會使得和使用者在同一個集團(GROUP)中的所有人一起隱形起來（包括施法者本身）。"
+
+[[skill]]
+en = "pass door"
+zh = "游離化"
+kind = "spell"
+group = "隱形傳送系"
+memory = 130
+delay = 0
+cycle = 7
+gain_hp = 0
+gain_mana = 50
+gain_mv = 0
+cost_mana = 45
+requires = "mass invis"
+usage = "cast 'pass door'"
+desc = "這個法術可以使得施法者可以穿過一些關著的門。"
+
+[[skill]]
+en = "illusion"
+zh = "迷朦幻影"
+kind = "spell"
+group = "隱形傳送系"
+memory = 50
+delay = 0
+cycle = "?"
+gain_hp = "?"
+gain_mana = "?"
+gain_mv = "?"
+cost_mana = 50
+requires = "mass invis + detect invis"
+usage = "cast illusion <character>"
+teacher = "魔法高塔幻術師"
+desc = "迷朦幻影，此一法術將可使其它人在看施法者時產生幻像，而無法正確分辦施法者的位置。"
+
+[[skill]]
+en = "teleport"
+zh = "雲遊術"
+kind = "spell"
+group = "隱形傳送系"
+memory = 50
+delay = 20
+cycle = 8
+gain_hp = 0
+gain_mana = 80
+gain_mv = 0
+cost_mana = 75
+usage = "cast teleport"
+desc = "這個法術將會把你從現在的房間中，任意的傳送到這個世界的任何一個地方去。但是：你在不可召喚的房間也不行。你在不可以 RECALL 的房間時也不行。"
+
+[[skill]]
+en = "summon"
+zh = "召喚術"
+kind = "spell"
+group = "隱形傳送系"
+memory = 30
+delay = 0
+cycle = 10
+gain_hp = 0
+gain_mana = 75
+gain_mv = 0
+cost_mana = 60
+requires = "teleport"
+usage = "cast summon <character>"
+desc = "這個法術將會將你所要召喚的對像召喚至你現在的房間中，若是這召喚的對像在戰鬥中或是不和你同一個區域你都無法召喚他。而且：你在不可召喚的房間也不行。他在安全房間也不行。他在不可以 RECALL 的房間時也不行。他在私人房間(PRIVATE)時也不行。"
+
+[[skill]]
+en = "transfer"
+zh = "傳送術"
+kind = "spell"
+group = "隱形傳送系"
+memory = 180
+delay = 0
+cycle = 12
+gain_hp = 0
+gain_mana = 160
+gain_mv = 0
+cost_mana = 150
+requires = "teleport"
+usage = "cast transfer <number>"
+teacher = "風采之都打工巫師／魔谷傳送神"
+teacher_note = "要給 600 萬"
+desc = "傳送術，可自由地來去於記憶中的房間，房間的記憶請查詢 HELP RNOTE。一般法術師只能傳送自身前往目的地，唯有學過法力加持者才可傳送整個團體內的人員。"
+
+[[skill]]
+en = "magic missile"
+zh = "魔法彈"
+kind = "spell"
+group = "攻擊魔法系／火系"
+memory = 5
+delay = 5
+cycle = 6
+gain_hp = 25
+gain_mana = 15
+gain_mv = 0
+cost_mana = 15
+usage = "cast missile <victim>"
+desc = "魔法彈，為一魔法初學者最早接觸的攻擊性魔法，習得此魔法之後將可駕禦自己的精神力，並將之轉化為一股力量攻向敵人。"
+
+[[skill]]
+en = "burning hand"
+zh = "火臂術"
+kind = "spell"
+group = "攻擊魔法系／火系"
+memory = 25
+delay = 8
+cycle = 8
+gain_hp = 25
+gain_mana = 15
+gain_mv = 0
+cost_mana = 10
+requires = "magic missile"
+usage = "cast 'burning hands' <victim>"
+desc = "火臂術，此為一魔法師對火系魔法最初之法術，任何想對火系法術更加深入之施法者，都必須先學習此一控制火源之基本法術。"
+
+[[skill]]
+en = "powerball"
+zh = "能源球"
+kind = "spell"
+group = "攻擊魔法系／火系"
+memory = 60
+delay = 12
+cycle = 6
+gain_hp = 60
+gain_mana = 30
+gain_mv = 0
+cost_mana = 25
+requires = "burning hand"
+usage = "cast powerball <victim>"
+desc = "能源球，此法術會將施法者的精神力化作一顆光球，而向敵人襲去。"
+
+[[skill]]
+en = "fireball"
+zh = "火球術"
+kind = "spell"
+group = "攻擊魔法系／火系"
+memory = 190
+delay = 15
+cycle = 8
+gain_hp = 90
+gain_mana = 50
+gain_mv = 0
+cost_mana = 30
+requires = "powerball"
+usage = "cast fireball <victim>"
+desc = "火球術，此法術會聚集游離在空氣中之可燃物，再將之以魔力燃燒，撲向敵人。"
+
+[[skill]]
+en = "flamestrike"
+zh = "熾焰術"
+kind = "spell"
+group = "攻擊魔法系／火系"
+memory = 400
+delay = 20
+cycle = 10
+gain_hp = 120
+gain_mana = 150
+gain_mv = 0
+cost_mana = 100
+requires = "fireball"
+usage = "cast 'flamestrike' <victim>"
+desc = "熾焰術，此法術將會聚集空氣中的可燃物，並利用魔法的力量使之變成一道火柱，而向你的敵人衝去。"
+
+[[skill]]
+en = "star rain"
+zh = "流星雨"
+kind = "spell"
+group = "攻擊魔法系／火系"
+memory = 50
+delay = 40
+cycle = 10
+gain_hp = 100
+gain_mana = 220
+gain_mv = 0
+cost_mana = 200
+requires = "flamestrike"
+usage = "cast 'star rain' <victim>"
+desc = "流星雨，可對同一房間內的所有人施以痛擊，為對群體的攻擊性法術，所召來的流星雨大小視熟練度而會有不同，所造成的傷害次數也不同。"
+
+[[skill]]
+en = "nuclearblast"
+zh = "核爆術"
+kind = "spell"
+group = "攻擊魔法系／火系"
+memory = 700
+delay = 45
+cycle = 12
+gain_hp = 250
+gain_mana = 200
+gain_mv = 0
+cost_mana = 180
+requires = "flamestrike"
+usage = "cast nuclear <victim>"
+teacher = "魔法高塔夏雅"
+teacher_note = "要解完夏雅的一件事"
+desc = "核爆術，魔法師之究極魔法，乃是結合了現代科技和遠古密技的晶華，若是在魔力加持(spellmaster)的幫助下，威力將更加可怕，而造成無法彌補的傷害。"
+
+[[skill]]
+en = "chill touch"
+zh = "寒霜之觸"
+kind = "spell"
+group = "攻擊魔法系／冰系"
+memory = 25
+delay = 10
+cycle = 7
+gain_hp = 50
+gain_mana = 30
+gain_mv = 0
+cost_mana = 20
+requires = "magic missile"
+usage = "cast 'chill touch' <victim>"
+desc = "寒霜之觸，此一法術乃為修練冰系魔法之基礎，唯有在習得此法後方可將自身之冰系魔法更上層樓，此外中法術之人也會因為受寒氣侵蝕而力不從心。"
+
+[[skill]]
+en = "frostdust"
+zh = "霜塵術"
+kind = "spell"
+group = "攻擊魔法系／冰系"
+memory = 60
+delay = 12
+cycle = 7
+gain_hp = 60
+gain_mana = 45
+gain_mv = 0
+cost_mana = 30
+requires = "chill touch"
+usage = "cast frostdust <victim>"
+desc = "霜塵術，此一法術為攻擊性法術，當被施法者遭受攻擊時，其力量會因此而減弱。"
+
+[[skill]]
+en = "icekris"
+zh = "冰刃術"
+kind = "spell"
+group = "攻擊魔法系／冰系"
+memory = 190
+delay = 20
+cycle = 7
+gain_hp = 90
+gain_mana = 80
+gain_mv = 0
+cost_mana = 50
+requires = "frostdust"
+usage = "cast icekris <victim>"
+desc = "冰刃術，此一法術會將空氣中的水氣結成冰刃，刺向你的敵人。"
+
+[[skill]]
+en = "congelation"
+zh = "急凍術"
+kind = "spell"
+group = "攻擊魔法系／冰系"
+memory = 400
+delay = 25
+cycle = 8
+gain_hp = 120
+gain_mana = 180
+gain_mv = 0
+cost_mana = 120
+requires = "icekris"
+usage = "cast congelation <victim>"
+desc = "急凍術，此一法術會將敵人的體溫急速降至 100K 而造成傷害，並且使敵人無法自由行動。"
+
+[[skill]]
+en = "blizzard"
+zh = "雪嵐"
+kind = "spell"
+group = "攻擊魔法系／冰系"
+memory = 700
+delay = 40
+cycle = 11
+gain_hp = 250
+gain_mana = 250
+gain_mv = 0
+cost_mana = 200
+requires = "congelation"
+usage = "cast blizzard"
+desc = "雪嵐，此法術將會呼喚冰之精靈帶來一場暴風雪，將你四週的敵人都捲入這場風暴之中致使你的敵人們無法動彈而受傷。"
+
+[[skill]]
+en = "rockblast"
+zh = "爆岩擊"
+kind = "spell"
+group = "攻擊魔法系／土系"
+memory = 40
+delay = 12
+cycle = 7
+gain_hp = 120
+gain_mana = 70
+gain_mv = 0
+cost_mana = 45
+requires = "magic missile"
+usage = "cast rockblast <victim>"
+desc = "爆岩擊，此法術會使地表上較堅硬之部分爆成碎片砸向的敵人。"
+
+[[skill]]
+en = "earthquake"
+zh = "地震術"
+kind = "spell"
+group = "攻擊魔法系／土系"
+memory = 200
+delay = 25
+cycle = 8
+gain_hp = 100
+gain_mana = 120
+gain_mv = 0
+cost_mana = 80
+requires = "rockblast"
+usage = "cast 'earthquake'"
+desc = "地震術，此一法術將呼喚地之精靈帶來強烈的震動，而地面之所有人亦會受到傷害。"
+
+[[skill]]
+en = "magma"
+zh = "熾岩煉獄"
+kind = "spell"
+group = "攻擊魔法系／土系"
+memory = 400
+delay = 40
+cycle = 10
+gain_hp = 150
+gain_mana = 250
+gain_mv = 0
+cost_mana = 180
+requires = "earthquake"
+usage = "cast magma <victim>"
+desc = "熾岩煉獄，此法術將呼喚地之精靈帶著滾燙的地底熔岩向你的敵人噬去。"
+
+[[skill]]
+en = "canyon"
+zh = "土噬術"
+kind = "spell"
+group = "攻擊魔法系／土系"
+memory = 700
+delay = 50
+cycle = 13
+gain_hp = 200
+gain_mana = 350
+gain_mv = 0
+cost_mana = 350
+requires = "magma"
+usage = "cast canyon"
+desc = "土噬術，此一法術將會呼喚地之精靈，大地頓時之間裂開，將你的敵人吞噬，不過對於高級的敵人將不構成任何威脅。"
+
+[[skill]]
+en = "cyclone"
+zh = "氣旋術"
+kind = "spell"
+group = "攻擊魔法系／風系"
+memory = 60
+delay = 20
+cycle = 8
+gain_hp = 100
+gain_mana = 120
+gain_mv = 0
+cost_mana = 70
+requires = "magic missile"
+usage = "cast cyclone <victim>"
+desc = "氣旋術，此一法術會招來強大的氣旋，將敵人捲入而受到傷害。"
+
+[[skill]]
+en = "vacuum"
+zh = "魔空真刃"
+kind = "spell"
+group = "攻擊魔法系／風系"
+memory = 360
+delay = 25
+cycle = 9
+gain_hp = 200
+gain_mana = 250
+gain_mv = 0
+cost_mana = 130
+requires = "cyclone"
+usage = "cast vacuum <victim>"
+desc = "魔空真刃，藉由快速的氣旋造成局部真空，敵人將會因體內外壓力的不同而感非常痛苦。"
+
+[[skill]]
+en = "hurricane"
+zh = "颶風術"
+kind = "spell"
+group = "攻擊魔法系／風系"
+memory = 700
+delay = 40
+cycle = 10
+gain_hp = 350
+gain_mana = 350
+gain_mv = 0
+cost_mana = 200
+requires = "vacuum"
+usage = "cast hurricane <victim>"
+desc = "颶風術，此一法術將會呼喚風之精靈帶著巨大的龍捲風襲來，而將你的敵人捲入空中，被龍捲風的力量撕成碎片。"
+
+[[skill]]
+en = "dark space"
+zh = "闇黑結界"
+kind = "spell"
+group = "其他法術"
+memory = 20
+delay = 25
+cycle = 8
+gain_hp = 0
+gain_mana = 100
+gain_mv = 0
+cost_mana = 80
+requires = "spellmaster"
+usage = "cast 'dark space' <victim>"
+desc = "闇黑結界，法力高深的巫術師，具有呼喚黑闇勢力的能力。所有的法術在此一結界中將全部失效，但是由於此一勢力十分強大，難以控制，所以其力量有可能會反彈到施法者的身上。"
+
+[[skill]]
+en = "detect poison"
+zh = "偵測毒性術"
+kind = "spell"
+group = "其他法術"
+memory = 5
+delay = 0
+cycle = 8
+gain_hp = 0
+gain_mana = 15
+gain_mv = 0
+cost_mana = 10
+usage = "cast 'detect poison' <object>"
+desc = "這個法術會去偵測到是否在食物或是飲水中有沒有毒。"
+
+[[skill]]
+en = "ventriloquate"
+zh = "腹語術"
+kind = "spell"
+group = "其他法術"
+memory = 5
+delay = 0
+cycle = 6
+gain_hp = 0
+gain_mana = 20
+gain_mv = 0
+cost_mana = 15
+usage = "cast ventriloquate <speaker> <message>"
+desc = "這項法術將會將你的聲音傳送到其它的物品或是人物身上，這些物品或是人物將會說出你所打出的話。如果你所施的對像可以避免這個法術，將會顯示出某不知人物要你所指定的對象說什麼話。但是不會顯示出是誰要他說的。如果你所指定的對象無法抵擋你的法術，則會照實的說出你要他說的話。"
+
+[[skill]]
+en = "full refresh"
+zh = "體力復原術"
+kind = "spell"
+group = "其他法術"
+memory = 80
+delay = 0
+cycle = 9
+gain_hp = 0
+gain_mana = 45
+gain_mv = 120
+cost_mana = 40
+usage = "cast 'full refresh' <victim>"
+desc = "體力復原術，此一法術可完全補充被施法者的體力。"
+
+[[skill]]
+en = "charge"
+zh = "充電（目前無效）"
+kind = "skill"
+group = "其他"
+usage = "charge <character> <hp|mana|move> <amount>"
+desc = "充電，可以將自己的生命力、精神力和移動力轉移傳送到別人身上，若不輸入 amount，則將從你目前的狀態數值中任取一亂數來做。"
+
+[[skill]]
+en = "gunner"
+zh = "鎗法"
+kind = "skill"
+group = "戰士技能"
+memory = 350
+desc = "鎗法，為一用鎗者之無上心法，鎗法熟練者將可發揮鎗枝的最大威力，且可百步穿揚，直接命中敵人要害。"
+
+[[skill]]
+en = "hanging"
+zh = "絞殺"
+kind = "skill"
+group = "戰士技能"
+memory = 300
+usage = "hanging <victim>"
+desc = "絞殺，在叢林野戰中，士兵中常常會躲在暗處，乘敵人不注意之際，給予敵人致命的一擊。這就是可怕的絞殺。也是軍人必受的基本訓練之一，通常乘敵人「不備」之時，使用出來會有更不同的效果。"
+
+[[skill]]
+en = "quintain"
+zh = "刺槍術"
+kind = "skill"
+group = "戰士技能"
+usage = "quintain"
+desc = "刺槍術，為一特有的格鬥技巧，只能在戰鬥中使用，無法引發戰鬥。"
+
+[[skill]]
+en = "cross glory"
+zh = "十字光芒"
+kind = "spell"
+group = "其他法術"
+memory = 50
+usage = "cast 'cross glory' <victim>"
+desc = "十字光芒。劃破自己的手臂，使鮮血流過雙臂，交叉於胸前成十字狀，口頌破邪除魔咒語，而將精神力化為攻擊敵人的強力法術。"
+
+[[skill]]
+en = "fall lightning"
+zh = "爆雷降臨"
+kind = "spell"
+group = "攻擊魔法系／雷系"
+memory = 1000
+usage = "cast 'fall lightning' <victim>"
+teacher = "魔法高塔夏雅"
+teacher_note = "要解完夏雅的一件事"
+desc = "爆雷降臨，此一法術可讓被施法者，在遭受到爆雷降臨的強大攻擊下，有時還會有意想不到的結果。"
+
+[[skill]]
+en = "magic clock"
+zh = "魔法沙漏"
+kind = "spell"
+group = "其他法術"
+memory = 40
+usage = "cast 'magic clock' <victim>"
+teacher = "黑地闇之賢者"
+desc = "魔法沙漏，此一法術可使被施法者的智力減少，而精神力會逐一消失。"
+
+[[skill]]
+en = "polar sparkle"
+zh = "究極死光"
+kind = "spell"
+group = "其他法術"
+memory = 100
+usage = "cast 'polar sparkle' <victim>"
+teacher = "十二星宮北極星"
+quest = "zodiac"
+desc = "究極死光。呼喚天上的極光，來達到重創敵人的目的，但是此一法術的威力強力，有可能會造成對施法者本身的傷害。牧師由於其信仰上的虔誠，天神將會幫助其施法的傷害力，並且使其免於受波及。呼喚者的心地和敵人的心地將會影響極光的傷害力。"
+
+[[skill]]
+en = "tenslice"
+zh = "十字斬"
+kind = "skill"
+group = "戰士技能"
+memory = 300
+requires = "windslice"
+teacher = "騎士堡亞瑟王"
+teacher_note = "殺 sable，把頭和 sable amulet 交給 Arthur 才能學"
+quest = "camelot"
+desc = "群體攻擊，扣 HP 與 MV，MV 越高越強；學會後 HP 約多 300。"
+
+[[skill]]
+en = "taigifist"
+zh = "太極拳"
+kind = "skill"
+group = "拳法"
+memory = 100
+requires = "ictus"
+desc = "無聖光時威力超越降龍。"
+
+[[skill]]
+en = "holy arrow"
+zh = "聖光箭"
+kind = "spell"
+group = "其他法術"
+memory = 450
+teacher = "騎士堡梅林"
+
+[[skill]]
+en = "god bless"
+zh = "神恩浩蕩"
+kind = "spell"
+group = "其他法術"
+teacher = "魔谷賢者布蘭德"
+teacher_note = "清光骷髏怪才能學"
+
+[[skill]]
+en = "breakdark"
+zh = "破闇黑結界"
+kind = "spell"
+group = "其他法術"
+memory = 0
+requires = "INT 與 WIS 都要 28 以上"
+teacher = "魔法高塔夏雅"
+teacher_note = "要解完夏雅的一件事"
+desc = "不花記憶點數；INT 30、WIS 26 下不能用，INT 30、WIS 30 一定能用。"
+
+[[skill]]
+en = "beiming"
+zh = "北冥神功"
+kind = "skill"
+group = "其他"
+teacher = "大理段譽"
+teacher_note = "解大理時 talk prince 大輪明王"
+quest = "dali"

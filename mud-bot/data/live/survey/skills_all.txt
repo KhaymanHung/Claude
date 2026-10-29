@@ -1,0 +1,107 @@
+> skills all
+這個世上所存在的技能有:
+
+            backstab                 背刺 記憶量: 900
+              disarm             卸除武器 記憶量: 200
+               dodge                 閃躲 記憶量: 100
+     enhanced damage             加強破壞 記憶量: 100
+                hide                 藏匿 記憶量: 250
+               parry                 格擋 記憶量: 200
+                peek                 窺視 記憶量: 100
+           pick lock                 開鎖 記憶量: 20
+              rescue                 解救 記憶量: 100
+       second attack             二段突刺 記憶量: 100
+               sneak                 潛行 記憶量: 250
+               steal                 偷竊 記憶量: 30
+        third attack             三段突刺 記憶量: 150
+             abscond               遁逃術 記憶量: 120
+                 aid             準確攻擊 記憶量: 150
+              assail               奇襲術 記憶量: 140
+           bare fist                 拳力 記憶量: 150
+              benumb               迷香術 記憶量: 120
+               blitz           閃電奇襲式 記憶量: 250
+               block             左手格擋 記憶量: 250
+            bs power             加強背刺 記憶量: 700
+             buttock               過肩摔 記憶量: 200
+         charmcorpse               操屍術 記憶量: 50
+              chaodu                 超渡 記憶量: 80
+         daub poison               抹毒術 記憶量: 60
+          earthslice             大地之斬 記憶量: 250
+             hanging                 絞殺 記憶量: 300
+          heavyslice               狂暴砍 記憶量: 250
+                hunt                 獵殺 記憶量: 250
+               ictus             六脈神劍 記憶量: 300
+          makescroll               煉符咒 記憶量: 30
+             pretend                 偽裝 記憶量: 50
+              piercy                 刺瞎 記憶量: 100
+           reflexion           乾坤大挪移 記憶量: 400
+    tuochangstarmove             斗轉星移 記憶量: 200
+                scan                 搜查 記憶量: 10
+               shoot                 射擊 記憶量: 600
+                 spy                 偵查 記憶量: 50
+                stun                 點穴 記憶量: 200
+               throw             武器投射 記憶量: 50
+           windslice             風嘯之斬 記憶量: 300
+            tenslice               十字斬 記憶量: 300
+              barter           五鬼運財術 記憶量: 30
+             agility                 輕功 記憶量: 300
+         outdo waver             凌波微步 記憶量: 300
+             darting                 暗器 記憶量: 150
+          two weapon           雙手持劍法 記憶量: 600
+         swordmaster                 劍訣 記憶量: 300
+         spellmaster             魔力加持 記憶量: 850
+          manamaster             法力加持 記憶量: 850
+            ejinjing               易筋經 記憶量: 200
+          time power             子午大法 記憶量: 800
+          okra power             葵花寶典 記憶量: 500
+              gunner                 鎗法 記憶量: 350
+           bannofist               般若掌 記憶量: 300
+           cometfist           天馬流星拳 記憶量: 200
+          dragonfist           降龍十八掌 記憶量: 150
+           taigifist               太極拳 記憶量: 100
+           handsfist       大慈大悲千手式 記憶量: 400
+        kingonfinger           大力金剛指 記憶量: 300
+           lohanfist               羅漢拳 記憶量: 150
+             sadfist           黯然消魂掌 記憶量: 200
+          saulinfist             少林長拳 記憶量: 100
+           tigerfist               伏虎拳 記憶量: 250
+       wushangfinger             無相劫指 記憶量: 200
+          kamekameha             龜派氣功 記憶量: 300
+           gankitama               元氣玉 記憶量: 400
+             kaioken               界王拳 記憶量: 600
+           drunkfist                 醉拳 記憶量: 150
+          bloomslash             天女散花 記憶量: 150
+       changjunslash             全真劍法 記憶量: 100
+        chunshislash             沖虛劍法 記憶量: 250
+        thunderslash             雷光電劍 記憶量: 80
+           fireslash             火之魔劍 記憶量: 25
+          flameslash             焰之魔劍 記憶量: 50
+           fusislash             伏羲劍法 記憶量: 150
+           lifeslash             奪命魔劍 記憶量: 100
+       mountainslash             茅山劍法 記憶量: 25
+        nuclearslash             核變魔劍 記憶量: 75
+           plowslash           天罡北斗陣 記憶量: 50
+         shadowslash             虛影劍法 記憶量: 50
+        shanyanslash             玄陽劍法 記憶量: 250
+           soulslash             魂竊魔劍 記憶量: 100
+          taigislash             太極劍法 記憶量: 450
+          twoyislash             兩儀劍法 記憶量: 400
+           girlslash             玉女劍法 記憶量: 150
+         flowerslash             狂花劍法 記憶量: 200
+           soleslash             獨孤九劍 記憶量: 500
+           evilslash             辟邪劍法 記憶量: 300
+      lightningslash             爆雷魔劍 記憶量: 120
+             dispose                 佈陣 記憶量: 320
+         case_square               四方陣 記憶量: 80
+           case_fire               烈火陣 記憶量: 160
+          case_earth               大地陣 記憶量: 240
+            case_air               狂風陣 記憶量: 160
+          case_magic               魔法陣 記憶量: 160
+          case_water               洪水陣 記憶量: 160
+           case_star               七星陣 記憶量: 160
+        case_element               五行陣 記憶量: 300
+        case_diagram               八卦陣 記憶量: 300
+           case_holy               聖光陣 記憶量: 240
+           case_evil               闇黑陣 記憶量: 240
+          case_taiji               太極陣 記憶量: 240
+           breakdark           破闇黑結界 記憶量: 0

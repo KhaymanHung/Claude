@@ -1,0 +1,855 @@
+# 解謎資料（第 2 部分）
+
+[[quest]]
+id = "chess"
+name = "奕之王國"
+aliases = ["奕之王國", "奕之國度", "chess", "象棋", "黑將"]
+area = "奕之國度"
+level = "35-60"
+intro = "黑將軍近日心情不好，黑卒可能知道些什麼。"
+route = ["/3w3n2e2nen2d2ne2nwnwn2u4nu2e2se", "behold chess"]
+note = "要先把 tell 打開。一隻騎士帶把 gold 武器就夠；巫師的話 mob 會 fly，要先拆。除了步驟需要，平常千萬不要走到紅帥那裡。本區 quit 就要重解（qmark 是 nosave）。"
+
+[[quest.steps]]
+title = "找黑卒"
+note = "先 talk black black，殺掉紅砲後再 talk black topic 兩次。"
+do = ["talk black black"]
+
+[[quest.steps]]
+title = "殺紅砲後再問黑卒"
+manual = true
+note = "殺掉紅砲，回來 talk black topic 兩次，再 talk black why、talk black help。"
+
+[[quest.steps]]
+title = "找黑象拿偽軍機"
+do = ["talk black topic", "talk black yes"]
+
+[[quest.steps]]
+title = "找紅帥，打三個頭"
+manual = true
+note = "走到紅帥處信會自動交給他，他要你打三個頭：黑馬、黑車、黑包（hidden，要 detect hidden）。"
+
+[[quest.steps]]
+title = "拿信物"
+manual = true
+note = "把三個首級給紅相，再找紅帥 talk red hostage 得到信物。"
+
+[[quest.steps]]
+title = "找黑士"
+note = "找位在（一，四）的黑士，給他信物後："
+do = ["talk black hostage"]
+
+[[quest.steps]]
+title = "殺紅仕，被傳送到密室"
+manual = true
+note = "往 n 走到底殺死紅仕，再找黑士 talk black hostage，會被傳送到密室。"
+
+[[quest.steps]]
+title = "打密室守衛"
+manual = true
+note = "先 dm guard，再 agg 0 後 talk guard topic 就開打。他會 disarm 和颶風，多帶 knife 用 ear 打。先給他一把 gold sword，他就不能 wear sword 攻擊。全部殺死後出現「一陣馬車聲…」就過關。"
+
+[[quest.steps]]
+title = "回報黑將"
+note = "回到 chess 找黑將。"
+do = ["talk black topic"]
+
+[[quest]]
+id = "five-elements"
+name = "五行世界"
+aliases = ["五行世界", "五行", "元素之戒", "小金", "凌波微步"]
+area = "五行世界"
+level = "60"
+route = ["/3nw2nen3w2d3n2en2u2n2w"]
+needs = ["奇怪的木劍 (strange sword)：只能拿一次，要重拿得 quest clear", "金元素：一定要自己殺小金拿到才有用"]
+rewards = ["元素之戒", "可向小金學凌波微步"]
+
+[[quest.steps]]
+title = "拿木劍"
+note = "進五行後往北兩步 enter，往西走說話，隱形雕刻家 (professor) 會走過來給你木劍。"
+do = ["2n", "enter", "w", "say 有沒有人在啊?"]
+
+[[quest.steps]]
+title = "飛沙走石：找土地"
+manual = true
+note = "往東出去，一直往北到飛沙走石（迷宮），對付土怪用 ear。上 detect invis、detect hidden，每走一步用 scan 找「土地」，土地會傳送你到火山口。"
+
+[[quest.steps]]
+title = "火山口：一直逃"
+manual = true
+note = "火妖會猛打你，千萬不要打他，一直 flee 到汪洋大海。"
+
+[[quest.steps]]
+title = "汪洋大海：殺壯漢"
+manual = true
+note = "只能殺壯漢（agg 0），殺別人會被往回傳送。殺死壯漢後傳送到糾結藤蔓。"
+
+[[quest.steps]]
+title = "糾結藤蔓：殺小木靈"
+manual = true
+note = "先 detect invis，走來走去直到出現「你看到一隻木靈走了過來!!」，殺死小木靈會被傳送到小金。木靈太多時別衝過去，碰到先 blind 再 flee。打小木靈最後一下不要用 ear。"
+
+[[quest.steps]]
+title = "打小金拿金元素"
+manual = true
+note = "dispel magic + dark，打到紅血時 wear 木劍，幸運的話一次就拿到金元素。"
+
+[[quest.steps]]
+title = "換元素之戒"
+note = "回到拿木劍的地方，把金元素給雕刻家，得到元素之戒。"
+do = ["open d", "d", "w", "say 有沒有人在啊?", "give 金元素 professor"]
+
+[[quest]]
+id = "kiki-island"
+name = "奇奇島"
+aliases = ["奇奇島", "kiki", "sm-queen", "夏雅"]
+area = "奇奇島"
+intro = "吉雅尼斯城突然多了一位外來客，不知為什麼他老是渾身發抖。"
+route_note = "先到吉雅尼斯城找會發抖的人 drifter（需要 detect hidden）。"
+rewards = ["鞭子（給魔法女王夏雅）"]
+
+[[quest.tables]]
+title = "必備物品"
+headers = ["物品", "來源"]
+rows = [
+  ["key", "庫達港船長會給"],
+  ["小火球 (fire ball)", "/5e2n2w3ne8n16e 大沙漠，找營帳 2euneusd → open w → ww → kill efreeti"],
+  ["龍尾鞭", "龍塔的綠龍 (green dragon)"],
+  ["地獄黑魔鞭", "地獄的馬面"],
+  ["連環鞭", "少林寺倒立師父 (monk)，會隱形，要 detect invis"],
+  ["電擊鞭", "元素峽谷 /3w3se look painting s10e4und3n2ws 的磁石 (magneto)"],
+]
+
+[[quest.steps]]
+title = "找流浪者"
+note = "在附近找 drifter（會藏匿）。"
+do = ["/3w3se", "look painting", "4sw", "talk drifter 出了什麼事情", "talk drifter yes"]
+
+[[quest.steps]]
+title = "找庫達港老船長"
+manual = true
+note = "老船長在噴水池往西 13 步。talk captain 奇奇島，再 give 30000 coins captain。"
+
+[[quest.steps]]
+title = "上島找村長"
+do = ["agg 0", "remove sword", "2n2w", "open w", "w", "talk chief 看到了什麼", "talk chief yes"]
+
+[[quest.steps]]
+title = "找賢者"
+note = "賢者 (wise villager) 在 3en 再 open e。依他說的把四種鞭子和小火球交給村長。"
+do = ["talk wise daffipjk", "talk wise reqtwoi"]
+
+[[quest.steps]]
+title = "把鞭子給夏雅"
+manual = true
+note = "拿到鞭子去找魔法女王夏雅給她，然後 talk drifter yes，再去找船長。"
+
+[[quest.steps]]
+title = "前往女王處"
+do = ["2n2e", "open n", "n", "search oven", "inventory", "2dwdsdeddndn2d"]
+
+[[quest.steps]]
+title = "殺 sm-Queen"
+manual = true
+note = "記得 wear whip。sm-queen 等級 65、hp 12000，血剩 35% 會 full，一定要能 dark：先讓騎士下去擋，再由巫師 dark。"
+
+[[quest.steps]]
+title = "完成"
+do = ["talk drifter ok"]
+
+[[quest]]
+id = "olympus"
+name = "奧林帕斯"
+aliases = ["奧林帕斯", "奧林帕斯山", "olympus", "zeus", "宙斯"]
+area = "奧林帕斯山"
+level = "10-60"
+route = ["/3w3s", "look painting", "s3e3n2w6n2u"]
+needs = [
+  "黃金爪 (claw)：/3w3s look painting s3e3n2w3nen2en3e2n7eue kill lord",
+  "磁石 (lode)：/3w3s look painting s10e4und2n kill medum",
+  "本區 mob 都隱形，要 detect invis",
+]
+
+[[quest.steps]]
+title = "宙斯與漢密斯"
+do = ["7n", "talk zeus 什麼事", "talk hermes 禮物"]
+
+[[quest.steps]]
+title = "雅典娜"
+do = ["4se", "talk athena 愛", "w4n", "talk zeus 心"]
+
+[[quest.steps]]
+title = "奧丁"
+do = ["s3w", "talk odin 項鍊", "talk odin 找到了"]
+
+[[quest.steps]]
+title = "鍊金術師與赫菲斯托斯"
+do = ["3e2s", "talk alchemist 製造", "give lode alchemist", "en2en", "talk hephaestus 製造", "give claw hephaestus"]
+
+[[quest.steps]]
+title = "奧丁與拉"
+do = ["s2wn3w", "talk odin 下一步", "6e", "talk ra 合併"]
+
+[[quest.steps]]
+title = "救普羅米修斯"
+do = ["3wn", "open d", "d", "kill jailer", "get key", "n", "unlock n", "n", "open n", "n", "talk prometheus 火之咒"]
+
+[[quest.steps]]
+title = "半獸人與飛馬"
+manual = true
+note = "找半獸人 talk roc 煩惱。從宙斯那格 s2w2n，kill cook 拿 food，找飛馬 give food horse。回宙斯處 d2n，talk prometheus 謝謝。"
+
+[[quest.steps]]
+title = "完成"
+do = ["2sus3e", "give chain ra", "give heart ra", "talk ra 大火小火一起燒", "3wn", "give heart zeus", "nu2w", "give heart hera"]
+
+[[quest]]
+id = "ultima"
+name = "Ultima"
+aliases = ["ultima", "創世紀", "英王", "avatar", "moonstone", "月之門"]
+area = "Ultima"
+level = "10-60"
+route = ["/3w3se", "look painting", "5sesesesd3s"]
+route_note = "之後路會變：走兩下 scan 找海蛇，過去後 s4w7s，enter wall。"
+needs = ["detect hidden", "通過月之門要 moonstone，通過聖壇要 8 個禱詞，另需沙漏"]
+note = "Ultima 也能買到 baby eq，其中魔法長袍（lv5）很有用。已經拿到所有 mantra 時，可請牧師傳送到沙漠加快速度。"
+rewards = ["可向亞瑟王學風嘯之斬"]
+
+[[quest.steps]]
+title = "1. 新梅吉尼卡"
+do = ["4s", "open e", "e", "kill 春娜", "get lum", "ene", "open n", "n", "open u", "u", "kill 蝙蝠", "get moonstone", "dsw"]
+note = "牧羊人春娜、蝙蝠；之後解開月之門。"
+
+[[quest.steps]]
+title = "2. 圖書館"
+manual = true
+note = "ws → 殺大蜘蛛 get moonstone → 殺魔法師瑪莉安 get ahm → s4ene 解開月之門。"
+
+[[quest.steps]]
+title = "3. 不列顛"
+manual = true
+note = "ws → open d → d，往 se 殺眼鏡蛇 get moonstone → 往 ne 殺吟遊詩人愛奧羅 get mu → ws 解開月之門。"
+
+[[quest.steps]]
+title = "4. 水松森林"
+manual = true
+note = "2s → open w → wn → detect hidden 後殺 prisoner get moonstone → se4n 進水松森林 → 殺德魯依教徒珍娜 get beh → 走到月之門（多用 look 和 exits 找）。"
+
+[[quest.steps]]
+title = "5. 地下城"
+manual = true
+note = "un2en → 殺戰士傑佛瑞 get ra → swsewnw2nene → 殺無頭人 get moonstone → 月之門。"
+
+[[quest.steps]]
+title = "6. 米諾克城"
+manual = true
+note = "2s2e → 殺工匠朱莉亞 get cah → 2wn3w2n → 旋渦 → 找章魚 get moonstone → 月之門。"
+
+[[quest.steps]]
+title = "7. 沙漠"
+manual = true
+note = "2e2s → 殺遊俠杜沛 get summ → 2n2w2nenwn → 龍穴殺火龍 get moonstone → nwn 解開月之門。"
+
+[[quest.steps]]
+title = "8. 精神聖堂"
+manual = true
+note = "殺時空之王 get hourglass → 2n 打 mob 拿 moonstone → 2se 殺流浪者米諾 get ohm → nwn 解開月之門。最後一個 moonstone 的地方叫邪惡根源，會耗光 mv 和 mp，要速戰速決。"
+
+[[quest.steps]]
+title = "9. 大英王城"
+manual = true
+note = "2nwu 進聖壇，用 7 個禱詞開 7 次北方的門，最後開上方的門，用沙漏一直開上面的門，殺佳第安。"
+
+[[quest.tips]]
+title = "打英王（不解謎時）"
+items = ["先 dm 英王再 fly avatar，dark 英王成功就能很快殺掉；沒有 dark 的話他的核爆相當強"]
+
+[[quest]]
+id = "white-mist"
+name = "白霧森林"
+aliases = ["白霧森林", "白霧", "white mist", "象牙項鍊"]
+area = "白霧森林"
+level = "55-60"
+intro = "白霧森林原本是座祥和的森林，居民為了一些小事吵起來，喚出了「傳說中的怪物」。"
+route = ["map3", "6e"]
+route_note = "map3 往東 6 步後往南再往東（遇彎就轉）。"
+needs = ["粉紅藥劑：找小精靈老爸 papa smurf（map3 → 4e 再往 n）"]
+rewards = ["amulet（完成後傳送回市中心）"]
+
+[[quest.steps]]
+title = "穿香石"
+manual = true
+note = "一進白霧先 detect invis，找到香石穿上（六眼怪物看到你會躲開）。"
+
+[[quest.steps]]
+title = "換象牙項鍊"
+manual = true
+note = "detect invis 後撿地上的黑藥草，解除磁性，交給 venturer（他也要 detect invis 才看得到），得到象牙項鍊。如果滾下山坡就找不到 venturer，必須重走。"
+
+[[quest.steps]]
+title = "找 chianru 父子"
+do = ["give necklace chianru", "talk father help", "talk father ok"]
+
+[[quest.steps]]
+title = "給女孩藥劑"
+do = ["give potion girl", "talk chianru ok"]
+
+[[quest.steps]]
+title = "找精靈拿 branch"
+manual = true
+note = "到森林找 fairy（chianru 處往北到三叉路再往東）。拿到後一定要先 talk chianru ok，否則 branch 要重拿。"
+
+[[quest.steps]]
+title = "打 key"
+manual = true
+note = "branch 先別給。往北再往西去打 key（血最多 2xxxx 的 monster，用 lore 確認）。打到 key 後先把所有 monster blind；沒 blind 的話要先 fly chianru 才能用 ear。"
+
+[[quest.steps]]
+title = "帶 chianru 走"
+note = "把 branch 給 chianru，他會跟著你。"
+do = ["give branch chianru", "wnwwd", "open n", "give key girl", "2n3w2n", "open u", "u", "wse", "talk chianru 到了"]
+
+[[quest.steps]]
+title = "完成"
+do = ["give branch hole", "n", "talk author 我完成了"]
+
+[[quest]]
+id = "xiangyang"
+name = "襄陽"
+aliases = ["襄陽", "xiangyang", "郭靖", "金輪法王", "降龍十八掌", "九陰真經", "九陰"]
+area = "襄陽"
+level = "35-60"
+intro = "金輪法王武功高強，除了郭靖的降龍十八掌外實無敵手。"
+route = ["map2", "5ws"]
+note = "要靠解謎學降龍或獨孤，得先學九陰。"
+rewards = ["可向郭靖學降龍十八掌", "可向楊過學黯然消魂掌"]
+
+[[quest.steps]]
+title = "殺郭芙拿面具"
+manual = true
+note = "殺郭芙取得 guo mask。"
+
+[[quest.steps]]
+title = "拿城樓鑰匙"
+manual = true
+note = "殺 climb 後，往 ws 殺城樓守衛拿 key。"
+
+[[quest.steps]]
+title = "上城樓找郭靖"
+do = ["unlock u", "open u", "u", "u", "open u", "u", "w", "wear guo", "w"]
+
+[[quest.steps]]
+title = "打金輪法王"
+manual = true
+note = "一定要先 dark 才好打，有九陰的人更好。"
+
+[[quest.steps]]
+title = "學九陰：拿絕情丹"
+note = "先學 remove nodrop。過秘林走 se。往 d 有絕情丹，鑰匙在 nw 的裘千仞身上。"
+do = ["map2", "3w3n3enen2e5n2en2e3neue2n"]
+
+[[quest.steps]]
+title = "學九陰：殺裘千仞"
+manual = true
+note = "殺死裘千仞後 unlock d → open d → d → get all → recall。"
+
+[[quest.steps]]
+title = "學九陰：給楊過絕情丹"
+note = "絕情丹要先解磁。"
+do = ["map2", "7w3sws7w", "give 絕情丹 yang", "talk yang yes"]
+
+[[quest.steps]]
+title = "學九陰：帶楊過找小龍女"
+note = "楊過跟著你之後，往 n 走到底。要學玉女劍法的話，不能先 say 是，要先學好再說。學過九陰的人再找小龍女可以 talk whitegirl 我要玉蜂針（九陰會消失）。"
+do = ["7ene9nw5n5se5s4e2n2es3e5ne", "talk yang 好", "swim", "e", "say 是"]
+
+[[quest]]
+id = "penguin-village"
+name = "企鵝村"
+aliases = ["企鵝村", "penguin", "馬西宇德", "重力戒指", "機器娃娃"]
+area = "企鵝村"
+level = "30-60"
+intro = "馬西宇德的手又癢了！這一次想把企鵝村整個的和平都破壞掉！"
+route = ["/13wds3w4n"]
+note = "car 有 100 kg、重力戒指有 300 kg，事先要清空身上裝備。最好兩人同行：解的人帶 pougua 和 arale，另一人帶 childe。解謎時間 am 6:00～pm 12:00。"
+
+[[quest.tables]]
+title = "前置物品"
+headers = ["物品", "取得方式"]
+rows = [
+  ["key", "到教堂 cast summon banzan，kill him get key；或到巴山森林打巴山"],
+  ["car", "where leader → kill leader → get car"],
+  ["turd", "where nicocha → talk nicocha 'Can you give me special turd?'"],
+  ["promise", "找 arale talk 'do you love childe?'"],
+]
+
+[[quest.steps]]
+title = "給三人物品並帶走"
+manual = true
+note = "am 6:00 給小少爺 promise、寶瓜 car、arale turd，三人都會 follow。"
+
+[[quest.steps]]
+title = "帶三人到小湖（從則捲家玄關繞路）"
+do = ["8w3nw3n4e", "open e", "e2s3e3ne", "open e", "en3en", "open n", "2n7wnw2ne", "open n", "n"]
+
+[[quest.steps]]
+title = "分別處理三個 milk"
+manual = true
+note = """pougua 對 milk 2、arale 對 milk 3。recall 再帶 childe 對 milk 5，再帶 arale 殺 doctor。
+un n → op n → n → op n → n → s，聽到寶瓜大叫後 n get key corpse。
+un u → op u → u → d（讓寶瓜去死）。ss 回去帶 arale → nnud 殺 milk3，等 arale 大叫。
+u → get key → un e → op e → op s → s → detect invis → get 重力戒指 → recall。"""
+
+[[quest.steps]]
+title = "小少爺與 arale"
+manual = true
+note = """帶小少爺 nnue（前面如果沒有 un e、op e 就 op e）→ e → w，聽到小少爺叫後 e get key → un u → op u → u → n → op n → n → s（讓小少爺去死）。
+sdwws（帶 arale）→ neeunns，聽到 arale 叫後 n get necklace。
+op n（cast blindness milk 再 flee）→ n → close s，看到機器 (machine)。"""
+
+[[quest.steps]]
+title = "完成"
+do = ["wear necklace", "say 機器娃娃", "look paper", "wear ring", "say kjaiej"]
+
+[[quest]]
+id = "sango1"
+name = "黃巾之亂"
+aliases = ["黃巾之亂", "sango1", "三國演義", "張角", "黃巾"]
+area = "三國演義 {黃巾之亂}"
+level = "60"
+intro = "東漢末年，張角三兄弟領導黃巾軍，朝廷下詔徵集各地賢能之士征討。"
+route = ["map2", "say 1"]
+rewards = ["黃巾之亂過關勳章 (sango1 medal)"]
+
+[[quest.steps]]
+title = "找硫磺和百年樹枝"
+manual = true
+note = "硫磺：luwang 打 thiefer（需要 detect hidden）。百年樹枝：桃園 break branch——走到城最南邊十里亭，往南走到沒有「東」的那格，再往西 3ws2w。"
+
+[[quest.steps]]
+title = "交給蘇雙"
+do = ["2en3e3n3e", "give old merchant", "give luwang merchant"]
+
+[[quest.steps]]
+title = "殺鄧茂和程遠志"
+manual = true
+note = "3w9sesu → 4e5s4w → open w 殺鄧茂 get key → unlock u → open u → u4n5e4s4w → open w 殺程遠志 get key。"
+
+[[quest.steps]]
+title = "找鄒靖"
+note = "看到「使用炸藥」時輸入 use explosive。"
+do = ["unlock u", "open u", "u3n4w2sw", "open d", "dn"]
+
+[[quest.steps]]
+title = "帶鄒靖回家拿信"
+do = ["suenwsd", "3e3n4w3sd", "se5e5n5wd", "2ne2ne", "say yes"]
+
+[[quest.steps]]
+title = "把信交給太守"
+do = ["wnes", "give recommendations guard", "give recommendations lord"]
+
+[[quest.steps]]
+title = "鑌鐵與袋子"
+manual = true
+note = "nw3s3ws2w2en3e3ne，張世平給你鑌鐵 → 給劉備 → 劉備還你 → 交給五金店鐵匠。回五金店拿三個 bag，帶到黃巾山。"
+
+[[quest.steps]]
+title = "打張家三兄弟"
+manual = true
+note = "依序：give bag liu（殺張寶 get humanhead）→ give bag zhang（殺張梁 get earthhead）→ give bag guan（殺張角 get godhead）。打張角前先到長安買解毒丹 (pills) 給他，他就不能 full。在張角那格 flee 有一半機會跑到沒出口的地方，可以事先放 13 個 bomber 擋著。最好有凌波巫師用 illusion 讓戰鬥停止後 dm。"
+
+[[quest.steps]]
+title = "依天地人交出首級"
+note = "recall 回 sango1。"
+do = ["sw4ses", "say yes", "give godhead lord", "give earthhead lord", "give humanhead lord", "say yes"]
+
+[[quest]]
+id = "sanctuary"
+name = "聖域"
+aliases = ["聖域", "sanctuary", "雅典娜", "athena", "聖鬥士", "青銅水晶", "白銀聖鎧", "皓金神劍"]
+area = "聖域"
+level = "55-60"
+intro = "雅典娜是古希臘的戰神，傳說要見到她就必須到聖域。"
+route = ["/3w3se", "look painting", "s13w", "s2w2sws3wnw4n2wu"]
+route_note = "look painting 後 s13w 沿途有小兵。"
+needs = ["kawa", "玫瑰花 rose（map3 → s3e3n2w 附近）", "shield", "輪迴之光 (saint)", "remove nodrop"]
+rewards = ["依選擇：忠誠＝青銅水晶、勇氣＝白銀聖鎧、榮譽＝皓金神劍"]
+note = "重解拿裝備時記得 quests cancel 聖域 和 quests clear。"
+
+[[quest.steps]]
+title = "找紫龍拿破損龍盾"
+manual = true
+note = "到聖域後 13n（12n 時金牛座會攻擊你）。找青龍座聖鬥士紫龍 talk saint yes。如果金牛座沒攻擊你，要先去 quests clean。"
+
+[[quest.steps]]
+title = "獅子座與處女座"
+manual = true
+note = "2e6nu（這裡記為 A），3n 附近找獅子座殺他拿天秤座聖符（也可以不打 leo，到 gold 處撿）。再 4n 附近找處女座殺他拿輪迴之光（不好打，需要 dark；騎士用 wind 要兩下）。"
+
+[[quest.steps]]
+title = "牡羊座穆斯：新生龍盾"
+manual = true
+note = "回聖域路口 4n 找牡羊座穆斯，給他破損龍盾和輪迴之光，換成新生龍盾，拿去給紫龍加龍氣（必要）。"
+
+[[quest.steps]]
+title = "金色雕像"
+manual = true
+note = "從 A 處 10n2se 把天秤座聖符給金色雕像，帶著走 sws。控制方向：say libra＝南、capricorn＝西、aries＝北、cancer＝東。巨型雕像死後拿出黃金聖鑰 (key) 和黃金聖水 (potion，要解磁)。"
+
+[[quest.steps]]
+title = "冰河項鍊"
+manual = true
+note = "解開南邊的門，西方的天蠍座會攻擊你（可以 flee），往西找白鳥座冰河給他 potion，得到冰河項鍊（必要）。"
+
+[[quest.steps]]
+title = "兩座迷宮"
+manual = true
+note = "從冰河往西走到底再往南到北風之道（迷宮 A）。出迷宮到射手宮（注意搜尋聖弓和聖箭），往南進迷宮 B（7 路迷宮）。"
+
+[[quest.steps]]
+title = "阿修羅、水瓶座、雙魚座"
+manual = true
+note = "出迷宮到無底地塹，往南遇阿修羅（打他拿山羊座聖衣一定要有龍氣才殺得死）。8s2es 找水瓶座卡繆給冰河項鍊（必要；打水瓶座聖衣要 dark），2se 找雙魚座給 rose（必要）。"
+
+[[quest.steps]]
+title = "見教皇與雅典娜"
+manual = true
+note = "傳送到玫瑰道後往上到教皇聖殿，3n 找教皇 talk saint 雅典娜（一次只能一人）。先跟教皇 talk 三件事，再往上找雅典娜 talk anthena yes，會回復所有 mana 並傳送回市中心。"
+
+[[quest.tables]]
+title = "聖域地圖"
+headers = ["西側（由下往上）", "東側（由下往上）"]
+rows = [
+  ["牡羊宮 → 金牛宮 → 雙子宮（大道分岔口）", "雅典娜 → 天梯 → 教皇聖殿 → 奪命玫瑰道"],
+  ["巨蟹宮 → 落石崖 → 巨石臺階", "雙魚宮 → 吹雪之路 → 水瓶宮"],
+  ["獅子宮 → 光明大道 → 處女座", "山羊宮 → 無底地塹 → 射手宮"],
+  ["巨石大道 → 力牆之內 → 天秤宮", "北風之路 → 天蠍宮 → 嘆息之門 → 天秤宮"],
+]
+
+[[quest.tips]]
+title = "簡易版解法"
+items = [
+  "身上先備好 rose 和 kawa，並先取得龍氣",
+  "請牧師傳到巨石大道 → 往 w 走到底再 s 進北風之道迷宮",
+  "出迷宮到射手宮 → 往 s 進 7 格迷宮",
+  "出來到無底地塹往南見阿修羅（s 門沒開就殺阿修羅）",
+  "8s2es 找水瓶座（s 門沒開就給 kawa），2se 找雙魚座給 rose，順路找到教皇",
+]
+
+[[quest]]
+id = "aspen"
+name = "亞斯本"
+aliases = ["亞斯本", "aspen", "未來計程車", "爵德", "dreed"]
+area = "亞斯本"
+level = "60"
+route_note = "找未來計程車 (future taxi，很會亂跑)，give 20000 coins taxi 傳到亞斯本；或請牧師直接傳到易容師那裡。"
+
+[[quest.steps]]
+title = "拿企鵝的信"
+do = ["/13wds2w5n4wn3ws", "talk penguin letter"]
+
+[[quest.steps]]
+title = "搭未來計程車"
+manual = true
+note = "detect hidden 找未來計程車，give 20000 coins taxi。"
+
+[[quest.steps]]
+title = "易容並買臂章"
+manual = true
+note = "到亞斯本先找易容師（迴圈中找 [北東西] 這格 open s）：先給兩萬再給三萬（幫你易容），再買 aspon arms（亞斯本臂章，穿上才能進監獄）。"
+
+[[quest.steps]]
+title = "到南獄門"
+manual = true
+note = "neenn（路會變：有東往東、見北往北）到南獄門。"
+
+[[quest.steps]]
+title = "完成"
+do = ["wear arms", "2n2w10nenen", "open u", "u", "give letter dr"]
+
+[[quest.tips]]
+title = "打法與殺爵德 (dreed)"
+items = [
+  "騎士用 at at wind 或 at at at 開路。evil 比 holy 好（不會受沙蟲究極死光傷害），但到亞斯本內部 evil 寸步難行",
+  "爵德身上有 scaner、超時空戰甲和爵德配槍；hp 22xxx，絕招是 buttock + disarm + 絆倒 + shoot",
+  "最佳組合：disarm 軍人 + 小偷。先 disarm，小偷拼命 piercy，軍人上 weaken/poison/frostdust/chill touch 等降 str 法術",
+  "全團先 fly（爵德會 recite 地震術符咒）；穿上臂章 judge 才不會打你",
+  "從 [南獄門] 走 nneennnwwn（最後的 n 就是爵德），先清掉東方的 robot",
+]
+
+[[quest]]
+id = "ikkoku"
+name = "相聚一刻"
+aliases = ["相聚一刻", "一刻館", "ikkoku", "響子"]
+area = "相聚一刻"
+level = "15-25"
+intro = "響子的父親氣沖沖地跑到一刻館，五代與響子的關係讓他覺得不妥。"
+route = ["/6w3n", "enter ikkoku"]
+note = "所有 mob 都要在他自己的房間 talk 或 give 才有用。"
+
+[[quest.steps]]
+title = "響子"
+note = "等響子進到管理人室時再說。"
+do = ["talk kyokoo otonashi", "talk kyokoo yes"]
+
+[[quest.steps]]
+title = "響子的父親"
+do = ["talk otonashi kyokoo"]
+
+[[quest.steps]]
+title = "再找響子"
+do = ["talk kyokoo otonashi"]
+
+[[quest.steps]]
+title = "五代"
+do = ["talk godai otonashi"]
+
+[[quest.steps]]
+title = "奶奶給錦囊"
+do = ["talk yukari godai", "talk yukari otonashi"]
+
+[[quest.steps]]
+title = "把錦囊給五代"
+do = ["give bag godai", "squeeze"]
+
+[[quest.steps]]
+title = "四谷與朱美"
+do = ["talk yotsuya godai", "talk akemi yotsuya"]
+
+[[quest.steps]]
+title = "管理人"
+note = "到一刻館 nw，keeper 會進屋。如果 keeper 已進 chachamaru，就 enter chachamaru 再 talk，得到白酒 (wine)。"
+do = ["nw", "talk keeper akemi"]
+
+[[quest.steps]]
+title = "完成"
+manual = true
+note = "把酒拿給朱美，到玄關見到朱美後，找響子的爸爸 talk otonashi kyokoo。"
+
+[[quest]]
+id = "shaolin"
+name = "少林寺"
+aliases = ["少林寺", "shaolin", "易筋經", "九陽真經", "心魔"]
+area = "少林寺"
+level = "15-25"
+route = ["map2", "9wswn2w2u"]
+needs = ["remove nodrop"]
+note = "可以向練功場的和尚學 tigerfist 和 bannofist，或向醉和尚學 drunkfist。"
+rewards = ["易筋經"]
+
+[[quest.steps]]
+title = "方丈要三本書"
+do = ["2nwu", "talk monk 經書"]
+
+[[quest.steps]]
+title = "九陽真經"
+manual = true
+note = "殺喝得爛醉的師父（他會亂走）得九陽真經。"
+
+[[quest.steps]]
+title = "尼姑的髮簪與金剛經"
+note = "從方丈處出發。無花和尚身上的金剛經要解磁。"
+do = ["d2e", "open d", "d", "kill guard", "get key", "unlock n", "open n", "kill female", "get 髮簪",
+      "s", "unlock s", "open s", "s", "kill 無花"]
+
+[[quest.steps]]
+title = "九陰真經換易筋經"
+note = "如果藏經閣管理員不給易筋經，殺他等 reborn 重來（bug，他身上只有一本）。"
+do = ["nu2wn", "unlock e", "open e", "e", "get 九陰真經", "w", "give 九陰真經 管理員"]
+
+[[quest.steps]]
+title = "交書給方丈"
+manual = true
+note = "su，把三本書交給方丈，talk monk 什麼事。"
+
+[[quest.steps]]
+title = "殺羅漢"
+do = ["dese", "open e", "e", "s", "kill 羅漢", "get key"]
+
+[[quest.steps]]
+title = "過關"
+do = ["unlock d", "open d", "ds2u2nwu", "talk monk 過關"]
+
+[[quest.steps]]
+title = "殺心魔"
+do = ["de2sdwn", "open w", "w", "kill 心魔"]
+
+[[quest.steps]]
+title = "完成"
+do = ["eseu2nwu", "talk monk 我殺了"]
+
+[[quest]]
+id = "dragon-tower"
+name = "龍塔"
+aliases = ["龍塔", "dragon tower", "提亞美特", "tiamat"]
+area = "龍塔"
+level = "10-50"
+intro = "傳說中的邪龍提亞美特帶著龍族弟兄佔據了龍塔！"
+route = ["/3w3se", "look painting", "s9e3n5u2wu3e"]
+note = "龍都會燒 box！裝備最好先拿出來或放到別的角色身上。殺完龍王、四條龍、地穴主人和提亞美特就解了。"
+
+[[quest.steps]]
+title = "紅龍"
+do = ["2n3e2n", "kill 紅龍", "get key corpse"]
+
+[[quest.steps]]
+title = "綠龍"
+do = ["2se", "unlock e", "open e", "e", "kill 綠龍", "get key corpse"]
+
+[[quest.steps]]
+title = "龍王"
+note = "回 / 再馬上跑到龍塔大門 (Gate)。"
+do = ["/3w3se", "look painting", "s9e3n5u2wu3e", "4nu3s", "kill 龍王", "get key"]
+
+[[quest.steps]]
+title = "九頭蛇"
+do = ["3ndswd", "kill 九頭蛇", "get key"]
+
+[[quest.steps]]
+title = "地穴主人"
+do = ["unlock s", "open s", "s", "unlock w", "open w", "3w", "kill 地穴主人", "get bone corpse"]
+
+[[quest.steps]]
+title = "白龍"
+do = ["unlock w", "open w", "wde2n", "kill 白龍"]
+
+[[quest.steps]]
+title = "黑龍"
+do = ["2se3suws", "kill 黑龍"]
+
+[[quest.steps]]
+title = "提亞美特"
+note = "有點強，可以用 at flee。"
+do = ["ne2u", "unlock n", "open n", "kill 提亞美特"]
+
+[[quest]]
+id = "poker"
+name = "撲克王國"
+aliases = ["撲克王國", "夢幻撲克王國", "poker", "poke"]
+area = "夢幻撲克王國"
+level = "10-30"
+intro = "撲克王國是個神秘的地方，只能進不能出。"
+route = ["/6s2e4u"]
+note = "想在本區 recall 要走到最南（進來的那一格）。"
+
+[[quest.steps]]
+title = "小黑桃"
+do = ["kill spade", "get stone"]
+
+[[quest.steps]]
+title = "方塊國王"
+note = "到最西方找方塊王國，得到祕語 goodmorning。"
+do = ["say gold", "give stone king"]
+
+[[quest.steps]]
+title = "黑桃皇后"
+note = "到最北方找黑桃皇后，得到祕語 ireallywantleave。"
+do = ["say goodmorning"]
+
+[[quest.steps]]
+title = "紅心皇后"
+do = ["3s3u", "say ireallywantleave"]
+
+[[quest]]
+id = "smurf"
+name = "精靈村"
+aliases = ["精靈村", "小精靈村", "smurf", "papa", "賈不妙"]
+area = "小精靈村"
+level = "1-10"
+intro = "小精靈的老爸似乎有什麼事在困擾著他。"
+route = ["/3w3se", "look painting", "seeeennnnn"]
+note = "小搗蛋 (jokey) 會給 gift，是 bomber 的來源。"
+
+[[quest.steps]]
+title = "找老爸"
+note = "用 where papa（或 summon）找到老爸。"
+do = ["where papa", "talk papa 什麼事", "talk papa yes"]
+
+[[quest.steps]]
+title = "拿 key 和 wand"
+manual = true
+note = "殺老爸拿 key（已經有 key 就不用）。往西北找賈不妙，殺他拿回 wand。等老爸 reborn 後把 wand 給他。"
+
+[[quest]]
+id = "salad"
+name = "生菜沙拉王國"
+aliases = ["生菜沙拉王國", "生菜沙拉", "生菜", "salad", "國王權杖"]
+area = "生菜沙拉王國"
+level = "8-25"
+intro = "生菜沙拉王國的國王遺失了國王的權杖。"
+route_note = "從 / 往東走到底。"
+note = "國王權杖可以 save，下次要解再 give wand king 一樣能解。森林裡不能 recall，一定要找到水池。本區很耗 mv，多帶補 mv 的道具。"
+
+[[quest.steps]]
+title = "殺蝴蝶皇后拿權杖"
+manual = true
+note = "到城堡裡找蝴蝶皇后，殺死她拿國王權杖。"
+
+[[quest.steps]]
+title = "交給國王"
+do = ["say why?", "give wand king"]
+
+[[quest.tables]]
+title = "各種水果蔬菜位置（從 /5e2n 算起）"
+headers = ["物品", "路徑"]
+rows = [
+  ["龍眼", "2w2nw"], ["鳳梨", "2w4n"], ["檸檬", "2w3ne3nw"], ["香蕉", "2w3ne7nw"],
+  ["橘子", "2w3ne5n3wsws"], ["榴蓮", "2w3ne5n3wnw"], ["蘋果", "3e2n4en"], ["草莓", "3e5nes"],
+  ["甘蔗", "3e5n2e2nes"], ["荔枝", "3e5n2e6ne3ne"], ["蕃茄", "3e5n2e6n3wne"], ["柳橙", "3e5n2e6n3w3n"],
+]
+
+[[quest]]
+id = "twelve-beauties"
+name = "十二金釵"
+aliases = ["十二金釵", "金釵", "紅樓夢", "元春"]
+area = "十二金釵"
+note = "解謎獎勵隨心地不同：中立 add(str2 power30)、holy add(hr4 mv25)、evil add(int2 mana30)。可以在 5n3w4n3ene 買地圖。"
+rewards = ["中立：str+2 power+30", "holy：hr+4 mv+25", "evil：int+2 mana+30"]
+
+[[quest.steps]]
+title = "到門口"
+do = ["map2", "4w3se"]
+
+[[quest.steps]]
+title = "共同前半段"
+do = [
+  "5n3w4n3ene", "ws3w3s2w", "talk master help",
+  "2es3e3ses4e3n2en", "talk day-yuh 喜歡",
+  "s2w3s5w4n3wn2w", "talk master 困難",
+  "2e3n3ene", "talk mayor 元春",
+  "5ws3es2e", "give dragon_scroll yuan-chuen",
+  "2wn6w3s2w", "talk master 進宮",
+  "2e2n2w", "talk shi-fenq 為難",
+]
+
+[[quest.steps]]
+title = "殺 thiefer"
+note = "不強，但 hp 多，會摔人。"
+do = ["2en12e3s", "kill thiefer"]
+
+[[quest.steps]]
+title = "共同前半段（續）"
+do = ["3w3n9ws2w", "talk shi-fenq 解決", "2e2s2w", "talk master 老爺"]
+
+[[quest.steps]]
+title = "中立路線：道士"
+note = "選擇中立獎勵 str+2 power+30 才走這條。之後到襄陽用 where taoist 找道士殺死他，再回來把 void_robe 給道士。"
+do = [
+  "2e3n3ene", "talk taoist 幫忙",
+  "map2", "5ws", "enter", "2w", "climb", "w5sd3n",
+]
+
+[[quest.steps]]
+title = "中立路線：完成"
+manual = true
+note = "殺死道士後：map2 → 4w3se → 5n3w4n3ene → give void_robe taoist → ws3w3s2w → talk master 放心。"
+
+[[quest.steps]]
+title = "holy 路線（替代）"
+manual = true
+note = "到 talk master 老爺 之後：2e3n3en → talk monk help → 去少林寺打黑衣人 (man，很會跑)。map2 → 4w3se → 5n3w4n3en → give void_book monk → s3w3s2w → talk master 解決。"
+
+[[quest.steps]]
+title = "evil 路線（替代）"
+manual = true
+note = "到 talk master 老爺 之後：2e3n3en3w → talk author 怎麼辦 → 3es3w4s3e3ses4e3n2en → kill day-yuh → s2w3s5w4n3wn2w → talk master 死了。"

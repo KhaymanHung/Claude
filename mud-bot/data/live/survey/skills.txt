@@ -1,0 +1,21 @@
+> skills
+你現在所能學習的技能有:
+
+               dodge                 閃躲 記憶量: 100
+     enhanced damage             加強破壞 記憶量: 100
+           pick lock                 開鎖 記憶量: 20
+       second attack             二段突刺 記憶量: 100
+           bare fist                 拳力 記憶量: 150
+             buttock               過肩摔 記憶量: 200
+          earthslice             大地之斬 記憶量: 250
+                scan                 搜查 記憶量: 10
+               shoot                 射擊 記憶量: 600
+               throw             武器投射 記憶量: 50
+         swordmaster                 劍訣 記憶量: 300
+            ejinjing               易筋經 記憶量: 200
+          okra power             葵花寶典 記憶量: 500
+          saulinfist             少林長拳 記憶量: 100
+       mountainslash             茅山劍法 記憶量: 25
+         shadowslash             虛影劍法 記憶量: 50
+           evilslash             辟邪劍法 記憶量: 300
+             dispose                 佈陣 記憶量: 320

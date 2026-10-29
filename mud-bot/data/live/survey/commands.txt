@@ -1,0 +1,37 @@
+> commands
+'               ,               /               ;               [               
+ability         affect          aggressive      areas           allowip         
+auto            autoexit        autoloot        autosac         abscond         
+assail          attack          buy             beep            bj              
+bug             blank           brief           brandish        backstab        
+benumb          bs              buttock         backup          breakdark       
+cast            clan            clandata        cmembers        commands        
+compare         consider        credits         cwho            channels        
+combine         config          ctell           close           cancel          
+changebody      charge          charmcorpse     chaodu          down            
+deposit         data            description     drink           drop            
+disarm          darting         daub            dispose         dismiss         
+east            exits           equipment       examine         eqstock         
+emote           eat             fist            fill            fixeq           
+flee            follow          forge           get             gtell           
+give            group           help            hold            hanging         
+hunt            hide            honor           inventory       idea            
+ictus           kill            kaioken         look            list            
+lock            loadmissile     learn           makescroll      mpk             
+north           order           open            outdo_waver     pagelength      
+pk              pretend         password        prompt          pose            
+pick            put             piercy          practice        query           
+quaff           quintain        qui             quit            quests          
+rest            report          reply           rnote           recite          
+reflexion       rescue          recall          rent            remove          
+south           sleep           slash           suicide         stand           
+score           socials         situation       scan            spy             
+say             sell            sacrifice       shoot           stun            
+save            sleep           sneak           skills          spells          
+split           steal           tell            talk            time            
+typo            title           take            tuochangstarmovethrow           
+tenslice        train           taigi           up              unlock          
+unloadmissile   value           visible         west            wield           
+withdraw        weather         who             wizlist         wimpy           
+wear            windslice       wake            where           zap             
+zulai           

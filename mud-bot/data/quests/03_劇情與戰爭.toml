@@ -1,0 +1,1177 @@
+# 解謎資料（第 3 部分）：闇的繼承者系列、戰爭區、其他
+
+[[quest]]
+id = "dark-heir"
+name = "闇的繼承者"
+aliases = ["闇的繼承者", "smangel", "普利莫", "primo", "聖戰神劍", "撒旦", "軒轅劍"]
+area = "闇的繼承者"
+route = ["map3", "s7e9n", "walk inside", "2n"]
+note = "普利莫 (primo) 不會自己清身上的裝備。如果 cast 'locate object' dark_crystal 有 19 個在他身上，負重就滿了，無法再 give，需請 imm 幫忙清。"
+rewards = ["諸神水晶 (god_crystal)", "聖戰神劍（nosave，hr10 dr10 damage 60-80）", "迅雷魔法指環（需先把約克和奧斯蒙打到紅血）", "魔界要塞入場權（軒轅劍合成）"]
+
+[[quest.steps]]
+title = "第一階段：見普利莫"
+note = "「幫忙」那一句可以省略。"
+do = ["talk primo 是", "talk primo 幫忙"]
+
+[[quest.steps]]
+title = "上帝之劍：找艾倫"
+note = "在前廳找艾倫 (Aaronn)。可選：先去找艾布特 (walk outside → 2s2en)，talk abbott 拜託，give excalibur abbott（不給只是洞穴內的 mob 會攻擊你，可以直接打或先迷倒）。"
+do = ["talk aaronn 任務", "talk aaronn ok"]
+
+[[quest.steps]]
+title = "上帝之劍：魔窟洞穴找維拉"
+note = "被傳送到魔窟洞穴後找到維拉 (Verai)，她會自動給你上帝之劍。"
+do = ["3ne2nws3ne2sen"]
+
+[[quest.steps]]
+title = "闇夜之劍：找約克"
+note = "約克 (Yorke) 要你救被藍道夫擄走的未婚妻翠絲特。"
+do = ["map3", "s3e3n2wn2esw2nw", "talk yorke 高手"]
+
+[[quest.steps]]
+title = "闇夜之劍：殺藍道夫"
+note = "找到藍道夫 (Randolph) 殺掉，取得闇夜之劍。"
+do = ["e;n;n;n;n;n;e;e;n;n;w;n"]
+
+[[quest.steps]]
+title = "闇夜之劍：送回翠絲特"
+note = "回去後翠絲特自動獲救。可選（解 ring 用）：把約克打到紅血，他會認輸。"
+do = ["s;e;s;s;w;w;s;s;s;s;s;w"]
+
+[[quest.steps]]
+title = "太陽之劍：找愛葛妮絲"
+manual = true
+note = "到 map1 風采之都北方十里坡，n 到底找愛葛妮絲 (Agnesi)，talk agnesi 任務。可選：talk primo 高手 得知三位高手名字。"
+
+[[quest.steps]]
+title = "太陽之劍：奧斯蒙"
+manual = true
+note = "奧斯蒙 (Osmond) 在 map3 聖域分歧點 e2ne。talk osmond 高手，往北殺骷髏王 (skeleton king)，回來 talk osmond 擊殺。可選（解 ring 用）：把奧斯蒙打到紅血。"
+
+[[quest.steps]]
+title = "太陽之劍：諾曼"
+note = "從約克處出發。不必準備 skying，給不給結果都一樣，直接打到紅血，諾曼認輸並給你太陽之劍。"
+do = ["e;s;s;e;n;w;w;s;e;e;s;s;s;e;e;e;s;s;s;s;e;e;s;e;e;d;n;n;n;e;s;s;s;e;s;e;e;e;e;n;w;s;s;e;s;s;w;w;s;s", "talk norman 高手"]
+
+[[quest.steps]]
+title = "合成諸神水晶"
+note = "三把劍交給普利莫，身上要留 50 kg 負重。"
+do = ["give sword primo", "give sword primo", "give sword primo", "talk primo 秘寶"]
+
+[[quest.steps]]
+title = "第二階段：前往奈落打闇之邪神"
+note = "務必穿上 god_crystal，可以擋掉特攻。在奈落底部殺闇之邪神，得到封神印 (dark_crystal)。如果死了或忘了穿，等 reborn 回去 talk agnesi 出發，不必重解。"
+do = ["recall", "n;n;n;w;n;n;e;n;d;d;n;n;e;n;n;w;n;w;n;u;u;n;n;n;n;n;n", "talk agnesi 出發"]
+
+[[quest.steps]]
+title = "回報普利莫"
+note = "普利莫會帶你到魔法幻界。"
+do = ["give dark_crystal primo", "talk primo 辦法", "talk primo 神的祝福"]
+
+[[quest.steps]]
+title = "第三階段：打五位神之戰士"
+manual = true
+note = """在魔法幻界連續 talk primo 召喚，打五位神之戰士（每位打到面無血色會自動停止）：
+泰德泰倫斯 → 賽門羅哲 → 白傑夫昆 → 伍德洛耶魯 → 丹尼爾路，各得五分之一的神之祝福。
+被打死或 recall 的話，回去找 primo talk 召喚，會改在公會裡打，比較好打。全部打完後 talk primo 得到了。"""
+
+[[quest.steps]]
+title = "第四階段：打撒旦"
+note = "被傳送到奈落底部，先打邪神 (evil god)，到主殿殺邪神撒旦。在邪神或撒旦處死亡的話，等 reborn 回去 talk aaronn 出發，不必重解。"
+do = ["talk aaronn 出發", "s;e;s;s;w;s;e;e;s;w;s;w;w;s;s;s;s;e;e;e;s;w;s;s;s;s;u;u;u"]
+
+[[quest.steps]]
+title = "拿獎勵"
+note = "回去找艾布特。注意：拿了裝備 qmark 會消掉，就無法進入魔界要塞。"
+do = ["talk abbott 我打敗了撒旦", "talk abbott 給我獎勵", "talk abbott 給我獎勵"]
+
+[[quest.tips]]
+title = "軒轅劍合成（魔界要塞）"
+items = [
+  "解完闇的繼承者得到聖戰神劍 (Holyer war sword) 和魔界要塞入場權",
+  "要塞內隨機會有不同妖怪 Boss 帶小兵進攻，有 qmark 的人打死可得合成元素（共七種）",
+  "把劍與元素融合（失敗機率頗高）得到新武器，重複直到集齊七把",
+  "七把子劍：爆 雷霆動神刃、異 魔法冰晶劍、滅 魔鬥戰劍、喪 斬妖牙、歿 靈切刃、極 天空追風劍、靈 流星碎地劍",
+  "把七把交給造劍師父，talk 造劍師父 上古的神劍 → yes，成功得到真 軒轅劍（也可能失敗）",
+  "真 軒轅劍：No Save，傷害 70-85，dr+12 hr+13，mv/hp/mana -100，con/wis/dex -2，int/str +1。BaBi 評語：頗爛，但解謎的樂趣大於拿 eq",
+]
+
+[[quest]]
+id = "demon-castle"
+name = "魔堡"
+aliases = ["魔堡", "路維斯", "煉獄脛甲", "hell leggings"]
+area = "闇的繼承者"
+needs = ["解完闇的繼承者取得 qmark（拿解謎獎品會取消 qmark）", "可以先迷倒往魔堡路上和魔堡外面旦丁以外的所有 mob"]
+route_note = "找打工巫師 talk wizard daemon，往南走到魔堡大門。"
+rewards = ["煉獄脛甲 (hell leggings)", "幸運魔幣 (luck_coin，穿上可擋特攻，只能穿一次)"]
+note = "有時限（約 24 tick），超過 boss 會消失，可以 quit 等 reborn 再打。可以 where ture_luweisi_king 查看是否 reborn（需 detect invis、detect hidden）。"
+
+[[quest.steps]]
+title = "接任務"
+do = ["talk braverman 未完成的事", "enter inside"]
+
+[[quest.steps]]
+title = "殺守門犬旦丁"
+manual = true
+note = "進魔堡往東北前進，殺守門犬旦丁 (dandin_dog)，屍體中得到水晶鑰匙（會融入體內）。"
+
+[[quest.steps]]
+title = "打開魔法牆"
+do = ["scan wall", "insert crystal_key"]
+
+[[quest.steps]]
+title = "穿越結界"
+manual = true
+note = "進王宮後 through place 穿越結界，會遇到馬卡.喬、傑克.伍滋、萊恩.佛斯特（打到瞎即可，可能被傳到異次空間）。若進入異次空間，找老人 talk older 苦惱 → talk older 出去，得到幸運魔幣。"
+
+[[quest.steps]]
+title = "殺魔王路維斯"
+manual = true
+note = "最後到砲室殺魔王路維斯 (ture_luweisi_king)。所有 mob 都可以 blind、dm 後 at flee，或直接 at flee。打死 boss 後 qmark 消失；若在砲室旁邊房間 quit 等 reborn，boss 臨死會發約 1500 hp 的特攻，但仍能拿到煉獄脛甲。"
+
+[[quest]]
+id = "shura-city"
+name = "修羅城"
+aliases = ["修羅城", "修羅金帶", "濃沃市"]
+area = "闇的繼承者"
+needs = ["解完闇的繼承者取得 qmark（拿解謎獎品會取消 qmark）", "最好先迷倒所有禁衛死靈步兵和騎兵，不然被圍攻很兇，還會被傳到監牢（付 0.5m 才能出去）"]
+route_note = "找打工巫師 talk wizard daemon，往南到路轉西北方向進修羅城。"
+rewards = ["隨機，例如修羅金帶", "濃沃市開放西邊區域和道具店"]
+
+[[quest.steps]]
+title = "一路打到底"
+manual = true
+note = "所有 mob 都可以用騎士 at flee 解決。"
+
+[[quest.steps]]
+title = "回報濃沃市長"
+do = ["talk city 討伐成功"]
+
+[[quest.tables]]
+title = "濃沃市道具店（魔堡和修羅城都解完後）"
+headers = ["#", "等級", "價格", "物品"]
+rows = [
+  ["1", "9", "3,030", "復原卷軸"],
+  ["2", "8", "1,634", "補充卷軸"],
+  ["3", "5", "2,200", "偵測卷軸"],
+  ["4", "10", "14,850", "補血卷軸"],
+  ["5", "13", "49,000", "定位地儀器"],
+  ["6", "13", "57,000", "礦物掃描儀"],
+  ["7", "6", "50,500", "高速鑽礦機"],
+]
+
+[[quest]]
+id = "armageddon"
+name = "世界末日"
+aliases = ["世界末日", "armageddon", "末日護腕", "楚門"]
+route_note = "找楚門交談「世界末日」，再 say yes。"
+rewards = ["末日護腕（選擇攻擊力或命中率）"]
+
+[[quest.steps]]
+title = "接任務"
+do = ["talk 楚門 世界末日", "say yes"]
+
+[[quest.steps]]
+title = "哈利"
+do = ["talk harry 拯救地球", "talk harry 夥伴"]
+
+[[quest.steps]]
+title = "弗斯特"
+note = "先找葛莉絲拿信。"
+do = ["give grace_letter frost", "talk frost 拯救地球"]
+
+[[quest.steps]]
+title = "羅克韓德"
+do = ["talk harry 夥伴", "talk rockhound 拯救地球", "talk rockhound 條件", "give 100000 coins rockhound"]
+
+[[quest.steps]]
+title = "搭太空船"
+note = "操作：start off＝發射、speed up＝推進、right/left＝往東/西推進。"
+do = ["talk 楚門 準備完成"]
+
+[[quest.steps]]
+title = "隕石上"
+manual = true
+note = "降落後找哈利 talk 幫助，找弗斯特 talk 鑽探機，帶弗斯特找哈利，talk frost 趕工、talk harry 趕工。殺 FBI 幹員拿核子彈頭，give warhead harry。"
+
+[[quest.steps]]
+title = "回報楚門"
+note = "之後選擇「攻擊力」或「命中率」，得到末日護腕。"
+do = ["give 太空人勳章 楚門"]
+
+[[quest]]
+id = "mine"
+name = "礦坑"
+aliases = ["礦坑", "mine", "惡魔王", "礦石"]
+area = "礦坑"
+level = "60"
+route_note = "市中心往西走到底，共 20 層。"
+note = "礦坑主要產礦石（幫派資源）。惡魔王原本有 100m，現在改為 3m 且會 full。"
+
+[[quest.tips]]
+title = "打法要點"
+items = [
+  "一隻凌波巫師 + 一隻騎士或拳法家是最佳組合",
+  "冥鬥士的天馬攻擊最強，一定要先 blind",
+  "異形 mana 超多，可以 soulsteal 補充",
+  "sm 女王的 dark + blizzard 最危險；她有 refl，騎士千萬不要 at",
+  "惡魔王：先 blind 再隱形 dm，dm 成功後專心 ear 和補血，sanctuary 最好有 4 個 ticks",
+  "住在最底層要注意 eq 和 box 會被 mob 拿走；柳木棺 (box) 比玻璃棺 (boxes) 好",
+]
+
+[[quest]]
+id = "isani"
+name = "艾莎尼亞"
+aliases = ["艾莎尼亞", "愛莎尼亞", "isani", "玄武", "女神之心", "不死鳥之心"]
+area = "艾莎尼亞"
+level = "60"
+route_note = "在往騎士堡的路上，[東南西北] 淺海海域這格 4w 後往北到底。"
+note = "多重解法區域，每次結果不同。2020 年回報：區域內敵方單位會阻塞路線。"
+rewards = ["衣服 (qmark)", "女性角色 10% 機會得到 crown", "後續：ring(dex1 dr1 hr4)、medal（戰功>6600）、dragon plate(hr5 dr5)、精靈弓"]
+
+[[quest.steps]]
+title = "冒險家加理"
+note = "到酒店找冒險家加理。"
+do = ["say 勇者"]
+
+[[quest.steps]]
+title = "首富給 key"
+do = ["talk millionaire topic", "talk millionaire 錢", "say yes"]
+
+[[quest.steps]]
+title = "玄武與女神之心"
+manual = true
+note = "碰到玄武 (grand turtle) 時必須被他 hunt 標記（讓他先打你），而且不能殺死玄武，否則要重來。到風沙堡藏寶庫開寶箱拿女神之心，交給首富得到衣服 (qmark)。失敗時到水晶球處 quests clear 清除紀錄重試。"
+
+[[quest.steps]]
+title = "女皇"
+note = "到宮門找隊長。"
+do = ["say yes", "talk queen 勇者", "say yes"]
+
+[[quest.steps]]
+title = "藍團隊長盧克"
+note = "會被傳送到火凰洞。"
+do = ["talk captain luke 任務"]
+
+[[quest.steps]]
+title = "火鳳凰"
+manual = true
+note = "殺火鳳凰拿不死鳥之心，回宮門 talk captain sure，把不死鳥之心給女皇。"
+
+[[quest.tips]]
+title = "第二次解與戰爭"
+items = [
+  "已有 finish mark 時：女皇要你把 heart 交給 risa → 公主死 → 殺殺手 → 開戰 (war1)",
+  "開戰方法：連續救兩次公主 → 出現殺手 → 打死殺手就開戰",
+  "後續可觸發殺龍任務、ko 王子等多種分支",
+]
+
+[[quest.tables]]
+title = "War 2 boss"
+headers = ["Boss", "HP", "戰功", "特性"]
+rows = [
+  ["黑騎士指揮官葛雷", "30000", "15", "double heal、disarm，hp<25% full heal"],
+  ["艾莎尼亞主教", "15000", "10", "天神真言全體 3000～4000、full heal"],
+  ["副指揮官威廉", "15000", "10", "refl、特攻 1500～2500×2、wind"],
+  ["凱文公爵", "25000", "15", "hp<25% full heal"],
+  ["皇家魔導士肖恩", "15000", "10", "凱撒之鷹全體 6000（10%）"],
+  ["殺手團團長", "15000", "10", "背刺 4000～5000、disarm"],
+]
+
+[[quest]]
+id = "black-cliff"
+name = "黑木崖"
+aliases = ["黑木崖", "東方不敗 war", "向問天", "楊蓮亭"]
+area = "笑傲江湖之東方不敗篇"
+route = ["map2", "4w2nw", "enter war"]
+
+[[quest.steps]]
+title = "殺向問天"
+manual = true
+note = "往 e 找向問天，殺了取得笑傲江湖曲。把曲給黃鐘公就開戰（開戰後約 15 分鐘可殺東方不敗）。"
+
+[[quest.steps]]
+title = "穿過迷宮"
+note = "scan 到守衛時用 food 做記號。沿路先殺楊蓮亭拿信物（有信物時東方不敗被追殺不會 full，攻擊力也會降），同時一路殺長老。"
+do = ["sw2n2enw2nws2n2es2wn"]
+
+[[quest.steps]]
+title = "到精雅小舍"
+note = "先 2n 到後花園打長老。"
+do = ["3u2nw2en4w2n"]
+
+[[quest.steps]]
+title = "打東方不敗"
+manual = true
+note = "dm 東方不敗後全力攻擊。"
+
+[[quest]]
+id = "dongfang"
+name = "笑傲江湖東方不敗"
+aliases = ["笑傲江湖", "東方不敗", "任我行", "sunflower dress", "丹青臂"]
+area = "笑傲江湖之東方不敗篇"
+level = "30-60"
+route = ["map2", "4w2nw", "enter hole"]
+note = "東方不敗的裝備 sunflower dress 是劍士裝。"
+rewards = ["想加入日月神教：丹青臂；不想：正港男子漢勳章"]
+
+[[quest.tables]]
+title = "必備物品"
+headers = ["物品", "英文", "來源"]
+rows = [
+  ["夜光杯", "Luminous Glass", "殺醉醺醺的人 (tipsy)"],
+  ["張旭肚痛帖", "Sample Penmanship", "殺隱居書法家 (man)"],
+  ["嘔血譜", "Chess Manual", "殺梅莊內小偷 (bandit)"],
+  ["廣陵散", "Zither Score", "殺盜墓者 (thief，會藏匿)"],
+]
+
+[[quest.steps]]
+title = "找任盈盈"
+do = ["say ok!"]
+
+[[quest.steps]]
+title = "盜墓者與假東方不敗"
+manual = true
+note = "殺盜墓者得廣陵散，殺假東方不敗得後花園通道鑰匙 (Flower Key)。"
+
+[[quest.steps]]
+title = "找東方不敗"
+note = "沿路 blind mob。說完會被 transfer。"
+do = ["nenwnw2nen2eseneneu2wnwnwn2w2n2e2n2e", "say 任我行", "talk 東方不敗 yes"]
+
+[[quest.steps]]
+title = "四位莊主"
+manual = true
+note = """殺 tipsy 得夜光杯、殺 man 得張旭肚痛帖。給四莊主夜光杯 → 傳到三莊主。
+talk 三莊主 任我行 → 給張旭肚痛帖 → 傳到二莊主。殺 bandit 得嘔血譜 → talk 二莊主 任我行 → 給嘔血譜 → 傳到大莊主。
+talk 大莊主 任我行 → 給廣陵散 → talk 大莊主 真的 → 傳到任我行。"""
+
+[[quest.steps]]
+title = "決戰"
+note = "到東方不敗臥房後再說「大夥上吧」。打法：有凌波巫師就很好對付。dm 後 fly 楊蓮亭（防止 ear 誤傷）→ dark → 打 → 追殺（他會吃 bowbow）。獨孤劍士在這裡很好用。"
+do = ["say 是"]
+
+[[quest]]
+id = "dragon-hell2"
+name = "地獄神龍II"
+aliases = ["地獄神龍", "地獄神龍II", "synn", "龍神斬魂刃"]
+note = "推薦路線：1 → 2-1(n) → 3-A(n) → 4-1 → 4-2 → 5 → 6-B(s) → 7-A(n) → …"
+
+[[quest.tables]]
+title = "各職業特效"
+headers = ["職業", "特效", "fire 效果（到特定關恢復）"]
+rows = [
+  ["fight", "可拿到傳說之劍（只有一把）", "破壞之戒加 dr"],
+  ["bxr", "", "hp+2000、barrier"],
+  ["cle", "可拿到聖劍，對不死系 talk turn 可 purge", "招喚牧師（talk 會 san heal）"],
+  ["mage", "可招喚究極召喚獸", "招喚巨鷹"],
+  ["thief", "對各 boss 可 talk boss steal，open chest 較不會中陷阱", "dc-2000"],
+]
+
+[[quest.tables]]
+title = "各關 boss 與掉落"
+headers = ["關卡", "Boss", "Get", "Steal"]
+rows = [
+  ["1", "機械砲車", "戰士頭盔", "戰士頭盔"],
+  ["2-1", "黑暗戰士1", "", ""],
+  ["2-2", "半蠍人", "", "魔法帽"],
+  ["3-A（城鎮）", "巨人兄弟", "", "白色頭巾、青色寶珠"],
+  ["3-B（腐林）", "眼魔", "eye", "eye"],
+  ["3-C（精靈森林）", "綠龍", "龍鱗", "龍鱗"],
+  ["4-1", "人面獅身怪", "獅皮", "獅皮、花邊頭環"],
+  ["4-2", "骷髏妖", "冰盾", "破壞劍、火盾"],
+  ["5", "黑豹", "豹皮、豹眼", "豹皮、豹眼"],
+  ["6-A", "黑龍", "龍鱗", "龍鱗"],
+  ["6-B", "三頭怪", "", ""],
+  ["6-C", "紅龍", "屠龍頭盔、龍角、龍鱗", "龍角"],
+  ["7-A", "火蜥蜴", "", "火盾"],
+  ["7-B", "冰蜥蜴", "", "冰盾"],
+  ["7-C", "黑暗精靈領袖", "后冠", "金質勳章"],
+  ["8-2", "幽靈", "金項鍊", "金項鍊、敏捷之靴、神靈呼喚戒"],
+  ["8-3", "黑暗戰士2", "力量手套", "破壞劍"],
+  ["8-4", "鳥人巫術士", "金項鍊", "金項鍊、魔法之杖"],
+  ["9", "Synn", "龍神斬魂刃", "飛行戒"],
+]
+
+[[quest.tables]]
+title = "可存檔裝備"
+headers = ["裝備", "屬性"]
+rows = [
+  ["元素護符", "hr1 dr4 mv-10"], ["金項鍊", "dr4"], ["敏捷之靴", "dex4"], ["龍王之翼", "dex4"],
+  ["飄浮之靴", "dex2、fly"], ["力量手套", "str3 dr2"], ["蛇杖", "int3 mana40 damage33"],
+  ["黑豹風衣", "hp55 mana-12"], ["金色勳章", "hp3 mana3"], ["屠龍頭盔", "hr4 dr1 hp10"],
+  ["銀弓／銀箭", "威力 68，裝載量 10／2kg 五發"], ["龍神斬魂刃", "hr8 dr14 damage70（有 soulsteal）"],
+  ["屠龍劍", "hr8 dr12 damage62"], ["破壞劍", "hr8 dr12 damage60"],
+]
+
+[[quest.tips]]
+title = "打 boss 要點"
+items = ["先 blind boss 再 flee → 小偷 talk steal → 最能擋的角色擋 → 黃血時全部 at at wind，避免 restore", "後面的 boss 先 dm 掉 sanctuary", "騎士瞬發力大，搶裝備好搶"]
+
+[[quest]]
+id = "sky-castle"
+name = "空中閣樓"
+aliases = ["空中閣樓", "超Z合金"]
+area = "雲空"
+route_note = "在雲空附近。"
+note = "這裡是打礦石的極佳場所：防禦系統的超 Z 合金重 120，可轉 2xx 的 metal 資源。騎士用 at flee 打到黃血再 at at at。"
+
+[[quest.steps]]
+title = "進入"
+do = ["talk master yes"]
+
+[[quest.steps]]
+title = "殺防禦系統"
+manual = true
+note = "一路殺上去，到 4 樓 open u 後殺防禦系統，拿 key2 和礦石。"
+
+[[quest.steps]]
+title = "完成"
+do = ["give key2 master"]
+
+[[quest]]
+id = "alien-planet"
+name = "異星球"
+aliases = ["異星球", "異星王", "塔坦", "異星間諜"]
+route_note = "戰爭區域在風采之都和西郊。"
+note = "目的：殺死 3 大 mob（有 medal）。殺塔坦後找異星間諜 (spy，會藏匿，要 detect hidden)，先攻擊後 spy 死掉會有一群異星人入侵（有戰功）。3 大 mob 每隻有 3 次 restore。在時限內殺死 3 大 mob 就能搭飛船進攻異星球（研究院西南方，約十分鐘起飛）。"
+
+[[quest.steps]]
+title = "降落後往下"
+do = ["2sws3wn3w2s"]
+
+[[quest.steps]]
+title = "異星球流程"
+manual = true
+note = """1. 到西理亞城按開關，開啟能源庫拱門。
+2. 進能源庫走到盡頭開 s 的門，打 mob 拿石頭。
+3. 到中央控制室按按鈕，開啟北山奈城和東凱薩城拱門。
+4. 東凱薩城密室按按鈕開啟能源庫地下密門；北山奈城密室也按按鈕（兩城的按鈕不能同時按）。
+5. 能源庫往下找密門，touch pool。
+6. 中央控制室往東開門按按鈕，能源庫最南方的密門會開。
+7. 沿路到異星王王宮追殺異星王（共出現 3 次後逃走）。
+8. 拿到中央控制室的 stone 按按鈕，王宮深處出現往上的路。
+9. 走到底殺異星王（restore 3 次、兩條命，會到處跑）。"""
+
+[[quest]]
+id = "research-center"
+name = "科研中心"
+aliases = ["科研中心", "金星", "四元素"]
+area = "科研中心"
+route_note = "在企鵝村附近。在研究院取好裝備，1 樓東南方搭船往金星。"
+needs = ["太空衣", "太空罩", "飛行器", "傳送裝置"]
+note = "分東西南北四區，目的是收集 4 個元素（可 save）。"
+rewards = ["shield (dex) 或 armor (int) 的 medal（500 戰功即可穿）"]
+
+[[quest.tables]]
+title = "MOB 種類"
+headers = ["MOB", "說明"]
+rows = [
+  ["毀滅異星人", "極少數 1～2 隻，不要打，blind 後跑"],
+  ["強磁異星人", "少數 4～5 隻，會破壞鑽孔裝置（放 box 裡保管）"],
+  ["異星人", "很多，at at at 就死"],
+  ["塔坦", "殺死會開戰，要穿太空裝，否則等死"],
+]
+
+[[quest.steps]]
+title = "西部"
+manual = true
+note = "傳送點在西北方，最簡單。殺異星人撿元素，不能 blind。"
+
+[[quest.steps]]
+title = "東部"
+manual = true
+note = "傳送點在正東方，需要抗酸瓶。多人一起殺塔坦（restore 3 次），殺死後穿 fight 裝拿元素。"
+
+[[quest.steps]]
+title = "北部"
+manual = true
+note = "傳送點在東北方，需要鑽孔裝置。找三出口的格子 drill（5～6 次到底），壞了回平台 fix。"
+
+[[quest.steps]]
+title = "南部"
+manual = true
+note = "傳送點在正南方。start locater → 指引機器人到四個目標 → detect insider → harvest xxxxx。機器人 hp 20000，要維持在 10001～19999 之間。路線：sw3swswsen3esewn3w2n2ws2wse3n。"
+
+[[quest.steps]]
+title = "交元素"
+do = ["talk leader all"]
+
+[[quest]]
+id = "dragon-lair"
+name = "龍穴"
+aliases = ["龍穴", "龍王", "dragon lair"]
+area = "龍穴"
+route = ["/3nw2nen2d2ne2nwnwn2u3nnue2nd"]
+needs = ["必須先解完龍塔", "一般三隻以上騎士帶石中劍 (sable) 和 gold 武器一起行動"]
+rewards = ["戰功", "necklace", "medal"]
+
+[[quest.steps]]
+title = "打死白龍"
+manual = true
+note = "白龍會 hide，要 detect hidden。follow white → dm → 追殺（白龍會連續 heal 很多次，等他 mana 用完）。"
+
+[[quest.steps]]
+title = "龍族大舉進攻"
+manual = true
+note = "待在原地等龍衝上來，不要貿然往龍谷衝。清小龍、士兵、護衛（護衛最強，不要把協調撐爆）。"
+
+[[quest.steps]]
+title = "打龍王（黑紅藍綠四種）"
+manual = true
+note = """龍王瞎了不會出裝備，禁用 gold spear。
+1. blind → dm → ear（人少時）：blind 龍王 → 全體隱形進入 → dm san 和 fly → cure blind → 全力 ear。
+2. dark：有巫師或 dark 騎士先封住法術，其他騎士開始 at。
+3. at flee（最保險）：穿 hr 裝（hr 80 以上較佳），可以不 dm fly；拳法家降龍再 flee 可加速。騎士單挑時 hr 90 左右配 aid，靠 excalibur 和 sable 補血，連 food 都不用吃。被雪嵐兩次就撿不了裝備、命中率大減，應立刻回 doctor 消雪嵐。"""
+
+[[quest]]
+id = "dream-city"
+name = "夢望城"
+aliases = ["夢望城", "雨林"]
+area = "夢望城"
+level = "60"
+route = ["map2", "4w"]
+route_note = "map2 往西 4 步，往南看到客棧後往西進雨林（迷宮）。"
+
+[[quest.steps]]
+title = "穿過雨林"
+manual = true
+note = "一直往西北，直到看到 <北邊看起來好像有個門>。"
+
+[[quest.steps]]
+title = "見城主"
+do = ["open n", "n"]
+note = "往 n 走到底看到城主。"
+
+[[quest.steps]]
+title = "接任務"
+do = ["talk master help", "talk master yes", "8s"]
+
+[[quest.steps]]
+title = "殺小偷拿紅寶石"
+manual = true
+note = "往 w 走到底，往 n 的路上殺 thief（要 detect hidden），get ruby，拿去給城主 give ruby master。"
+
+[[quest.steps]]
+title = "殺公主開戰"
+manual = true
+note = "往 s 到底，到雨林中殺公主 get head，給城主 give head master 就開戰。"
+
+[[quest]]
+id = "dali"
+name = "大理"
+aliases = ["大理", "大理國", "段譽", "北冥神功", "玉璽"]
+area = "大理國"
+level = "30-60"
+route = ["map2", "4w2s2w5sws2ws", "enter"]
+note = "迷宮部分可以 summon 角色省時間。可量產，多解幾次效益最好。"
+rewards = ["ring", "可學北冥神功"]
+
+[[quest.steps]]
+title = "王子給信"
+do = ["2w2se", "talk prince 煩惱", "talk prince yes"]
+
+[[quest.steps]]
+title = "到平原找王"
+note = "回十字路口後往平原，可以 scan 找鯉魚定位 wang。"
+do = ["w2n2e", "4nednedne", "give letter wang"]
+
+[[quest.steps]]
+title = "復國與信物"
+do = ["talk fu 復國", "talk fu 信物", "talk wang 信物", "talk wang 金刀"]
+
+[[quest.steps]]
+title = "王子與皇帝"
+do = ["2w2se", "talk prince 金刀", "w2n4e2ne", "talk emperor 金刀", "talk emperor 挑釁"]
+
+[[quest.steps]]
+title = "段譽：北冥神功"
+manual = true
+note = "去見段譽 talk prince 大輪明王，學得北冥神功。"
+
+[[quest.steps]]
+title = "天龍寺"
+manual = true
+note = "2s2esunwn 進天龍寺，往 u（需要 pass door），殺 dead bishop，到段政明 (emperor) 處 talk emperor 金刀 得金刀。"
+
+[[quest.steps]]
+title = "玉璽"
+manual = true
+note = "talk wang 玉璽，回十字路口 2sen，打 thief 得玉璽（記得關門）。給 wang 得 letter，give letter prince 得 ring。"
+
+[[quest]]
+id = "jumanji"
+name = "野蠻遊戲"
+aliases = ["野蠻遊戲", "jumanji", "古德", "野蠻神"]
+area = "野蠻遊戲"
+level = "40-60"
+route = ["map2", "n5ene", "search corner"]
+note = "解到殺鳥、拿鑰匙之後要注意步驟順序；長老不理你代表步驟有誤（PTT 2020/05 kairichin）。"
+
+[[quest.steps]]
+title = "玩具槍"
+manual = true
+note = "到矮人王國打玩具士兵取得玩具槍。"
+
+[[quest.steps]]
+title = "村長、長老與女孩"
+manual = true
+note = "找村長 talk what，找長老及 girl talk what，girl 要你去白霧森林找結界處長老 talk topic。到長安打神祕小偷取得藥草（要 detect invis、detect hidden），給 girl。"
+
+[[quest.steps]]
+title = "小木屋鑰匙"
+do = ["talk girl topic", "talk girl ok", "talk girl yes"]
+
+[[quest.steps]]
+title = "殺古德"
+note = "古德需要 dark，會吃白爛式雞精。"
+do = ["3n3en", "unlock d", "open d", "d3se2s2e"]
+
+[[quest.steps]]
+title = "圖騰"
+manual = true
+note = "殺死古德後往東北找圖騰 pray totem（沒 pray 不能解）。"
+
+[[quest.steps]]
+title = "小湯米與鵜鶘"
+manual = true
+note = "找小湯米，帶他去打鵜鶘：talk kid 開扁後逃（大鳥噴酸很痛），kid 打死鵜鶘後 get jumanji box。找長老拿 key，把玩具槍給湯米換 key，再找長老，他要你去廣場。"
+
+[[quest.steps]]
+title = "叫出野蠻神"
+manual = true
+note = "上午 12 點給 box，上午 3～6 點給 key，他會叫出野蠻神，say yes 就解了。"
+
+[[quest]]
+id = "diablo1"
+name = "暗黑破壞神魔道器篇"
+aliases = ["暗黑破壞神", "魔道器", "林奇", "聖潔護符", "梅塔-利卡那"]
+area = "暗黑的破壞神魔道器篇"
+level = "50-60"
+route_note = "吉雅尼斯城 → 5s2wne。梅塔-利卡那森林是本區的背景區域：/3w3se look painting 5s2wnenenen2n2w4n2wnw。"
+needs = ["food 多帶一點", "先用 magic food 標記陷阱位置", "本區各項物品都要由解謎者親自取得"]
+rewards = ["聖潔護符"]
+
+[[quest.tables]]
+title = "從入口出發的路徑"
+headers = ["目的地", "路徑"]
+rows = [["林奇", "2n2e3nen2e"], ["獨眼巨人", "2n3e"], ["statue", "3n2w"]]
+
+[[quest.steps]]
+title = "找吉歐"
+note = "有些往 n 要先 open n。隨手關門防止 gio 亂跑。"
+do = ["ne3n2w2n2e6n2w7nw", "talk gio 魔道器的下落"]
+
+[[quest.steps]]
+title = "防具店：惡魔之鎧"
+do = ["e8s3e", "talk boss 惡魔之鎧", "talk boss 林奇", "w5s3ene", "kill 林奇"]
+note = "林奇 lv65，不怕魔法，dark 無效，dm 也會被 armor 重上，會 fly（凌波巫師沒用）。先 blind，等 5 ticks refl 和 tou 失效再打（blind 後他不會再用）。保留一劍攻擊力（協調 500～700）用來補血。林奇 abscond 逃跑時可以幫他 refresh。"
+
+[[quest.steps]]
+title = "交惡魔之鎧"
+do = ["get 惡魔之鎧 corpse", "give armor boss"]
+
+[[quest.steps]]
+title = "武器店：妖魔的鎚鉾"
+manual = true
+note = "找武器店老闆 talk boss 妖魔的鎚鉾。w6s2w2s2es3e 殺獨眼巨人（不能 blind），拿妖魔的鎚鉾交給武器店老闆。"
+
+[[quest.steps]]
+title = "魔法店：魔王的戒指"
+do = ["recall", "ne3n2w2n2e6n5w", "talk boss 最後的魔道器", "talk boss 魔王的戒指", "talk boss 最後的審判", "talk boss 封印之地"]
+
+[[quest.steps]]
+title = "殺艾迪-依、奧斯芬"
+manual = true
+note = "殺艾迪-依（不能 blind）拿魔王的戒指。找 gio talk 森林中的大鎖，detect invis、detect hidden 後殺奧斯芬拿 key。到封印之地下方 look door，找 gio talk 地洞的大紅鎖 得 key。"
+
+[[quest.steps]]
+title = "封印（一定要照順序）"
+note = "回封印之地往北。"
+do = ["give armor hole", "give hammer hole", "give ring hole", "talk king 封印完成"]
+
+[[quest.tips]]
+title = "究極魔道獸（lv85、hp 30000）"
+items = [
+  "每週日會自行 purge，攻擊時間是週一至週六",
+  "需要肥凌波巫師 dark 加兩隻以上騎士",
+  "dark 成功後 dm 掉 san 和 fly；追殺時非封印者碰上它會 full heal",
+  "封印者 at at wind 追殺 2～3 次可殺，要連續打死三次才算真正殺死",
+]
+
+[[quest.tables]]
+title = "魔道器篇地圖（* 表示陷阱）"
+headers = ["區段", "房間"]
+rows = [
+  ["北方", "吉歐 119─120─121 國王；116─117─118；115"],
+  ["中段", "108─109 110─111─112 113─114；101～107；094─095 096─097─098 099─100；091 092 093"],
+  ["商店街", "魔法店 084─085─086─087─088─090─091 武器店；077～083 防具店；070～076；063～069"],
+  ["南段", "049 060 061 062 050；044 *045 046 *047 048（往林奇駐地）；*035─036～043"],
+  ["入口附近", "*030 031 *033 034（往獨眼巨人）；022 023～028；015─016 017 018～021；*009 封印之地 010～*014；005─006 007─008；往國道 001─002 *003 004─入口；往艾迪依在 009 西側"],
+]
+
+[[quest]]
+id = "diablo2"
+name = "暗黑破壞神忍者篇"
+aliases = ["忍者篇", "忍者城", "洋子", "grala", "火劍"]
+area = "暗黑的破壞神忍者城篇"
+level = "60"
+needs = ["先解過魔道器篇"]
+route_note = "由魔道器篇進入。"
+
+[[quest.tables]]
+title = "鑰匙取得"
+headers = ["鑰匙", "來源"]
+rows = [["城門", "sosonija 身上"], ["二樓", "密斯塔護斯（要給 10000 coins）"], ["三樓", "土下座衛門（會 charm）"]]
+
+[[quest.steps]]
+title = "公主與 pum"
+do = ["talk shila 洋子", "talk pum 效忠皇室"]
+
+[[quest.steps]]
+title = "巨劍與火炎魔神"
+manual = true
+note = "9～18 點兩人會跟著解謎者（公主看到巨劍會拿了就跑，先讓另一人拿）。拿到巨劍後在該房間 wear，出現火炎魔神，殺它兩次以上得火劍。"
+
+[[quest.steps]]
+title = "殺 grala 救洋子"
+manual = true
+note = """grala hp 30000，騎士不適合（他有所有防守招式），要等 5 ticks 再出招。blind 後離開那格就破 blind。
+mpallfist 群體攻擊一下 3000～3500，一定要有牧師。hp 30% 時會叫出 coconija 並 abscond（順序 nswe），之後會吃 bowbow（20% 吃第二個）。三隻以上界王拳法家可以秒殺。
+打法：先在二樓休息 → 凌波巫師或牧師 blind → flee → 隱形 dm → 全體隱形攻擊 → 他 abscond 後打跑 coconija 再隱形追殺。穿火劍殺 grala 後救出洋子即解。"""
+
+[[quest]]
+id = "diablo3"
+name = "暗黑破壞神武家屋敷篇"
+aliases = ["武家屋敷", "holy arm", "約克 yourk", "macabon"]
+area = "暗黑的破壞神武家屋敷篇"
+level = "60"
+needs = ["先解過忍者篇"]
+route = ["map3"]
+rewards = ["holy arm（int+2 wis+1）"]
+
+[[quest.steps]]
+title = "跟隨約克"
+do = ["talk yourk 讓我幫助你", "follow yourk"]
+
+[[quest.steps]]
+title = "出發"
+note = "上午 6 點。約克會帶你往北，找到 macabon 後 macabon 會殺約克（離開原房間會自己下毒）。"
+do = ["talk yourk 準備好了"]
+
+[[quest.steps]]
+title = "帶約克回去"
+manual = true
+note = "say 我們走吧。每走一格約克失血 12000，要幫他 full。到大門 talk yourk 可以，找 youchu talk youchu 約克回來了。"
+
+[[quest.steps]]
+title = "開戰"
+manual = true
+note = "到城內廣場 youchu 跟隨 → 大門 talk youchu 願意 → 到大廳。洋子說話後約克死，找 marce 王子 talk marce 王子您好，stop prince 阻止王子就開戰。"
+
+[[quest.steps]]
+title = "挑撥兩方"
+manual = true
+note = "找馬卡邦，回去 talk youchu 馬卡邦（youchu 和 macabon 開打）。找 basolie，回去 talk shinca 巴索利（星卡和巴索利開打）。等 youchu 和 shinca 都死後找洋子，魯協變身修耐特。"
+
+[[quest.steps]]
+title = "完成"
+manual = true
+note = "talk darkshownaida 幫助我們，帶他找 basolie 和 macabon，get medal corpse。回去找洋子 talk diya 安全了 → give macabon giya → give basolie diya 得 holy arm。"
+
+[[quest]]
+id = "jojo3"
+name = "JOJO 冒險野郎第三部"
+aliases = ["jojo3", "jojo", "dioo", "承太郎"]
+area = "JOJO 冒險野郎第三部"
+level = "60"
+route = ["/3w5s", "board plane"]
+
+[[quest.steps]]
+title = "上飛機"
+note = "跟阿布德爾交談 yes 有小地圖。"
+do = ["w", "s", "get on", "2s"]
+
+[[quest.steps]]
+title = "到邪惡男人處"
+manual = true
+note = """打老人到他叫出 mob，殺 mob 後往上走，飛機墜落。見波魯那雷夫交談 chariot，往 s 見承太郎趁機 leave。
+往 w 遇猩猩用 ear 打，殺死椅子後被傳送到邪惡男人處。慢慢打男人（不會死）叫出惡魔，殺惡魔後 2n 自動往 w，到鏡中世界。"""
+
+[[quest.steps]]
+title = "鏡中世界到審判者"
+manual = true
+note = """鏡中世界（大迷宮）：找倒吊男影子用 ear 打，得到玻璃碎片，到處 plast mirror 解開。
+出來後往 n 自動往 w，遇到車和蟲（不要殺車），往 w 到底往 n 找到老女人。look hill → use telescope → beat man → 自動往 w。
+往 s（會被 sleep），wake 後往 s 見 judger 交談 happy。"""
+
+[[quest.steps]]
+title = "幻境到達比"
+manual = true
+note = """在快樂幻境找十字鎬 (pick)，權勢幻境找保護之戒（要 detect invis），穿戒指 enter。穿十字鎬 dig down 往下，murder dirtman，跟 judger 交談 happy。
+w → touch pipe → 殺水管怪、鐵管怪、醜陋婦女。fly → nw → mana 撐到滿 → read page1、page2、page3（page1 需 mana 50%、page2 需 75%）。
+enter house → 說 page3 看到的字 → push that door → read page4 → close book。n 撿 sword → wear → 殺劍怪 → 2n（魔法磁鐵不用殺）。
+把 hp 和 mana 降到紅色讓 mob 欺負，往 n 見達比。跟達比猜數字 → touch heart → 找到達比的心靈殺死 → enter door。"""
+
+[[quest.steps]]
+title = "Dioo 的房屋"
+manual = true
+note = """善用 scan 和 exits 找路（陷阱很多）。
+一樓：jojolon talk help 會 heal 你。到第一個十字路口找凱特鷹（會 -str），等冰鷹跟著你後 flee 到第二個十字路口；往 ws 到第三個，s 有 mob，blind 後往 e 到第四個；n 再往上（冰鷹消失，要睡覺回復 str）。
+二樓：4 個十字路迷宮，每次 reborn 都會變。殺 wanila 後才能上三樓。
+三樓：S 形路，底部會 dark 和破 san。上樓後碰到的第一個鬼王不要殺（防止 reborn 被拉回二樓），往西南走到 dioo 房間。"""
+
+[[quest.steps]]
+title = "殺 dioo"
+manual = true
+note = "只能早上打（am 6～pm 6）。用 gold spear blind dioworld 和 dioo（會被 dark）→ dm dioo → 回二樓樓梯休息 → at flee → 之後只 blind dioworld 不 blind dioo。dioo 只會三次 heal，加上 dioworld 幫 heal 一次。打死時被 blind 也沒關係。"
+
+[[quest]]
+id = "jojo4"
+name = "JOJO 冒險野郎第四部"
+aliases = ["jojo4", "吉影", "jojodon"]
+route = ["/11w", "talk paradiser adv"]
+route_note = "recall 後按十一次 w，早上三點前去。"
+
+[[quest.steps]]
+title = "看信"
+do = ["look paper", "talk jojodon eastside"]
+
+[[quest.steps]]
+title = "指引仗助"
+manual = true
+note = """帶 jojodon 去找吉影 (giin/howju)，jojodon 被打傷跑走。找小屋 (enter) 找到 jojodon，talk outside 帶到外面。
+用 where 找 jojodon，用 south/west/north/east 指引他到 giin 的地方，看他們 pk，等 jojodon 跑掉（可以幫打 giin 到面無血色，refresh jojodon 並把他打跑）。"""
+
+[[quest.steps]]
+title = "找同伴"
+manual = true
+note = "去西北找億泰 talk itai follow 帶去找 giin，再指引 jojodon 去打 giin。去東南找廣瀨康一 talk kuonlai follow 帶去找 giin。找承太郎 jojotai 到 giin 處，giin 倒下。"
+
+[[quest.steps]]
+title = "救護車"
+manual = true
+note = "到處找救護車 follow，等它撞到 giin 時 say 前面有人，再幹掉 giin 就解完。"
+
+[[quest]]
+id = "zodiac"
+name = "十二星宮"
+aliases = ["十二星宮", "polaris", "北極星", "究極死光"]
+area = "十二星宮"
+level = "30-50"
+route_note = "由奧林帕斯宙斯後方往上走，進入水晶球。"
+note = "主要目的是找北極星學究極死光 (polar sparkle)。"
+rewards = ["可向北極星學究極死光"]
+
+[[quest.steps]]
+title = "摩羯座：冬天的樹枝"
+do = ["nennue", "kill 摩羯座", "get 'winter branch' corpse"]
+
+[[quest.steps]]
+title = "水瓶座"
+do = ["e", "kill 水瓶座", "w"]
+
+[[quest.steps]]
+title = "巨蟹座：夏天的鮮花"
+do = ["2w", "kill 巨蟹座", "get 'summer flower' corpse"]
+
+[[quest.steps]]
+title = "獅子座"
+do = ["w", "kill 獅子座"]
+
+[[quest.steps]]
+title = "牡羊座：春天的嫩芽"
+do = ["2es", "kill 牡羊座", "get 'spring shoot' corpse"]
+
+[[quest.steps]]
+title = "雙魚座、金牛座"
+do = ["e", "kill 美人魚", "2w", "kill 金牛座"]
+
+[[quest.steps]]
+title = "天秤座：秋天的葉子"
+do = ["e2n", "kill 天秤座", "get 'autumn leaf' corpse"]
+
+[[quest.steps]]
+title = "天蠍座、射手座"
+do = ["w", "kill 天蠍座", "w", "kill 射手座"]
+
+[[quest.steps]]
+title = "到天龍座"
+do = ["2es", "unlock u", "open u", "u", "unlock u", "open u", "u"]
+
+[[quest.steps]]
+title = "龍之首"
+do = ["4n", "unlock e", "open e", "2esw", "kill 龍之首"]
+
+[[quest.steps]]
+title = "大熊座"
+do = ["unlock s", "open s", "sw2sws", "kill 大熊座"]
+
+[[quest.steps]]
+title = "見北極星"
+note = "北極星 (polaris) 會隱形。"
+do = ["s"]
+
+[[quest]]
+id = "sango2"
+name = "赤壁之戰"
+aliases = ["赤壁之戰", "sango2", "曹操", "孔明", "周瑜", "陣法"]
+area = "三國演義 {赤壁之戰}"
+level = "60"
+intro = "東漢末年，曹操起兵南征。"
+route = ["map2", "say 2"]
+needs = [
+  "先解 sango1，全程不能 quit",
+  "special book：殺張角",
+  "sugar：向 sango1 的 salesman 買",
+  "jade bracer：5eswses2e2n2en2eswn2w 殺孫權士兵",
+]
+rewards = ["周瑜 talk chou cap：綸巾 (mana+60)", "孔明 talk ming fan：羽扇 (mana+75)", "孔明 talk ming light：七星燈 (mana+50 int+1 wis+1)", "可向孔明或周瑜學第二陣法以上"]
+
+[[quest.steps]]
+title = "劉琦"
+do = ["w", "talk liu-gi topic", "talk liu-gi yes"]
+
+[[quest.steps]]
+title = "孔明與魯肅"
+do = ["5eswses2e2n2en2esw", "talk ming help", "talk ming method", "2e", "talk lu topic"]
+
+[[quest.steps]]
+title = "草船借箭"
+note = "到弩箭手處 fl（接箭）。"
+do = ["recall", "2e2n4ws4w2n3wu"]
+
+[[quest.steps]]
+title = "交箭給孔明"
+do = ["d3e2s4en4e2s3eswses2e2n2en2esw", "give arrow ming", "e", "talk chou help"]
+
+[[quest.steps]]
+title = "翡翠手鐲與龐統"
+manual = true
+note = "在孔明的 wn2w 附近打孫權士兵得翡翠手鐲。從周瑜處 4n4eseseswses2w，talk child topic → give bracer child → n → talk pang-tong topic。回周瑜那兒 talk chou topic。"
+
+[[quest.steps]]
+title = "借東風"
+do = ["w", "talk ming wind", "give book ming"]
+
+[[quest.steps]]
+title = "烏林找小孩"
+note = "find kid 後再給糖。"
+do = ["recall", "2e2nw2n3ws3e"]
+
+[[quest.steps]]
+title = "七星壇"
+do = ["recall", "5esws3un", "give berry ming"]
+
+[[quest.steps]]
+title = "降書與令牌"
+note = "找魯肅拿降書，再往 w3nw 找蔡中拿令牌。"
+do = ["recall", "5eswses2e2n2en2ese", "talk lu topic", "w3nw"]
+
+[[quest.steps]]
+title = "交給士兵並開戰"
+do = ["recall", "2e2n5ws2wnw", "give cao-card soldier", "give capitulation soldier"]
+
+[[quest.steps]]
+title = "打曹操"
+manual = true
+note = """回周瑜處 talk chou topic 開戰。巫師解法：
+1. 先 charm 12 隻吸血鬼，帶到曹軍主營前一格 order all sleep。
+2. 兩隻巫師進曹軍主營 dm 三位軍師（先 dark 軍師再 dm）。
+3. 開戰後打軍師：一隻巫師 dark，兩隻一起打；軍師跑了由開戰者追殺。
+4. 三位軍師都打死後打曹操：dm → dark → 開打 → 追殺到烏林，直到曹操紅血撤軍。
+5. 找孔明 talk ming topic。
+堵路只有在要殺曹操時才需要（solve 不堵比較好）：用道士 charm bomber 堵路，每格放 13 隻。"""
+
+[[quest.tables]]
+title = "堵路圖"
+note = "c＝曹操出現處、a＝一定要堵、n＝路、u＝往上弓箭手、數字＝mob reborn 處、o＝入口"
+headers = ["列", "格子"]
+rows = [
+  ["1", "u a 1 2 3 a u"],
+  ["2", "n c a 4 a c n"],
+  ["3", "n a 5 c 6 a n"],
+  ["4", "n c a n a c n"],
+  ["5", "u e e n w w u"],
+  ["入口", "o（在第 5 列中間下方）"],
+]
+
+[[quest]]
+id = "dragonball"
+name = "七龍珠"
+aliases = ["七龍珠", "龍珠", "神龍珠", "神龍臂", "悟空"]
+area = "七龍珠"
+level = "50-60"
+rewards = ["神龍珠 (dex2 mana50 dc-60)", "或殺神龍得神龍臂 (int2 hp5 mana60)"]
+
+[[quest.steps]]
+title = "布馬"
+manual = true
+note = "在風采找布馬 talk special 龍珠的下落（天魔的龍珠不用自己打，有就好）。再 talk 得知第二顆在赤羅身上（必須先 talk 過再去打才會有）。"
+
+[[quest.steps]]
+title = "赤羅"
+manual = true
+note = "到崑崙往東，殺黑鐵雕像拿 key 和信物 → 開北門 → 石林找往上的路 → 開東門 → give iron god → 五個叉路依序不要往 S N N E N 走 → 殺赤羅（不能 blind，他必須看得到你）。"
+
+[[quest.steps]]
+title = "悟空"
+note = "回風采再 talk 布馬。從白色噴泉出發，小心陷阱。"
+do = ["10w2ne2n2en", "talk koku 請問你有龍珠嗎", "talk koku 可以給我嗎", "talk koku 呼叫神龍"]
+
+[[quest.steps]]
+title = "龜仙人"
+manual = true
+note = "再 talk 布馬，到 map3 找海龜 (seaturtle，需 detect invis、detect hidden)：talk sea why → talk sea yes → 帶回龜仙人家 → talk sea 到了 → talk turtlefairy save → talk turtlefairy 請問你有龍珠嗎。"
+
+[[quest.steps]]
+title = "龍珠村"
+manual = true
+note = "再 talk 布馬，到龍珠村找村長 talk chief 請問你有龍珠嗎 → talk chief yes → 找烏龍 (woolong) 打倒 → 帶 pig 到村長處 → talk madam 消滅。"
+
+[[quest.steps]]
+title = "牛魔王"
+manual = true
+note = "再 talk 布馬，到烤鍋山找牛魔王 talk bull 請問你有龍珠嗎 → talk bull yes → 到五行打水族得水護符 → give water bull。"
+
+[[quest.steps]]
+title = "炒飯大王"
+manual = true
+note = "再 talk 布馬，到炒飯城堡（森林中 [北東南] → s6w3n3e2swnwu）殺炒飯大王（會 full，必須由解謎者殺）。"
+
+[[quest.steps]]
+title = "許願"
+manual = true
+note = "找悟空 talk koku ok，帶他到 room 8142，talk koku 到了。把七顆龍珠給 plate，say 神龍啊!實現我的願望!，再 say 世界和平，get 神龍珠。"
+
+[[quest]]
+id = "mongol"
+name = "蒙古"
+aliases = ["蒙古", "蒙古草原", "鐵木真"]
+area = "蒙古草原"
+level = "30-60"
+route = ["map2", "3w3nen5e2s"]
+
+[[quest.steps]]
+title = "拿鏟子"
+manual = true
+note = "先到鐵木真的軍營找他兄長 talk，再跟他媽媽 talk，拿到鏟子。"
+
+[[quest.steps]]
+title = "找鐵木真"
+manual = true
+note = "到敵軍第 2 個十字路口往 2n，殺 2 個 soldier 拿 key，開門往下找鐵木真 talk tieemuhjen help。到第一個十字路口往 n talk old help。"
+
+[[quest.steps]]
+title = "帶鐵木真出來"
+manual = true
+note = "回去 give shovel tieemuhjen，他會跟著你，group 他往下走沿路出去。路上的 soldier 不要用 ear（可能砍到鐵木真，可以先 fly 鐵木真）。帶到 old man 處（第一十字路口往 n）。"
+
+[[quest.steps]]
+title = "找信物"
+do = ["swwssseeesds", "talk old 鎖兒罕失剌"]
+note = "在 old man 處出發，得知要信物。回第一十字路口往 n talk old 信物，拿到信物後回船長那裡。"
+
+[[quest.steps]]
+title = "完成"
+manual = true
+note = "等晚上 12 點 give token old。4wn2w2s 帶鐵木真找到孛兒帖 say 是。找訶額侖 talk heerluen hecomeback 解完。"
+
+[[quest]]
+id = "area51"
+name = "五十一區"
+aliases = ["五十一區", "area51", "超鍍小銀河"]
+route = ["5e2n3e5n2e6n3es"]
+
+[[quest.steps]]
+title = "接任務"
+do = ["talk lady", "talk police", "talk professor help", "wield machine"]
+
+[[quest.steps]]
+title = "娜托絲星人"
+do = ["talk alien help", "say yes", "talk alien method", "talk alien bugs"]
+
+[[quest.steps]]
+title = "警察的情報"
+do = ["talk police clue", "talk police data", "talk police ready"]
+
+[[quest.steps]]
+title = "收集五粒超鍍小銀河"
+manual = true
+note = "五種蟲分佈：隱形虫（五十一區）、變形虫（風采之都）、風蝕虫（五十一區）、沙迴虫（東方大沙漠）、妖魔虫（風采之都）。"
+
+[[quest.steps]]
+title = "完成"
+do = ["give galaxy professor", "talk professor finish"]
+
+[[quest]]
+id = "aladdin"
+name = "阿拉丁幽靈船"
+aliases = ["阿拉丁", "幽靈船", "phantom ship", "精靈長老"]
+level = "60"
+route_note = "阿拉丁東城門 → 沙漠 → 綠洲 → 幽靈海。"
+needs = ["解毒藥丸 (pill)", "pretend（要在 18:00～07:00 使用才不會被識破）"]
+
+[[quest.steps]]
+title = "前往阿拉丁"
+note = "從阿拉丁西城門出發。如果 enter 後遇到風沙，改走 2s2e 再 touch。"
+do = ["2sene", "enter", "2s", "touch"]
+
+[[quest.steps]]
+title = "拿小禮盒（炸彈道具）"
+note = "小搗蛋 (jokey) 在漿果園，會把小禮盒 (gift) 給你。小禮盒在船上用來 pretend 成 bomber：要用時 get gift box、pretend bomber，會滾出一顆炸彈。"
+do = ["where jokey", "cast identify gift", "put gift box"]
+
+[[quest.steps]]
+title = "穿越沙漠到綠洲"
+note = "從阿拉丁東城門出發。邊走邊用 exits 找第二個綠洲入口（跟第一個不同）。"
+do = ["4e3nese", "enter", "2e2s3wn", "4e3n2es"]
+
+[[quest.steps]]
+title = "第二個綠洲"
+manual = true
+note = "找到後 enter → ss，到綠洲找到透明石頭 touch，石頭發出強光，傳送到荒野十字路口。"
+
+[[quest.steps]]
+title = "精靈與幽靈船"
+note = "在荒野小路盡頭找到失去法力的精靈 (spirit)。精靈帶你到幽靈海後，看到幽靈船 (phantom_ship) 經過時 climb。"
+do = ["talk spirit 幽靈船", "talk spirit go"]
+
+[[quest.steps]]
+title = "船上解謎"
+manual = true
+note = "登船後在甲板上先清怪（守護者 guard、惡靈 evil ghost、腐屍 Death corpse）。pull 拉動桿子開啟通道，東邊木板擋路處 enter 進去，深入船艙找到走道盡頭的牢房。"
+
+[[quest.steps]]
+title = "救出精靈長老"
+note = "長老要你收集四件精靈裝備：精靈皇冠、精靈手杖、精靈護符、精靈靴。交給他後他會破除魔法力場，再 talk master ok，他會帶你去控制室。"
+do = ["talk master help"]
+
+[[quest.steps]]
+title = "Boss：幽靈船船長"
+manual = true
+note = "cast lore leader。船長 Lv78、HP 12765、五項屬性全 30、DC -1930、AC 412、HR 126、DR 144。"
+
+[[quest]]
+id = "yangdingtian"
+name = "陽頂天"
+aliases = ["陽頂天", "聖火令", "holy fire"]
+note = "這是打陽頂天拿聖火令的組隊技巧，不是一般謎題。"
+rewards = ["聖火令 (holy fire)：照明器具，No Save，armor 100、避免法術 -15、dr+10、hr+8、dc-100、hp+100、mana+100"]
+
+[[quest.tips]]
+title = "打法（marry go）"
+items = [
+  "A marry B 後 A 申請 freeman，再 marry C、申請 freeman……可以 marry 很多個（一個新郎配 N 個新娘）",
+  "要打聖火令要 teleport 進 Winwell 的房間；A 和最後一位新娘都要學 pretend 和 teleport",
+  "趁晚上 teleport 進去，這時陽頂天不會打人，趁機拆掉他的 detect invis 和 detect hidden",
+  "其他新娘對著 A marry go，就可以全體一起施放 star rain，一擊打死陽頂天",
+  "陽頂天要 dm 好，大約要八隻 star 才能一發打死。marry go 只適用陽頂天，很多地方不能 marry go",
+]
+
+[[quest]]
+id = "fishing-village"
+name = "濱海漁村"
+aliases = ["濱海漁村", "銀燄幻魔錄"]
+note = "資料不完整（PTT 2023/04 nosxap）：在船上拿三樣東西，念完後會被傳下船，下船後要繼續探索。相關區域：銀燄幻魔錄（爬山要帶繩子）。濃沃市也在附近。"

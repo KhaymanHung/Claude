@@ -1,0 +1,94 @@
+# 新手開局：依攻略〈入門與升級路線〉和實際角色資料（Lv1、記憶容量 800、身上 0 美拉）整理
+# 2026-10-29 實測：學技能會扣記憶點數（攻略說 Lv1 免費是錯的）；雕像位置與記憶量依實際紀錄更新
+# 用法：#quest 新手開局，之後每一步 #next
+
+[[quest]]
+id = "newbie"
+name = "新手開局"
+aliases = ["新手", "開局", "newbie", "新手之旅", "start"]
+area = "勇者學校"
+level = "1-9"
+intro = "新角色只有 800 點記憶容量（Lv60 才有 3000），學技能會扣點數（practice 會顯示「你還剩下 N 點的記憶容量」）。先用便宜、能拉高生命和移動力上限的技能打底，再去新手之旅升到 Lv9。"
+note = "原攻略說「Lv1 practice 不消耗記憶點數」，實測不是如此（2026-10-29），以遊戲為準。每學完一組就打 practice 確認剩餘點數。屬性先維持 18 18 18 18 18，不要 changebody：等等級全滿、決定最後的技能法術組合後再換（攻略：技能都練到 99 後再到 /sswu changebody），在全 18 時換才不會讓已學的技能熟練度下降。"
+rewards = ["Lv9", "上帝武裝（god vest）", "製造食物術（create food）、造泉術（create spring）等補給法術，不必花錢買食物和水"]
+
+[[quest.tables]]
+title = "已學會（2026-10-29 13:01，23 項共 760 點，剩 40 點）"
+note = "Lv1 練習（prac）不收美拉，可以一直練到「你對 X 這個技能十分熟練了」（多半 71～81，拳力（bare fist）51）；之後只能靠實際使用提升。升級後每練一次要 132～728 美拉，拳力（bare fist）要 50728。練完的上限：生命 339、法力 414、移動力 373、內力 150。"
+headers = ["類別", "技能（記憶量）", "小計", "教的雕像"]
+rows = [
+  ["補給", "造水術（create water）5、製造食物術（create food）5、造泉術（create spring）5、光球術（continual light）5", "20", "冒險者巨像"],
+  ["回復", "輕度治療（cure light）5、強力治療（cure serious）5、補充體力術（refresh）20、體力復原術（full refresh）80", "110", "牧師巨像"],
+  ["解狀態", "療毒術（cure poison）20、復明術（cure blindness）20", "40", "牧師巨像"],
+  ["移動", "呼風喚雨術（control weather）10、舞空術（fly）30", "40", "雷系巫師巨像（冒險者巨像也有）"],
+  ["小法術", "偵測魔法術（detect magic）5、偵測毒性術（detect poison）5、偵測邪惡術（detect evil）5、辯邪術（know alignment）5、腹語術（ventriloquate）5、神靈呼喚術（armor）20", "45", "牧師巨像、大冒險家巨像、冒險者巨像、力場系巫師巨像"],
+  ["攻擊法術", "魔法彈（magic missile）5", "5", "火系巫師巨像（冰系、土系、風系巫師巨像也有）"],
+  ["打怪", "少林長拳（saulinfist）100、拳力（bare fist）150、羅漢拳（lohanfist）150", "400", "拳法家巨像"],
+  ["防禦", "閃躲（dodge）100", "100", "盜帥巨像"],
+]
+
+[[quest.tables]]
+title = "剩下 40 點：趁 Lv1 練習免費時用掉"
+note = "記憶容量會隨等級增加（Lv60 是 3000），之後學的技能練習都要花錢，所以 Lv1 剩的點數現在學最划算。這三項都對探索有幫助。"
+headers = ["技能（記憶量）", "教的雕像", "用途"]
+rows = [
+  ["夜視術（infravision）15", "大冒險家巨像", "黑暗的房間也看得到出口和怪，#map 不會卡住"],
+  ["偵測隱形術（detect invis）15", "大冒險家巨像", "看得到隱形的怪和 NPC"],
+  ["搜查（scan）10", "冒險者巨像（小偷巨像也有）", "看相鄰房間有什麼怪，探索和練功前先判斷危險"],
+]
+
+[[quest.tables]]
+title = "升級後（點數夠了再學）"
+headers = ["時機", "技能（記憶量）", "上限加成", "教的雕像"]
+rows = [
+  ["Lv10", "大地之斬（earthslice）250", "生命 +180、移動力 +200", "圓桌騎士巨像"],
+  ["之後", "格擋（parry）200", "生命 +130、移動力 +25、內力 +30", "圓桌騎士巨像"],
+  ["之後", "二段突刺（second attack）100 → 三段突刺（third attack）150", "生命 +150、移動力 +80", "騎士巨像"],
+  ["之後", "伏虎拳（tigerfist）250", "生命 +150、移動力 +20、內力 +100", "拳法家巨像"],
+  ["之後", "治療麻痺術（cure paralysis）20、寒霜之觸（chill touch）25", "生命 +80、法力 +80", "牧師巨像、冰系巫師巨像"],
+]
+
+[[quest.steps]]
+title = "先看遊戲內的新手說明"
+note = "help begin（新手上路）、setup、cancel 可能比攻略新。#survey 也會把它們存到 data/live/survey/。"
+do = ["help begin", "help cancel", "practice"]
+
+[[quest.steps]]
+title = "前往勇者學校"
+note = "攻略路線 /2sw2u，到大堂（雕像館入口）。北面是冒險者館，東面是東方技巧（拳法家巨像在東北、盜帥巨像在東南），西面是西方技巧（牧師、教宗、力場系巫師、大冒險家巨像）。在雕像前 look statue 看它教什麼。"
+do = ["/2sw2u", "look"]
+
+[[quest.steps]]
+title = "記下雕像館的地圖"
+manual = true
+note = "#learn 要知道雕像在哪間房間。還沒跑過的話，先輸入 #map 勇者學校 80 10（自動走 /2sw2u 到大堂，再探索附近 10 步內的房間），跑完再 #next。"
+
+[[quest.steps]]
+title = "夜視術（infravision）15 點"
+note = "自動走到大冒險家巨像學，Lv1 練習免費，一直練到十分熟練。"
+learn = "infravision"
+
+[[quest.steps]]
+title = "偵測隱形術（detect invis）15 點"
+learn = "detect invis"
+
+[[quest.steps]]
+title = "搜查（scan）10 點"
+note = "冒險者巨像或小偷巨像。學完 practice 應該剩 0 點。"
+learn = "scan"
+
+[[quest.steps]]
+title = "回市中心開始新手之旅"
+pause = true   # #next all 做到這裡會停，確認準備好了再 #next
+note = "市中心的敘述寫著「新手請鍵入 start 按下 [enter] 進入新手之旅」。"
+do = ["recall", "start"]
+
+[[quest.steps]]
+title = "新手之旅 stage 1～5"
+manual = true
+note = "依遊戲指示依序過關，可升到 Lv9，過關獎賞上帝武裝 (god vest)。打怪前先 agg 100，用 f saulin <怪>。打死怪後 get all corpse、sacrifice corpse 可以拿到錢。"
+
+[[quest.steps]]
+title = "Lv10 之後：格鬥天堂與大地之斬"
+manual = true
+note = "攻略推薦 Lv10～30 在格鬥天堂練功（#area 格鬥天堂）。大地之斬（250 點，Lv10 才能用）生命 +180、移動力 +200，是之後升級的主力。用 #farm 自動練功前，先把 config.toml 的 kill_command 改成 \"f saulin\" 或 \"ear\"。"

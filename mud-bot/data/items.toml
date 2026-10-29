@@ -1,0 +1,1843 @@
+# 裝備資料（由攻略整理）
+# en 是遊戲裡的關鍵字；sources 是取得地點或方式；builds 表示出現在哪些角色配裝範例
+
+[[item]]
+name = "勇者學校証書"
+en = "diploma"
+type = "baby"
+slot = "手上"
+level = "1"
+stats = "con+1"
+difficulty = 1
+sources = ["勇者學校"]
+notes = ["可存檔"]
+
+[[item]]
+name = "粉紅冰戒指"
+en = "ring pink ice"
+type = "baby"
+slot = "手指×2"
+level = "1"
+stats = "str+1"
+difficulty = 1
+sources = ["矮人育嬰房", "矮人王國"]
+notes = ["可存檔"]
+
+[[item]]
+name = "小項鍊"
+en = "necklace"
+type = "baby"
+slot = "脖子×2"
+level = "1"
+stats = "int+1"
+difficulty = 1
+sources = ["小精靈村"]
+notes = ["Lv2 才能用"]
+
+[[item]]
+name = "眼鏡"
+type = "baby"
+slot = "頭"
+level = "1"
+stats = "wis+1"
+notes = ["Lv2 才能用"]
+
+[[item]]
+name = "亞麻布袍子"
+en = "robe linen"
+type = "baby"
+slot = "身體"
+level = "4"
+stats = "wis+1"
+difficulty = 2
+sources = ["矮人王國"]
+notes = ["可存檔"]
+
+[[item]]
+name = "勇士之劍"
+en = "brave sword"
+type = "baby"
+slot = "右手"
+level = "5"
+stats = "str+1"
+difficulty = 2
+sources = ["愛神堡"]
+notes = ["可存檔", "crash 後等級才會更新"]
+builds = ["Lcm (cle)"]
+
+[[item]]
+name = "矮人手套"
+en = "gloves"
+type = "baby"
+slot = "手部"
+level = "5"
+stats = "str+1 dex+1"
+difficulty = 2
+sources = ["矮人王國"]
+notes = ["可存檔", "crash 後等級才會更新"]
+
+[[item]]
+name = "小馬"
+en = "Pony"
+type = "baby"
+slot = "腳部"
+level = "5"
+stats = "dex+1"
+difficulty = 2
+sources = ["騎士堡"]
+notes = ["可存檔"]
+
+[[item]]
+name = "棉製護袍"
+type = "baby"
+level = "5"
+stats = "wis+1"
+
+[[item]]
+name = "勇者之冠"
+en = "brave crown"
+type = "baby"
+slot = "頭部"
+level = "6"
+stats = "int+2"
+difficulty = 2
+sources = ["格鬥天堂"]
+notes = ["可存檔"]
+
+[[item]]
+name = "金色頭帶"
+type = "baby"
+slot = "頭"
+level = "6"
+stats = "int+1"
+sources = ["創世紀"]
+notes = ["可存檔"]
+
+[[item]]
+name = "蘑菇護身符"
+en = "amulet"
+type = "baby"
+slot = "脖子×2"
+level = "8"
+stats = "con+2"
+difficulty = 5
+sources = ["東方大沙漠"]
+notes = ["Lv9 才能用"]
+
+[[item]]
+name = "電光手環"
+type = "baby"
+slot = "手腕×2"
+level = "9"
+stats = "int+2"
+sources = ["昆崙"]
+notes = ["Lv11 才能用"]
+
+[[item]]
+name = "白金手杖"
+en = "platinum staff"
+type = "baby"
+slot = "左手"
+level = "11"
+stats = "int+1"
+difficulty = 4
+sources = ["Ultima"]
+notes = ["crash 後等級才會更新"]
+
+[[item]]
+name = "一之瀨太太的扇子"
+type = "baby"
+slot = "手上"
+level = "12"
+stats = "str+1"
+sources = ["Ikkoku"]
+notes = ["可存檔"]
+
+[[item]]
+name = "亮藍色石頭"
+type = "baby"
+slot = "手上"
+level = "12"
+stats = "str+1"
+sources = ["Thalos"]
+
+[[item]]
+name = "紅藍相間石頭"
+type = "baby"
+slot = "手上"
+level = "12"
+stats = "int+1"
+sources = ["Thalos"]
+
+[[item]]
+name = "深紅色石頭"
+type = "baby"
+slot = "手上"
+level = "12"
+stats = "dex+1"
+sources = ["Thalos"]
+
+[[item]]
+name = "淺藍色石頭"
+type = "baby"
+slot = "手上"
+level = "12"
+stats = "str+1"
+sources = ["Thalos"]
+
+[[item]]
+name = "龍眼手鐲"
+en = "longan bracelet"
+type = "baby"
+slot = "手腕×2"
+level = "13"
+stats = "str+1"
+difficulty = 3
+sources = ["生菜沙拉王國", "生菜沙拉"]
+notes = ["Lv15 才能用"]
+
+[[item]]
+name = "檸檬手鐲"
+type = "baby"
+slot = "手腕×2"
+level = "13"
+stats = "wis+1"
+sources = ["生菜沙拉王國"]
+notes = ["Lv16 才能用"]
+
+[[item]]
+name = "洋蔥手鐲"
+en = "onion bracelet"
+type = "baby"
+slot = "手腕×2"
+level = "13"
+stats = "con+1"
+difficulty = 3
+sources = ["生菜沙拉王國", "生菜沙拉"]
+notes = ["Lv16 才能用"]
+
+[[item]]
+name = "青椒手鐲"
+en = "green pepper bracelet"
+type = "baby"
+slot = "手腕×2"
+level = "13"
+stats = "dex+1"
+difficulty = 3
+sources = ["生菜沙拉王國", "生菜沙拉"]
+notes = ["可存檔"]
+
+[[item]]
+name = "蘋果手鐲"
+type = "baby"
+slot = "手腕×2"
+level = "13"
+stats = "int+1"
+sources = ["生菜沙拉王國"]
+notes = ["Lv16 才能用"]
+
+[[item]]
+name = "榴槤領帶"
+en = "durian necktie"
+type = "baby"
+slot = "脖子×2"
+level = "13"
+stats = "wis+1"
+difficulty = 3
+sources = ["生菜沙拉王國", "生菜沙拉"]
+
+[[item]]
+name = "荔枝領帶"
+en = "litchi necktie"
+type = "baby"
+slot = "脖子×2"
+level = "13"
+stats = "dex+2"
+difficulty = 3
+sources = ["生菜沙拉王國", "生菜沙拉"]
+notes = ["Lv15 才能用"]
+
+[[item]]
+name = "橘子領帶"
+type = "baby"
+slot = "脖子×2"
+level = "13"
+stats = "int+1"
+sources = ["生菜沙拉王國"]
+
+[[item]]
+name = "甘蔗領帶"
+type = "baby"
+level = "13"
+stats = "con+2"
+sources = ["生菜沙拉王國"]
+
+[[item]]
+name = "黑曜石短劍"
+en = "obsidian dirk"
+type = "baby"
+slot = "右手"
+level = "13"
+stats = "dex+1"
+difficulty = 3
+sources = ["金字塔"]
+notes = ["可存檔"]
+
+[[item]]
+name = "竹盾"
+en = "cane shield"
+type = "baby"
+slot = "左手"
+level = "15"
+stats = "wis+2 dex+1"
+difficulty = 3
+sources = ["少林寺"]
+notes = ["Lv17 才能用"]
+
+[[item]]
+name = "一件僧袍"
+en = "robe"
+type = "baby"
+slot = "身體"
+level = "15"
+stats = "con+1"
+difficulty = 3
+sources = ["少林寺"]
+notes = ["Lv19 才能用"]
+
+[[item]]
+name = "僧侶的臭襪"
+en = "garters"
+type = "baby"
+slot = "腳部"
+level = "15"
+stats = "dex+1"
+difficulty = 3
+sources = ["少林寺"]
+notes = ["Lv20 才能用"]
+
+[[item]]
+name = "水護符"
+type = "baby"
+slot = "脖子×2"
+level = "20"
+stats = "str+1"
+sources = ["五行世界"]
+notes = ["可存檔"]
+
+[[item]]
+name = "響子的披巾"
+type = "baby"
+slot = "身體"
+level = "21"
+stats = "dex+1"
+sources = ["Ikkoku"]
+notes = ["可存檔"]
+
+[[item]]
+name = "幸福之杖"
+type = "baby"
+slot = "右手"
+level = "26"
+stats = "wis+2"
+sources = ["Poker"]
+
+[[item]]
+name = "好運之杖"
+type = "baby"
+slot = "右手"
+level = "26"
+stats = "int+2"
+sources = ["Poker"]
+
+[[item]]
+name = "小惡魔之盾"
+type = "baby"
+slot = "左手"
+level = "27"
+stats = "str+2 dex+1"
+sources = ["企鵝村"]
+notes = ["可存檔"]
+
+[[item]]
+name = "骯髒的頭巾"
+type = "baby"
+slot = "頭"
+level = "27"
+stats = "dex+1"
+sources = ["金字塔"]
+
+[[item]]
+name = "金色彎刀"
+type = "baby"
+slot = "右手"
+level = "28"
+stats = "int+1 wis+2"
+sources = ["龍塔"]
+notes = ["可存檔"]
+
+[[item]]
+name = "方丈和尚的袈裟"
+type = "baby"
+slot = "身體"
+level = "29"
+stats = "int+1"
+sources = ["少林寺"]
+
+[[item]]
+name = "方丈和尚的佛珠"
+type = "baby"
+slot = "手腕×2"
+level = "29"
+stats = "str+2"
+sources = ["少林寺"]
+
+[[item]]
+name = "太空傳送裝置"
+en = "transferset"
+type = "baby"
+level = "1"
+stats = "dex+2"
+difficulty = 1
+sources = ["科研中心"]
+
+[[item]]
+name = "一刻館之戒"
+en = "ikkoku ring"
+type = "baby"
+level = "3"
+stats = "str+1"
+difficulty = 1
+sources = ["相聚一刻"]
+
+[[item]]
+name = "五代ゆかり的土產"
+en = "food"
+type = "baby"
+level = "5"
+stats = "str+1 con+1"
+difficulty = 2
+sources = ["愛神堡"]
+notes = ["crash 後等級才會更新"]
+
+[[item]]
+name = "雷光手環"
+en = "bracelet"
+type = "baby"
+level = "8"
+stats = "int+2"
+difficulty = 5
+sources = ["崑崙"]
+
+[[item]]
+name = "精靈護臂"
+en = "spirit sleeves"
+type = "baby"
+level = "10"
+stats = "int+2 dex-1"
+difficulty = 4
+sources = ["睡美人"]
+
+[[item]]
+name = "憤怒手套"
+en = "angry gloves"
+type = "baby"
+level = "10"
+stats = "wis+2"
+difficulty = 3
+sources = ["撲克王國"]
+
+[[item]]
+name = "生命之盾"
+en = "Life Shield"
+type = "baby"
+level = "10"
+stats = "con+3"
+difficulty = 4
+sources = ["異星球"]
+
+[[item]]
+name = "閃著光芒的慈悲心"
+en = "flame mercy"
+type = "baby"
+level = "0"
+stats = "+dr4 +hp20"
+difficulty = 1
+
+[[item]]
+name = "格鬥脛甲"
+en = "fight leggings"
+type = "baby"
+level = "1"
+stats = "+mana35"
+difficulty = 2
+
+[[item]]
+name = "魔法長袍"
+en = "magic robe"
+type = "baby"
+level = "5"
+stats = "隱形術"
+difficulty = 2
+
+[[item]]
+name = "聖十字"
+en = "Holy Cross"
+slot = "照明器具"
+price = "10m~15m"
+sources = ["騎士堡（解謎）"]
+builds = ["MagicUser (holy-kni)", "Bluewind (holy-kni)"]
+
+[[item]]
+name = "小火球"
+en = "ball fire"
+slot = "照明器具"
+price = "1m"
+builds = ["(sole-swd)", "(swd)"]
+
+[[item]]
+name = "布達拉宮王冠"
+en = "budala crown"
+slot = "頭部"
+price = "10m~15m"
+builds = ["MagicUser (holy-kni)", "Bluewind (holy-kni)"]
+
+[[item]]
+name = "金剛圈"
+en = "adamant circle"
+slot = "脖子"
+price = "10m~30m"
+sources = ["酆都 地藏王（解謎獎勵）"]
+builds = ["MagicUser (holy-kni)"]
+
+[[item]]
+name = "牛頭面具"
+en = "bull head vest"
+slot = "頭部"
+price = "1m"
+builds = ["Magwind (out-wiz)", "Mudo (holy-refl-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "忘憂簪子"
+en = "forget hairpin"
+slot = "頭部"
+price = "0.5m~1m"
+builds = ["Twolight (evil-bxr)", "Godfinger (evil-bxr)", "OKOOK (evil-kni)", "Bxrwind (evil-kni)"]
+
+[[item]]
+name = "藍龍項鍊"
+en = "blue dragon necklace"
+slot = "脖子"
+price = "80m~120m"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "黑龍項鍊"
+en = "black dragon necklace"
+slot = "脖子"
+price = "1m（少人買）"
+builds = ["Twolight (evil-bxr)", "Godfinger (evil-bxr)", "Bxrwind (evil-kni)"]
+
+[[item]]
+name = "白霧徽章"
+en = "amulet"
+slot = "脖子"
+price = "1m~2m"
+builds = ["Magwind (out-wiz)", "(mag-swd)"]
+
+[[item]]
+name = "聖衣"
+price = "0.2m~1m"
+
+[[item]]
+name = "超時空戰甲"
+price = "10m"
+sources = ["亞斯本 爵德"]
+
+[[item]]
+name = "究極魔道甲"
+en = "super devil armor"
+slot = "身體"
+builds = ["OKOOK (evil-kni)"]
+
+[[item]]
+name = "倚天劍"
+price = "1200m"
+
+[[item]]
+name = "爪黃飛電"
+
+[[item]]
+name = "黑雷破天臂"
+en = "black hand"
+slot = "手臂"
+price = "0.5m"
+builds = ["Twolight (evil-bxr)", "Lcm (cle)", "OKOOK (evil-kni)", "Mudo (holy-refl-wiz)", "Bxrwind (evil-kni)", "(sole-swd)", "(mag-swd)", "(swd)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "魔法手套"
+en = "the Magic Gauntlets"
+slot = "手部"
+price = "10m~15m"
+builds = ["Twolight (evil-bxr)", "Zyl (holy-kni)", "MagicUser (holy-kni)", "OKOOK (evil-kni)", "Bxrwind (evil-kni)", "(sole-swd)", "(mag-swd)", "(swd)"]
+
+[[item]]
+name = "風沙之手"
+en = "wind sand gauntlets"
+slot = "手部"
+price = "1m~3m"
+builds = ["Bluewind (holy-kni)"]
+
+[[item]]
+name = "桃花腰帶"
+price = "0.5m~3m"
+
+[[item]]
+name = "玩具腰帶"
+en = "toy belt"
+slot = "腰部"
+price = "2m~12m"
+builds = ["Twolight (evil-bxr)", "MagicUser (holy-kni)", "OKOOK (evil-kni)"]
+
+[[item]]
+name = "寶瓜之翼"
+en = "Pougua Wings"
+slot = "背部"
+price = "0.4~1m"
+builds = ["MagicUser (holy-kni)", "Bluewind (holy-kni)"]
+
+[[item]]
+name = "混沌脛甲"
+en = "chaos leggings"
+slot = "腿部"
+price = "1m~3m"
+builds = ["Twolight (evil-bxr)", "Godfinger (evil-bxr)", "Bluewind (holy-kni)", "OKOOK (evil-kni)"]
+
+[[item]]
+name = "旋天脛甲"
+en = "Skying Leggings"
+slot = "腳部"
+price = "20m~50m"
+sources = ["黑地 天魔"]
+builds = ["MagicUser (holy-kni)", "Bluewind (holy-kni)", "Bxrwind (evil-kni)"]
+
+[[item]]
+name = "山豬校長之護手"
+en = "Boar bracelet"
+slot = "右手腕"
+price = "易打，少人買"
+builds = ["Zyl (holy-kni)", "Godfinger (evil-bxr)", "MagicUser (holy-kni)", "Bluewind (holy-kni)"]
+
+[[item]]
+name = "金錶"
+en = "golden watch"
+slot = "右手腕"
+price = "2~3m"
+builds = ["Mudo (holy-refl-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "王手鐲"
+price = "6m~12m"
+
+[[item]]
+name = "謎之水晶"
+en = "secret crystal"
+slot = "握在手上"
+price = "20m~30m"
+builds = ["MagicUser (holy-kni)", "OKOOK (evil-kni)"]
+
+[[item]]
+name = "英王權杖"
+en = "sceptre"
+slot = "握在手上"
+price = "0.5m~1m"
+builds = ["Twolight (evil-bxr)", "Bluewind (holy-kni)"]
+
+[[item]]
+name = "紅外線掃描儀"
+en = "Scaner"
+slot = "握在手上"
+price = "20m"
+builds = ["(sole-swd)", "(mag-swd)", "(swd)"]
+
+[[item]]
+name = "黃巾之亂過關勳章"
+en = "sango1 medal"
+slot = "戴在胸前"
+stats = "hp+10 mana+10"
+price = "0.4m"
+sources = ["黃巾之亂（解謎）"]
+builds = ["Twolight (evil-bxr)", "MagicUser (holy-kni)"]
+
+[[item]]
+name = "忘憂湯瓢"
+price = "1m"
+
+[[item]]
+name = "蠻荒之刃"
+en = "fierce blade"
+slot = "左手拿著"
+price = "0.1m~1m"
+builds = ["MagicUser (holy-kni)", "Bluewind (holy-kni)", "OKOOK (evil-kni)"]
+
+[[item]]
+name = "解剖刀"
+price = "1m"
+
+[[item]]
+name = "黑子槍"
+price = "1m~3m"
+
+[[item]]
+name = "破魂黑束腰"
+en = "black girdle"
+slot = "腰部"
+price = "0.5m"
+builds = ["Godfinger (evil-bxr)", "Magwind (out-wiz)", "Mudo (holy-refl-wiz)", "(sole-swd)", "(mag-swd)", "(swd)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "企鵝村和平臂章"
+en = "Penguin Hero"
+slot = "手臂"
+price = "1m~2m"
+builds = ["MagicUser (holy-kni)", "Bluewind (holy-kni)"]
+
+[[item]]
+name = "愛神之羽"
+en = "love flying"
+price = "10m"
+sources = ["愛神堡（解謎獎勵）"]
+
+[[item]]
+name = "諸神的黃昏"
+en = "Sunset Sword"
+slot = "右手拿著"
+price = "0.2~0.5m"
+builds = ["MagicUser (holy-kni)"]
+
+[[item]]
+name = "元素之戒"
+en = "Elemental Ring"
+slot = "右手手指"
+price = "1m"
+sources = ["五行世界 雕刻家（解謎獎勵）"]
+builds = ["Twolight (evil-bxr)", "Godfinger (evil-bxr)", "MagicUser (holy-kni)", "Bluewind (holy-kni)", "OKOOK (evil-kni)", "Bxrwind (evil-kni)"]
+
+[[item]]
+name = "黑子胄甲"
+en = "black death armour"
+slot = "身體"
+price = "1m"
+builds = ["Twolight (evil-bxr)", "Bxrwind (evil-kni)"]
+
+[[item]]
+name = "龍脈"
+en = "dragon"
+slot = "背部"
+price = "0.3~0.5m"
+sources = ["凌雲窟 黃帝的鬥魂（解謎）"]
+builds = ["Magwind (out-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "金蠶手套"
+en = "Golden Silk Gauntlets"
+slot = "手部"
+price = "0.1m"
+builds = ["Magwind (out-wiz)", "Mudo (holy-refl-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "綠寶石戒指"
+en = "emerald ring"
+slot = "右手手指"
+price = "1m"
+builds = ["Lcm (cle)", "Magwind (out-wiz)", "Mudo (holy-refl-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "智慧之光"
+en = "wisdom light"
+slot = "照明器具"
+price = "0.2m"
+builds = ["Magwind (out-wiz)"]
+
+[[item]]
+name = "青銅水晶"
+en = "bronze crystal"
+slot = "握在手上"
+price = "1m~2m"
+sources = ["聖域 雅典娜（選忠誠）"]
+builds = ["Godfinger (evil-bxr)", "Magwind (out-wiz)", "Mudo (holy-refl-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "白銀聖鎧"
+en = "holy silver armour"
+slot = "身體"
+price = "1m~2m"
+sources = ["聖域 雅典娜（選勇氣）"]
+builds = ["(sole-swd)", "(swd)"]
+
+[[item]]
+name = "玄鐵護腕"
+price = "30~50m"
+
+[[item]]
+name = "赤羅之火"
+en = "fire stone"
+slot = "照明器具"
+builds = ["Twolight (evil-bxr)", "Godfinger (evil-bxr)", "Bxrwind (evil-kni)"]
+
+[[item]]
+name = "啖雲戒指"
+en = "ring"
+slot = "右手手指"
+price = "10m"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "村雨劍"
+en = "grala sword"
+slot = "右手拿著"
+price = "100~200m"
+builds = ["(sole-swd)"]
+
+[[item]]
+name = "黃巾帥旗"
+en = "banner"
+slot = "照明器具"
+builds = ["OKOOK (evil-kni)"]
+
+[[item]]
+name = "能量光環"
+
+[[item]]
+name = "巨蛇護符"
+en = "silver amulet"
+slot = "脖子"
+builds = ["Magwind (out-wiz)", "(sole-swd)", "(swd)"]
+
+[[item]]
+name = "英王皇冠"
+en = "crown"
+slot = "頭部"
+builds = ["Lcm (cle)"]
+
+[[item]]
+name = "Clan EQ"
+price = "1m"
+
+[[item]]
+name = "神祕水晶"
+price = "15m~20m"
+
+[[item]]
+name = "馬西宇德魔甲"
+
+[[item]]
+name = "馬西宇德魔盾"
+en = "Mashield shield"
+slot = "左手拿著"
+builds = ["Mudo (holy-refl-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "馬西宇德魔珠"
+
+[[item]]
+name = "飛天長靴"
+en = "boots wind"
+slot = "腳部"
+builds = ["Twolight (evil-bxr)", "Magwind (out-wiz)", "Mudo (holy-refl-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "玉手鐲"
+en = "jade bracelet"
+slot = "右手腕"
+builds = ["Twolight (evil-bxr)", "OKOOK (evil-kni)", "Bxrwind (evil-kni)"]
+
+[[item]]
+name = "闇黑·爆龍炎"
+en = "Holy Cross"
+slot = "照明器具"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "闇黑·活心·蒼龍"
+en = "ring"
+slot = "左手手指"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "闇黑·天霸·聖皇戰甲"
+en = "golden cloth"
+slot = "身體"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "闇黑·雙龍紋"
+en = "budala crown"
+slot = "頭部"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "闇黑·霸王穿心腿"
+en = "chaos leggings"
+slot = "腿部"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "闇黑·殘影·天魔腳"
+en = "sango2_horse"
+slot = "腳部"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "闇黑·霸王·咆嘯拳"
+en = "Penguin Hero"
+slot = "手臂"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "英雄劍"
+en = "Hero Sword"
+slot = "左手拿著"
+builds = ["Zyl (holy-kni)", "(swd)"]
+
+[[item]]
+name = "闇黑·六翼天使之羽"
+en = "love flying"
+slot = "背部"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "闇黑·百鬼夜行"
+en = "belt"
+slot = "腰部"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "闇黑·七鍵守護神"
+en = "secret crystal"
+slot = "握在手上"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "闇黑-蒼雷印"
+en = "medal of blue dragon"
+slot = "戴在胸前"
+builds = ["Zyl (holy-kni)"]
+
+[[item]]
+name = "金牛座聖衣"
+en = "golden cloth"
+slot = "身體"
+builds = ["Godfinger (evil-bxr)"]
+
+[[item]]
+name = "馬蹄鐵"
+en = "horseshoes"
+slot = "腳部"
+builds = ["Godfinger (evil-bxr)"]
+
+[[item]]
+name = "力量手套"
+en = "gauntlets ogre power"
+slot = "手部"
+stats = "str3 dr2"
+sources = ["地獄神龍II"]
+builds = ["Godfinger (evil-bxr)"]
+
+[[item]]
+name = "玄鐵護臂"
+en = "sango2_arms"
+slot = "手臂"
+builds = ["Godfinger (evil-bxr)"]
+
+[[item]]
+name = "滅神罩袍"
+en = "kill god robe"
+slot = "背部"
+builds = ["Godfinger (evil-bxr)"]
+
+[[item]]
+name = "電子燈"
+en = "electrical light"
+slot = "照明器具"
+builds = ["Lcm (cle)"]
+
+[[item]]
+name = "雷斯徽章"
+en = "rex amulet"
+slot = "脖子"
+builds = ["Lcm (cle)", "(mag-swd)"]
+
+[[item]]
+name = "處女座聖衣"
+en = "golden cloth"
+slot = "身體"
+notes = ["法師衣服常見選擇，100 kg"]
+builds = ["Lcm (cle)"]
+
+[[item]]
+name = "刺針護脛"
+en = "spinhxian leggings"
+slot = "腿部"
+builds = ["Lcm (cle)", "(swd)"]
+
+[[item]]
+name = "太平要術"
+en = "book"
+slot = "左手拿著"
+builds = ["Lcm (cle)"]
+
+[[item]]
+name = "風暴罩袍"
+en = "storm robe"
+slot = "背部"
+builds = ["Lcm (cle)", "(mag-swd)"]
+
+[[item]]
+name = "風暴腰帶"
+en = "storm belt"
+slot = "腰部"
+builds = ["Lcm (cle)"]
+
+[[item]]
+name = "雷斯手環"
+en = "rex bracer"
+slot = "右手腕"
+builds = ["Lcm (cle)", "(mag-swd)"]
+
+[[item]]
+name = "聖杯"
+en = "Holy Grail"
+slot = "握在手上"
+builds = ["Lcm (cle)"]
+
+[[item]]
+name = "滅世魔身"
+en = "golden cloth"
+slot = "身體"
+builds = ["MagicUser (holy-kni)"]
+
+[[item]]
+name = "可愛的 RU-RU 長尾巴"
+en = "RU-RU tail"
+slot = "腿部"
+builds = ["MagicUser (holy-kni)", "(sole-swd)", "(mag-swd)"]
+
+[[item]]
+name = "土黃色戒指"
+en = "sandy ring"
+slot = "左手手指"
+builds = ["Magwind (out-wiz)"]
+
+[[item]]
+name = "摘夫人之長袍"
+en = "Zai cloth"
+slot = "身體"
+builds = ["Magwind (out-wiz)"]
+
+[[item]]
+name = "飛鼠尾巴"
+en = "fly squirrel tail"
+slot = "腿部"
+builds = ["Magwind (out-wiz)", "Mudo (holy-refl-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "螳螂手"
+en = "mantis sleeves"
+slot = "手臂"
+builds = ["Magwind (out-wiz)"]
+
+[[item]]
+name = "魔盾"
+en = "Evil shield"
+slot = "左手拿著"
+builds = ["Magwind (out-wiz)"]
+
+[[item]]
+name = "綠寶石手鐲"
+en = "bracelet emerald"
+slot = "右手腕"
+builds = ["Magwind (out-wiz)"]
+
+[[item]]
+name = "冶鍊金闊劍"
+en = "forge sword"
+slot = "右手拿著"
+builds = ["Magwind (out-wiz)"]
+
+[[item]]
+name = "亞瑟王護符"
+en = "Arthur Amulet"
+slot = "脖子"
+builds = ["Bluewind (holy-kni)"]
+
+[[item]]
+name = "獅子座聖衣"
+en = "golden cloth"
+slot = "身體"
+builds = ["Bluewind (holy-kni)"]
+
+[[item]]
+name = "桃花束腰"
+en = "belt"
+slot = "腰部"
+builds = ["Bluewind (holy-kni)"]
+
+[[item]]
+name = "黃金巨劍"
+en = "gold sword"
+slot = "右手拿著"
+builds = ["Bluewind (holy-kni)"]
+
+[[item]]
+name = "Diku 過關勳章"
+en = "sango1 medal"
+slot = "戴在胸前"
+builds = ["Bluewind (holy-kni)"]
+
+[[item]]
+name = "Sable Amulet"
+en = "Sable Amulet"
+slot = "脖子"
+builds = ["OKOOK (evil-kni)"]
+
+[[item]]
+name = "黃金長矛"
+en = "gold spear"
+slot = "右手拿著"
+builds = ["OKOOK (evil-kni)"]
+
+[[item]]
+name = "胸針"
+en = "flower breastpin"
+slot = "戴在胸前"
+builds = ["OKOOK (evil-kni)"]
+
+[[item]]
+name = "象牙之墜"
+en = "broach ivory"
+slot = "脖子"
+builds = ["Mudo (holy-refl-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "水瓶座聖衣"
+en = "golden cloth"
+slot = "身體"
+builds = ["Mudo (holy-refl-wiz)", "Dkk (refl-wiz)"]
+
+[[item]]
+name = "開山刀"
+en = "blade"
+slot = "右手拿著"
+builds = ["Mudo (holy-refl-wiz)"]
+
+[[item]]
+name = "妮姆手杖"
+en = "Nymue Sceptre"
+slot = "握在手上"
+builds = ["Bxrwind (evil-kni)"]
+
+[[item]]
+name = "山吹綠之戒"
+en = "Yamabuki ring"
+slot = "右手手指"
+builds = ["(sole-swd)", "(swd)"]
+
+[[item]]
+name = "黃金面具"
+en = "golden mask"
+slot = "頭部"
+builds = ["(sole-swd)", "(swd)"]
+
+[[item]]
+name = "白金長靴"
+en = "boots platinum"
+slot = "腳部"
+builds = ["(sole-swd)", "(swd)"]
+
+[[item]]
+name = "小魔女之盾"
+en = "Daemon shield"
+slot = "左手拿著"
+builds = ["(sole-swd)"]
+
+[[item]]
+name = "斷天罩袍"
+en = "robe"
+slot = "背部"
+builds = ["(sole-swd)", "(swd)"]
+
+[[item]]
+name = "木綠紫之手環"
+en = "Akane bracelet"
+slot = "右手腕"
+builds = ["(sole-swd)"]
+
+[[item]]
+name = "七星燈"
+en = "sango2_light"
+slot = "照明器具"
+stats = "mana+50 int+1 wis+1"
+sources = ["赤壁之戰 孔明 talk ming light"]
+builds = ["(mag-swd)"]
+
+[[item]]
+name = "瑯嬛玉戒"
+en = "Lang-huan Jade Ring"
+slot = "右手手指"
+builds = ["(mag-swd)"]
+
+[[item]]
+name = "雙魚座聖衣"
+en = "golden cloth"
+slot = "身體"
+builds = ["(mag-swd)"]
+
+[[item]]
+name = "綸巾"
+en = "sango2_cap"
+slot = "頭部"
+stats = "mana+60"
+sources = ["赤壁之戰 周瑜 talk chou cap"]
+builds = ["(mag-swd)"]
+
+[[item]]
+name = "七彩蓮花座"
+en = "Rainbow Lotus Wheel"
+slot = "腳部"
+builds = ["(mag-swd)"]
+
+[[item]]
+name = "金剛經"
+en = "sutra"
+slot = "左手拿著"
+builds = ["(mag-swd)"]
+
+[[item]]
+name = "玫瑰荊棘鞭"
+en = "sword"
+slot = "右手拿著"
+builds = ["(mag-swd)"]
+
+[[item]]
+name = "二級夢望勳章"
+en = "dream medal"
+slot = "戴在胸前"
+builds = ["(mag-swd)"]
+
+[[item]]
+name = "圓桌刺盾"
+en = "Royal spiked Shield"
+slot = "左手拿著"
+builds = ["(swd)"]
+
+[[item]]
+name = "啖雲手鐲"
+en = "bracelet"
+slot = "右手腕"
+builds = ["(swd)"]
+
+[[item]]
+name = "冶鍊銀利爪"
+en = "forge claw"
+slot = "右手拿著"
+builds = ["Dkk (refl-wiz)"]
+
+[[item]]
+name = "飛焰之戒"
+en = "fire ring"
+stats = "no save"
+sources = ["酆都 秦廣王"]
+
+[[item]]
+name = "毀靈之臂"
+en = "arms"
+sources = ["酆都 宋帝王"]
+
+[[item]]
+name = "電閃頭盔"
+en = "electric helm"
+sources = ["酆都 楚江王"]
+
+[[item]]
+name = "滅神之戒"
+en = "ring"
+sources = ["酆都 五官王"]
+
+[[item]]
+name = "暗黑之符"
+en = "dark"
+sources = ["酆都 閻羅王"]
+
+[[item]]
+name = "化魂頭盔"
+en = "helmet"
+sources = ["酆都 平等王"]
+
+[[item]]
+name = "斷天肘"
+en = "arms"
+sources = ["酆都 泰山王"]
+
+[[item]]
+name = "雷火項鍊"
+en = "fire"
+sources = ["酆都 都市王"]
+
+[[item]]
+name = "風暴之戒"
+en = "ring"
+sources = ["酆都 卞城王"]
+
+[[item]]
+name = "雨化護身符"
+en = "rain"
+sources = ["酆都 轉輪王"]
+
+[[item]]
+name = "孔雀羽"
+en = "plume"
+sources = ["酆都 地藏王（解謎）"]
+notes = ["50 kg；要全新沒穿過的才能叫出 mob 加 qmark"]
+
+[[item]]
+name = "真理之劍"
+sources = ["睡美人 佛娜仙女"]
+
+[[item]]
+name = "美德之盾"
+sources = ["睡美人 梅莉仙女"]
+
+[[item]]
+name = "神聖十字架"
+stats = "可上 sanctuary 十次"
+sources = ["睡美人 芙蘿拉仙女"]
+
+[[item]]
+name = "極光腰帶"
+sources = ["睡美人 國王（解謎獎勵）"]
+
+[[item]]
+name = "魔龍戰甲"
+stats = "dr5 str+1/+2 dex+2 con+1/+2"
+sources = ["睡美人 國王（第二次解，給魔龍之鱗）"]
+
+[[item]]
+name = "邪靈臂紋"
+stats = "一般 con+2 dr/hr+3；有 spellmaster 者 int+2；有 gunner/fireslash 者 wis+2"
+sources = ["睡美人 國王（第二次解，給邪靈之魂）"]
+
+[[item]]
+name = "包袱"
+sources = ["桃花村 村長（解謎）"]
+
+[[item]]
+name = "溼婆之爪"
+en = "claws"
+sources = ["布達拉宮（解謎）"]
+
+[[item]]
+name = "皓金神劍"
+sources = ["聖域 雅典娜（選榮譽）"]
+
+[[item]]
+name = "重力戒指"
+sources = ["企鵝村（解謎）"]
+notes = ["300 kg"]
+
+[[item]]
+name = "羽扇"
+stats = "mana+75"
+sources = ["赤壁之戰 孔明 talk ming fan"]
+
+[[item]]
+name = "神龍珠"
+stats = "dex+2 mana+50 dc-60"
+sources = ["七龍珠（解謎）"]
+
+[[item]]
+name = "神龍臂"
+stats = "int+2 hp+5 mana+60"
+sources = ["七龍珠 殺神龍"]
+
+[[item]]
+name = "諸神水晶"
+en = "god_crystal"
+sources = ["闇的繼承者 普利莫"]
+notes = ["可擋特攻"]
+
+[[item]]
+name = "聖戰神劍"
+en = "Holyer war sword"
+stats = "nosave hr10 dr10 damage 60-80"
+sources = ["闇的繼承者 艾布特"]
+
+[[item]]
+name = "迅雷魔法指環"
+sources = ["闇的繼承者 艾布特（需先把約克和奧斯蒙打到紅血）"]
+
+[[item]]
+name = "真 軒轅劍"
+en = "True shunyen sword"
+stats = "No Save 傷害 70-85 dr+12 hr+13 mv/hp/mana-100 con/wis/dex-2 int/str+1"
+sources = ["魔界要塞（七把子劍合成）"]
+
+[[item]]
+name = "煉獄脛甲"
+en = "hell leggings"
+sources = ["魔堡 魔王路維斯"]
+
+[[item]]
+name = "幸運魔幣"
+en = "luck_coin"
+sources = ["魔堡 異次空間的老人"]
+notes = ["穿上可擋特攻，只能穿一次"]
+
+[[item]]
+name = "修羅金帶"
+sources = ["修羅城（隨機獎勵）"]
+
+[[item]]
+name = "末日護腕"
+stats = "攻擊力或命中率（自選）"
+sources = ["世界末日（解謎）"]
+
+[[item]]
+name = "丹青臂"
+sources = ["笑傲江湖東方不敗（選擇加入日月神教）"]
+
+[[item]]
+name = "正港男子漢勳章"
+sources = ["笑傲江湖東方不敗（選擇不加入）"]
+
+[[item]]
+name = "sunflower dress"
+sources = ["笑傲江湖 東方不敗"]
+notes = ["劍士裝"]
+
+[[item]]
+name = "聖潔護符"
+sources = ["暗黑破壞神魔道器篇（解謎）"]
+
+[[item]]
+name = "holy arm"
+stats = "int+2 wis+1"
+sources = ["暗黑破壞神武家屋敷篇（解謎）"]
+
+[[item]]
+name = "mirror"
+stats = "nosave str+1 hr+5 dr+5"
+sources = ["天界 寶塔第二層"]
+
+[[item]]
+name = "爵德配槍"
+en = "dreed gun"
+stats = "no save 連發，約 1400×4"
+sources = ["亞斯本 爵德"]
+
+[[item]]
+name = "聖火令"
+en = "holy fire"
+slot = "照明器具"
+stats = "No Save armor100 避免法術-15 dr+10 hr+8 dc-100 hp+100 mana+100"
+sources = ["陽頂天"]
+
+[[item]]
+name = "玉蜂針"
+sources = ["小龍女（學過九陰者 talk whitegirl 我要玉蜂針）"]
+notes = ["暗器"]
+
+[[item]]
+name = "暗源標"
+sources = ["黑地掉落"]
+notes = ["暗器"]
+
+[[item]]
+name = "黑色十字"
+sources = ["黑地掉落（較易取得）"]
+notes = ["暗器"]
+
+[[item]]
+name = "龍紋戰甲"
+stats = "避免法術影響 -10"
+
+[[item]]
+name = "冰霜指環"
+stats = "避免龍氣傷害 -10（對任何法術都有效）"
+
+[[item]]
+name = "太陽之杖"
+stats = "避免法術 -5、避免石擊 -5"
+
+[[item]]
+name = "愛之護符"
+en = "amulet"
+stats = "多種避免效果，合計 -25"
+
+[[item]]
+name = "馬西宇德"
+notes = ["法師衣服常見選擇，100 kg"]
+
+[[item]]
+name = "超魔導甲"
+sources = ["艾莎尼亞"]
+notes = ["法師衣服，稀有"]
+
+[[item]]
+name = "護國袈裟"
+notes = ["法師衣服，Evil"]
+
+[[item]]
+name = "牡羊座聖衣"
+notes = ["法師衣服"]
+
+[[item]]
+name = "魔法方塊"
+notes = ["容器，不會損壞，推薦日常使用"]
+
+[[item]]
+name = "月光寶盒"
+notes = ["早期紀念品容器，不會燒"]
+
+[[item]]
+name = "黑杖"
+en = "staff black"
+sources = ["龍塔"]
+notes = ["降心地最快（範圍）"]
+
+[[item]]
+name = "金屬魔杖"
+en = "wand metal"
+sources = ["神秘高塔 魔咒師的儲藏室"]
+notes = ["降心地最快（單體）"]
+
+[[item]]
+name = "上帝武裝"
+en = "god vest"
+sources = ["勇者學校 新手之旅過關獎賞"]
+
+[[item]]
+name = "元素護符"
+stats = "hr1 dr4 mv-10"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "金項鍊"
+stats = "dr4"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "敏捷之靴"
+stats = "dex4"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "龍王之翼"
+stats = "dex4"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "飄浮之靴"
+stats = "dex2, fly"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "蛇杖"
+stats = "int3 mana40 damage33"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "黑豹風衣"
+stats = "hp55 mana-12"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "金色勳章"
+stats = "hp3 mana3"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "屠龍頭盔"
+stats = "hr4 dr1 hp10"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "銀弓/銀箭"
+stats = "威力68, 裝載量10/2kg五發"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "龍神斬魂刃"
+stats = "hr8 dr14 damage70 (有 soulsteal)"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "屠龍劍"
+stats = "hr8 dr12 damage62"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "破壞劍"
+stats = "hr8 dr12 damage60"
+sources = ["地獄神龍II"]
+
+[[item]]
+name = "Blue Dragon Medal"
+type = "medal"
+stats = "DR +2"
+
+[[item]]
+name = "Green Dragon Medal"
+type = "medal"
+stats = "HR +2"
+
+[[item]]
+name = "Black Dragon Medal"
+type = "medal"
+stats = "CON +1, HP +20"
+
+[[item]]
+name = "Red Dragon Medal"
+type = "medal"
+stats = "DEX +1, MV +20"
+
+[[item]]
+name = "Sango1 Medal"
+type = "medal"
+stats = "HP +10, Mana +10"
+
+[[item]]
+name = "一級 Medal"
+type = "medal"
+stats = "內力 +20"
+
+[[item]]
+name = "二級 Medal"
+type = "medal"
+stats = "Mana +30"
+
+[[item]]
+name = "伏羲 Medal"
+type = "medal"
+stats = "DR +1, HR +1"
+
+[[item]]
+name = "王家 Medal"
+type = "medal"
+stats = "HP +5, Mana +5"
+
+[[item]]
+name = "JoJo Medal Jojo2"
+type = "medal"
+stats = "CON/INT/DEX/STR+1"
+
+[[item]]
+name = "風雲流英雄勳章"
+en = "hero medal"
+type = "clan"
+sources = ["幫派：風雲流"]
+
+[[item]]
+name = "LGC軍團專用墨鏡"
+en = "Lgc Troops Glasses"
+type = "clan"
+sources = ["幫派：LGC軍團"]
+
+[[item]]
+name = "羅生門臂章"
+en = "Rosun"
+type = "clan"
+sources = ["幫派：羅生門"]
+
+[[item]]
+name = "蘋果背包"
+en = "apple backpack"
+type = "clan"
+sources = ["幫派：蘋果派"]
+
+[[item]]
+name = "時空特警腰帶"
+en = "time-cop belt"
+type = "clan"
+sources = ["幫派：超時空特警署"]
+
+[[item]]
+name = "玄冰玉鐲"
+en = "ice jade"
+type = "clan"
+sources = ["幫派：逆天盟"]
+
+[[item]]
+name = "水滸寨通行證"
+en = "card"
+type = "clan"
+sources = ["幫派：梁山泊"]
+
+[[item]]
+name = "雙色玫瑰"
+en = "beauty rose"
+type = "clan"
+sources = ["幫派：美少女學園"]
+
+[[item]]
+name = "響子親手織的圍巾"
+en = "neckerchief"
+type = "clan"
+sources = ["幫派：一刻館"]
+
+[[item]]
+name = "幻象會員卡"
+en = "illusion card"
+type = "clan"
+sources = ["幫派：幻象騎士團"]
+
+[[item]]
+name = "日月神教令牌"
+en = "Sun-Moon Card"
+type = "clan"
+sources = ["幫派：日月神教"]
+
+[[item]]
+name = "小飛豬俱樂部會員卡"
+en = "Small Pig Card"
+type = "clan"
+sources = ["幫派：小飛豬俱樂部"]
+
+[[item]]
+name = "米老鼠包包"
+en = "Mickey leather"
+type = "clan"
+sources = ["幫派：狄斯耐樂園"]
+
+[[item]]
+name = "美少女胸針"
+en = "beauty flower"
+type = "clan"
+sources = ["幫派：美少女學園"]
+
+[[item]]
+name = "豬頭面罩"
+en = "pig mask"
+type = "clan"
+sources = ["幫派：豬頭家族"]
+
+[[item]]
+name = "九天鳳凰聖羽"
+en = "phonix leather"
+type = "clan"
+sources = ["幫派：仙劍派"]
+
+[[item]]
+name = "恐龍蛋"
+en = "Egg"
+type = "clan"
+sources = ["幫派：風之塔"]
+
+[[item]]
+name = "7-11 重量杯"
+en = "Super Cup"
+type = "clan"
+sources = ["幫派：7-11"]
+
+[[item]]
+name = "黑手黨黨章"
+en = "mafia manual"
+type = "clan"
+sources = ["幫派：黑手黨"]
+
+[[item]]
+name = "凱撒之鷹"
+en = "eagle fly free"
+type = "clan"
+sources = ["幫派：赤字軍團"]
+
+[[item]]
+name = "七彩霹靂神珠"
+en = "Peli rainbow magic orb"
+type = "clan"
+sources = ["幫派：霹靂門"]
+
+[[item]]
+name = "光劍"
+en = "Genji light"
+type = "clan"
+sources = ["幫派：天使聖族"]
+
+[[item]]
+name = "酒井法子新專輯"
+en = "noriko’s CD"
+type = "clan"
+sources = ["幫派：酒井法子之家"]
+
+[[item]]
+name = "小可愛勳章"
+en = "gooder medal"
+type = "clan"
+sources = ["幫派：龍虎之門"]
+
+[[item]]
+name = "幸運手環"
+en = "luck bracelet"
+type = "clan"
+sources = ["幫派：北帝國"]
+
+[[item]]
+name = "變態社長的內褲"
+en = "underwear"
+type = "clan"
+sources = ["幫派：掰掰演劇社"]
+
+[[item]]
+name = "集英盒"
+en = "hero box"
+type = "clan"
+sources = ["幫派：集英社"]
+
+[[item]]
+name = "風林火山旗"
+en = "wind fire flag"
+type = "clan"
+sources = ["幫派：風林火山"]
+
+[[item]]
+name = "天劫地浩"
+en = "sky earth"
+type = "clan"
+sources = ["幫派：紅雲藍霞"]
+
+[[item]]
+name = "虛無戰袍"
+en = "Void robe"
+type = "clan"
+sources = ["幫派：破碎虛空"]
+
+[[item]]
+name = "四行倉庫通行證"
+en = "card"
+type = "clan"
+
+[[item]]
+name = "太玄經"
+type = "clan"
+sources = ["幫派：俠客島"]
+
+[[item]]
+name = "逍遙派"
+en = "happy wing"
+type = "clan"
+sources = ["幫派：逍遙之翼"]
+
+[[item]]
+name = "能夠吸納萬物的黑洞"
+en = "black hole"
+type = "clan"
+
+[[item]]
+name = "冷月鏡"
+en = "moon mirror"
+type = "clan"
+
+[[item]]
+name = "天兵團認同徽章"
+en = "God Soldier Medal"
+type = "clan"

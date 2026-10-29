@@ -1,0 +1,18 @@
+> spells
+你現在所能學習的法術有:
+
+               armor           神靈呼喚術 記憶量: 20
+               bless           女神庇祐術 記憶量: 60
+     control weather           呼風喚雨術 記憶量: 10
+        create water               造水術 記憶量: 5
+          cure light             輕度治療 記憶量: 5
+               curse               詛咒術 記憶量: 10
+        detect magic           偵測魔法術 記憶量: 5
+       detect poison           偵測毒性術 記憶量: 5
+               invis               隱身術 記憶量: 30
+      know alignment               辯邪術 記憶量: 5
+       locate object               定位術 記憶量: 10
+       magic missile               魔法彈 記憶量: 5
+            teleport               雲遊術 記憶量: 50
+       ventriloquate               腹語術 記憶量: 5
+         cross glory             十字光芒 記憶量: 50

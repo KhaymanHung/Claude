@@ -1,0 +1,348 @@
+# 解謎資料：101次求婚（由原攻略的每日指令自動轉出）
+
+[[quest]]
+id = "101-proposals"
+name = "101次求婚"
+aliases = ["101次求婚", "101", "求婚", "大鏡子"]
+route_note = "找到大鏡子後 touch 進入。"
+note = "長篇互動劇情，共需收集 80 顆金幣，每天一顆。每個 drop X coins 代表搭電車或計程車前往下一天，get gold 撿起金幣。原文 p4、p5、p6、st、wa 等縮寫照原樣保留。第 53、62、64 天原文的 drop 金額（521、601、611）看起來像打字錯誤，送出前請確認。"
+
+[[quest.steps]]
+title = "進入"
+do = ["touch"]
+
+[[quest.steps]]
+title = "第 1 天"
+do = ["st", "g all", "wa", "sesuss", "p5", "dro 1 coins"]
+
+[[quest.steps]]
+title = "第 2 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "snws", "site", "n", "use tel", "s", "car", "esssse", "p4", "dro 2 coins"]
+
+[[quest.steps]]
+title = "第 3 天"
+do = ["g gold", "nnndn", "ta zp what", "wn", "bed", "wa", "sesuss", "p5", "dro 3 coins"]
+
+[[quest.steps]]
+title = "第 4 天"
+do = ["g gold", "n", "hotel", "nsn", "ta zp a3", "s", "ta hs a1", "leave", "w", "shop", "ta hs b2", "ta hs c1", "ta hs d2", "n", "ta hs e2", "ta hs c2", "e", "p4", "dro 4 coins"]
+
+[[quest.steps]]
+title = "第 5 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesuss", "p5", "dro 5 coins"]
+
+[[quest.steps]]
+title = "第 6 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "work", "nwssssse", "p4", "dro 6 coins"]
+
+[[quest.steps]]
+title = "第 7 天"
+do = ["g gold", "nnndnwsn", "use tel", "use tel", "esuss", "door", "order japan", "enndnwn", "bed", "wa", "sesuss", "p5", "dro 7 coins"]
+
+[[quest.steps]]
+title = "第 8 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "work", "use tel", "op n", "nwsss", "inn", "ta gh a2", "ennees", "door", "ta hs f2", "wsssw", "p4", "dro 8 coins"]
+
+[[quest.steps]]
+title = "第 9 天"
+do = ["g gold", "nnndnw", "ta zp c1", "n", "bed", "wa", "sesuss", "p5", "dro 9 coins"]
+
+[[quest.steps]]
+title = "第 10 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "work", "nwsees", "door", "ta hs c3", "dro 10 coins"]
+
+[[quest.steps]]
+title = "第 11 天"
+do = ["g gold", "door", "nn", "ta man c1", "s", "leave", "s", "p4", "dro 11 coins"]
+
+[[quest.steps]]
+title = "第 12 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesuss", "p5", "dro 12 coins"]
+
+[[quest.steps]]
+title = "第 13 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "work", "nws", "site", "nsnsesssse", "p4", "dro 13 coins"]
+
+[[quest.steps]]
+title = "第 14 天"
+do = ["g gold", "nnndnw", "use tel", "select 1", "ta zp c2", "ta zp c3", "n", "bed", "wa", "sesuss", "p5", "dro 14 coins"]
+
+[[quest.steps]]
+title = "第 15 天"
+do = ["g gold", "nwnn", "bar", "e", "ta hs g1", "ta hs c4", "ta hs c5", "wusse", "p4", "dro 15 coins"]
+
+[[quest.steps]]
+title = "第 16 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesun", "course", "select 7-1 all", "esss", "p5", "dro 16 coins"]
+
+[[quest.steps]]
+title = "第 17 天"
+do = ["g gold", "nennn", "door", "path", "op e", "ew", "back", "wsssw", "p4", "dro 17 coins"]
+
+[[quest.steps]]
+title = "第 18 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesuss", "p5", "dro 18 coins"]
+
+[[quest.steps]]
+title = "第 19 天"
+do = ["g gold", "nwnn", "bar", "e", "ta waiter c1", "wusse", "p4", "dro 19 coins"]
+
+[[quest.steps]]
+title = "第 20 天"
+do = ["g gold", "nnndnw", "ta zp c4", "ta zp b3", "ta zp c5", "n", "bed", "wa", "sesuss", "p5", "dro 20 coins"]
+
+[[quest.steps]]
+title = "第 21 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "n", "op e", "ewwwesss", "bar", "e", "ta waiter c2", "walk there", "wusse", "p4", "dro 21 coins"]
+
+[[quest.steps]]
+title = "第 22 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesuss", "p6", "dro 22 coins"]
+
+[[quest.steps]]
+title = "第 23 天"
+do = ["g gold", "nnnnn", "door", "press", "ee", "ta cl c1", "ta cl c2", "ta cl c3", "ta cl c4", "wwsssss", "station", "dro 23 coins"]
+
+[[quest.steps]]
+title = "第 24 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesuss", "p5", "dro 24 coins"]
+
+[[quest.steps]]
+title = "第 25 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "work", "nwwee", "op s", "s", "work", "nwsss", "bar", "ewusse", "p4", "dro 25 coins"]
+
+[[quest.steps]]
+title = "第 26 天"
+do = ["g gold", "nnndnwesun", "ta hs h2", "s", "g 101_key", "dnwn", "bed", "wa", "sesuss", "p5", "dro 26 coins"]
+
+[[quest.steps]]
+title = "第 27 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "snwssssse", "p6", "dro 27 coins"]
+
+[[quest.steps]]
+title = "第 28 天"
+do = ["g gold", "nnnnn", "door", "press", "gi 101_key gh", "eew", "op w", "ws", "wait", "ssss", "p4", "dro 28 coins"]
+
+[[quest.steps]]
+title = "第 29 天"
+do = ["g gold", "nnndnw", "gi gh_food zp", "n", "bed", "wa", "sesuss", "p5", "dro 29 coins"]
+
+[[quest.steps]]
+title = "第 30 天"
+do = ["g gold", "nen", "theater", "w", "store", "ta father c1", "esw", "p4", "dro 30 coins"]
+
+[[quest.steps]]
+title = "第 31 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesu", "ta hs c6", "ta hs c7", "ta hs c8", "dnwweesuss", "door", "order japan", "enndnwn", "bed", "wa", "sesuss", "p5", "dro 31 coins"]
+
+[[quest.steps]]
+title = "第 32 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "snws", "site", "truck", "start", "dro 32 coins"]
+
+[[quest.steps]]
+title = "第 33 天"
+do = ["g gold", "door", "rush to her", "truck", "start", "dro 33 coins"]
+
+[[quest.steps]]
+title = "第 34 天"
+do = ["g gold", "door", "ta sk c1", "esssse", "p4", "dro 34 coins"]
+
+[[quest.steps]]
+title = "第 35 天"
+do = ["g gold", "nnndnw", "use tel", "ta zp c6", "ta zp c7", "keep", "esuss", "p5", "dro 35 coins"]
+
+[[quest.steps]]
+title = "第 36 天"
+do = ["g gold", "nennnnss", "ground", "ta boy c1", "s", "enter", "keep", "door", "nw", "door", "u", "keep", "ddu", "door", "station", "ta mother c1", "ta mother c2", "essw", "p4", "dro 36 coins"]
+
+[[quest.steps]]
+title = "第 37 天"
+do = ["g gold", "nnndnwwen", "bed", "wa", "sesuss", "p5", "dro 37 coins"]
+
+[[quest.steps]]
+title = "第 38 天"
+do = ["g gold", "nennnn", "door", "udsssssw", "res", "start eat", "e", "keep", "car", "ssss", "p4", "dro 38 coins"]
+
+[[quest.steps]]
+title = "第 39 天"
+do = ["g gold", "nnndnwn", "start eat", "n", "bed", "wa", "sesuss", "p5", "dro 39 coins"]
+
+[[quest.steps]]
+title = "第 40 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "work", "nwwe", "ta lz c1", "see", "door", "ta ta a2", "ta ta c1", "check shelf", "select shau", "ta ta c2", "ssssw", "p4", "dro 40 coins"]
+
+[[quest.steps]]
+title = "第 41 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesuss", "p5", "dro 41 coins"]
+
+[[quest.steps]]
+title = "第 42 天"
+do = ["g gold", "nwnse", "p4", "dro 42 coins"]
+
+[[quest.steps]]
+title = "第 43 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sewnsesuss", "p5", "dro 43 coins"]
+
+[[quest.steps]]
+title = "第 44 天"
+do = ["g gold", "nwn", "work", "se", "p4", "dro 44 coins"]
+
+[[quest.steps]]
+title = "第 45 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesuss", "p5", "dro 45 coins"]
+
+[[quest.steps]]
+title = "第 46 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "work", "nwssss", "work", "s", "up", "keep", "dnse", "p4", "dro 46 coins"]
+
+[[quest.steps]]
+title = "第 47 天"
+do = ["g gold", "nnndnw", "bed", "wa", "sesuss", "p5", "dro 47 coins"]
+
+[[quest.steps]]
+title = "第 48 天"
+do = ["g gold", "nen", "select 1", "sw", "p4", "dro 48 coins"]
+
+[[quest.steps]]
+title = "第 49 天"
+do = ["g gold", "nnndnwnsesuss", "p5", "dro 49 coins"]
+
+[[quest.steps]]
+title = "第 50 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "snwwesssssse", "p4", "dro 50 coins"]
+
+[[quest.steps]]
+title = "第 51 天"
+do = ["g gold", "nnndnw", "ta zp c8", "use tel", "ta zp c9", "n", "bed", "sesuss", "p6", "dro 51 coins"]
+
+[[quest.steps]]
+title = "第 52 天"
+do = ["g gold", "nnnnn", "wait here", "door", "keep", "sssss", "p5", "dro 52 coins"]
+
+[[quest.steps]]
+title = "第 53 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "work", "nwssssse", "p4", "dro 521 coins"]
+
+[[quest.steps]]
+title = "第 54 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesuss", "p6", "dro 53 coins"]
+
+[[quest.steps]]
+title = "第 55 天"
+do = ["g gold", "nnnnn", "door", "press", "sss", "park", "keep", "car", "shopping", "nnnn", "door", "udsssssw", "p4", "dro 54 coins"]
+
+[[quest.steps]]
+title = "第 56 天"
+do = ["g gold", "nnndnwn", "ta zp c10", "bed", "wa", "sesuss", "p5", "dro 55 coins"]
+
+[[quest.steps]]
+title = "第 57 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "sn", "op e", "ewwsss", "bar", "ewu", "inn", "keep", "e", "select 1", "sse", "p4", "dro 56 coins"]
+
+[[quest.steps]]
+title = "第 58 天"
+do = ["g gold", "nnndnw", "ta zp c11", "esuss", "p5", "dro 57 coins"]
+
+[[quest.steps]]
+title = "第 59 天"
+do = ["g gold", "ne", "shop", "ta jeweller ring", "nnnnnww", "door", "ss", "shop", "ta cl a1", "es", "bar", "ewu", "keep", "car", "keep", "ssss", "p4", "dro 58 coins"]
+
+[[quest.steps]]
+title = "第 60 天"
+do = ["g gold", "n", "door", "order chin", "enndnwn", "bed", "wa", "sesuss", "p5", "dro 59 coins"]
+
+[[quest.steps]]
+title = "第 61 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "work", "n", "op n", "n", "press", "start eat", "door", "op s", "ssnwssssse", "p6", "dro 60 coins"]
+
+[[quest.steps]]
+title = "第 62 天"
+do = ["g gold", "nnnnn", "door", "press", "ee", "keep", "w", "op n", "n", "touch cello", "sit sofa", "focus cello", "swsssss", "p4", "dro 601 coins"]
+
+[[quest.steps]]
+title = "第 63 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesuss", "p5", "dro 61 coins"]
+
+[[quest.steps]]
+title = "第 64 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "s", "work", "nwwesss", "bar", "e", "ta kg c1", "ta ta c3", "ta ta c4", "ta kg a3", "car", "ssss", "p4", "dro 611 coins"]
+
+[[quest.steps]]
+title = "第 65 天"
+do = ["g gold", "nnndnwnsn", "bed", "wa", "sesuss", "p5", "dro 62 coins"]
+
+[[quest.steps]]
+title = "第 66 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "sn", "ws", "site", "ns", "ta ta c5", "car", "church", "door", "wss", "p4", "dro 63 coins"]
+
+[[quest.steps]]
+title = "第 67 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sesuss", "p5", "dro 64 coins"]
+
+[[quest.steps]]
+title = "第 68 天"
+do = ["g gold", "nwnnnn", "door", "e", "op s", "sn", "op e", "ewwss", "shop", "keep", "esss", "shop", "keep", "fall down", "wa", "sesuss", "p5", "dro 65 coins"]
+
+[[quest.steps]]
+title = "第 69 天"
+do = ["g gold", "nwnn", "use tel", "n", "keep", "ta hs k1", "ssse", "p4", "dro 66 coins"]
+
+[[quest.steps]]
+title = "第 70 天"
+do = ["g gold", "nnndnwn", "bed", "wa", "sessunn", "focus boy", "ssss", "p5", "dro 67 coins"]
+
+[[quest.steps]]
+title = "第 71 天"
+do = ["g gold", "nennn", "ta hs m1", "sssw", "p4", "dro 68 coins"]
+
+[[quest.steps]]
+title = "第 72 天"
+do = ["g gold", "nnndnw", "ta zp c13", "n", "study", "s", "use tel", "ta zp c14", "n", "study", "sw", "ta zp c15", "eesuss", "p5", "dro 69 coins"]
+
+[[quest.steps]]
+title = "第 73 天"
+do = ["g gold", "nennn", "in", "ta leader report", "esssw", "p4", "dro 70 coins"]
+
+[[quest.steps]]
+title = "第 74 天"
+do = ["g gold", "nnndnwn", "study", "sesuss", "p5", "dro 71 coins"]
+
+[[quest.steps]]
+title = "第 75 天"
+do = ["g gold", "nennnnw", "room", "in", "sessssw", "p4", "dro 72 coins"]
+
+[[quest.steps]]
+title = "第 76 天"
+do = ["g gold", "nnndnw", "ta zp c16", "esuss", "p5", "dro 73 coins"]
+
+[[quest.steps]]
+title = "第 77 天"
+do = ["g gold", "nwnn", "bar", "e", "take tel", "ta hs c9", "ta hs n2", "wusse", "p4", "dro 74 coins"]
+
+[[quest.steps]]
+title = "第 78 天"
+do = ["g gold", "nnndnwesuss", "p5", "dro 75 coins"]
+
+[[quest.steps]]
+title = "第 79 天"
+do = ["g gold", "nennn", "in", "esssw", "p4", "dro 76 coins"]
+
+[[quest.steps]]
+title = "第 80 天"
+do = ["g gold", "nnndnsuss", "up", "worship", "s", "worship", "n", "worship", "s", "worship", "n", "leave", "nndnwn", "bed", "wa", "sesuss", "p5", "dro 77 coins"]
+
+[[quest.steps]]
+title = "第 81 天"
+do = ["g gold", "nennnnw", "room", "check board", "sessssw", "p6", "dro 78 coins"]
+
+[[quest.steps]]
+title = "第 82 天"
+do = ["g gold", "nnn", "church", "door", "puton", "select 2", "swss", "p4", "dro 79 coins"]
+
+[[quest.steps]]
+title = "第 83 天"
+do = ["g gold", "nnnnn", "road", "back", "select 1", "back", "ssdnw", "ta zp d1", "esuss", "p5", "dro 80 coins"]
+
+[[quest.steps]]
+title = "最後一步"
+do = ["g gold", "nennnnw", "walkto road", "use tool", "say yes", "final step", "get all", "park", "park", "park", "park", "park", "park", "park", "park", "park", "park", "g all", "leave"]

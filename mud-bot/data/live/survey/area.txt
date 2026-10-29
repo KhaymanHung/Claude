@@ -1,0 +1,67 @@
+> area
+{ None} Diku    Limbo                  { ALL } Qing    風采之都               
+{ ALL } Gen     吉雅尼斯王城           { ALL } Chosen  古大陸中               
+{ ALL } Warman  長安城                 { ALL } Joey    雕像館                 
+{ ALL } Chosen  太空飛行世界           { ALL } Yshuang 童話世界               
+{ All } Qing    幫派總壇               { ALL } Ichen   幫派大陸               
+{ ALL } Macau   新勇者學校             { 1  5}*Sandman 矮人育嬰中心           
+{ 1 10}*Generic 小精靈村               { 5 15} Diku    吉雅尼斯西邊森林       
+{ 5 20} Qing    動物園                 { 5 20} Copper  綠血小鬼之森           
+{ 5 25} Alfa    吉雅尼斯外圍平原       { 5 35} Qer     格鬥天堂               
+{ 5 35} Ronald  玩具反斗城             {10 20} Anon    東方大沙漠             
+{10 15}*Merc    巨人洞穴               {10 25} Corel   生菜沙拉王國           
+{10 25}*Anon    矮人王國               {10 35} Alfa    聖魔森林               
+{10 20} Chosen  風采北方近郊           {15 25} Copper  北方平原               
+{15 25} Boom    少林寺                 {15 25} Chosen  風采西方近郊           
+{15 25} Chosen  相聚一刻               {20 35} Vera    夢幻撲克王國           
+{20 60} Winwell SOGO 百貨              {25 35} Chosen  吉尼南方近郊           
+{25 35} Chosen  巨木林                 {30 40} Chosen  科研中心               
+{30 40} Cgh     闇之陵                 {30 40}*Anon    泰洛市                 
+{30 45} Doctor  十二星宮               {30 45} Andi    金字塔                 
+{30 45} Dylan   雲空[譯者:ICTUS]       {30 50} Cgh     蜀山劍俠               
+{30 50} Uranus  恐龍公園               {30 60} Chosen  企鵝村                 
+{30 60} Gen     Ultima                 {35 55} Raff    元素峽谷               
+{40 60} Chris   曼托爾城[譯者:ICTUS]   {40 50} Yshuang 傑克與魔豆             
+{45 60} Shuo    龍塔                   {45 60} Vera    天界                   
+{45 60} Shuo    神秘高塔               {45 60} Corel   魔王迷宮               
+{45 60} Volvic  鞏恩城                 {45 60} OHIO    大理國                 
+{50 60} Suleen  蒙古草原               {50 60} Hatchet 新奧夫卡               
+{50 60} Chosen  JoJo冒險野郎           {50 60} Corel   昆侖                   
+{60 60} bellvenus 聖鬥士 {海皇篇}      {50 60} Chosen  襄陽                   
+{50 60} Generic 奧林帕斯山[譯者:ICTUS] {50 60} Corel   布達拉宮               
+{55 60} Suleen  白霧森林               {55 60}	Gen     聖域                   
+{55 60} Chosen  魔谷                   {55 60} Chosen  騎士堡                 
+{55 60} Timon   桃 花 村               {60 60} Chosen  地獄神龍II             
+{60 60} Corel   夢望城                 {60 60} Chosen  五行世界               
+{60 60} Chosen  亞斯本                 {60 60} Chosen  魔宮                   
+{60 60} Chosen  =JOJO=冒險野郎第三部   {60 60} Chosen  拂曉的亮星             
+{60 60} Chosen  異星球                 {60 60} Winwell 奕之國度               
+{60 60} Bluesky 奇奇島                 {60 60} Yshuang 七龍珠                 
+{60 60} Chosen  黑地                   {60 60} Chosen  黑木崖                 
+{60 60} Chosen  絕情谷                 {60 60} Qing    凌雲窟                 
+{60 60} Corel   酆都熱鬥篇             {60 60} Timon   愛 神 堡               
+{60 60} Macau   三國演義 {黃巾之亂}    {60 60} Macau   三國演義 {赤壁之戰}    
+{ ALL } Macau   五十一區               {60 60} Qer     野蠻遊戲               
+{60 60} Gen     礦坑                   {60 60} Gooder  礦坑                   
+{60 60} KOKKO   暗黑破壞神魔道器篇     {60 60} KOKKO   暗黑破壞神忍者城篇     
+{60 60} KOKKO   暗黑破壞神武家屋敷篇   {60 60} Khshi   艾莎尼亞               
+{60 60} Dely    笑傲江湖之東方不敗篇   {60 60} Ichen   睡美人                 
+{60 60} Dkg     世界末日               { ALL } Lilina  十二金釵               
+{60 60} Lilina  泰山-森林危機          { ALL } Lilina  阿拉丁                 
+{60 60} Lilina  賈方復仇記             {60 60} Lilina  幽靈船                 
+{60 60} Lilina  阿拉丁和大盜之王       {60 60} Lilina  馬戲團                 
+{60 60} Smangel   闇的繼承者           {60 60} Smangel   魔界要塞             
+{60 60} Smangel 魔堡                   {60 60} Smangel 修羅城                 
+{60 60} Smangel 濃沃市                 {60 60} Smangel 銀燄幻魔錄{死神的序曲} 
+{ ALL } Warman  長安城                 {60 60} Winwell 嚴流島                 
+                                       { 1  5} Liya    回到未來               
+{60 60} Chosen  101次求婚              {60 60} Urge    哞哞牧場               
+{ 0 60} Rick    闍城血印  [Urge修改]   {60 60} Tears   濱海漁村               
+{ 5 35} Tears   重陽宮                 {60 60} Tears   襄陽城郊               
+{60 60} Robler　東方紅魔鄉             {60 60} Kyo     夢幻之島               
+{ 1 60} Kyo     霹靂大戰               { 1 60} Timon   白霧之都I   [Urge增編] 
+{ 1 60} Timon   白霧之都II  [Urge增編] {30 60} Timon   白霧之都III [Urge增編] 
+{60 60} Timon   白霧之都IV  [Urge增編] {30 60} Rolo    鹿鼎記                 
+{60 60} BlackJoe風雲第二部             {20 60} Liya    秀逗魔導士  [Urge整理] 
+{10 60} Where   鴉片戰爭(V1.3)         {50 60} Deity   新世紀福音戰士         
+{50 60} Best    武當山                 {60 60} Bala    馬到成功嶺             

@@ -1,0 +1,34 @@
+score	16 行
+affects	5 行
+equipment	16 行
+inventory	2 行
+worth	1 行
+level	1 行
+practice	1 行
+train	1 行
+skills	20 行
+skills all	106 行
+spells	17 行
+spells all	79 行
+commands	36 行
+socials	25 行
+help	16 行
+help newbie	1 行
+help rules	1 行
+area	66 行
+areas	66 行
+who	9 行
+where	5 行
+time	3 行
+weather	1 行
+config	11 行
+channels	2 行
+prompt	1 行
+alias	1 行
+quests	1 行
+news	1 行
+info	1 行
+wizlist	31 行
+look	9 行
+exits	5 行
+scan	1 行

@@ -1,0 +1,12 @@
+> config
+[ Keyword  ] Option
+[+AUTOEXIT ] 你會自動探查所在房間的出口.
+[-autoloot ] 你不自動撿取屍體內的東西.
+[+AUTOGOLD ] 你將自動撿取屍體內的金錢.
+[-autosac  ] 你不自動將屍體奉獻給天神.
+[+BLANK    ] 在等待下一指令前會先顯示一行空白.
+[-brief    ] 你可以看到房間的完整敘述.
+[+COLOR    ] 你想要收到顏色控制碼.
+[+COMBINE  ] 你可以同時看到物品的兩種顯示模式.
+[+PROMPT   ] 等待下一個指令時會有提示符號.
+[-telnetga ] You don't receive a telnet GA sequence.

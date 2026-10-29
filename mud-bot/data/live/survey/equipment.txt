@@ -1,0 +1,17 @@
+> equipment
+你正使用著:
+§照明器具§   (閃爍) 螢光棒/lighter
+§右手手指§   螺絲帽/cap
+§ 脖  子 §   平安符/amulet
+§ 身  體 §   流行 T 恤/shirt
+§ 頭  部 §   安全帽/helmet
+§ 腿  部 §   護膝/leggings
+§ 腳  部 §   球鞋/sport boots
+§ 手  部 §   機車手套/gloves
+§ 手  臂 §   護臂/sleeves
+§左手拿著§   雜誌/magazine
+§ 背  部 §   披風/cape
+§ 腰  部 §   皮帶/belt
+§ 右手腕 §   佛珠/rosary
+§右手拿著§   美工刀/knife
+§握在手上§   身份證/id card

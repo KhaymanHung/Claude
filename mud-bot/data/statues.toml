@@ -1,0 +1,112 @@
+# 勇者學校雕像館的雕像和它們教的技能（2026-10-29 從遊戲 look statue 的結果整理）
+# 牧師巨像有三座，各教一部分；#learn 會到每座有這個名字的雕像前 look statue 確認。
+
+[[statue]]
+name = "牧師巨像"
+skills = ["cure light", "cure serious", "heal", "refresh", "bless", "protection", "sanctuary", "cure blindness", "detect magic", "detect invis", "faerie fog", "lore", "lifesteal", "soulsteal", "cross glory", "polar sparkle", "holy arrow", "manamaster", "double heal", "full heal", "full refresh", "grefresh", "detect poison", "cure poison", "cure paralysis", "remove curse", "god bless"]
+zh = ["輕度治療", "、強力治療", "、治療術", "、補充體力術", "、女神庇祐術", "、聖佑術", "、聖光", "、復明術", "、偵測魔法術", "、偵測隱形術", "、顯像術", "、博識術", "、取魄術", "、勾魂術", "、十字光芒", "、究極死光", "、聖光箭", "、法力加持", "、雙重治療術", "、完全治療術", "、體力復原術", "、群體體力回復術", "、偵測毒性術", "、療毒術", "、治療麻痺術", "、去除詛咒術", "、神恩浩蕩"]
+
+[[statue]]
+name = "冒險者巨像"
+skills = ["scan", "create water", "create food", "create spring", "continual light", "control weather", "fly", "locate object", "identify", "recharge item", "ventriloquate"]
+zh = ["搜查", "、造水術", "、製造食物術", "、造泉術", "、光球術", "、呼風喚雨術", "、舞空術", "、定位術", "、鑑定術", "、補充術", "、腹語術"]
+
+[[statue]]
+name = "拳法家巨像"
+skills = ["bare fist", "ejinjing", "saulinfist", "lohanfist", "tigerfist", "bannofist", "handsfist", "kingonfinger", "wushangfinger"]
+zh = ["拳力", "、易筋經", "、少林長拳", "、羅漢拳", "、伏虎拳", "、般若掌", "、大慈大悲千手式", "、大力金剛指", "、無相劫指"]
+
+[[statue]]
+name = "盜帥巨像"
+skills = ["dodge"]
+zh = ["閃躲"]
+
+[[statue]]
+name = "教宗巨像"
+skills = ["holyaura", "gheal", "gfull heal", "extra heal", "gextra heal", "gcure blindness", "teleport", "transfer"]
+zh = ["大至聖光芒", "、群體強力治療術", "、群體恢復生命術", "、額外治療術", "、群體加強生命術", "、群體復明術", "、雲遊術", "、傳送術"]
+
+[[statue]]
+name = "力場系巫師巨像"
+skills = ["armor", "shield", "stone skin", "pass door", "giant strength", "barrier", "curse", "faerie fire", "dispel magic", "breakdark"]
+zh = ["神靈呼喚術", "、氣盾", "、肌膚石化術", "、游離化", "、巨人之力", "、魔法結界術", "、詛咒術", "、碎甲術", "、去除魔法術", "、破暗黑結界"]
+
+[[statue]]
+name = "大冒險家巨像"
+skills = ["detect magic", "detect invis", "faerie fog", "lore", "know alignment", "detect evil", "infravision", "detect hidden", "invis", "mass invis", "teleport", "transfer", "summon"]
+zh = ["偵測魔法術", "、偵測隱形術", "、顯像術", "、博識術", "、辯邪術", "、偵測邪惡術", "、夜視術", "、偵測藏匿術", "、隱身術", "、全隱術", "、雲遊術", "、傳送術", "、召喚術"]
+
+[[statue]]
+name = "小偷巨像"
+skills = ["scan", "pick lock", "peek", "steal", "hide", "sneak", "backstab", "enhanced damage", "bs power", "abscond", "assail", "benumb", "daub poison", "pretend", "piercy", "spy"]
+zh = ["搜查", "、開鎖", "、窺視", "、偷竊", "、藏匿", "、潛行", "、背刺", "、加強破壞", "、加強背刺", "、遁逃術", "、奇襲術", "、迷香術", "、抹毒術", "、偽裝", "、刺瞎", "、偵查"]
+
+[[statue]]
+name = "拳法高手巨像"
+skills = ["stun", "dragonfist", "reflexion", "cometfist", "sadfist", "ictus", "drunkfist", "taigifist"]
+zh = ["點穴", "、降龍十八掌", "、乾坤大挪移", "、天馬流星拳", "、黯然銷魂掌", "、六脈神劍", "、醉拳", "、太極拳"]
+
+[[statue]]
+name = "賽亞人巨像"
+skills = ["kamekameha", "gankitama", "kaioken"]
+zh = ["龜派氣功", "、元氣玉", "、界王拳"]
+
+[[statue]]
+name = "劍士巨像"
+skills = ["swordmaster", "shadowslash", "fusislash", "shanyanslash", "chunshislash", "twoyislash", "taigislash", "girlslash", "flowerslash", "bloomslash", "soleslash"]
+zh = ["劍訣", "、虛影劍法", "、伏羲劍法", "、玄陽劍法", "、沖虛劍法", "、兩儀劍法", "、太極劍法", "、玉女劍法", "、狂花劍法", "、天女散花", "、獨孤九劍"]
+
+[[statue]]
+name = "邪劍士巨像"
+skills = ["swordmaster", "shadowslash", "fusislash", "shanyanslash", "evilslash", "okra power"]
+zh = ["劍訣", "、虛影劍法", "、伏羲劍法", "、玄陽劍法", "、辟邪劍法", "、葵花寶典"]
+
+[[statue]]
+name = "道士巨像"
+skills = ["mountainslash", "changjunslash", "locate object", "identify", "enchant weapon", "remove nodrop", "time power", "makescroll", "bloom weapon", "curse", "sleep", "charm person", "charmcorpse", "chaodu", "barter", "plowslash"]
+zh = ["茅山劍法", "、全真劍法", "、定位術", "、鑑定術", "、加強武器術", "、解除磁性術", "、子午大法", "、煉符咒", "、武器鍛燒術", "、詛咒術", "、催眠術", "、攝心術", "、操屍術", "、超渡", "、五鬼運財術", "、天罡北斗陣"]
+
+[[statue]]
+name = "騎士巨像"
+skills = ["dodge", "enhanced damage", "second attack", "third attack", "blitz", "two weapon", "tenslice", "aid"]
+zh = ["閃躲", "、加強破壞", "、二段突刺", "、三段突刺", "、閃電奇襲式", "、雙手持劍法", "、十字斬", "、準確攻擊"]
+
+[[statue]]
+name = "圓桌騎士巨像"
+skills = ["earthslice", "windslice", "disarm", "parry", "block", "rescue", "hunt", "heavyslice"]
+zh = ["大地之斬", "、風嘯之斬", "、卸除武器", "、格擋", "、左手格擋", "、解救", "、獵殺", "、狂暴砍"]
+
+[[statue]]
+name = "暗系巫師巨像"
+skills = ["spellmaster", "dark space", "curse", "magic clock", "blindness", "sleep", "charm person", "illusion", "poison", "weaken", "confuse"]
+zh = ["魔力加持", "、闇黑結界", "、詛咒術", "、魔法沙漏", "、目盲術", "、催眠術", "、攝心術", "、迷朦幻影", "、植毒", "、力之禁錮", "、困惑術"]
+
+[[statue]]
+name = "雷系巫師巨像"
+skills = ["spellmaster", "control weather", "fly", "call lightning", "lightning bolt", "paralyze", "fall lightning"]
+zh = ["魔力加持", "、呼風喚雨術", "、舞空術", "、雷之召喚", "、轟雷落", "、麻痺術", "、爆雷降臨"]
+
+[[statue]]
+name = "火系巫師巨像"
+skills = ["spellmaster", "magic missile", "burning hands", "powerball", "fireball", "flamestrike", "nuclearblast", "star rain"]
+zh = ["魔力加持", "、魔法彈", "、火臂術", "、能源球", "、火球術", "、熾焰術", "、核爆術", "、流星雨"]
+
+[[statue]]
+name = "冰系巫師巨像"
+skills = ["spellmaster", "magic missile", "chill touch", "frostdust", "icekris", "congelation", "blizzard"]
+zh = ["魔力加持", "、魔法彈", "、寒霜之觸", "、霜塵術", "、冰刃術", "、急凍術", "、雪嵐"]
+
+[[statue]]
+name = "土系巫師巨像"
+skills = ["spellmaster", "magic missile", "rockblast", "earthquake", "magma", "canyon"]
+zh = ["魔力加持", "、魔法彈", "、爆岩擊", "、地震術", "、熾岩煉獄", "、土噬術"]
+
+[[statue]]
+name = "風系巫師巨像"
+skills = ["spellmaster", "magic missile", "cyclone", "vacuum", "hurricane"]
+zh = ["魔力加持", "、魔法彈", "、氣旋術", "、魔空真刃", "、颶風術"]
+
+[[statue]]
+name = "魔劍士巨像"
+skills = ["swordmaster", "shadowslash", "fusislash", "shanyanslash", "thunderslash", "lifeslash", "soulslash", "fireslash", "flameslash", "nuclearslash", "lightningslash"]
+zh = ["劍訣", "、虛影劍法", "、伏羲劍法", "、玄陽劍法", "、雷光電劍", "、奪命魔劍", "、魂竊魔劍", "、火之魔劍", "、焰之魔劍", "、核變魔劍", "、爆雷魔劍"]
